@@ -79,7 +79,7 @@ export const IndexPageTemplate = ({
   ctalink
 }) => {
   const heroImage = getImage(images[0].image);
-  console.log(heroImage);
+  const heroImage1 = getImage(images[1].image);
   return (
     <>
       <Container>
@@ -92,29 +92,35 @@ export const IndexPageTemplate = ({
         <Col md={12} lg={8} xl={9}>
           <Row className='d-flex justify-content-end'>
             <Col xs={10} md={10} lg={8}>
+              <Link to={images[0].link}>
               <div style={{
-                position: "relative"
-              }}>
-                <h1 style={{
-                  position: "absolute",
-                  left: 5,
-                  bottom: 0,
-                  zIndex: 10,
-                  marginLeft: "2rem",
-                  marginBottom: "2rem",
-                  color: "white",
-                  fontWeight: 700,
-                  lineHeight: 1
-                }}>{images[0].title}</h1>
-                <GatsbyImage image={heroImage} alt={images[0].title} />                
-              </div>
+                  position: "relative"
+                }}>
+                  <h1 style={{
+                    position: "absolute",
+                    left: 5,
+                    bottom: 0,
+                    zIndex: 10,
+                    marginLeft: "2rem",
+                    marginBottom: "2rem",
+                    color: "white",
+                    fontWeight: 700,
+                    lineHeight: 1
+                  }}>{images[0].title}</h1>
+                  <GatsbyImage image={heroImage} alt={images[0].title} />                
+                </div>
+              </Link>
             </Col>
             <Col xs={2} md={2} lg={2} className='window02'>
-              <Image fluid={true} src={image02}></Image>
+              <Link to={images[1].link}>
+              <div>
+            <GatsbyImage image={heroImage1} alt={images[1].title} />  
               <p style={{
                 lineHeight: 1,
                 marginTop: "1rem"
-              }}>Marianne Mustermann</p>
+              }}>{images[1].title}</p>
+              </div>
+              </Link>
             </Col>
           </Row>
         </Col>
@@ -127,11 +133,15 @@ export const IndexPageTemplate = ({
 };
 
 IndexPageTemplate.propTypes = {
-  images: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  images: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    image: PropTypes.object,
+    link: PropTypes.string.isRequired
+  })),
   title: PropTypes.string,
   lead: PropTypes.string,
   ctatext: PropTypes.string,
-  ctalink: PropTypes.object
+  ctalink: PropTypes.string
 };
 
 const IndexPage = ({ data }) => {
