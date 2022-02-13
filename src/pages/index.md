@@ -6,9 +6,9 @@ ctatext: Über uns
 ctalink: /about
 images:
   - title: Tarik Sharief
-    image: /img/blog-index.jpg
+    image: /img/image.png
     link: /about
   - title: Marianne Mustermann
-    image: /img/flavor_wheel.jpg
+    image: /img/image2.png
     link: /about
 ---
