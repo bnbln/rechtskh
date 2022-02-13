@@ -1,89 +1,137 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Navbar, Container, Nav, NavDropdown, Button, Row, Col, Card, Image} from 'react-bootstrap';
 
+import image01 from "../img/about/IMAGE.png";
+import image02 from "../img/about/IMAGE2.png";
+import image03 from "../img/about/ImageAbout_cutout.png";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 
+function ContactPage() {
+  return (
+    <div style={{
+      backgroundImage: "url("+image03+")",
+      backgroundSize: "cover"
+    }}>
+      <Container style={{minHeight: "100vh"}}>
+        <Row>
+          <Col md={4}>
+          <h2>Unsere Kanzlei am Wittenbergplatz</h2>
+          <p>Lernen Sie uns, unsere Stärken und Kolleg*innen besser kennen</p>
+          <Card>
+            <Card.Body>
+              <p>
+                <b>Rechtsanwälte in Bürogemeinschaft</b><br/>
+                Tarik Sharief, Zivilrecht <br/>
+                Antonia Simeonova, Fachanwältin für Verkehrsrecht <br/>
+                Tanja Ruperti, Fachanwältin für Arbeitsrecht
+              </p>
+              <p>
+                <b>Anschrift</b><br/>
+                Ansbacher Straße 13<br/>
+                10787 Berlin
+              </p>
+              <p>
+                <b>Kontaktdaten</b><br/>
+                Telefon: +49/(0)30-69 53 33 61<br/>
+                Fax: +49/(0)30-69 53 33 62<br/>
+                Mail: kanzlei@rechtsklarheit.de<br/>
+              </p>
+              <p>
+                <b>Sprechzeiten</b><br/>
+                Mo-Fr 9:00-12:00 Uhr<br/>
+                Mo, Di, Do 15:00-18:00 Uhr<br/>
+              </p>
+            </Card.Body>
+          </Card>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  )
+}
+function Banner() {
+  return (
+    <>
+      <Container fluid className='bg-scnd'>
+        <Container>
+          <Row>
+            <Col><h2 style={{ textAlign: "right"}}>Jetzt Kontakt aufnehmen</h2></Col>
+            <Col><Button>Zum Kontaktformular</Button></Col>
+          </Row>
+        </Container>
+      </Container>
+    </>
+  )
+}
+
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
-  image,
+  images,
   title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro,
+  lead,
+  ctatext,
+  ctalink
 }) => {
-  const heroImage = getImage(image) || image;
-
+  const heroImage = getImage(images[0].image);
+  console.log(heroImage);
   return (
-    <div>
-      <FullWidthImage img={heroImage} title={title} subheading={subheading} />
-      <section className="section section--gradient">
-        <div className="container">
-          <div className="section">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div className="content">
-                  <div className="content">
-                    <div className="tile">
-                      <h1 className="title">{mainpitch.title}</h1>
-                    </div>
-                    <div className="tile">
-                      <h3 className="subtitle">{mainpitch.description}</h3>
-                    </div>
-                  </div>
-                  <div className="columns">
-                    <div className="column is-12">
-                      <h3 className="has-text-weight-semibold is-size-2">
-                        {heading}
-                      </h3>
-                      <p>{description}</p>
-                    </div>
-                  </div>
-                  <Features gridItems={intro.blurbs} />
-                  <div className="columns">
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/products">
-                        See all products
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      Latest stories
-                    </h3>
-                    <BlogRoll />
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/blog">
-                        Read more
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+    <>
+      <Container>
+      <Row className="justify-content-between align-items-md-center herorow">
+        <Col md={12} lg={4} xl={3}>
+          <h1>{title}</h1>
+          <p>{lead}</p>
+          <Button variant="secondary" to={ctalink}>{ctatext}</Button>
+        </Col>
+        <Col md={12} lg={8} xl={9}>
+          <Row className='d-flex justify-content-end'>
+            <Col xs={10} md={10} lg={8}>
+              <div style={{
+                position: "relative"
+              }}>
+                <h1 style={{
+                  position: "absolute",
+                  left: 5,
+                  bottom: 0,
+                  zIndex: 10,
+                  marginLeft: "2rem",
+                  marginBottom: "2rem",
+                  color: "white",
+                  fontWeight: 700,
+                  lineHeight: 1
+                }}>{images[0].title}</h1>
+                <GatsbyImage image={heroImage} alt={images[0].title} />                
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+            </Col>
+            <Col xs={2} md={2} lg={2} className='window02'>
+              <Image fluid={true} src={image02}></Image>
+              <p style={{
+                lineHeight: 1,
+                marginTop: "1rem"
+              }}>Marianne Mustermann</p>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </Container>
+      <ContactPage />
+      <Banner />
+    </>
   );
 };
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  images: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+  lead: PropTypes.string,
+  ctatext: PropTypes.string,
+  ctalink: PropTypes.object
 };
 
 const IndexPage = ({ data }) => {
@@ -92,13 +140,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        lead={frontmatter.lead}
+        ctatext={frontmatter.ctatext}
+        ctalink={frontmatter.ctalink}
+        images={frontmatter.images}
       />
     </Layout>
   );
@@ -119,30 +165,19 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          }
-        }
-        heading
-        subheading
-        mainpitch {
+        lead
+        ctatext
+        ctalink
+        images {
           title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
-              }
+          image {
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
-            text
           }
-          heading
-          description
+          link
         }
+
       }
     }
   }

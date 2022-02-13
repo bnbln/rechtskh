@@ -1,0 +1,79 @@
+@use "sass:map";
+@import "bootstrap/scss/functions"; 
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/navbar";
+
+
+$theme-colors: (
+  primary: #258EA6,
+  secondary: #172340
+);
+
+@import "bootstrap";
+
+.navbar-light .navbar-brand {
+color: map.get($theme-colors, "secondary");
+font-weight: 700;
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .nav-link.active, .dropdown-item, .navbar-light .navbar-nav .nav-link {
+  color: map.get($theme-colors, "secondary");
+}
+
+.dropdown-menu {
+  border: 1px solid rgba(map.get($theme-colors, "secondary"), .5)
+}
+
+.dropdown-divider {
+  border-top: 1px solid rgba(map.get($theme-colors, "secondary"), .5);
+}
+.dropdown-item:hover, .dropdown-item:focus {
+  background: rgba(map.get($theme-colors, "primary"), .3)
+}
+.btn {
+  border-radius: 0.1rem
+}
+
+.btn-primary {
+  color: #fff
+}
+
+.btn-outline-primary:hover, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+}
+
+.btn-secondary:hover{
+background: lighten(map.get($theme-colors, "secondary"), 20)
+}
+
+.navbar-light .navbar-brand:hover {
+  color: lighten(map.get($theme-colors, "secondary"), 20);
+}
+.bg-scnd {
+  background-color: map.get($theme-colors, "secondary");
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.herorow {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  flex-direction: row;
+}
+
+@include media-breakpoint-down(lg) { 
+
+  .herorow {
+    flex-direction: column-reverse;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+  .window02 p {
+    transform: rotate(90deg)
+
+  }
+  
+}

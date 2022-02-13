@@ -1,0 +1,44 @@
+site: Rxxxxxkxxxxxxx.de
+description: Kanzlei am Wittenbergplatz
+seo: abc abc
+image: /img/headerimage.jpg
+menu:
+  - name: Home
+    to: /
+  - name: Rechtsfragen
+    to: /recht
+  - name: Anwalt
+    to: /about
+  - name: Aktuelles
+    to: /blog
+footermenu:
+  - name: Kontakt
+    to: /contact
+  - name: Impressum
+    to: /impressum
+  - name: Datenschutzerklärung
+    to: /datenschutz
+contact:
+  info: |-
+    **Rechtsanwälte in Bürogemeinschaft**\
+    T\
+    Zivilrecht
+
+    A\
+    Fachanwältin für Verkehrsrecht
+
+    T\
+    Fachanwältin für Arbeitsrecht
+  contact: |-
+    **Anschrift**\
+    Ans\
+    10787
+
+    **Kontaktdaten**\
+    Telefon:\
+    Fax:\
+    Mail:
+  open: |-
+    **Sprechzeiten**\
+    Mo-Fr 9:00-12:00 Uhr\
+    Mo, Di, Do 15:00-18:00 Uhr
