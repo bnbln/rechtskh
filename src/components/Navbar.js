@@ -10,7 +10,7 @@ const Navigation = class extends React.Component {
     console.log(meta);
     return (
       <>
-        <Navbar expand="lg">
+        <Navbar expand="lg" bg="white" variant="light" fixed="top">
           <Container>
             <Navbar.Brand onClick={()=> navigate("/")}>
            
