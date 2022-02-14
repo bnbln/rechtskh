@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, navigate } from "gatsby";
+import { navigate } from "gatsby";
 import { Navbar, Container, Nav, NavDropdown, Button, Row, Col, Card, Image} from 'react-bootstrap';
 
 import logo from "../img/logo.svg";

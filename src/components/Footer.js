@@ -1,14 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import ReactMarkdown from 'react-markdown'
-import { Navbar, Container, Nav, NavDropdown, Button, Row, Col, Card, Image} from 'react-bootstrap';
-
-
-import logo from "../img/logo.svg";
-import facebook from "../img/social/facebook.svg";
-import instagram from "../img/social/instagram.svg";
-import twitter from "../img/social/twitter.svg";
-import vimeo from "../img/social/vimeo.svg";
+import { Navbar, Container} from 'react-bootstrap';
 
 const Footer = class extends React.Component {
   render() {

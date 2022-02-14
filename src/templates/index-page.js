@@ -1,16 +1,11 @@
 import React, {useState, useEffect} from "react";
-import PropTypes, { func } from "prop-types";
-import { Link, graphql } from "gatsby";
+import PropTypes from "prop-types";
+import { Link, navigate, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Navbar, Container, Nav, NavDropdown, Button, Row, Col, Card, Image} from 'react-bootstrap';
+import { Container, Button, Row, Col, Card } from 'react-bootstrap';
 
-import image01 from "../img/about/IMAGE.png";
-import image02 from "../img/about/IMAGE2.png";
 import image03 from "../img/about/ImageAbout_cutout.png";
 import Layout from "../components/Layout";
-import Features from "../components/Features";
-import BlogRoll from "../components/BlogRoll";
-import FullWidthImage from "../components/FullWidthImage";
 
 function ContactPage() {
   return (
@@ -83,9 +78,9 @@ export const IndexPageTemplate = ({
   const [hoverState, setHoverState] = useState(false)
   const heroImage = getImage(images[0].image);
   const heroImage1 = getImage(images[1].image);
-
+  console.log("banner: ", images[0].image, heroImage);
   useEffect(() => {
-    if(hoverState == false) {
+    if(hoverState === false) {
     const intervalId = setInterval(() => {      
         if (heroState === 0) {
           setHeroState(1)
@@ -177,7 +172,7 @@ export const IndexPageTemplate = ({
         <Col md={12} lg={4} xl={3}>
           <h1>{title}</h1>
           <p>{lead}</p>
-          <Button variant="primary" size="lg" to={ctalink}>{ctatext}</Button>
+          <Button variant="primary" size="lg" onClick={()=> navigate(ctalink)}>{ctatext}</Button>
         </Col>
       </Row>
     </Container>

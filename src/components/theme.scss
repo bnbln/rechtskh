@@ -92,3 +92,18 @@ background: lighten(map.get($theme-colors, "secondary"), 20)
   }
   
 }
+
+.CookieConsent {
+  margin: 2rem;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: map.get($theme-colors, "secondary");
+  padding: 16px 32px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+}
