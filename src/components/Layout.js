@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import { Link, navigate } from "gatsby";
+import { navigate } from "gatsby";
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
-import { Container, Nav, NavDropdown, Button, Row, Col, Card, Image} from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap';
 
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,11 +12,12 @@ import metadata from "../../content/settings/global.yml";
 
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import useSiteMetadata from "./SiteMetadata";
+// import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata();
+  // const { title, description } = useSiteMetadata();
+  console.log("COOKIE: ", getCookieConsentValue("gdpr"));
   return (
     <div>
       <Helmet>

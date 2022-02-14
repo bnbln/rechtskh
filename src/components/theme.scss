@@ -107,3 +107,16 @@ background: lighten(map.get($theme-colors, "secondary"), 20)
   gap: 24px;
   align-items: center;
 }
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.recht.content h3 {
+  padding-top: 4rem;
+}
+
+footer {
+  background: map.get($theme-colors, "secondary");
+  color: white;
+}
