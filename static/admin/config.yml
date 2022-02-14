@@ -63,6 +63,26 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+            - file: "src/pages/impressum/index.md"
+        label: "Impressum"
+        name: "impressum"
+        fields:
+        - {label: "Template Key", name: "templateKey", widget: "hidden", default: "impressum-page"}
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: Lead, name: lead, widget: string}
+        - {label: Icon, name: icon, widget: image}
+        - {label: Bild, name: image, widget: image}
+        - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/datenschutz/index.md"
+        label: "Datenschutz"
+        name: "datenschutz"
+        fields:
+        - {label: "Template Key", name: "templateKey", widget: "hidden", default: "datenschutz-page"}
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: Lead, name: lead, widget: string}
+        - {label: Icon, name: icon, widget: image}
+        - {label: Bild, name: image, widget: image}
+        - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
@@ -192,3 +212,17 @@ collections:
           - {label: "Hauptmenü", name: menu, widget: list, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string"}]}
           - {label: "Footermenü", name: footermenu, widget: list, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string"}]}
           - {label: "Kontakt", name: contact, widget: object, fields: [{label: "Information", name: "info", widget: "markdown"}, {label: "Kontakt", name: "contact", widget: "markdown"}, {label: "Öffnungszeiten", name: "open", widget: "markdown"}]}
+   - name: "recht"
+    label: "Rechtsfragen"
+    folder: "src/pages/recht"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "recht-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: Lead, name: lead, widget: string}
+      - {label: Icon, name: image, widget: image}
+      - {label: Bild, name: picture, widget: image}
+      - {label: "Banner", name: banner, widget: list, fields: [{label: Titel, name: title, widget: "string"}, {label: Absatz, name: text, widget: "text"}]}
+      - {label: "Beitrag", name: article, widget: list, fields: [{label: Titel, name: title, widget: "string"}, {label: Body, name: body, widget: "markdown"}]}
+ 

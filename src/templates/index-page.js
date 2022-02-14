@@ -83,47 +83,32 @@ export const IndexPageTemplate = ({
   const [hoverState, setHoverState] = useState(false)
   const heroImage = getImage(images[0].image);
   const heroImage1 = getImage(images[1].image);
-  console.log(hoverState);
 
   useEffect(() => {
     if(hoverState == false) {
-    const intervalId = setInterval(() => {
-      console.log("loop");
-      
+    const intervalId = setInterval(() => {      
         if (heroState === 0) {
           setHeroState(1)
         } else {
           setHeroState(0)
         }
-    }, 6000);
+    }, 6500);
     return () => clearInterval(intervalId);
   }
   }, [hoverState, heroState]);
   
-
   function setToggle(input) {
-    console.log("Stop Loop");
     setHeroState(input);
     setHoverState(true)
-    
-    
   }
   var timingfunction = "3s cubic-bezier(0.45, 0, 0.55, 1)"
   return (
     <>
       <Container>
-      <Row className="justify-content-between align-items-md-center herorow">
-
-        <Col md={12} lg={4} xl={3}>
-          <h1>{title}</h1>
-          <p>{lead}</p>
-          <Button variant="secondary" to={ctalink}>{ctatext}</Button>
-        </Col>
-
-        <Col md={12} lg={8} xl={9}>
-          <Row className='d-flex justify-content-end align-items-center'>
-
-            <Col xs={heroState === 0 ? 10 : 2} md={heroState === 0 ? 10 : 2} lg={heroState === 0 ? 8 : 2} style={{height: "60vh", transition: timingfunction}} onMouseOut={()=>setHoverState(false)} onMouseOver={()=>setToggle(0)} >
+      <Row className=" align-items-md-center herorow">
+        <Col md={12} lg={8} xl={8}>
+          <Row className='d-flex justify-content-start align-items-center'>
+            <Col xs={heroState === 0 ? 10 : 2} md={heroState === 0 ? 10 : 3} lg={heroState === 0 ? 8 : 3} style={{height: "70vh", transition: timingfunction}} onMouseOut={()=>setHoverState(false)} onMouseOver={()=>setToggle(0)} >
               <Link to={images[0].link}>
               <div style={{
                   position: "relative",
@@ -151,13 +136,11 @@ export const IndexPageTemplate = ({
                     marginTop: heroState === 0 ? "0vh" : "5vh"
                     }}>
                       <GatsbyImage image={heroImage || images[0].path} alt={images[0].title} style={{height: "100%"}}  /> 
-                  </div>
-                                 
+                  </div>                                
                 </div>
               </Link>
             </Col>
-            
-            <Col xs={heroState === 0 ? 2 : 10} md={heroState === 0 ? 2 : 10} lg={heroState === 0 ? 2 : 8} className='window02' style={{height: "60vh", transition: timingfunction}} onMouseOut={()=>setHoverState(false)} onMouseOver={()=>setToggle(1)} >
+            <Col xs={heroState === 0 ? 2 : 10} md={heroState === 0 ? 3 : 10} lg={heroState === 0 ? 3 : 8} className='window02' style={{height: "70vh", transition: timingfunction}} onMouseOut={()=>setHoverState(false)} onMouseOver={()=>setToggle(1)} >
               <Link to={images[1].link}>
               <div style={{
                   position: "relative",
@@ -189,11 +172,65 @@ export const IndexPageTemplate = ({
                 </div>
               </Link>
             </Col>
-
           </Row>
+        </Col>
+        <Col md={12} lg={4} xl={3}>
+          <h1>{title}</h1>
+          <p>{lead}</p>
+          <Button variant="primary" size="lg" to={ctalink}>{ctatext}</Button>
         </Col>
       </Row>
     </Container>
+    <div style={{
+      background: "#172340",
+      paddingTop: 40,
+      paddingBottom: 40,
+      marginBottom: 140,
+    }}>
+      <Container>
+        <Row className="justify-content-center">
+          <Col md="auto">
+            <Card style={{ width: '18rem' }}>
+              <GatsbyImage className="card-img-top" image={heroImage1 || images[1].path} alt={images[1].title} style={{height:"100%"}} /> 
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up the bulk of
+                  the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md="auto">
+            <Card style={{ width: '18rem' }}>
+              <GatsbyImage className="card-img-top" image={heroImage1 || images[1].path} alt={images[1].title} style={{height:"100%"}} /> 
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up the bulk of
+                  the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md="auto">
+            <Card style={{ width: '18rem' }}>
+              <GatsbyImage className="card-img-top" image={heroImage1 || images[1].path} alt={images[1].title} style={{height:"100%"}} /> 
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up the bulk of
+                  the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </div>
       <ContactPage />
       <Banner />
     </>

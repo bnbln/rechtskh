@@ -2,13 +2,18 @@ $primary: #258EA6;
 $secondary: #172340;
 $blue: #258EA6;
 $dark: rgb(37, 142, 166);
+$font-family-base: 'Poppins', sans-serif;
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+* {
+font-family: 'Poppins', sans-serif;;
+}
 
 @media (max-width: 768px) {
     #navbar-content {
       height: 100vh;
    }
-   
+
  }
 
 // .navbar-light .navbar-brand {
