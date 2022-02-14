@@ -5,7 +5,7 @@ lead: Die Beschwerden der Versicherten beim Versicherungsombudsmann sowie bei
   Anwälten über das Verhalten von Versicherungen nehmen seit Jahren dramatisch
   zu. Hierzu zählt unter anderem
 image: /img/flavor_wheel.jpg
-picture: /img/flavor_wheel.jpg
+picture: /img/versicherungsrecht.png
 banner:
   - title: Versicherungen versuchen bewußt, Zahlung zu vermeiden
     text: Der Versicherte geht bei Abschluss der Versicherung davon aus, dass er
