@@ -2,7 +2,7 @@ import * as React from "react";
 import { Helmet } from "react-helmet";
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import "./theme.scss";
 
 import metadata from "../../content/settings/global.yml";
@@ -56,7 +56,7 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Navbar metadata={metadata} />
       <div style={{
-        marginTop: 80
+        marginTop: 56
       }}>{children}</div>
       <Footer metadata={metadata} />
     </div>
