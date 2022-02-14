@@ -55,15 +55,10 @@ collections:
         label: "About"
         name: "about"
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "about-page",
-            }
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-            - file: "src/pages/impressum/index.md"
+      - file: "src/pages/impressum/index.md"
         label: "Impressum"
         name: "impressum"
         fields:
@@ -215,7 +210,7 @@ collections:
   - name: "recht"
     label: "Rechtsfragen"
     folder: "src/pages/recht"
-    create: false
+    create: true
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "recht-post"}
