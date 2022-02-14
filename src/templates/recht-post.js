@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Container, Button, Row, Col, Image} from 'react-bootstrap';
+import { Container, Row, Col, Button, ButtonGroup } from 'react-bootstrap';
+// import Content, { HTMLContent } from "../components/Content";
 
 import ReactMarkdown from 'react-markdown'
 import Layout from '../components/Layout'
@@ -13,49 +14,66 @@ export const RechtPostTemplate = ({
   data,
   banner,
   article,
+  image,
   description,
+  content,
+  contentComponent,
   helmet,
 }) => {
-  const heroImage = getImage(data.picture);
+// const PageContent = contentComponent || Content;
+  const heroImage = getImage(image);
   console.log("data", data );
-  console.log("img", heroImage );
+  console.log("img", image );
   return (
     <>
       {helmet || ''}
       <Container>
-        <Row className=" align-items-md-center herorow">
-            <Col md={12} lg={8} xl={8}>
+        <Row className=" align-items-md-center justify-content-between herorow">
+            <Col md={12} lg={5} xl={4}>
+
+                            <h1>{data.title}</h1>
+                            <p>{data.lead}</p>
+                            <div className="list">
+                                {data.article.map((item, i) => (
+                                    <Button size="sm" variant="primary" onClick={()=> navigate("#"+i)} key={"sectionbutton"+i}>{item.title}</Button>
+                                ))}
+                            </div>
+          
+            </Col>
+            <Col md={12} lg={7} xl={7}>
             <Row className='d-flex justify-content-start align-items-center'>
-                <Col>
+  
                 <div style={{
                     position: "relative",
                     overflow: "hidden"
                     }}>
-                    <h1 style={{
-                        position: "absolute",
-                        maxWidth: 100,
-                        left: 5,
-                        bottom: 0,
-                        zIndex: 10,
-                        marginLeft: "2rem",
-                        marginBottom: "2rem",
-                        color: "white",
-                        fontWeight: 700,
-                        lineHeight: 1
-                    }}>ABCDEFG</h1>
                     <div style={{
                         height: "70vh"
                         }}>
+                            <img src={image.publicURL} />
                         <GatsbyImage image={heroImage} style={{height: "100%"}}  /> 
                     </div>                                
                     </div>
-                </Col>
             </Row>
             </Col>
-        <Col md={12} lg={4} xl={3}>
-          <h1>{data.title}</h1>
-          <p>{data.lead}</p>
-        </Col>
+        </Row>
+      </Container>
+      <div style={{
+                background: "#172340",
+                paddingTop: 40,
+                paddingBottom: 40
+                }}></div>
+      <Container>
+        <Row>
+            <Col xs={12} md={8}>
+                {article.map((item,i)=> (
+                <section className="recht content" key={"section"+i}>
+                <h3 id={i}>{item.title}</h3>
+                {/* <PageContent className="content" content={content} /> */}
+                <ReactMarkdown>{item.body}</ReactMarkdown>
+                </section>
+            ))}
+            </Col>
         </Row>
       </Container>
     </>
@@ -64,6 +82,7 @@ export const RechtPostTemplate = ({
 
 RechtPostTemplate.propTypes = {
   data: PropTypes.object,
+  image: PropTypes.object,
   banner: PropTypes.object,
   article: PropTypes.object,
   content: PropTypes.node.isRequired,
@@ -80,6 +99,7 @@ const RechtPost = ({ data }) => {
     <Layout>
       <RechtPostTemplate
         data={data.markdownRemark.frontmatter}
+        image={data.markdownRemark.frontmatter.image}
         banner={data.markdownRemark.frontmatter.banner}
         article={data.markdownRemark.frontmatter.article}
         content={post.html}

@@ -1,13 +1,11 @@
 import React from "react";
 import { navigate } from "gatsby";
-import { Navbar, Container, Nav, NavDropdown, Button, Row, Col, Card, Image} from 'react-bootstrap';
-
-import logo from "../img/logo.svg";
+import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
 
 const Navigation = class extends React.Component {
   render() {
     const meta = this.props.metadata;
-    console.log(meta);
+    // console.log(meta);
     return (
       <>
         <Navbar expand="lg" bg="white" variant="light" fixed="top">
