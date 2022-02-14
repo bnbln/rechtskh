@@ -4,7 +4,7 @@ title: Mietrecht
 lead: Mietrecht in Berlin ist oft umstritten - Renovierungspflicht,
   Wasserschaden, Reparaturen und Räumung
 image: /img/flavor_wheel.jpg
-picture: /img/flavor_wheel.jpg
+picture: /img/mietrecht.png
 banner:
   - text: Der erfahrene Anwalt im Mietrecht muss nicht immer den direkten Weg
       wählen, um Ihr Ziel durchzusetzen. Wenn z.B. eine Mietminderung rechtlich
