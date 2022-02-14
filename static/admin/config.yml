@@ -212,7 +212,7 @@ collections:
           - {label: "Hauptmenü", name: menu, widget: list, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string"}]}
           - {label: "Footermenü", name: footermenu, widget: list, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string"}]}
           - {label: "Kontakt", name: contact, widget: object, fields: [{label: "Information", name: "info", widget: "markdown"}, {label: "Kontakt", name: "contact", widget: "markdown"}, {label: "Öffnungszeiten", name: "open", widget: "markdown"}]}
-   - name: "recht"
+  - name: "recht"
     label: "Rechtsfragen"
     folder: "src/pages/recht"
     create: false
@@ -225,4 +225,4 @@ collections:
       - {label: Bild, name: picture, widget: image}
       - {label: "Banner", name: banner, widget: list, fields: [{label: Titel, name: title, widget: "string"}, {label: Absatz, name: text, widget: "text"}]}
       - {label: "Beitrag", name: article, widget: list, fields: [{label: Titel, name: title, widget: "string"}, {label: Body, name: body, widget: "markdown"}]}
- 
+  
