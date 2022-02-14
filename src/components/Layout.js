@@ -1,6 +1,9 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
+import { Link, navigate } from "gatsby";
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
+import { Container, Nav, NavDropdown, Button, Row, Col, Card, Image} from 'react-bootstrap';
+
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./theme.scss";
@@ -59,6 +62,25 @@ const TemplateWrapper = ({ children }) => {
         marginTop: 56
       }}>{children}</div>
       <Footer metadata={metadata} />
+      <Container>
+      <CookieConsent
+            location="bottom"
+            buttonText="Akzeptieren"
+            cookieName="gdpr"
+            expires={150}
+            disableStyles={true}
+          >
+            <b>Diese Seite verwendet Cookies </b>
+            <br />
+            <span style={{ fontSize: 10 }}>
+              Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren,
+              Funktionen für soziale Medien anbieten zu können und die Zugriffe
+              auf unsere Website zu analysieren.
+              <br />
+              <Button variant="outline-secondary" size="sm" onClick={()=> navigate("/datenschutz")}>Weitere Informationen</Button>
+            </span>
+          </CookieConsent>
+      </Container>
     </div>
   );
 };
