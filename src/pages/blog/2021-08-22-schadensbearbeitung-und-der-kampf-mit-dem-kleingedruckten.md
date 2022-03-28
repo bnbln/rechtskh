@@ -7,7 +7,7 @@ description: Der im Versicherungsrecht tätige Anwalt muss immer wieder
   feststellen, dass der Schaden durch die Versicherungen überhaupt nicht oder
   nur schleppend reguliert wird.
 featuredpost: false
-featuredimage: /img/chemex.jpg
+featuredimage: /img/versicherungsrecht.png
 ---
 Der Preisdruck unter den Versicherungen macht sich auch bei dem Regulierungsverhalten der Versicherung bemerkbar. Die Ver- sicherungen versuchen ihren Gewinn zu maximieren, indem sie möglichst viele Versicherungen abschließen, Personal einsparen und nach Möglichkeit im Schadensfall nicht zahlen.
 
