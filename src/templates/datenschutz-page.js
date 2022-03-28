@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import { Container, Button, Row, Col, Card, Carousel, Form } from "react-bootstrap";
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
@@ -35,14 +36,16 @@ const DatenschutzPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   return (
     <Layout data={data.markdownRemark.frontmatter}>
-      <DatenschutzPageTemplate
-        title={frontmatter.title}
-        lead={frontmatter.lead}
-        icon={frontmatter.icon}
-        image={frontmatter.image}
-        content={data.markdownRemark.html}
-        contentComponent={HTMLContent}
-      />
+      <Container>
+        <DatenschutzPageTemplate
+          title={frontmatter.title}
+          lead={frontmatter.lead}
+          icon={frontmatter.icon}
+          image={frontmatter.image}
+          content={data.markdownRemark.html}
+          contentComponent={HTMLContent}
+        />
+      </Container>
     </Layout>
   )
 }

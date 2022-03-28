@@ -9,18 +9,29 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 class BlogRollTemplate extends React.Component {
   render() {
+    const {props} = this.props;
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
-
+    var all = props.all ? props.all : false
+    console.log("P", props)
     return (
       <Row>
         {posts &&
-          posts.slice(0,5).map(({ node: post }) => (
+          posts.slice(0, all === false ? 5 : 100).map(({ node: post }) => (
             <Col md="auto" lg={post.frontmatter.featuredpost ? 8 : 4}>
-            <Card key={post.id}>
+               <Link
+                      className="title has-text-primary is-size-4"
+                      to={post.fields.slug}
+                      style={{
+                        textDecoration: `none`,
+                        color: `black`,
+                      }}
+                    >
+            <Card key={post.id} style={{borderRadius: 0, border: "none",  marginBottom: 40}}>
                   <PreviewCompatibleImage
                         className="card-img-top"
                         imageInfo={{
+                          style: { height: post.frontmatter.featuredpost ? 450: 300, borderRadius: 5},
                           image: post.frontmatter.featuredimage,
                           alt: `featured image thumbnail for post ${post.frontmatter.title}`
                         }}
@@ -31,29 +42,20 @@ class BlogRollTemplate extends React.Component {
                 }`}
               >
                 <header>
-                  <p className="post-meta">
-                    <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                    >
+                  <h5 className="post-meta" style={{marginTop: 14}}>
                       {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <span className="subtitle is-size-5 is-block">
-                      {post.frontmatter.date}
-                    </span>
-                  </p>
+                  </h5>
                 </header>
                 <p>
                   {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
+                  <span> </span>
+                  <Link className="button" to={post.fields.slug} style={{color: "#258EA6"}}>
+                    Weiterlesen →
                   </Link>
                 </p>
               </article>
             </Card>
+            </Link>
             </Col>
           ))}
       </Row>
@@ -62,6 +64,7 @@ class BlogRollTemplate extends React.Component {
 }
 
 BlogRoll.propTypes = {
+  all: PropTypes.object,
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -70,7 +73,7 @@ BlogRoll.propTypes = {
 }
 
 
-export default function BlogRoll() {
+export default function BlogRoll(props) {
   return (
     <StaticQuery
       query={graphql`
@@ -96,9 +99,8 @@ export default function BlogRoll() {
                       gatsbyImageData(
                         width: 120
                         quality: 100
-                        layout: CONSTRAINED
+                        layout: FULL_WIDTH
                       )
-
                     }
                   }
                 }
@@ -107,7 +109,7 @@ export default function BlogRoll() {
           }
         }
       `}
-      render={(data, count) => <BlogRollTemplate data={data} count={count} />}
+      render={(data, count) => <BlogRollTemplate data={data} count={count} props={props}/>}
     />
   );
 }
