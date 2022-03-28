@@ -14,6 +14,7 @@ $theme-colors: (
   secondary: #172340,
   body-color: #172340,
   bs-body-color: #172340,
+  color: #172340,
   dark: #172340,
   bs-dark: #172340,
   dark-rgb: rgb(23, 35, 64)
@@ -26,6 +27,9 @@ $theme-colors: (
   }
 h1, .navbar-brand {
   font-family: 'Source Serif 4', sans-serif;
+}
+h1 {
+  font-size: 2rem;
 }
 
 .navbar-light .navbar-brand {
@@ -119,4 +123,25 @@ background: lighten(map.get($theme-colors, "secondary"), 20)
 footer {
   background: map.get($theme-colors, "secondary");
   color: white;
+}
+
+@include media-breakpoint-down(lg) { 
+  .recht.herorow {
+    flex-direction: column-reverse!important;
+    gap: 20px
+  }
+  .rechtroll {
+    gap: 20px;
+  }
+  .rechtroll .card {
+    flex-direction: row;
+  }
+  .rechtroll .card .card-img-top {
+    width: 110px
+  }
+  .rechtroll .card .card-body {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
 }

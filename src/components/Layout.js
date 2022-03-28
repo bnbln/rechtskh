@@ -60,9 +60,10 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Navbar metadata={metadata} />
       <div style={{
-        marginTop: 56
+        marginTop: 56,
+        marginBottom: 56
       }}>{children}</div>
-      <Footer metadata={metadata} />
+      <Footer metadata={metadata}  />
       <Container>
       <CookieConsent
             location="bottom"

@@ -1,9 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 import { Helmet } from "react-helmet";
-import { graphql, Link } from "gatsby";
+import { graphql, Link, navigate } from "gatsby";
+import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
+
 import Layout from "../components/Layout";
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import Content, { HTMLContent } from "../components/Content";
 
 // eslint-disable-next-line
@@ -14,36 +19,54 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  image
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
+    <>
       {helmet || ""}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
+      <Container>
+        <Row className=" align-items-md-center justify-content-between herorow">
+          <Col md={12} lg={5} xl={4}>
+            <h1>{title}</h1>
             <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map((tag) => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
+          </Col>
+          <Col md={12} lg={7} xl={7}>
+            <Row className="d-flex justify-content-start align-items-center">
+              <div
+                style={{
+                  position: "relative",
+                  overflow: "hidden",
+                }}
+              >
+                <div
+                  style={{
+                    height: "70vh",
+                  }}
+                >
+                  {/* <img src={picture.publicURL} style={{ width: "100%" }} /> */}
+                  <PreviewCompatibleImage
+                  imageInfo={{
+                    image: image,
+                    alt: title,
+                    style: { borderRadius: "5px",  width: "100%", height: "100%"}
+                  }}
+                />
+                </div>
               </div>
-            ) : null}
-          </div>
-        </div>
-      </div>
-    </section>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
+      <Container>
+        <Row>
+          <Col xs={12} md={8}>
+            <PostContent content={content} />
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
 
@@ -53,6 +76,7 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  image: PropTypes.object,
 };
 
 const BlogPost = ({ data }) => {
@@ -73,6 +97,7 @@ const BlogPost = ({ data }) => {
             />
           </Helmet>
         }
+        image={post.frontmatter.featuredimage}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
@@ -97,7 +122,15 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        tags
+        featuredimage {
+          childImageSharp {
+            gatsbyImageData(
+              width: 2400
+              quality: 100
+              layout: CONSTRAINED
+            )
+          }
+        }
       }
     }
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import { navigate } from "gatsby";
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
+import {MailIcon} from '@primer/octicons-react'
 
 const Navigation = class extends React.Component {
   render() {
@@ -10,7 +11,7 @@ const Navigation = class extends React.Component {
       <>
         <Navbar expand="lg" bg="white" variant="light" fixed="top">
           <Container>
-            <Navbar.Brand onClick={()=> navigate("/")}>
+            <Navbar.Brand onClick={()=> navigate("/")} style={{color: "#324c8b", cursor: "pointer"}}>
            
               {/* <img src={logo} alt="Kaldi" style={{ width: "88px" }} /> */}
               Rechtsklarheit.de
@@ -24,13 +25,11 @@ const Navigation = class extends React.Component {
                   <NavDropdown.Item onClick={()=> navigate("/recht/versicherungsrecht")}>Versicherungsrecht</NavDropdown.Item>
                   <NavDropdown.Item onClick={()=> navigate("/recht/verkehrsrecht")}>Verkehrstrecht</NavDropdown.Item>
                   <NavDropdown.Item onClick={()=> navigate("/recht/mietrecht")}>Mietrecht</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item onClick={()=> navigate("/recht/strafrecht")}>Strafrecht</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link onClick={()=> navigate("/about")}>Anwalt</Nav.Link>
                 <Nav.Link onClick={()=> navigate("/blog")}>Aktuelles</Nav.Link>
               </Nav>
-              <Button variant="outline-secondary" size="sm" onClick={()=> navigate("/contact")}>Kontakt aufnehmen</Button>
+              <Button variant="outline-secondary" size="sm" onClick={()=> navigate("/contact")}><div style={{marginRight: 8, display: "initial"}}><MailIcon /></div> Kontakt aufnehmen</Button>
             </Navbar.Collapse>
           </Container>
         </Navbar>

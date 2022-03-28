@@ -18,19 +18,30 @@ const Footer = class extends React.Component {
                   fontSize: 24
                 }}>Rechtsklarheit.de</Navbar.Brand>
               <h4>Kanzlei am Wittenbergplatz</h4>
-                <nav>
-                  {meta.menu.map((item, i)=> <Link className="navbar-item" to={item.to} key={"footermainnav-"+i}>{item.name}</Link>)}
+                <nav style={{
+                  display: "flex",
+                  gap: 8
+                }}>
+                  {meta.menu.map((item, i)=> <Link className="navbar-item" to={item.to} key={"footermainnav-"+i} style={{
+                    color: "white"
+                  }}>{item.name}</Link>)}
                 </nav>
-                <nav>
-                  {meta.footermenu.map((item, i)=> <Link className="navbar-item" to={item.to} key={"footernav-"+i}>{item.name}</Link>)}
+                <nav style={{
+                  display: "flex",
+                  gap: 8
+                }}>
+                  {meta.footermenu.map((item, i)=> <Link className="navbar-item" to={item.to} key={"footernav-"+i} style={{
+                    color: "white"
+                  }}>{item.name}</Link>)}
                 </nav>
-              </Col>
-              <Col md={4}>
-                <ReactMarkdown>{meta.contact.info}</ReactMarkdown>
               </Col>
               <Col md={4}>
                 <ReactMarkdown>{meta.contact.contact}</ReactMarkdown>
               </Col>
+              <Col md={4}>
+                <ReactMarkdown>{meta.contact.info}</ReactMarkdown>
+              </Col>
+              
               
               <p className="copyright top" style={{textAlign: "center", paddingTop: 40, fontWeight: 100}}>Alle Rechte vorbehalten. © Copyright {new Date().getFullYear()}</p>
             </Row>
