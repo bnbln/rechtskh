@@ -1,7 +1,15 @@
-site: Rxxxxxkxxxxxxx.de
+site: Rechtsklarheit.de
 description: Kanzlei am Wittenbergplatz
-seo: abc abc
-image: /img/headerimage.jpg
+seo: "Plötzlich und unvermittelt tritt ein Unfall ein, für den die Versicherung
+  nicht zahlen will. Der Vermieter spricht eine Eigenbedarfskündigung aus. Das
+  neu gekaufte Auto bleibt nach kurzer Zeit stehen. Ratlos steht man vor diesen
+  Problemen. Die eigenen Schreiben bleiben unbeantwortet oder die Gegenseite
+  erklärt stur, dass sie im Recht sei. Bei Rechtsproblemen im Verkehrsrecht,
+  Mietrecht oder Versicherungsrecht stehen Ihnen oft Profis gegenüber: Sie
+  sollten die Kosten für einen Rechtsanwalt nicht scheuen. Sonst gehen Sie das
+  Risiko ein, Ihre Rechte in diesen wichtigen Fragen nicht ausreichend
+  wahrzunehmen."
+image: /img/image.png
 menu:
   - name: Home
     to: /
@@ -21,24 +29,16 @@ footermenu:
 contact:
   info: |-
     **Rechtsanwälte in Bürogemeinschaft**\
-    T\
-    Zivilrecht
-
-    A\
-    Fachanwältin für Verkehrsrecht
-
-    T\
-    Fachanwältin für Arbeitsrecht
+    Tarik Sharief, Zivilrecht\
+    Sarah Kreibich, Strafrecht\
+    Tanja Ruperti, Fachanwältin für Arbeitsrecht
   contact: |-
     **Anschrift**\
-    Ans\
-    10787
+    Ansbacher Straße 13\
+    10787 Berlin
 
     **Kontaktdaten**\
-    Telefon:\
-    Fax:\
-    Mail:
-  open: |-
-    **Sprechzeiten**\
-    Mo-Fr 9:00-12:00 Uhr\
-    Mo, Di, Do 15:00-18:00 Uhr
+    Telefon: +49/(0)30-69 53 33 61\
+    Fax: +49/(0)30-69 53 33 62\
+    Mail: kanzlei@rechtsklarheit.de
+  open: "**___**"
