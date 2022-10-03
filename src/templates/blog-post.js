@@ -1,11 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { kebabCase } from "lodash";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import { Helmet } from "react-helmet";
-import { graphql, Link, navigate } from "gatsby";
-import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
+import { graphql } from "gatsby";
+import { Container, Row, Col } from "react-bootstrap";
 
 import Layout from "../components/Layout";
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
