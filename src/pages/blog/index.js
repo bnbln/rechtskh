@@ -10,7 +10,10 @@ export default class BlogIndexPage extends React.Component {
     return (
       <Layout>
         <Container>
-        <h1>Aktuelles</h1>
+        <h1 style={{
+          // marginTop: 120,
+          // marginBottom: 20
+        }}>Aktuelles</h1>
         <BlogRoll all={true} />
       </Container>
       </Layout>

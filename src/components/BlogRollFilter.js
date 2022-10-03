@@ -1,22 +1,32 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import { Row, Col, Card } from "react-bootstrap";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+import { Container, Button, Row, Col, Card, Carousel } from "react-bootstrap";
 
 import PreviewCompatibleImage from './PreviewCompatibleImage'
-import { random } from 'lodash';
 
-class BlogRollTemplate extends React.Component {
+class BlogRollFilterTemplate extends React.Component {
   render() {
     const {props} = this.props;
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
     var all = props.all ? props.all : false
+    console.log("P", posts)
+
+    const category = []
+    posts.forEach(post => {
+        console.log(props);
+        if(post.node.frontmatter.recht === props.recht) {
+            category.push(post)
+        }})
+    console.log("C", category);
     return (
       <Row>
         {posts &&
-          posts.slice(0, all === false ? 5 : 100).map(({ node: post }) => (
-            <Col key={"BlogRoll-"+post.id} md="auto" lg={post.frontmatter.featuredpost ? 8 : 4}>
+          category.slice(0, all === false ? 5 : 100).map(({ node: post }) => (
+            <Col md="auto" lg={4}>
                <Link
                       className="title has-text-primary is-size-4"
                       to={post.fields.slug}
@@ -25,11 +35,11 @@ class BlogRollTemplate extends React.Component {
                         color: `black`,
                       }}
                     >
-            <Card key={post.id} style={{borderRadius: 0, border: "none",  marginBottom: 40}}>
+            <Card key={post.id} style={{borderRadius: 0, border: "none",  marginBottom: 40, background: "none", color: "white"}}>
                   <PreviewCompatibleImage
                         className="card-img-top"
                         imageInfo={{
-                          style: { height: post.frontmatter.featuredpost ? 450: 300, borderRadius: 0},
+                          style: { height: 300, borderRadius: 5},
                           image: post.frontmatter.featuredimage,
                           alt: `featured image thumbnail for post ${post.frontmatter.title}`
                         }}
@@ -40,11 +50,11 @@ class BlogRollTemplate extends React.Component {
                 }`}
               >
                 <header>
-                  <h5 className="post-meta" style={{marginTop: 14, fontWeight: 700}}>
+                  <h5 className="post-meta" style={{marginTop: 14}}>
                       {post.frontmatter.title}
                   </h5>
                 </header>
-                <p style={{fontWeight: 300}}>
+                <p>
                   {post.excerpt}
                   <span> </span>
                   <Link className="button" to={post.fields.slug} style={{color: "#258EA6"}}>
@@ -61,7 +71,7 @@ class BlogRollTemplate extends React.Component {
   }
 }
 
-BlogRoll.propTypes = {
+BlogRollFilter.propTypes = {
   all: PropTypes.object,
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
@@ -71,11 +81,11 @@ BlogRoll.propTypes = {
 }
 
 
-export default function BlogRoll(props) {
+export default function BlogRollFilter(props) {
   return (
     <StaticQuery
       query={graphql`
-        query BlogRollQuery {
+        query BlogRollFilterQuery {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
             filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
@@ -88,6 +98,7 @@ export default function BlogRoll(props) {
                   slug
                 }
                 frontmatter {
+                  recht
                   title
                   templateKey
                   date(formatString: "MMMM DD, YYYY")
@@ -107,7 +118,7 @@ export default function BlogRoll(props) {
           }
         }
       `}
-      render={(data, count) => <BlogRollTemplate data={data} count={count} props={props}/>}
+      render={(data, count) => <BlogRollFilterTemplate data={data} count={count} props={props}/>}
     />
   );
 }
