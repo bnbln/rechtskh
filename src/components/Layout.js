@@ -60,7 +60,7 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Navbar metadata={metadata} />
       <div style={{
-        marginTop: 56,
+        marginTop: "5rem",
         marginBottom: 56
       }}>{children}</div>
       <Footer metadata={metadata}  />

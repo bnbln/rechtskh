@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { graphql, navigate } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
+import { getImage } from "gatsby-plugin-image";
+import { Container, Row, Col, Button } from "react-bootstrap";
 // import Content, { HTMLContent } from "../components/Content";
 
 import ReactMarkdown from "react-markdown";
@@ -11,6 +11,7 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 import Layout from "../components/Layout";
 import { HTMLContent } from "../components/Content";
+import BlogRollFilter from "../components/BlogRollFilter";
 
 export const RechtPostTemplate = ({
   data,
@@ -78,7 +79,12 @@ export const RechtPostTemplate = ({
           paddingTop: 40,
           paddingBottom: 40,
         }}
-      ></div>
+      >
+        <Container>
+        <BlogRollFilter recht={data.title}></BlogRollFilter>
+
+          </Container>        
+        </div>
       <Container>
         <Row>
           <Col xs={12} md={8}>

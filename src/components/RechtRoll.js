@@ -1,11 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, navigate, graphql, StaticQuery } from 'gatsby'
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-
-import { Container, Button, Row, Col, Card, Carousel } from "react-bootstrap";
-
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+import { graphql, StaticQuery } from 'gatsby'
+import { Row, Col, Card } from "react-bootstrap";
 
 class RechtRollTemplate extends React.Component {
   render() {
@@ -16,22 +12,47 @@ class RechtRollTemplate extends React.Component {
     return (
       <Row className="justify-content-center align-items-center rechtroll">
         <Col style={{color: "white"}} sm={12} lg={3}>
-          <h2>{props.rechtsbereiche}</h2>
+          <h2 style={{
+            fontWeight: 300
+          }}>{props.rechtsbereiche}</h2>
         </Col>
         {posts &&
           posts.map(({ node: post }) => (
             <Col sm={12} lg={3} style={{
               justifyContent: "center",
               display: "flex",
-              position: "relative"
+              position: "relative",
+              
         }}>
-          <Card style={{ width: "100%" }}>
-            <img className="card-img-top" src={post.frontmatter.picture.publicURL} alt={post.frontmatter.title}/>
+          <a href={post.fields.slug} style={{
+            width: "100%",
+            color: "inherit",
+            textDecoration: "inherit"
+          }}>
+          <Card style={{ 
+            width: "100%",
+            position: "relative",
+            display: "flex",
+            minWidth: 0,
+            wordWrap: "break-word",
+            backgroundColor: "#fff",
+            backgroundClip: "border-box",
+            border: "0px solid rgba(0, 0, 0, 0.125)",
+            borderRadius: "0rem",
+            overflow: "hidden",
+            boxShadow: "black 0px 0 70px -50px"  
+            
+            }}>
+            
             <Card.Body>
-              <Card.Title>{post.frontmatter.title}</Card.Title>
-              <Button variant="secondary" onClick={()=> navigate(post.fields.slug)}>Mehr erfahren</Button>
+              <Card.Title style={{
+                margin: 0
+              }}>{post.frontmatter.title}</Card.Title>
+              {/* <Button variant="secondary" size='sm' onClick={()=> navigate(post.fields.slug)}>Mehr erfahren</Button> */}
             </Card.Body>
+            <img className="card-img-top" src={post.frontmatter.picture.publicURL} alt={post.frontmatter.title}/>
           </Card>
+          </a>
         </Col>
             
           ))}

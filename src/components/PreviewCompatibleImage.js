@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 const PreviewCompatibleImage = ({ imageInfo }) => {
-  const imageStyle = { borderRadius: "5px", maxWidth: "none", height: "100%" };
-
   const { alt = "", childImageSharp, image, style } = imageInfo;
 
   if (!!image && !!image.childImageSharp) {
