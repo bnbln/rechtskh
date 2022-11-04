@@ -1,13 +1,13 @@
 ---
 templateKey: index-page
-title: Ihr Partner für Versicherungsrecht, Verkehrsrecht und Mietrecht
-lead: Hochqualiative Rechtsberatung in der Berliner Kanzlei für Sie
-ctatext: Über uns
+title: Ihr Partner für Versicherungsrecht, Verkehrsrecht
+lead: Hochqualiative Rechtsberatung in der Berliner K
+ctatext: Prozesskostenrechner
 ctalink: /about
 rechtsbereiche: Individuelle Fälle erfordern individuelle Lösungsansätze
 images:
   - title: Tarik Sharief
-    image: /img/img_0513.jpg
+    image: /img/renate-cremer-portrait.jpg
     link: /about
   - title: Kanzlei am Wittenbergplatz
     image: /img/mietrecht.png
