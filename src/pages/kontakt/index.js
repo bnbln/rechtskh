@@ -2,6 +2,7 @@ import * as React from "react";
 import { navigate } from "gatsby-link";
 import { Container, Button, Row, Col, Card, Carousel, Form } from "react-bootstrap";
 
+import PreviewCompatibleImage from '../../components/PreviewCompatibleImage'
 import Layout from "../../components/Layout";
 
 
@@ -41,12 +42,15 @@ export default class Index extends React.Component {
     return (
       <Layout>
         <Container>
+          <Row>
+          <h1>Kontakt</h1>
+          </Row>
+        <Row>
           <Col lg={8}>
-            <h1>Kontakt</h1>
           <Form
                 name="contact"
                 method="post"
-                action="/contact/thanks/"
+                action="/kontakt/thanks/"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={this.handleSubmit}
@@ -136,11 +140,15 @@ export default class Index extends React.Component {
                     placeholder="030 1234567" />
                 </Form.Group>
                   </Col>
+                  <Form.Group>
+                  <Form.Check 
+        type="switch"
+        id="custom-switch"
+        label="ich wünsche einen Rückruf"
+      />
+                  </Form.Group>
                 </Row>
-                
-                
-                
-                
+
                 <Form.Group className="mb-3" controlId="betreff">
                   <Form.Label htmlFor={'betreff'}>Betreff</Form.Label>
                   <Form.Control 
@@ -160,11 +168,45 @@ export default class Index extends React.Component {
                     onChange={this.handleChange}
                     id={'message'}
                     required={true}
+                    style={{ height: '200px' }}
                     placeholder="Meine Nachricht" />
                 </Form.Group>
                 <Button type="submit">Senden</Button>
               </Form>
           </Col>
+          <Col lg={4}>
+            <div style={{
+              width: "100%",
+              color: "white"
+            }}>
+              <div style={{
+              padding: "1rem",
+              background: "#172340",
+            }}>
+              <h3>Für Sie erreichbar</h3>
+              <p>Sie können unser Anwalts-Sekretariat in Berlin zwischen 9.00 Uhr und 12.00 Uhr und 15.00 Uhr bis 18.00 Uhr telefonisch erreichen:
+                <br/>
+                Oder senden Sie uns hier Ihre Nachricht: Wir melden uns um- gehend zurück. Bitte beachten Sie, dass der Anwalt für Sie wichtige Fristen erst nach der Mandatsübernahmebestätigung und Erhalt sämtlicher wesentlicher Unterlagen beachten wird. Der Anwalt wird also erst nach einer Mandatsvereinbarung für Sie tätig werden. 
+              </p>
+              </div>
+              <PreviewCompatibleImage
+                        className="card-img-top"
+                        imageInfo={{
+                          style: { width: "100%", padding: "50px",},
+                          image: "../img/Renate-Cremer-portrait.jpg",
+                        }}
+                      />
+              <div style={{
+              padding: "1rem",
+              color: "black"
+            }}>
+              <p><b>Diplom Juristin Renate Cremer</b> Sekretratriat Anwaltskanzlei am Wittenbergplatz in Berlin</p>
+
+            </div>
+
+            </div>
+          </Col>
+        </Row>
         </Container>
       </Layout>
     );
