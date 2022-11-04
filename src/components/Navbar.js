@@ -36,7 +36,7 @@ const Navigation = class extends React.Component {
                 <Nav.Link onClick={()=> navigate("/about")}>Anwalt</Nav.Link>
                 <Nav.Link onClick={()=> navigate("/blog")}>Aktuelles</Nav.Link>
               </Nav>
-              <Button variant="outline-secondary" size="sm" onClick={()=> navigate("/contact")}><div style={{marginRight: 8, display: "initial"}}><MailIcon /></div> Kontakt aufnehmen</Button>
+              <Button variant="outline-secondary" size="sm" onClick={()=> navigate("/kontakt")}><div style={{marginRight: 8, display: "initial"}}><MailIcon /></div> Kontakt aufnehmen</Button>
             </Navbar.Collapse>
           </Container>
         </Navbar>

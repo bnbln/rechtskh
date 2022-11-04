@@ -97,7 +97,7 @@ collections:
           - {label: "Bild", name: "image", widget: image}
           - {label: "Hauptmenü", name: menu, widget: list, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string"}]}
           - {label: "Footermenü", name: footermenu, widget: list, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string"}]}
-          - {label: "Kontakt", name: contact, widget: object, fields: [{label: "Information", name: "info", widget: "markdown"}, {label: "Kontakt", name: "contact", widget: "markdown"}, {label: "Öffnungszeiten", name: "open", widget: "markdown"}]}
+          - {label: "Kontakt", name: contact, widget: object, fields: [{label: "Information", name: "info", widget: "markdown"}, {label: "Kontakt", name: "contact", widget: "markdown"}, {label: "Öffnungszeiten", name: "open", widget: "markdown"}, {label: "Einleitung", name: "intro", widget: "markdown"}, {label: "Bild", name: "image", widget: image},{label: "Bildunterschrift", name: "bu", widget: "markdown"}]}
   - name: "recht"
     label: "Rechtsfragen"
     folder: "src/pages/recht"
