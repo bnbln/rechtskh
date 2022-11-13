@@ -7,6 +7,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 // import Content, { HTMLContent } from "../components/Content";
 
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from 'rehype-raw'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 import Layout from "../components/Layout";
@@ -92,7 +93,7 @@ export const RechtPostTemplate = ({
               <section className="recht content" key={"section" + i}>
                 <h3 id={i}>{item.title}</h3>
                 {/* <PageContent className="content" content={content} /> */}
-                <ReactMarkdown>{item.body}</ReactMarkdown>
+                <ReactMarkdown rehypePlugins={[rehypeRaw]}>{item.body}</ReactMarkdown>
               </section>
             ))}
           </Col>
