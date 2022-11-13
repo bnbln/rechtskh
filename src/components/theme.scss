@@ -138,7 +138,7 @@ object-position: top;
   
 }
 
-.content p img {
+.inline-image {
   position: relative;
   width: 50%;
   float: left;
@@ -146,6 +146,8 @@ object-position: top;
   margin-bottom: 60px;
   margin-top: 10px;
 }
+.inline-image img {
+  width: 100%;
 }
 
 
