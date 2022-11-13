@@ -140,10 +140,10 @@ object-position: top;
 
 .inline-image {
   position: relative;
-  width: 50%;
+  width: 45%;
   float: left;
   margin-right: 60px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   margin-top: 10px;
 }
 .inline-image img {
@@ -197,5 +197,8 @@ footer {
     justify-content: center;
     display: flex;
     flex-direction: column;
+  }
+  .inline-image {
+    width: 100%;
   }
 }

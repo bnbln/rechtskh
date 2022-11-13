@@ -54,7 +54,7 @@ CMS.registerEditorComponent({
     },
     // Function to create a text block from an instance of this component
     toBlock: function(obj) {
-        return '<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="'+ obj.link +'" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>';
+        return '<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="./kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>';
     },
     // Preview output for this component. Can either be a string or a React component
     // (component gives better render performance)
