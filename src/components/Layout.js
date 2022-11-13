@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import { navigate } from "gatsby";
+import { navigate, Link } from "gatsby";
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
 import { Container, Button } from 'react-bootstrap';
 
@@ -66,20 +66,25 @@ const TemplateWrapper = ({ children }) => {
       <Footer metadata={metadata}  />
       <Container>
       <CookieConsent
+            enableDeclineButton
             location="bottom"
-            buttonText="Akzeptieren"
+            buttonText="Alle Cookies akzeptieren"
             cookieName="gdpr"
             expires={150}
             disableStyles={true}
+            declineButtonText="Notwendige Cookies akzeptieren"
+            declineButtonClasses="btn btn-outline-primary btn-sm"
+            style={{
+              boxShadow: "black 0px 0px 150px"
+            }}
+            buttonClasses="btn btn-primary btn-sm"
           >
             <b>Diese Seite verwendet Cookies </b>
             <br />
             <span style={{ fontSize: 10 }}>
               Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren,
               Funktionen für soziale Medien anbieten zu können und die Zugriffe
-              auf unsere Website zu analysieren.
-              <br />
-              <Button variant="outline-secondary" size="sm" onClick={()=> navigate("/datenschutz")}>Weitere Informationen</Button>
+              auf unsere Website zu analysieren. <Link to="/datenschutz" style={{color: "white"}}>Weitere Informationen</Link>
             </span>
           </CookieConsent>
       </Container>
