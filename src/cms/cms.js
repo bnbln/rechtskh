@@ -28,13 +28,13 @@ CMS.registerEditorComponent({
     },
     // Function to create a text block from an instance of this component
     toBlock: function(obj) {
-        return "<div class='inline-image'> <img src="+ obj.image +"/> </div> ";
+        return "<div class='inline-image'> <img src="+ obj.image +" /> </div> ";
     },
     // Preview output for this component. Can either be a string or a React component
     // (component gives better render performance)
     toPreview: function(obj) {
       return (
-        'text: '+obj.image +' '
+        'image: '+obj.image +' '
       );
     }
   });
@@ -60,7 +60,7 @@ CMS.registerEditorComponent({
     // (component gives better render performance)
     toPreview: function(obj) {
       return (
-        'text: '+obj.contact +' '
+        'contact: '+obj.contact +' '
       );
     }
   });
