@@ -31,7 +31,7 @@ article:
       Der erfahrene Anwalt im Mietrecht muss nicht immer den direkten Weg wählen, um Ihr Ziel durchzusetzen. Wenn z.B. eine Mietminderung rechtlich schwer durchsetzbar ist, die Schönheitsreparaturen aber aufgrund einer unwirksamen Klausel vom Vermieter zu tragen sind, wird der Anwalt den Vermieter darauf hinweisen. Er wird dem Vermieter erläutern, wie teuer es für ihn ist, wenn er während des laufenden Mietverhältnisses die laufenden Schönheitsreparaturen und Renovierungen auszuführen hat. Viele Vermieter sind dann bereit, eine einvernehmliche Lösung hinsichtlich des ursprünglichen Problems zu finden. Wenn Sie eine konkrete Frage haben, können Sie hier einen im Mietrecht tätigen Anwalt in Berlin kontaktieren.
 
 
-      <div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="undefined" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
+      <div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="./kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
   - title: Schönheitsreparaturen
     body: >-
       #### Mietrecht und Mietverträge in Berlin: Der Streit um
