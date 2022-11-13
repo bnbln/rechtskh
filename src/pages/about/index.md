@@ -3,7 +3,9 @@ templateKey: about-page
 path: /about
 title: Über Rechtsanwalt Tarik Sharief
 ---
-![](/img/img_0513.jpg)
+<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="contact" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
+
+<div class='inline-image'> <img src=/img/img_0513.jpg/> </div> 
 
 ### Lebenslauf in Kürze
 
