@@ -60,7 +60,6 @@ export const IndexPageTemplate = ({
           paddingTop: 40,
           paddingBottom: 40,
           marginBottom: 60,
-          boxShadow: "rgb(24 34 64) 0px 0px 90px -30px"
         }}
       >
         <Container fluid={"sm"}>
@@ -78,7 +77,7 @@ export const IndexPageTemplate = ({
           <Row>
             <Col md={6} lg={4}>
               <h1>{metadata.description}</h1>
-              <Card>
+              <Card style={{backgroundColor: "rgba(0,0,0,0)", backdropFilter: "blur(20px)", borderRadius: 0}}>
                 <Card.Body>
                   <ReactMarkdown>{metadata.contact.info}</ReactMarkdown>
                   <ReactMarkdown>{metadata.contact.contact}</ReactMarkdown>

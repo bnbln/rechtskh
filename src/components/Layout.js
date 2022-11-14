@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import { navigate, Link } from "gatsby";
+import { Link } from "gatsby";
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
-import { Container, Button } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
