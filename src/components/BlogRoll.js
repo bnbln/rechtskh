@@ -4,7 +4,6 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import { Row, Col, Card } from "react-bootstrap";
 
 import PreviewCompatibleImage from './PreviewCompatibleImage'
-import { random } from 'lodash';
 
 class BlogRollTemplate extends React.Component {
   render() {
@@ -12,6 +11,7 @@ class BlogRollTemplate extends React.Component {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
     var all = props.all ? props.all : false
+    console.log(data);
     return (
       <Row>
         {posts &&
@@ -90,6 +90,8 @@ export default function BlogRoll(props) {
                 frontmatter {
                   title
                   templateKey
+                  rechtsbereiche
+                  description
                   date(formatString: "MMMM DD, YYYY")
                   featuredpost
                   featuredimage {

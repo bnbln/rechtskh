@@ -13,14 +13,26 @@ const Footer = class extends React.Component {
                 }}>
             <Container>
             <Row>
-              <Col md={4} className="footernav">
+              <Col md={12} className="footernav">
               <Navbar.Brand onClick={()=> navigate("/")} style={{
-                  fontSize: 24
-                }}>Rechtsklarheit.de</Navbar.Brand>
-              <h4>Kanzlei am Wittenbergplatz</h4>
+                  fontSize: 24,
+                  fontWeight: 800
+                }}>{meta.site}</Navbar.Brand>
+              <h4 style={{fontWeight: 300, marginBottom: "2rem"}}>{meta.description}</h4>
+              </Col>
+            </Row>
+            <Row>
+            <Col md={5}>
+                <ReactMarkdown>{meta.contact.contact}</ReactMarkdown>
+                <ReactMarkdown>{meta.contact.info}</ReactMarkdown>
+              </Col>
+              <Col md={6} className="footernav">
+              
                 <nav style={{
                   display: "flex",
-                  gap: 8
+                  flexDirection: "column",
+                  gap: 8,
+                  marginBottom: "2rem"
                 }}>
                   {meta.menu.map((item, i)=> <Link className="navbar-item" to={item.to} key={"footermainnav-"+i} style={{
                     color: "white"
@@ -28,22 +40,19 @@ const Footer = class extends React.Component {
                 </nav>
                 <nav style={{
                   display: "flex",
-                  gap: 8
+                  flexDirection: "column",
+                  gap: 8,
+                  marginBottom: "2rem"
                 }}>
                   {meta.footermenu.map((item, i)=> <Link className="navbar-item" to={item.to} key={"footernav-"+i} style={{
                     color: "white"
                   }}>{item.name}</Link>)}
                 </nav>
               </Col>
-              <Col md={4}>
-                <ReactMarkdown>{meta.contact.contact}</ReactMarkdown>
-              </Col>
-              <Col md={4}>
-                <ReactMarkdown>{meta.contact.info}</ReactMarkdown>
-              </Col>
+             
               
               
-              <p className="copyright top" style={{textAlign: "center", paddingTop: 40, fontWeight: 100}}>Alle Rechte vorbehalten. © Copyright {new Date().getFullYear()}</p>
+              <p className="copyright top" style={{textAlign: "center", paddingTop: 100, fontWeight: 300}}>Alle Rechte vorbehalten. © Copyright {new Date().getFullYear()}</p>
             </Row>
           </Container>
       </footer>
