@@ -1,6 +1,6 @@
 import * as React from "react";
 import { navigate } from "gatsby-link";
-import { Container, Button, Row, Col, Card, Carousel, Form } from "react-bootstrap";
+import { Container, Button, Row, Col, Form } from "react-bootstrap";
 
 import PreviewCompatibleImage from '../../components/PreviewCompatibleImage'
 import Layout from "../../components/Layout";

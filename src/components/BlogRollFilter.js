@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-
-import { Container, Button, Row, Col, Card, Carousel } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 

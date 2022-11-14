@@ -46,7 +46,8 @@ class RechtRollTemplate extends React.Component {
             
             <Card.Body>
               <Card.Title style={{
-                margin: 0
+                margin: 0,
+                textAlign: "center"
               }}>{post.frontmatter.title}</Card.Title>
               {/* <Button variant="secondary" size='sm' onClick={()=> navigate(post.fields.slug)}>Mehr erfahren</Button> */}
             </Card.Body>

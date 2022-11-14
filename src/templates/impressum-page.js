@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import { Container, Button, Row, Col, Card, Carousel, Form } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
