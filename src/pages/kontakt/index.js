@@ -41,10 +41,16 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout>
+        <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginBottom: "2rem"}}>
+          <Container>
+            <Row>
+              <Col>
+                <h1 style={{margin: 0, marginTop: 5}}>Kontakt</h1>    
+              </Col>
+            </Row>
+          </Container>
+       </div>
         <Container>
-          <Row>
-          <h1>Kontakt</h1>
-          </Row>
         <Row>
           <Col lg={8}>
           <Form
@@ -54,6 +60,9 @@ export default class Index extends React.Component {
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={this.handleSubmit}
+                style={{
+                  marginBottom: "2rem"
+                }}
               >
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                 <input type="hidden" name="form-name" value="contact" />
@@ -64,7 +73,7 @@ export default class Index extends React.Component {
                   </label>
                 </div>
                 <Row>
-                  <Col xs={6}>
+                  <Col sm={6}>
                   <Form.Group className="mb-3" controlId="vorname">
                     <Form.Label htmlFor={'vorname'}>Vorname</Form.Label>
                     <Form.Control  
@@ -76,7 +85,7 @@ export default class Index extends React.Component {
                       placeholder="Max" />
                   </Form.Group>
                   </Col>
-                  <Col xs={6}>
+                  <Col sm={6}>
                   <Form.Group className="mb-3" controlId="nachname">
                     <Form.Label htmlFor={'nachname'}>Nachname</Form.Label>
                     <Form.Control 
@@ -90,7 +99,7 @@ export default class Index extends React.Component {
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs={6}>
+                  <Col sm={6}>
                   <Form.Group className="mb-3" controlId="adresse">
                   <Form.Label htmlFor={'adresse'}>Straße und Hausnummer</Form.Label>
                   <Form.Control 
@@ -102,7 +111,7 @@ export default class Index extends React.Component {
                     placeholder="Musterstraße 10" />
                 </Form.Group>
                   </Col>
-                  <Col xs={6}>
+                  <Col sm={6}>
                   <Form.Group className="mb-3" controlId="stadt">
                   <Form.Label htmlFor={'stadt'}>PLZ und Stadt</Form.Label>
                   <Form.Control 
@@ -116,7 +125,7 @@ export default class Index extends React.Component {
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs={6}>
+                  <Col sm={6}>
                   <Form.Group className="mb-3" controlId="email">
                   <Form.Label htmlFor={'email'}>Mailadresse</Form.Label>
                   <Form.Control 
@@ -128,7 +137,7 @@ export default class Index extends React.Component {
                     placeholder="max.mustermann@mail.de" />
                 </Form.Group>
                   </Col>
-                  <Col xs={6}>
+                  <Col sm={6}>
                   <Form.Group className="mb-3" controlId="telefon">
                   <Form.Label htmlFor={'telefon'}>Telefonnummer</Form.Label>
                   <Form.Control 
@@ -142,10 +151,11 @@ export default class Index extends React.Component {
                   </Col>
                   <Form.Group>
                   <Form.Check 
-        type="switch"
-        id="custom-switch"
-        label="ich wünsche einen Rückruf"
-      />
+                    type="switch"
+                    id="custom-switch"
+                    label="ich wünsche einen Rückruf"
+                    style={{marginBottom: 24}}
+                  />
                   </Form.Group>
                 </Row>
 
@@ -188,7 +198,6 @@ export default class Index extends React.Component {
                 <br/>
                 Oder senden Sie uns hier Ihre Nachricht: Wir melden uns um- gehend zurück. Bitte beachten Sie, dass der Anwalt für Sie wichtige Fristen erst nach der Mandatsübernahmebestätigung und Erhalt sämtlicher wesentlicher Unterlagen beachten wird. Der Anwalt wird also erst nach einer Mandatsvereinbarung für Sie tätig werden. 
               </p>
-              </div>
               <PreviewCompatibleImage
                         className="card-img-top"
                         imageInfo={{
@@ -200,6 +209,8 @@ export default class Index extends React.Component {
               padding: "1rem",
               color: "black"
             }}>
+              </div>
+             
               <p><b>Diplom Juristin Renate Cremer</b> Sekretratriat Anwaltskanzlei am Wittenbergplatz in Berlin</p>
 
             </div>

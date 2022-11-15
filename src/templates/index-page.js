@@ -24,11 +24,11 @@ export const IndexPageTemplate = ({
   return (
     <>
       <Container>
-        <Row className="align-items-md-center herorow">
+        <Row className="align-items-md-center herorow" style={{marginTop: "5rem"}}>
           <Col sm={12} md={7} lg={8} xl={8}>
             <CarouselMobileWrapper images={images} />
             <Row className="d-flex justify-content-start align-items-center d-none d-lg-flex" style={{
-              height: "70vh",
+              height: "67vh",
               position: "relative"
             }}>
                         <CarouselWrapper images={images} title={title} lead={lead} ctatext={ctatext} ctalink={ctalink} />
@@ -77,7 +77,7 @@ export const IndexPageTemplate = ({
           <Row>
             <Col md={6} lg={4}>
               <h1>{metadata.description}</h1>
-              <Card style={{backgroundColor: "rgba(0,0,0,0)", backdropFilter: "blur(20px)", borderRadius: 0}}>
+              <Card style={{backgroundColor: "rgba(255,255,255,0.5)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" , borderRadius: 0}}>
                 <Card.Body>
                   <ReactMarkdown>{metadata.contact.info}</ReactMarkdown>
                   <ReactMarkdown>{metadata.contact.contact}</ReactMarkdown>
