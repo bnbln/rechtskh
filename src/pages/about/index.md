@@ -2,9 +2,15 @@
 templateKey: about-page
 path: /about
 title: Über Rechtsanwalt Tarik Sharief
+featuredimage: /img/tarik-sharief-anwalt-in-berlin-portrait.jpg
+subtitle: Lebenslauf in Kürze
+list:
+  - item: Tarik Sharief wurde 1965 in Dresden geboren
+  - item: 1986 Studium Jura und Politikwissenschaften an der FU-Berlin
+  - item: Referendariat am Kammergericht Berlin
+  - item: Seit 1999 selbständiger Rechtsanwalt in Berlin
+  - item: Tarik Sharief lebt mit seiner Familie in Berlin
 ---
-<div class='inline-image'> <img src=/img/img_0513.jpg/> </div> 
-
 ### Lebenslauf in Kürze
 
 * Tarik Sharief wurde 1965 in Dresden geboren
