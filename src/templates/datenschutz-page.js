@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
@@ -16,9 +16,20 @@ export const DatenschutzPageTemplate = ({
 const PageContent = contentComponent || Content
 return (
   <>
+  <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginBottom: "2rem"}}>
+      <Container>
+        <Row>
+          <Col>
+            <h1 style={{margin: 0, marginTop: 5}}>{title}</h1>    
+          </Col>
+        </Row>
+      </Container>
+     </div>
+     <Container>
     <section className="mymargins">
       <PageContent className="content" content={content} />
     </section>
+    </Container>
   </>
 )
 }
@@ -36,7 +47,7 @@ const DatenschutzPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   return (
     <Layout data={data.markdownRemark.frontmatter}>
-      <Container>
+     
         <DatenschutzPageTemplate
           title={frontmatter.title}
           lead={frontmatter.lead}
@@ -45,7 +56,6 @@ const DatenschutzPage = ({ data }) => {
           content={data.markdownRemark.html}
           contentComponent={HTMLContent}
         />
-      </Container>
     </Layout>
   )
 }

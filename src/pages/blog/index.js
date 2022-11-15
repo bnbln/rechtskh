@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 
 import Layout from "../../components/Layout";
@@ -9,11 +9,16 @@ export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
+        <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginBottom: "2rem"}}>
+      <Container>
+        <Row>
+          <Col>
+            <h1 style={{margin: 0, marginTop: 5}}>Aktuelles</h1>    
+          </Col>
+        </Row>
+      </Container>
+     </div>
         <Container>
-        <h1 style={{
-          // marginTop: 120,
-          // marginBottom: 20
-        }}>Aktuelles</h1>
         <BlogRoll all={true} />
       </Container>
       </Layout>

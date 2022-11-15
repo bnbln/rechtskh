@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+import { Container, Row, Col } from "react-bootstrap";
+
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 
@@ -9,20 +11,45 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (
+    <>
+    
+    <div style={{background: "#f0f3f9", padding: "2rem 0rem"}}>
+      <Container>
+        <Row>
+          <Col>
+            <h1 style={{margin: 0, marginTop: 5}}>{title}</h1>    
+          </Col>
+        </Row>
+      </Container>
+    </div>
+    <div style={{background: "#182340", padding: "2rem 0rem", color: "white"}}>
+      <Container>
+        <Row>
+          <Container>
+            <h3>Lebenslauf in Kürze</h3>
+            <ul>
+              <li>Tarik Sharief wurde 1965 in Dresden geboren</li>
+              <li>1986 Studium Jura und Politikwissenschaften an der FU-Berlin</li>
+              <li>Tarik Sharief wurde 1965 in Dresden geboren</li>
+              <li>1986 Studium Jura und Politikwissenschaften an der FU-Berlin</li>
+            </ul>
+          </Container>
+        </Row>
+      </Container>
+    </div>
     <section className="section section--gradient">
       <div className="container">
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <div className="section">
-              <h1 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h1>
               <PageContent className="content" content={content} />
             </div>
           </div>
         </div>
       </div>
     </section>
+    </>
+    
   );
 };
 

@@ -9,10 +9,13 @@ const Navigation = class extends React.Component {
     // console.log(meta);
     return (
       <>
-        <Navbar expand="lg" bg="white" variant="light" fixed="top" style={{
+        <Navbar expand="lg" variant="light" fixed="top" style={{
                 //boxShadow: "rgb(24 34 64) 0px -40px 80px -20px",
                 paddingTop: "1rem",
-                paddingBottom: "1rem"
+                paddingBottom: "1rem",
+                backgroundColor: "rgb(255 255 255 / 75%)",
+                backdropFilter: "blur(15px)",
+                WebkitBackdropFilter: "blur(15px)"
               }}>
           <Container>
             <Navbar.Brand onClick={()=> navigate("/")} style={{color: "#324c8b", cursor: "pointer", marginRight: "2rem"}}>
