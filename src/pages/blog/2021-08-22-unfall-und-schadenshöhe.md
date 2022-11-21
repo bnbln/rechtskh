@@ -5,7 +5,7 @@ date: 2021-08-22T22:42:20.164Z
 recht: Verkehrsrecht
 description: Anwalt für Verkehrsrecht einschalten
 featuredpost: false
-featuredimage: /img/chemex.jpg
+featuredimage: /img/clark-van-der-beken-cskriqwetvs-unsplash.jpg
 ---
 ### Viele verschenken Geld, wenn sie nach Autounfall den Schaden selbst regulieren
 
