@@ -8,7 +8,7 @@ description: Berlin ist eine Millionenstadt, in der die Meisten zur Miete
   kommt. ist unausweichlich. In der Regel bestehen folgende Rechtsprobleme
   sowohl bei Wohnraum- als auch Gewerberaummietverträgen.
 featuredpost: false
-featuredimage: /img/chemex.jpg
+featuredimage: /img/adrien-aletti-nzwlmc0aaxk-unsplash.jpg
 ---
 ### In den komplexen Fragen des Mietrechts zählt die Erfahrung des Anwalts
 
