@@ -40,9 +40,19 @@ class BlogRollTemplate extends React.Component {
                 }`}
               >
                 <header>
-                  <h5 className="post-meta" style={{marginTop: 14, fontWeight: 700}}>
+                  <h5 style={{
+                    //marginTop: 14, fontWeight: 400, fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "4px"
+                    fontWeight: 800,
+                    margin: "1rem  0px 5px 0px",
+                    textTransform: "uppercase",
+                    fontSize: "1rem",
+                    letterSpacing: "3px",
+                    color: "#334c8b"
+                    }}>{post.frontmatter.recht ? post.frontmatter.recht : "Information"}</h5>
+                  <h5 className="post-meta" style={{ fontWeight: 700}}>
                       {post.frontmatter.title}
                   </h5>
+                  <p>Vom {post.frontmatter.date}</p>
                 </header>
                 <p style={{fontWeight: 300}}>
                   {post.excerpt}
@@ -90,9 +100,9 @@ export default function BlogRoll(props) {
                 frontmatter {
                   title
                   templateKey
-                  rechtsbereiche
+                  recht
                   description
-                  date(formatString: "MMMM DD, YYYY")
+                  date(formatString: "DD.MM.YYYY")
                   featuredpost
                   featuredimage {
                     childImageSharp {
