@@ -16,6 +16,10 @@ font-family: 'Poppins', sans-serif;;
 
  }
 
+ .gatsby-image-wrapper img {
+  object-position: center;
+ }
+
 // .navbar-light .navbar-brand {
 //     color: map.get($theme-colors, "secondary");
 //     font-weight: 700;

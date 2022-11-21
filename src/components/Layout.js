@@ -73,11 +73,14 @@ const TemplateWrapper = ({ children }) => {
             expires={150}
             disableStyles={true}
             declineButtonText="Notwendige Cookies akzeptieren"
-            declineButtonClasses="btn btn-outline-primary btn-sm"
+            buttonClasses="btn btn-primary btn-sm"
+            buttonWrapperClasses="buttonWrapperClasses"
+            declineButtonClasses="btn btn-outline-primary btn-sm"    
+            contentClasses="contentClasses"      
             style={{
               boxShadow: "black 0px 0px 150px"
             }}
-            buttonClasses="btn btn-primary btn-sm"
+            
           >
             <b>Diese Seite verwendet Cookies </b>
             <br />
