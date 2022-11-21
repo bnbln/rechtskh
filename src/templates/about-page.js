@@ -3,13 +3,16 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { Container, Row, Col } from "react-bootstrap";
 
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+
+
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 
 // eslint-disable-next-line
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
+export const AboutPageTemplate = ({ title, subtitle, list, image, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
-
+console.log(subtitle, list, image);
   return (
     <>
     
@@ -22,18 +25,25 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
         </Row>
       </Container>
     </div>
-    <div style={{background: "#182340", padding: "2rem 0rem", color: "white"}}>
+    <div style={{background: "#182340", padding: "3rem 0rem", color: "white"}}>
       <Container>
         <Row>
-          <Container>
-            <h3>Lebenslauf in Kürze</h3>
+        <Col sm={5} lg={3}>
+            <PreviewCompatibleImage
+                    imageInfo={{
+                      image: image,
+                      alt: title,
+                      style: { width: "100%", height: "100%"}
+                    }}
+                  />
+          </Col>
+          <Col sm={7} lg={9}>
+            <h3>{subtitle}</h3>
             <ul>
-              <li>Tarik Sharief wurde 1965 in Dresden geboren</li>
-              <li>1986 Studium Jura und Politikwissenschaften an der FU-Berlin</li>
-              <li>Tarik Sharief wurde 1965 in Dresden geboren</li>
-              <li>1986 Studium Jura und Politikwissenschaften an der FU-Berlin</li>
+              {list.map((item)=> (<li>{item.item}</li>)
+              )}
             </ul>
-          </Container>
+          </Col>
         </Row>
       </Container>
     </div>
@@ -67,6 +77,9 @@ const AboutPage = ({ data }) => {
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
+        image={post.frontmatter.featuredimage}
+        subtitle={post.frontmatter.subtitle}
+        list={post.frontmatter.list}
         content={post.html}
       />
     </Layout>
@@ -85,6 +98,15 @@ export const aboutPageQuery = graphql`
       html
       frontmatter {
         title
+        subtitle
+        list {
+          item
+        }
+        featuredimage {
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
       }
     }
   }
