@@ -6,7 +6,7 @@ recht: Verkehrsrecht
 description: Der Verkehrsrechtsanwalt gibt Tipps, die bei einer richtigen
   Schadensmeldung nach einem Unfall helfen.
 featuredpost: false
-featuredimage: /img/chemex.jpg
+featuredimage: /img/taylor-grote-l3qup8mpexc-unsplash.jpg
 ---
 ### Versicherung, Ersatzwagen und Nutzungsausfall des PKW
 
