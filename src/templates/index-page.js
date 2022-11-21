@@ -25,7 +25,7 @@ export const IndexPageTemplate = ({
     <>
       <Container>
         <Row className="align-items-md-center herorow" style={{marginTop: "5rem"}}>
-          <Col sm={12} md={7} lg={8} xl={8}>
+          <Col sm={12} md={7} lg={8} xl={8} >
             <CarouselMobileWrapper images={images} />
             <Row className="d-flex justify-content-start align-items-center d-none d-lg-flex" style={{
               height: "67vh",
