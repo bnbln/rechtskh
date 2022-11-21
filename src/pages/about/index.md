@@ -11,14 +11,6 @@ list:
   - item: Seit 1999 selbständiger Rechtsanwalt in Berlin
   - item: Tarik Sharief lebt mit seiner Familie in Berlin
 ---
-### Lebenslauf in Kürze
-
-* Tarik Sharief wurde 1965 in Dresden geboren
-* 1986 Studium Jura und Politikwissenschaften an der FU-Berlin
-* Referendariat am Kammergericht Berlin
-* Seit 1999 selbständiger Rechtsanwalt in Berlin
-* Tarik Sharief lebt mit seiner Familie in Berlin
-
 ### Ausführlicher Lebenslauf
 
 Rechtsanwalt Tarik Sharief wurde 1965 in Dresden als Sohn einer Journalistin und eines Arztes geboren. Er zog 1975 nach Stadthagen, wo er sein Abitur machte. Im Jahre 1986 begann er mit dem Studium der Rechtswissenschaften und Politikwissenschaften an der Freien Universität Berlin. Während des Studiums arbeitete er für die Uni Münster an einem Forschungsprojekt. Sein Referendariat absolvierte er beim Kammergericht Berlin. In Berlin ist Tarik Sharief seit 1999 für seine Mandanten als selbständiger Rechtsanwalt tätig.
