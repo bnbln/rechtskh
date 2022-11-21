@@ -9,7 +9,7 @@ description: Gerade die fehlerhafte Beratung durch die Versicherungsagenten hat
   Anwalt erlebt, dass den Versicherungsnehmern Versicherungen verkauft wurden,
   die ihren Bedürfnissen nicht entsprachen.
 featuredpost: false
-featuredimage: /img/chemex.jpg
+featuredimage: /img/stefan-stefancik-pza7qwnciyg-unsplash.jpg
 ---
 ### Beratungsbedingte fehlerhafte Angaben
 
