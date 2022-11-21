@@ -51,7 +51,7 @@ class RechtRollTemplate extends React.Component {
               }}>{post.frontmatter.title}</Card.Title>
               {/* <Button variant="secondary" size='sm' onClick={()=> navigate(post.fields.slug)}>Mehr erfahren</Button> */}
             </Card.Body>
-            <img className="card-img-top" src={post.frontmatter.picture.publicURL} alt={post.frontmatter.title}/>
+            <img className="card-img-top" style={{border: "4px solid white"}} src={post.frontmatter.picture.publicURL} alt={post.frontmatter.title}/>
           </Card>
           </a>
         </Col>
