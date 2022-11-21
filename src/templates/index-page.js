@@ -8,7 +8,7 @@ import { CarouselMobileWrapper } from "../components/CarouselMobileWrapper";
 import BlogRoll from "../components/BlogRoll";
 import RechtRoll from "../components/RechtRoll";
 
-import image03 from "../img/about/ImageAbout_cutout.png";
+import image03 from "../img/about/Map.jpg";
 import Layout from "../components/Layout";
 
 import metadata from "../../content/settings/global.yml";
@@ -58,8 +58,7 @@ export const IndexPageTemplate = ({
         style={{
           background: "#172340",
           paddingTop: 40,
-          paddingBottom: 40,
-          marginBottom: 60,
+          paddingBottom: 40
         }}
       >
         <Container fluid={"sm"}>
@@ -71,14 +70,16 @@ export const IndexPageTemplate = ({
         style={{
           backgroundImage: "url(" + image03 + ")",
           backgroundSize: "cover",
+          backgroundPosition: "center",
+          paddingTop: 80
         }}
       >
-        <Container style={{ minHeight: "90vh" }}>
+        <Container style={{ minHeight: "65vh" }}>
           <Row>
             <Col md={6} lg={4}>
-              <h1>{metadata.description}</h1>
-              <Card style={{backgroundColor: "rgba(255,255,255,0.5)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" , borderRadius: 0}}>
+              <Card style={{backgroundColor: "rgba(255,255,255,0.5)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" , borderRadius: 0, border: 0}}>
                 <Card.Body>
+                  <h1>{metadata.description}</h1>
                   <ReactMarkdown>{metadata.contact.info}</ReactMarkdown>
                   <ReactMarkdown>{metadata.contact.contact}</ReactMarkdown>
                 </Card.Body>
@@ -163,7 +164,11 @@ export const pageQuery = graphql`
           title
           image {
             childImageSharp {
-              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+              gatsbyImageData(
+                width: 1920
+                quality: 80
+                layout: CONSTRAINED
+                )
             }
           }
           link

@@ -9,7 +9,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
     return (
       <GatsbyImage
         image={image.childImageSharp.gatsbyImageData}
-        style={style}
+        style={{...style, objectPosition: "center"}}
         alt={alt}
       />
     );
@@ -17,13 +17,13 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
     return (
       <GatsbyImage
         image={childImageSharp.gatsbyImageData}
-        style={style}
+        style={{...style, objectPosition: "center"}}
         alt={alt}
       />
     );
     // for Netlify CMS 
   } else if (image) {
-    return <img style={style} src={image} alt={alt} />;
+    return <img style={{...style, objectPosition: "center"}} src={image} alt={alt} />;
   } else {
     return null
   }
