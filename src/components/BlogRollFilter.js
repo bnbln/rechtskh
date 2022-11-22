@@ -11,15 +11,15 @@ class BlogRollFilterTemplate extends React.Component {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
     var all = props.all ? props.all : false
-    console.log("P", posts)
+    // console.log("P", posts)
 
     const category = []
     posts.forEach(post => {
-        console.log(props);
+        //console.log(props);
         if(post.node.frontmatter.recht === props.recht) {
             category.push(post)
         }})
-    console.log("C", category);
+    //console.log("C", category);
     return (
       <Row>
         {posts &&

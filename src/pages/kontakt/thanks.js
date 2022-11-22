@@ -1,16 +1,19 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import Layout from "../../components/Layout";
 
 // eslint-disable-next-line
 export default () => (
   <Layout>
-    <section className="section">
-      <div className="container">
-        <div className="content">
-          <h1>Thank you!</h1>
-          <p>This is a custom thank you page for form submissions</p>
-        </div>
-      </div>
-    </section>
+    <div style={{background: "#f0f3f9", padding: "10rem 0rem", marginTop: "73px"}}>
+      <Container>
+        <Row>
+          <Col>
+            <h1 style={{margin: 0, marginTop: 5}}>Nachricht gesendet</h1>  
+            <p>Vielen Dank für Ihre Nachricht. Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen. Bei dringenden Anliegen sind wir telefonisch zu erreichen.</p>  
+          </Col>
+        </Row>
+      </Container>
+    </div>
   </Layout>
 );
