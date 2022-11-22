@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, navigate, graphql } from "gatsby";
-import { Container, Button, Row, Col, Card } from "react-bootstrap";
+import { Container, Button, Row, Col, Card, Stack } from "react-bootstrap";
 import ReactMarkdown from 'react-markdown'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { CarouselWrapper } from "../components/CarouselWrapper";
 import { CarouselMobileWrapper } from "../components/CarouselMobileWrapper";
 import BlogRoll from "../components/BlogRoll";
@@ -23,10 +24,88 @@ export const IndexPageTemplate = ({
 }) => {
   return (
     <>
-      <Container>
+
+
+      <div className="d-block d-sm-none"
+              style={{
+                height: "650px",
+                width: "100%",
+                position: "relative",
+              }}
+            >
+              <Container className="d-flex justify-content-end" style={{
+                position: "absolute",
+                left: 0,
+                right:0,
+                top:0,
+                bottom: 0,
+                zIndex:1,
+                background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 26.15%, rgba(0, 0, 0, 0.65) 66.15%, #000000 100%)",
+                padding:" var(--bs-gutter-x, 0.75rem)",
+                flexDirection: "column"
+              }}>
+                <Row>
+                  <Col>
+                  <h1 style={{
+                        color: "white", fontWeight: "900", fontSize: "1.2rem", marginBottom: "0.5rem"
+                    }}>{images[0].title}
+                  </h1>
+                  </Col>
+                
+                </Row>
+                <Row>
+                  <Col>
+                <h1 style={{color: "white", fontFamily: "Lato", fontSize: "1.5rem"}}>{title}</h1>
+                </Col>
+                </Row>
+                <Row className="d-flex justify-content-end">
+                  <Col >
+                    <p className="lead" style={{color: "white"}}>{lead}</p>
+                  </Col>
+                </Row>
+                <Row className="d-flex justify-content-end">
+                  <Col >
+                  <Button
+                  style={{width: "100%"}}
+                  variant="primary"
+                  size="lg"
+                  onClick={() => navigate(ctalink)}
+                >
+                  {ctatext}
+                </Button>
+                  </Col>
+                </Row>
+
+                  
+                
+
+                
+              
+              </Container>
+                
+
+              <PreviewCompatibleImage
+                style={{
+                  objectFit: "cover",
+                  objectPosition: -20
+                }}
+                imageInfo={{
+                  image: images[0].image,
+                  alt: images[0].title,
+                  style: {
+                    borderRadius: "0px",
+                    maxWidth: "none",
+                    height: "100%",
+                  },
+                }}
+              />
+      </div>
+
+
+      <Container className="d-none d-lg-flex">
         <Row className="align-items-md-center herorow" style={{marginTop: "5rem"}}>
           <Col sm={12} md={7} lg={8} xl={8} >
-            <CarouselMobileWrapper images={images} />
+            {/* <CarouselMobileWrapper images={images} /> */}
             <Row className="d-flex justify-content-start align-items-center d-none d-lg-flex" style={{
               height: "67vh",
               position: "relative"
@@ -96,7 +175,7 @@ export const IndexPageTemplate = ({
               <h2 style={{ textAlign: "right", width: "fit-content" }}>Jetzt Kontakt aufnehmen</h2>
             </Col>
             <Col md="auto">
-              <Button onClick={()=> navigate("/contact")}>Zum Kontaktformular</Button>
+              <Button onClick={()=> navigate("/kontakt")}>Zum Kontaktformular</Button>
             </Col>
           </Row>
         </Container>
