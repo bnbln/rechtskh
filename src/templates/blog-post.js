@@ -35,7 +35,7 @@ console.log(lowercaseRecht);
                     style: { position: "absolute", left: 0, top:0, right:0, width: "100%", zIndex: "-100", filter: "blur(100px)", transform: "scale(0.5)", opacity: "0.6"}
                   }}
                 /> */}
-      <div style={{background: "#f0f3f9", padding: "2rem 0rem"}}>
+      <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginTop: "73px",}}>
       <Container style={{
  
       }}>

@@ -17,7 +17,7 @@ export const ImpressumPageTemplate = ({
 const PageContent = contentComponent || Content
 return (
   <>
-  <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginBottom: "2rem"}}>
+  <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginBottom: "2rem",marginTop: "73px",}}>
       <Container>
         <Row>
           <Col>
