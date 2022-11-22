@@ -52,7 +52,7 @@ const Footer = class extends React.Component {
              
               
               
-              <p className="copyright top" style={{textAlign: "center", paddingTop: 100, fontWeight: 300}}>Alle Rechte vorbehalten. © Copyright {new Date().getFullYear()}</p>
+              <p className="copyright top" style={{textAlign: "center", paddingTop: 100}}>Alle Rechte vorbehalten. © Copyright {new Date().getFullYear()}</p>
             </Row>
           </Container>
       </footer>
