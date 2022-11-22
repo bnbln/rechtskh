@@ -13,9 +13,9 @@ const Navigation = class extends React.Component {
                 //boxShadow: "rgb(24 34 64) 0px -40px 80px -20px",
                 paddingTop: "1rem",
                 paddingBottom: "1rem",
-                backgroundColor: "rgb(255 255 255 / 75%)",
-                backdropFilter: "blur(15px)",
-                WebkitBackdropFilter: "blur(15px)"
+                backgroundColor: "rgb(255 255 255 / 100%)",
+                // backdropFilter: "blur(15px)",
+                // WebkitBackdropFilter: "blur(15px)"
               }}>
           <Container>
             <Navbar.Brand onClick={()=> navigate("/")} style={{color: "#324c8b", cursor: "pointer", marginRight: "2rem"}}>
@@ -29,7 +29,7 @@ const Navigation = class extends React.Component {
               <ThreeBarsIcon size='20px' fill="rgb(50, 76, 139)" />
             </Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto" style={{gap: 18}}>
+              <Nav className="me-lg-auto" style={{gap: 8}}>
                 <Nav.Link onClick={()=> navigate("/")}>Home</Nav.Link>
                 <Nav.Link onClick={()=> navigate("/about")}>Anwalt</Nav.Link>
                 <Nav.Link onClick={()=> navigate("/blog")}>Aktuelles</Nav.Link>
