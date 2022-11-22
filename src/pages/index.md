@@ -7,7 +7,7 @@ ctalink: /about
 rechtsbereiche: Individuelle Fälle erfordern individuelle Lösungsansätze
 images:
   - title: Tarik Sharief
-    image: /img/20140510-17-06_bearbeitet.jpg
+    image: /img/20140510-17-06_2.jpg
     link: /about
   - title: Kanzlei am Wittenbergplatz
     image: /img/mietrecht.png
