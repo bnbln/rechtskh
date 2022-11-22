@@ -16,7 +16,7 @@ console.log(subtitle, list, image);
   return (
     <>
     
-    <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginTop: "73px",}}>
+    <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginTop: "73px"}}>
       <Container>
         <Row>
           <Col>
@@ -25,19 +25,24 @@ console.log(subtitle, list, image);
         </Row>
       </Container>
     </div>
-    <div style={{background: "#182340", padding: "3rem 0rem", color: "white"}}>
+    <div style={{background: "#182340", color: "white"}}>
       <Container>
-        <Row>
-        <Col sm={5} lg={3}>
+        <Row gap={24}>
+        <Col sm={5} lg={3} style={{padding: "1.5rem"}}>
             <PreviewCompatibleImage
                     imageInfo={{
                       image: image,
                       alt: title,
-                      style: { width: "100%", height: "100%"}
+                      style: { width: "100%", height: "100%", borderRadius: "100%"}
                     }}
                   />
           </Col>
-          <Col sm={7} lg={9}>
+          <Col sm={7} lg={9} style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                padding: "2rem"
+          }}>
             <h3>{subtitle}</h3>
             <ul>
               {list.map((item)=> (<li>{item.item}</li>)
@@ -47,7 +52,7 @@ console.log(subtitle, list, image);
         </Row>
       </Container>
     </div>
-    <section className="section section--gradient">
+    <section className="section section--gradient" style={{marginTop: "2rem"}}>
       <div className="container">
         <div className="columns">
           <div className="column is-10 is-offset-1">
