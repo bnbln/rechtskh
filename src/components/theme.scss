@@ -40,15 +40,33 @@ h1 {
 
 a.nav-link {
   color: #172340;
-  text-transform: uppercase;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  font-size: 0.95rem;
+  //text-transform: uppercase;
+  font-weight: 700;
+  //letter-spacing: 0.5px;
+  font-size: 1rem;
+  color: hsl(223deg 30% 60%);
+}
+.navbar-light .navbar-collapse.collapsing{
+  height: 0;
+  overflow: hidden;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  // @include transition($transition-collapse);
+}
+.navbar-light .navbar-collapse.collapse.show {
+height: calc(100vh - 71px);
+display: flex;
+flex-direction: column;
+gap: 24px;
+justify-content: center;
+align-items: center;
+padding-bottom: 80px;
+}
+.navbar-light .navbar-collapse.collapse.show a.nav-link {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 200%;
 }
 
-.navbar-light .navbar-collapse.collapse.show {
-height: 100vh;
-}
 .navbar-light .navbar-brand {
 color: map.get($theme-colors, "secondary");
 font-weight: 900;
@@ -56,21 +74,32 @@ opacity: 1;
 }
 
 .navbar-light .navbar-brand:hover {
-  opacity: 0.8;
+  opacity: 0.75;
   }
 
 .navbar-light .navbar-toggler:focus {
     outline: -webkit-focus-ring-color auto 0px;
     box-shadow: none;
+    color: rgb(50, 76, 139);
 
 }  
 
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .nav-link.active, .dropdown-item, .navbar-light .navbar-nav .nav-link {
-  color: map.get($theme-colors, "secondary");
+  color: hsl(223deg 30% 60%) //map.get($theme-colors, "secondary");
+ 
+}
+
+.navbar-light .navbar-nav .show > .nav-link:hover, .navbar-light .navbar-nav .nav-link.active, .dropdown-item, .navbar-light .navbar-nav .nav-link:hover {
+ color:  rgb(50, 76, 139);
 }
 
 .dropdown-menu {
-  border: 1px solid rgba(map.get($theme-colors, "secondary"), .5)
+  border: 0px solid rgba(map.get($theme-colors, "secondary"), .5);
+  box-shadow: #00000026 -2px 12px 50px;
+  border-radius: 0px;
+  padding: 1rem;
+  margin-top: -3px;
+  z-index: 0;
 }
 
 .dropdown-divider {
@@ -96,7 +125,7 @@ background: lighten(map.get($theme-colors, "secondary"), 20)
 }
 
 .navbar-light .navbar-brand:hover {
-  color: lighten(map.get($theme-colors, "secondary"), 20);
+  color: rgb(50, 76, 139) //lighten(map.get($theme-colors, "secondary"), 20);
 }
 .bg-scnd {
   background-color: map.get($theme-colors, "secondary");
