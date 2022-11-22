@@ -13,12 +13,12 @@ image: /img/ebene-1.jpg
 menu:
   - name: Home
     to: /
-  - name: Rechtsfragen
-    to: /recht
   - name: Anwalt
     to: /about
   - name: Aktuelles
     to: /blog
+  - name: Schwerpunkte
+    to: DROPDOWN
 footermenu:
   - name: Kontakt
     to: /contact
