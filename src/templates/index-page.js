@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, navigate, graphql } from "gatsby";
 import { Container, Button, Row, Col, Card, Stack } from "react-bootstrap";
-import ReactMarkdown from 'react-markdown'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import ReactMarkdown from "react-markdown";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import { CarouselWrapper } from "../components/CarouselWrapper";
 import { CarouselMobileWrapper } from "../components/CarouselMobileWrapper";
 import BlogRoll from "../components/BlogRoll";
@@ -20,101 +20,134 @@ export const IndexPageTemplate = ({
   lead,
   ctatext,
   ctalink,
-  rechtsbereiche
+  rechtsbereiche,
 }) => {
   return (
     <>
-
-
-      <div className="d-block d-sm-none"
-              style={{
-                height: "650px",
-                width: "100%",
-                position: "relative",
-              }}
-            >
-              <Container className="d-flex justify-content-end" style={{
-                position: "absolute",
-                left: 0,
-                right:0,
-                top:0,
-                bottom: 0,
-                zIndex:1,
-                background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 26.15%, rgba(0, 0, 0, 0.65) 66.15%, #000000 100%)",
-                padding:" var(--bs-gutter-x, 0.75rem)",
-                flexDirection: "column"
-              }}>
-                <Row>
-                  <Col>
-                  <h1 style={{
-                        color: "white", fontWeight: "900", fontSize: "1.2rem", marginBottom: "0.5rem"
-                    }}>{images[0].title}
-                  </h1>
-                  </Col>
-                
-                </Row>
-                <Row>
-                  <Col>
-                <h1 style={{color: "white", fontFamily: "Lato", fontSize: "1.5rem"}}>{title}</h1>
-                </Col>
-                </Row>
-                <Row className="d-flex justify-content-end">
-                  <Col >
-                    <p className="lead" style={{color: "white"}}>{lead}</p>
-                  </Col>
-                </Row>
-                <Row className="d-flex justify-content-end">
-                  <Col >
-                  <Button
-                  style={{width: "100%"}}
-                  variant="primary"
-                  size="lg"
-                  onClick={() => navigate(ctalink)}
-                >
-                  {ctatext}
-                </Button>
-                  </Col>
-                </Row>
-
-                  
-                
-
-                
-              
-              </Container>
-                
-
-              <PreviewCompatibleImage
+      <div
+        className="d-block d-lg-none"
+        style={{
+          height: "720px",
+          width: "100%",
+          position: "relative",
+        }}
+      >
+        <Container
+          className="d-flex justify-content-end"
+          style={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            zIndex: 1,
+            padding: " var(--bs-gutter-x, 0.75rem)",
+            flexDirection: "column",
+          }}
+        >
+          <Row>
+            <Col>
+              <h1
                 style={{
-                  objectFit: "cover",
-                  objectPosition: -20
+                  color: "white",
+                  fontWeight: "900",
+                  fontSize: "1.2rem",
+                  marginBottom: "0.5rem",
                 }}
-                imageInfo={{
-                  image: images[0].image,
-                  alt: images[0].title,
-                  style: {
-                    borderRadius: "0px",
-                    maxWidth: "none",
-                    height: "100%",
-                  },
+              >
+                {images[0].title}
+              </h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={5}>
+              <h1
+                style={{
+                  color: "white",
+                  fontFamily: "Lato",
+                  fontSize: "1.5rem",
                 }}
-              />
+              >
+                {title}
+              </h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={5}>
+              <p className="lead" style={{ color: "white" }}>
+                {lead}
+              </p>
+            </Col>
+          </Row>
+          <Row style={{marginBottom: "2rem"}}>
+            <Col md={4}>
+              <Button
+                style={{ width: "100%" }}
+                variant="primary"
+                size="lg"
+                onClick={() => navigate(ctalink)}
+              >
+                {ctatext}
+              </Button>
+            </Col>
+          </Row>
+        </Container>
+
+        <PreviewCompatibleImage
+          style={{
+            objectFit: "cover",
+            objectPosition: -20,
+          }}
+          imageInfo={{
+            image: images[0].image,
+            alt: images[0].title,
+            style: {
+              borderRadius: "0px",
+              maxWidth: "none",
+              height: "100%",
+            },
+          }}
+        />
+        <div style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0,
+          zIndex: 0,
+          background:
+              "linear-gradient(180deg, rgba(0, 0, 0, 0) 26.15%, rgba(0, 0, 0, 0.65) 66.15%, #000000 100%)",
+            }}></div>
       </div>
 
 
+
+
+
+
       <Container className="d-none d-lg-block">
-        <Row className="align-items-md-center herorow" style={{marginTop: "5rem"}}>
-          <Col sm={12} md={7} lg={8} xl={8} >
+        <Row
+          className="align-items-md-center herorow"
+          style={{ marginTop: "5rem" }}
+        >
+          <Col sm={12} md={7} lg={8} xl={8}>
             {/* <CarouselMobileWrapper images={images} /> */}
-            <Row className="justify-content-start align-items-center" style={{
-              height: "67vh",
-              position: "relative"
-            }}>
-                        <CarouselWrapper images={images} title={title} lead={lead} ctatext={ctatext} ctalink={ctalink} />
+            <Row
+              className="justify-content-start align-items-center"
+              style={{
+                height: "67vh",
+                position: "relative",
+              }}
+            >
+              <CarouselWrapper
+                images={images}
+                title={title}
+                lead={lead}
+                ctatext={ctatext}
+                ctalink={ctalink}
+              />
 
-            <Link to={images[0].link}>
-            </Link>
-
+              <Link to={images[0].link}></Link>
             </Row>
           </Col>
 
@@ -132,12 +165,11 @@ export const IndexPageTemplate = ({
         </Row>
       </Container>
 
-      
       <div
         style={{
           background: "#172340",
           paddingTop: 40,
-          paddingBottom: 40
+          paddingBottom: 40,
         }}
       >
         <Container fluid={"sm"}>
@@ -150,13 +182,21 @@ export const IndexPageTemplate = ({
           backgroundImage: "url(" + image03 + ")",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          paddingTop: 80
+          paddingTop: 80,
         }}
       >
         <Container style={{ minHeight: "65vh" }}>
           <Row>
             <Col md={6} lg={4}>
-              <Card style={{backgroundColor: "rgba(255,255,255,0.5)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" , borderRadius: 0, border: 0}}>
+              <Card
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.5)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  borderRadius: 0,
+                  border: 0,
+                }}
+              >
                 <Card.Body>
                   <h1>{metadata.description}</h1>
                   <ReactMarkdown>{metadata.contact.info}</ReactMarkdown>
@@ -172,15 +212,19 @@ export const IndexPageTemplate = ({
         <Container>
           <Row className="justify-content-center">
             <Col md="auto">
-              <h2 style={{ textAlign: "right", width: "fit-content" }}>Jetzt Kontakt aufnehmen</h2>
+              <h2 style={{ textAlign: "right", width: "fit-content" }}>
+                Jetzt Kontakt aufnehmen
+              </h2>
             </Col>
             <Col md="auto">
-              <Button onClick={()=> navigate("/kontakt")}>Zum Kontaktformular</Button>
+              <Button onClick={() => navigate("/kontakt")}>
+                Zum Kontaktformular
+              </Button>
             </Col>
           </Row>
         </Container>
       </Container>
-      <Container style={{marginTop: "3rem"}}>
+      <Container style={{ marginTop: "3rem" }}>
         <h1>Aktuelles</h1>
         <BlogRoll all={false} />
       </Container>
@@ -200,7 +244,7 @@ IndexPageTemplate.propTypes = {
   lead: PropTypes.string,
   ctatext: PropTypes.string,
   ctalink: PropTypes.string,
-  rechtsbereiche: PropTypes.string
+  rechtsbereiche: PropTypes.string,
 };
 
 const IndexPage = ({ data }) => {
@@ -243,11 +287,7 @@ export const pageQuery = graphql`
           title
           image {
             childImageSharp {
-              gatsbyImageData(
-                width: 1920
-                quality: 80
-                layout: CONSTRAINED
-                )
+              gatsbyImageData(width: 1920, quality: 80, layout: CONSTRAINED)
             }
           }
           link

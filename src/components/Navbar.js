@@ -26,7 +26,7 @@ const Navigation = class extends React.Component {
               padding: 0,
               margin: 0
             }}>
-              <ThreeBarsIcon size='20px' fill="rgb(24 34 64)" />
+              <ThreeBarsIcon size='20px' fill="rgb(50, 76, 139)" />
             </Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto" style={{gap: 18}}>
