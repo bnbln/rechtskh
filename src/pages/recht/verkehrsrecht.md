@@ -4,7 +4,7 @@ title: Verkehrsrecht
 lead: Die Beschwerden der Versicherten beim Versicherungsombudsmann sowie bei
   Anwälten über das Verhalten von Versicherungen nehmen seit Jahren dramatisch
   zu. Hierzu zählt unter anderem
-image: /img/flavor_wheel.jpg
+image: /img/safari-pinned-tab.svg
 picture: /img/verkehrsrecht.png
 banner:
   - title: Versicherungen versuchen bewußt, Zahlung zu vermeiden
