@@ -17,7 +17,7 @@ import { withPrefix } from "gatsby";
 
 const TemplateWrapper = ({ children }) => {
   // const { title, description } = useSiteMetadata();
-  console.log("COOKIE: ", getCookieConsentValue("gdpr"));
+  // console.log("COOKIE: ", getCookieConsentValue("gdpr"));
   return (
     <div>
       <Helmet>

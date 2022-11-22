@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, navigate, graphql } from "gatsby";
-import { Container, Button, Row, Col, Card, Stack } from "react-bootstrap";
+import { Container, Button, Row, Col, Card } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import { CarouselWrapper } from "../components/CarouselWrapper";
-import { CarouselMobileWrapper } from "../components/CarouselMobileWrapper";
+//import { CarouselMobileWrapper } from "../components/CarouselMobileWrapper";
 import BlogRoll from "../components/BlogRoll";
 import RechtRoll from "../components/RechtRoll";
 
@@ -120,11 +120,6 @@ export const IndexPageTemplate = ({
             }}></div>
       </div>
 
-
-
-
-
-
       <Container className="d-none d-lg-block">
         <Row
           className="align-items-md-center herorow"
@@ -170,6 +165,7 @@ export const IndexPageTemplate = ({
           background: "#172340",
           paddingTop: 40,
           paddingBottom: 40,
+          //color: "white"
         }}
       >
         <Container fluid={"sm"}>
@@ -190,9 +186,9 @@ export const IndexPageTemplate = ({
             <Col md={6} lg={4}>
               <Card
                 style={{
-                  backgroundColor: "rgba(255,255,255,0.5)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
+                  backgroundColor: "rgba(255,255,255,1)",
+                  // backdropFilter: "blur(20px)",
+                  // WebkitBackdropFilter: "blur(20px)",
                   borderRadius: 0,
                   border: 0,
                 }}

@@ -27,8 +27,8 @@ export const RechtPostTemplate = ({
 }) => {
   // const PageContent = contentComponent || Content;
   const heroImage = getImage(picture);
-  console.log("data", data);
-  console.log("img", picture.publicURL);
+  // console.log("data", data);
+  // console.log("img", picture.publicURL);
   return (
     <>
       {helmet || ""}
@@ -60,7 +60,6 @@ export const RechtPostTemplate = ({
               >
                 <div style={{maxHeight: "70vh"}}
                 >
-                  {console.log("PICTURE", picture)}
                   <PreviewCompatibleImage
                   imageInfo={{
                     image: picture,
@@ -117,7 +116,7 @@ RechtPostTemplate.propTypes = {
 
 const RechtPost = ({ data }) => {
   const { markdownRemark: post } = data;
-  console.log(data);
+  //console.log(data);
   return (
     <Layout>
       <RechtPostTemplate

@@ -6,7 +6,7 @@ import {MailIcon, ThreeBarsIcon} from '@primer/octicons-react'
 const Navigation = class extends React.Component {
   render() {
     const meta = this.props.metadata;
-    // console.log(meta);
+    // console.log("meta ", meta);
     return (
       <>
         <Navbar expand="lg" variant="light" fixed="top" style={{
@@ -30,14 +30,21 @@ const Navigation = class extends React.Component {
             </Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-lg-auto" style={{gap: 8}}>
-                <Nav.Link onClick={()=> navigate("/")}>Home</Nav.Link>
-                <Nav.Link onClick={()=> navigate("/about")}>Anwalt</Nav.Link>
-                <Nav.Link onClick={()=> navigate("/blog")}>Aktuelles</Nav.Link>
-                <NavDropdown title="Schwerpunkte" id="basic-nav-dropdown">
-                  <NavDropdown.Item onClick={()=> navigate("/recht/versicherungsrecht")}>Versicherungsrecht</NavDropdown.Item>
-                  <NavDropdown.Item onClick={()=> navigate("/recht/verkehrsrecht")}>Verkehrstrecht</NavDropdown.Item>
-                  <NavDropdown.Item onClick={()=> navigate("/recht/mietrecht")}>Mietrecht</NavDropdown.Item>
-                </NavDropdown>
+                {meta.menu.map((item, i)=> {
+                  if (item.to === "DROPDOWN") {
+                    return (
+                      <NavDropdown title="Schwerpunkte" id="basic-nav-dropdown" key={"menu-item-"+i}>
+                        <NavDropdown.Item onClick={()=> navigate("/recht/versicherungsrecht")}>Versicherungsrecht</NavDropdown.Item>
+                        <NavDropdown.Item onClick={()=> navigate("/recht/verkehrsrecht")}>Verkehrsrecht</NavDropdown.Item>
+                        <NavDropdown.Item onClick={()=> navigate("/recht/mietrecht")}>Mietrecht</NavDropdown.Item>
+                      </NavDropdown>
+                    )
+                  } else {
+                    return(
+                      <Nav.Link key={"menu-item-"+i} onClick={()=> navigate(item.to)}>{item.name}</Nav.Link>
+                    )
+                  }
+                })}
               </Nav>
               <Button variant="outline-secondary" size="sm" onClick={()=> navigate("/kontakt")}><div style={{marginRight: 8, display: "initial"}}><MailIcon /></div> Kontakt aufnehmen</Button>
             </Navbar.Collapse>

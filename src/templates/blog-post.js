@@ -22,9 +22,9 @@ export const BlogPostTemplate = ({
   image
 }) => {
   const PostContent = contentComponent || Content;
-console.log(date);
+// console.log(date);
 var lowercaseRecht = recht
-console.log(lowercaseRecht);
+// console.log(lowercaseRecht);
   return (
     <>
       {helmet || ""}
