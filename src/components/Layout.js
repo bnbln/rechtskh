@@ -78,7 +78,8 @@ const TemplateWrapper = ({ children }) => {
             declineButtonClasses="btn btn-outline-primary btn-sm"    
             contentClasses="contentClasses"      
             style={{
-              boxShadow: "black 0px 0px 150px"
+              boxShadow: "black 0px 0px 150px",
+              zIndex: "100"
             }}
             
           >
