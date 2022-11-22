@@ -23,7 +23,7 @@ export const CarouselWrapper = ({ images, title }) => {
     setHoverState(true);
   }
   var timingfunction = "3s cubic-bezier(0.45, 0, 0.55, 1)";
-  console.log(title);
+  //console.log(title);
   return (
     <>
 

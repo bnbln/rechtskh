@@ -13,29 +13,8 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Aktuelles"
-    folder: "src/pages/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "blog-post",
-        }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - {label: "Rechtsbereich", name: "recht", widget: "relation", collection: "recht", search_fields: ["title"], value_field: "title", display_fields: ["title"], required: false}
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Featured Post", name: "featuredpost", widget: "boolean", required: false}
-      - { label: "Featured Image", name: "featuredimage", widget: image }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
-
   - name: "pages"
-    label: "Pages"
+    label: "Seiten"
     create: true
     files:
       - file: "src/pages/index.md"
@@ -78,8 +57,41 @@ collections:
         - {label: "Template Key", name: "templateKey", widget: "hidden", default: "datenschutz-page"}
         - {label: "Title", name: "title", widget: "string"}
         - {label: "Body", name: "body", widget: "markdown"}
+  - name: "blog"
+    label: "Aktuelles"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {label: "Rechtsbereich", name: "recht", widget: "relation", collection: "recht", search_fields: ["title"], value_field: "title", display_fields: ["title"], required: false}
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Post", name: "featuredpost", widget: "boolean", required: false}
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
+  - name: "recht"
+    label: "Schwerpunkte"
+    folder: "src/pages/recht"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "recht-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: Lead, name: lead, widget: string}
+      - {label: Icon, name: image, widget: image}
+      - {label: Bild, name: picture, widget: image}
+      - {label: "Banner", name: banner, widget: list, fields: [{label: Titel, name: title, widget: "string"}, {label: Absatz, name: text, widget: "text"}]}
+      - {label: "Beitrag", name: article, widget: list, fields: [{label: Titel, name: title, widget: "string"}, {label: Body, name: body, widget: "markdown"}]}
   - name: "settings"
-    label: "Einstellungen"
+    label: "Globale Einstellungen"
     delete: false
     editor:
       preview: false
@@ -96,17 +108,4 @@ collections:
           - {label: "Hauptmenü", name: menu, widget: list, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string"}]}
           - {label: "Footermenü", name: footermenu, widget: list, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string"}]}
           - {label: "Kontakt", name: contact, widget: object, fields: [{label: "Information", name: "info", widget: "markdown"}, {label: "Kontakt", name: "contact", widget: "markdown"}, {label: "Öffnungszeiten", name: "open", widget: "markdown"}, {label: "Einleitung", name: "intro", widget: "markdown"}, {label: "Bild", name: "image", widget: image},{label: "Bildunterschrift", name: "bu", widget: "markdown"}]}
-  - name: "recht"
-    label: "Rechtsfragen"
-    folder: "src/pages/recht"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "recht-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: Lead, name: lead, widget: string}
-      - {label: Icon, name: image, widget: image}
-      - {label: Bild, name: picture, widget: image}
-      - {label: "Banner", name: banner, widget: list, fields: [{label: Titel, name: title, widget: "string"}, {label: Absatz, name: text, widget: "text"}]}
-      - {label: "Beitrag", name: article, widget: list, fields: [{label: Titel, name: title, widget: "string"}, {label: Body, name: body, widget: "markdown"}]}
   

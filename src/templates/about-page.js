@@ -12,7 +12,7 @@ import Content, { HTMLContent } from "../components/Content";
 // eslint-disable-next-line
 export const AboutPageTemplate = ({ title, subtitle, list, image, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
-console.log(subtitle, list, image);
+// console.log(subtitle, list, image);
   return (
     <>
     
@@ -28,12 +28,12 @@ console.log(subtitle, list, image);
     <div style={{background: "#182340", color: "white"}}>
       <Container>
         <Row gap={24}>
-        <Col sm={5} lg={3} style={{padding: "1.5rem"}}>
+        <Col sm={3} lg={3} style={{padding: "1.5rem", display: "flex"}} className="about-image ">
             <PreviewCompatibleImage
                     imageInfo={{
                       image: image,
                       alt: title,
-                      style: { width: "100%", height: "100%", borderRadius: "100%"}
+                      style: { width: "100%", height: "auto", }
                     }}
                   />
           </Col>
@@ -72,6 +72,9 @@ AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
+  subtitle: PropTypes.string, 
+  list: PropTypes.object,
+  image: PropTypes.object,
 };
 
 const AboutPage = ({ data }) => {

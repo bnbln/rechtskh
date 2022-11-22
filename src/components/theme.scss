@@ -223,7 +223,11 @@ footer {
   background: map.get($theme-colors, "secondary");
   color: white;
 }
-
+@include media-breakpoint-down(lg) { 
+  .about-image {
+    padding: 30px;
+  }
+}
 @include media-breakpoint-down(lg) { 
   .recht.herorow {
     flex-direction: column-reverse!important;

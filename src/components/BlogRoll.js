@@ -11,7 +11,7 @@ class BlogRollTemplate extends React.Component {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
     var all = props.all ? props.all : false
-    console.log(data);
+    // console.log(data);
     return (
       <Row>
         {posts &&
