@@ -31,13 +31,13 @@ const Navigation = class extends React.Component {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto" style={{gap: 18}}>
                 <Nav.Link onClick={()=> navigate("/")}>Home</Nav.Link>
-                <NavDropdown title="Rechtsfragen" id="basic-nav-dropdown">
+                <Nav.Link onClick={()=> navigate("/about")}>Anwalt</Nav.Link>
+                <Nav.Link onClick={()=> navigate("/blog")}>Aktuelles</Nav.Link>
+                <NavDropdown title="Schwerpunkte" id="basic-nav-dropdown">
                   <NavDropdown.Item onClick={()=> navigate("/recht/versicherungsrecht")}>Versicherungsrecht</NavDropdown.Item>
                   <NavDropdown.Item onClick={()=> navigate("/recht/verkehrsrecht")}>Verkehrstrecht</NavDropdown.Item>
                   <NavDropdown.Item onClick={()=> navigate("/recht/mietrecht")}>Mietrecht</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link onClick={()=> navigate("/about")}>Anwalt</Nav.Link>
-                <Nav.Link onClick={()=> navigate("/blog")}>Aktuelles</Nav.Link>
               </Nav>
               <Button variant="outline-secondary" size="sm" onClick={()=> navigate("/kontakt")}><div style={{marginRight: 8, display: "initial"}}><MailIcon /></div> Kontakt aufnehmen</Button>
             </Navbar.Collapse>
