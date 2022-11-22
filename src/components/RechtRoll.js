@@ -95,7 +95,7 @@ export default function RechtRoll(props) {
                     childImageSharp {
                       gatsbyImageData(
                         width: 120
-                        quality: 100
+                        quality: 50
                         layout: CONSTRAINED
                       )
 
