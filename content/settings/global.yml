@@ -21,7 +21,7 @@ menu:
     to: DROPDOWN
 footermenu:
   - name: Kontakt
-    to: /contact
+    to: /kontakt
   - name: Impressum
     to: /impressum
   - name: Datenschutzerklärung
