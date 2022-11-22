@@ -2,7 +2,7 @@
 templateKey: about-page
 path: /about
 title: Über Rechtsanwalt Tarik Sharief
-featuredimage: /img/tarik-sharief-anwalt-in-berlin-portrait.jpg
+featuredimage: /img/tarik-sharief-anwalt-in-berlin-portrait-1-.png
 subtitle: Lebenslauf in Kürze
 list:
   - item: Tarik Sharief wurde 1965 in Dresden geboren
