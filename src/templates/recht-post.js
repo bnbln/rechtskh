@@ -32,7 +32,7 @@ export const RechtPostTemplate = ({
   return (
     <>
       {helmet || ""}
-      <Container>
+      <Container style={{marginTop: "73px"}}>
         <Row className="d-flex align-items-md-center justify-content-between recht herorow ">
           <Col md={12} lg={5} xl={4}>
             <h1>{data.title}</h1>

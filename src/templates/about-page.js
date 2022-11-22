@@ -16,7 +16,7 @@ console.log(subtitle, list, image);
   return (
     <>
     
-    <div style={{background: "#f0f3f9", padding: "2rem 0rem"}}>
+    <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginTop: "73px",}}>
       <Container>
         <Row>
           <Col>
