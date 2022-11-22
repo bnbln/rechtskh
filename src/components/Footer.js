@@ -34,9 +34,29 @@ const Footer = class extends React.Component {
                   gap: 8,
                   marginBottom: "2rem"
                 }}>
-                  {meta.menu.map((item, i)=> <Link className="navbar-item" to={item.to} key={"footermainnav-"+i} style={{
-                    color: "white"
-                  }}>{item.name}</Link>)}
+                  {meta.menu.map((item, i)=> {
+                    if (item.to === "DROPDOWN") {
+                      return(
+                        <>
+                        <Link className="navbar-item" to={"/recht/mietrecht"} key={"footermainnav-"+i} style={{
+                          color: "white"
+                        }}>Mietrecht</Link>
+                        <Link className="navbar-item" to={"/recht/verkehrsrecht"} key={"footermainnav-"+i} style={{
+                          color: "white"
+                        }}>Verkehrsrecht</Link>
+                        <Link className="navbar-item" to={"/recht/versicherungsrecht"} key={"footermainnav-"+i} style={{
+                          color: "white"
+                        }}>Versicherungsrecht</Link>
+                        </>
+                      )
+                    } else {
+                      return(
+                        <Link className="navbar-item" to={item.to} key={"footermainnav-"+i} style={{
+                          color: "white"
+                        }}>{item.name}</Link>
+                      )
+                    }
+                  })}
                 </nav>
                 <nav style={{
                   display: "flex",
