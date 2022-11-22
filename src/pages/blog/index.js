@@ -9,7 +9,7 @@ export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginBottom: "2rem"}}>
+        <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginBottom: "2rem", marginTop: "73px",}}>
       <Container>
         <Row>
           <Col>
