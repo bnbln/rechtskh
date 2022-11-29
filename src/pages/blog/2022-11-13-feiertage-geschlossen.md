@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Feiertage geschlossen
+title: Über die Feiertage nur eingeschränkt erreichbar
 date: 2022-11-13T22:36:06.176Z
 description: Liebe Mandant*innen, über die Feiertage bleibt die Kanzlei geschlossen
 featuredpost: true
