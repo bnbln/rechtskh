@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: Ihr Partner für Versicherungsrecht, Verkehrsrecht und Mietrecht
+title: Ihr Partner für Versicherungsrecht, Verkehrsrecht und Mietrech
 lead: Hochqualiative Rechtsberatung in der Berliner Kanzlei für Sie
 ctatext: Mehr zum Anwalt
 ctalink: /about
