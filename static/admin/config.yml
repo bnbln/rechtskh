@@ -60,15 +60,15 @@ collections:
         - {label: "Body", name: "body", widget: "markdown"}
   - name: "userpages"
     label: "Seiten"
-    folder: "src/pages/userpages"
+    folder: "src/pages/page"
     create: true
-    slug: "{{slug}}"
+    slug: "/{{slug}}"
     fields:
       - {
           label: "Template Key",
           name: "templateKey",
           widget: "hidden",
-          default: "userpage-post",
+          default: "userpages-post",
         }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
