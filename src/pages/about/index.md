@@ -19,11 +19,9 @@ Rechtsanwalt Tarik Sharief wurde 1965 in Dresden als Sohn einer Journalistin und
 
 Schwerpunkte der Anwaltstätigkeit sind Kauf-, Versicherungs- und Mietrecht. Rechtsanwalt Sharief betreut regelmäßig auch zahlreiche Streitigkeiten aus dem Bereich des Schadensersatz-, Werkvertrags-, Verkehrs- und des Bauvertragsrechts. Seine Stärke ist es, rechtsgebietsübergreifende Lösungen zu finden. Zum Beispiel kann ein Schimmelschaden sowohl mietrechtliche, versicherungsrechtliche als auch baurechtliche Probleme beinhalten.
 
-## Der Anwalt sucht nach der besten Lösung und betreibt Konfliktmanagement
+### Der Anwalt sucht nach der besten Lösung und betreibt Konfliktmanagement
 
 Aus seiner täglichen Berufserfahrung weiß Rechtsanwalt Tarik Sharief, dass Viele zunächst davon ausgehen, rechtliche Problem alleine lösen zu können. Oft besteht auch die Sorge, dass der Gang zum Anwalt zu einer Eskalation des Konfliktes führen könnte. Hierbei wird jedoch übersehen, dass anwaltliches Handeln ein professionelles Konfliktmanagement bedeutet. Die Aufgabe des Anwalts besteht darin, die Interessen seiner Mandanten sachlich darzustellen und entsprechende Maßnahmen zu treffen.
-
-
 
 <div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="./kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
 
