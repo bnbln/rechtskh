@@ -17,18 +17,20 @@ Rechtsanwalt Tarik Sharief wurde 1965 in Dresden als Sohn einer Journalistin und
 
 ### Schwerpunkte der Anwaltstätigkeit
 
-Schwerpunkte der Anwalts-Tätigkeit sind Kauf-, Versicherungs- und Verkehrsrecht. Rechtsanwalt Sharief betreut regelmäßig auch zahlreiche Streitigkeiten aus dem Bereich des Schadensersatz-, Werkvertrags-, Wettbewerbs- und des Insolvenzrechts. Seine Spezialisierung bezieht sich damit auf die Rechtsgebiete übergreifende Lösungssuche. In Rechtsgebieten, die Anwalt Sharief nicht selbst bearbeitet, wie z.B. Sozialrecht und Ausländerrecht, kann er im Interesse des Rechtssuchenden sehr gut qualifizierte Anwalts-Kollegen empfehlen.
+Schwerpunkte der Anwaltstätigkeit sind Kauf-, Versicherungs- und Mietrecht. Rechtsanwalt Sharief betreut regelmäßig auch zahlreiche Streitigkeiten aus dem Bereich des Schadensersatz-, Werkvertrags-, Verkehrs- und des Bauvertragsrechts. Seine Stärke ist es, rechtsgebietsübergreifende Lösungen zu finden. Zum Beispiel kann ein Schimmelschaden sowohl mietrechtliche, versicherungsrechtliche als auch baurechtliche Probleme beinhalten.
 
-### Der Anwalt sucht nach der besten Lösung: mandantenzentriertes Konfliktmanagement
+### Der Anwalt sucht nach der besten Lösung und betreibt Konfliktmanagement
 
 Aus seiner täglichen Berufserfahrung weiß Rechtsanwalt Tarik Sharief, dass Viele zunächst davon ausgehen, rechtliche Problem alleine lösen zu können. Oft besteht auch die Sorge, dass der Gang zum Anwalt zu einer Eskalation des Konfliktes führen könnte. Hierbei wird jedoch übersehen, dass anwaltliches Handeln ein professionelles Konfliktmanagement bedeutet. Die Aufgabe des Anwalts besteht darin, die Interessen seiner Mandanten sachlich darzustellen und entsprechende Maßnahmen zu treffen.
 
 <div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="./kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
 
-### Mit eigenem Rechtsanwalt kommt der Mandant auf Augenhöhe mit Firmen und Institutionen
+### Auf gleicher Augenhöhe mit Firmen und Institutionen durch einen Anwalt
 
-Ein Mandant begegnet Hausverwaltern im Mietrecht, Behörden und Versicherungen im Verkehrsrecht, Sachbearbeitern im Versicherungsrecht - in den meisten Fällen hat der Mandant im juristischen Alltag also Gegner, die Erfahrung tatsächlich haben oder zumindest glaubhaft vorspiegeln. Nur mit Hilfe eines engagierten Anwaltes kann eine Privatperson seine Interessen auf gleicher Augenhöhe mit den in ihren Rechtsangelegenheiten erfahrenen Sachbearbeitern stehen, seine rechtlichen Möglichkeiten begreifen und wahrnehmen.
+Ein Mandant begegnet Hausverwaltern im Mietrecht, Behörden und Versicherungen im Verkehrsrecht, Sachbearbeitern im Versicherungsrecht - in den meisten Fällen hat der Mandant im juristischen Alltag also Gegner, die tatsächlich Erfahrung haben oder diese zumindest glaubhaft vorspiegeln. Nur mit Hilfe eines engagierten Anwaltes kann eine Privatperson seine Interessen auf gleicher Augenhöhe durchsetzen. Der Anwalt kann den in ihren Rechtsangelegenheiten erfahrenen Sachbearbeitern die tatsächliche Rechtslage derart mitteilen, dass in der Regel Gerichtsverfahren vermieden werden können. 
 
 ### Die praktische Lösung finden: Vermittlung statt Prozess kann Ihr Kostenrisiko senken
 
-Diese Webseite "Rechtsklarheit.de" soll für die Rechtsgebiete, mit denen Mandanten im Alltag am ehesten konfrontiert werden, einfach gehaltene Einstiegshilfen bieten. Sie sollen den Handlungsansatz des Anwalts für Mandanten begreiflicher machen. Der Anwalt benötigt nicht nur fundierte Rechtskenntnisse, sondern muss auch die Bereitschaft haben, praktikable Lösungen zu finden, den Vergleich oder Verhandlungserfolg zu suchen und Ziele ohne kostspielige Instanzenwege praktisch zu erreichen.
+Rechtsanwalt Tarik Sharief verfolgt das Ziel seinen Handlungsansatz für Mandanten begreiflich zu machen. Mit seinen fundierten Kenntnissen zeigt er die Bereitschaft Lösungen zu finden, den Vergleich oder Verhandlungserfolg zu suchen und Ziele ohne kostspielige Instanzenwege praktisch zu erreichen. 
+
+Soweit sich zeigt, dass die Gegenseite nicht bereit ist, Ihre Rechte zu berücksichtigen, wird Rechtsanwalt Sharief, nach Rücksprache mit Ihnen, Ihre Rechtsposition gerichtlich geltend machen.
