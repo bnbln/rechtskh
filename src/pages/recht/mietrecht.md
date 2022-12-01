@@ -28,7 +28,7 @@ article:
       Mietvertrag. 
 
 
-      In den komplexen Fragen des Mietrechts zählt die Erfahrung des Anwalts. Bei Schönheitsreparaturen, Eigenbedarfskündigungen, Wasser- und Schimmelschäden sowie bei Mietminderung gibt es oft keine einfache Antwort. Der erfahrene Anwalt im Mietrecht muss nicht immer den direkten Weg wählen, um Ihr Ziel durchzusetzen. Manchmal ist es auch sinnvoll unabhängig von der Rechtslage eine Lösung zu finden mit der beide Seiten gut leben können.
+      In den komplexen Fragen des Mietrechts zählt die Erfahrung des Anwalts. Bei Schönheitsreparaturen, Eigenbedarfskündigungen, Wasser- und Schimmelschäden sowie bei Mietminderung gibt es oft keine einfache Antwort. Der erfahrene Anwalt im Mietrecht muss nicht immer den direkten Weg wählen, um Ihr Ziel durchzusetzen. Manchmal ist es auch sinnvoll unabhängig von der Rechtslage eine Lösung zu finden, mit der beide Seiten gut leben können.
 
 
       <div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="./kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
