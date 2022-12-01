@@ -17,7 +17,7 @@ Rechtsanwalt Tarik Sharief wurde 1965 in Dresden als Sohn einer Journalistin und
 
 ### Schwerpunkte der Anwaltstätigkeit
 
-Schwerpunkte seiner Anwaltstätigkeit sind Kauf-, Versicherungs- und Mietrecht. Rechtsanwalt Sharief betreut regelmäßig auch zahlreiche Streitigkeiten aus dem Bereich des Schadensersatz-, Werkvertrags-, Verkehrs- und des Bauvertragsrechts. Seine Stärke ist es, rechtsgebietsübergreifende Lösungen zu finden. Zum Beispiel kann ein Schimmelschaden sowohl mietrechtliche, versicherungsrechtliche als auch baurechtliche Probleme beinhalten. 
+Schwerpunkte seiner Anwaltstätigkeit sind Kauf-, Versicherungs- und Mietrecht. Rechtsanwalt Sharief betreut regelmäßig auch zahlreiche Streitigkeiten aus dem Bereich des Schadensersatz-, Werkvertrags-, Verkehrs- und des Bauvertragsrechts. Seine Stärke ist es, rechtsgebietsübergreifende Lösungen zu finden. So kann zum Beispiel ein Schimmelschaden sowohl mietrechtliche, versicherungsrechtliche als auch baurechtliche Probleme beinhalten. 
 
 ### Der Anwalt sucht nach der besten Lösung und betreibt Konfliktmanagement
 
