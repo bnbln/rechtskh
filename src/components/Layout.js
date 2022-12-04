@@ -18,8 +18,7 @@ import { withPrefix } from "gatsby";
 const TemplateWrapper = ({ children }) => {
   // const { title, description } = useSiteMetadata();
   // console.log("COOKIE: ", getCookieConsentValue("gdpr"));
-  const getWidth = () => window.innerWidth 
-  || document.documentElement.clientWidth 
+  const getWidth = () => document.documentElement.clientWidth 
   || document.body.clientWidth;
 
 function useCurrentWidth() {
