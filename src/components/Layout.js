@@ -19,7 +19,7 @@ const TemplateWrapper = ({ children }) => {
   // const { title, description } = useSiteMetadata();
   // console.log("COOKIE: ", getCookieConsentValue("gdpr"));
 
-  const { width } = useWindowSize();
+  const width = useWindowSize()
   return (
     <div>
       <Helmet>
