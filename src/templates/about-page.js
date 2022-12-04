@@ -3,68 +3,68 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { Container, Row, Col } from "react-bootstrap";
 
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
-
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 
-// eslint-disable-next-line
-export const AboutPageTemplate = ({ title, subtitle, list, image, content, contentComponent }) => {
+export const AboutPageTemplate = ({
+  title,
+  subtitle,
+  list,
+  image,
+  content,
+  contentComponent,
+}) => {
   const PageContent = contentComponent || Content;
-// console.log(subtitle, list, image);
   return (
     <>
-    
-    <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginTop: "73px"}}>
-      <Container>
-        <Row>
-          <Col>
-            <h1 style={{margin: 0, marginTop: 5}}>{title}</h1>    
-          </Col>
-        </Row>
-      </Container>
-    </div>
-    <div style={{background: "#182340", color: "white"}}>
-      <Container>
-        <Row gap={24}>
-        <Col sm={3} lg={3} style={{padding: "1.5rem", display: "flex"}} className="about-image ">
-            <PreviewCompatibleImage
-                    imageInfo={{
-                      image: image,
-                      alt: title,
-                      style: { width: "100%", height: "auto", }
-                    }}
-                  />
-          </Col>
-          <Col sm={7} lg={9} style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                padding: "2rem"
-          }}>
-            <h3>{subtitle}</h3>
-            <ul>
-              {list.map((item)=> (<li>{item.item}</li>)
-              )}
-            </ul>
-          </Col>
-        </Row>
-      </Container>
-    </div>
-    <section className="section section--gradient" style={{marginTop: "2rem"}}>
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
-        </div>
+      <div className="pageTitle">
+        <Container>
+          <Row>
+            <Col>
+              <h1>{title}</h1>
+            </Col>
+          </Row>
+        </Container>
       </div>
-    </section>
+      <div className="aboutHero">
+        <Container>
+          <Row gap={24} className="align-items-md-center justify-content-center">
+            <Col xs={8} sm={6} lg={3} style={{ padding: "1.5rem"}}>
+              <PreviewCompatibleImage
+              className="about-image "
+                imageInfo={{
+                  image: image,
+                  alt: title,
+                  style: { width: "100%", height: "auto", objectFit: "contain",  },
+                }}
+              />
+            </Col>
+            <Col
+            className="list"
+              xs={12}
+              sm={12}
+              lg={9}
+            >
+              <h3>{subtitle}</h3>
+              <Row style={{margin:0, padding:0}}>
+                {list.map((item) => (
+                  <Col className="listItem" xs={12}>{item.item}</Col>
+                ))}
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <Container style={{ background: "white", paddingTop: "2rem" }}>
+        <Row>
+          <Col xs={12} md={8}>
+            <PageContent className="content" content={content} />
+          </Col>
+        </Row>
+      </Container>
     </>
-    
   );
 };
 
@@ -72,7 +72,7 @@ AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
-  subtitle: PropTypes.string, 
+  subtitle: PropTypes.string,
   list: PropTypes.object,
   image: PropTypes.object,
 };

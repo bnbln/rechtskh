@@ -32,59 +32,102 @@ export const RechtPostTemplate = ({
   return (
     <>
       {helmet || ""}
-      <Container style={{marginTop: "73px"}}>
-        <Row className="d-flex align-items-md-center justify-content-between recht herorow ">
-          <Col md={12} lg={5} xl={4}>
-            <h1>{data.title}</h1>
-            <p>{data.lead}</p>
-            <div className="list">
-              {data.article.map((item, i) => (
-                <Button
-                  size="sm"
-                  variant="primary"
-                  onClick={() => navigate("#" + i)}
-                  key={"sectionbutton" + i}
-                >
-                  {item.title}
-                </Button>
-              ))}
-            </div>
-          </Col>
-          <Col md={12} lg={7} xl={7} className="order-sm-0">
-            <Row className="d-flex justify-content-start align-items-center" >
-              <div
-                style={{
-                  position: "relative",
-                  overflow: "hidden",
-                }}
-              >
-                <div style={{maxHeight: "70vh"}}
-                >
-                  <PreviewCompatibleImage
-                  imageInfo={{
-                    image: picture,
-                    alt: "",
-                    style: { borderRadius: "5px",  width: "100%", height: "100%"}
-                  }}
-                />
-                </div>
-              </div>
-            </Row>
-          </Col>
-        </Row>
-      </Container>
+
       <div
+        //className="d-block d-lg-none"
         style={{
-          background: "#172340",
-          paddingTop: 40,
-          paddingBottom: 40,
+          height: "720px",
+          width: "100%",
+          position: "relative",
         }}
       >
-        <Container>
-        <BlogRollFilter recht={data.title}></BlogRollFilter>
+        <Container
+          className="d-flex justify-content-end"
+          style={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            zIndex: 1,
+            padding: " var(--bs-gutter-x, 0.75rem)",
+            flexDirection: "column",
+          }}
+        >
+          <Row>
+            <Col md={5}>
+              <h1
+                style={{
+                  color: "white",
+                  fontFamily: "Lato",
+                  fontSize: "1.5rem",
+                }}
+              >
+                {data.title}
+              </h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={5}>
+              <p className="lead" style={{ color: "white" }}>
+                {data.lead}
+              </p>
+            </Col>
+          </Row>
+          <Row style={{marginBottom: "2rem"}}>
+            <Col md={4}>
+            <div className="list">
+                {data.article.map((item, i) => (
+                  <Button
+                    size="md"
+                    variant="primary"
+                    onClick={() => navigate("#" + i)}
+                    key={"sectionbutton" + i}
+                    style={{
+                      background: "white",
+                      color: "black",
+                      border: 0
+                    }}
+                  >
+                    {item.title}
+                  </Button>
+                ))}
+              </div>
+            </Col>
+          </Row>
+        </Container>
 
-          </Container>        
-        </div>
+        <PreviewCompatibleImage
+          style={{
+            objectFit: "cover",
+          }}
+          imageInfo={{
+            image: picture,
+            alt: data.title,
+            style: {
+              borderRadius: "0px",
+              maxWidth: "none",
+              height: "100%",
+              width: "100%"
+            },
+          }}
+        />
+        <div style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0,
+          zIndex: 0,
+          background:
+              "linear-gradient(180deg, rgba(0, 0, 0, 0) 26.15%, rgba(0, 0, 0, 0.65) 66.15%, #000000 100%)",
+            }}></div>
+      </div>
+      <div className="banner">
+        <Container>
+          <BlogRollFilter recht={data.title}></BlogRollFilter>
+        </Container>        
+      </div>
       <Container>
         <Row>
           <Col xs={12} md={8}>
@@ -128,7 +171,7 @@ const RechtPost = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
-          <Helmet titleTemplate="%s | Recht">
+          <Helmet titleTemplate="%s | Schwerpunkt">
             <title>{`${post.frontmatter.title}`}</title>
             <meta
               name="description"

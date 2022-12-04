@@ -6,10 +6,9 @@ import { graphql } from "gatsby";
 import { Container, Row, Col } from "react-bootstrap";
 
 import Layout from "../components/Layout";
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Content, { HTMLContent } from "../components/Content";
 
-// eslint-disable-next-line
 export const BlogPostTemplate = ({
   content,
   contentComponent,
@@ -19,73 +18,48 @@ export const BlogPostTemplate = ({
   date,
   title,
   helmet,
-  image
+  image,
 }) => {
   const PostContent = contentComponent || Content;
-// console.log(date);
-var lowercaseRecht = recht
-// console.log(lowercaseRecht);
+  var lowercaseRecht = recht;
   return (
     <>
       {helmet || ""}
-      {/* <PreviewCompatibleImage
-                  imageInfo={{
-                    image: image,
-                    alt: title,
-                    style: { position: "absolute", left: 0, top:0, right:0, width: "100%", zIndex: "-100", filter: "blur(100px)", transform: "scale(0.5)", opacity: "0.6"}
-                  }}
-                /> */}
-      <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginTop: "73px",}}>
-      <Container style={{
- 
-      }}>
-        <Row className=" align-items-md-center justify-content-between herorow" style={{marginBottom: 0}}>
-          <Col md={12} lg={5} xl={4}>
-            <a href={"/recht/"+ lowercaseRecht +"/"} style={{
-              color: "inherit",
-              textDecoration: "none"
-            }}>
-              <h5 style={{
-                fontWeight: 800,
-                margin: "1rem 0px",
-                textTransform: "uppercase",
-                fontSize: "1rem",
-                letterSpacing: "3px",
-                color: "#334c8b"
-              }}>{recht}</h5>
-            </a>
-            <h1 style={{hyphens: "auto"}}>{title}</h1>
-            <p>{description}</p>
-            <p>Vom {date}</p>
-          </Col>
-          <Col md={12} lg={7} xl={7}>
-            <Row className="d-flex justify-content-start align-items-center">
-              <div
-                style={{
-                  position: "relative",
-                  overflow: "hidden",
-                }}
-              >
-                <div
-                  style={{
-                    height: "60vh",
-                  }}
-                >
-                  <PreviewCompatibleImage
-                  imageInfo={{
-                    image: image,
-                    alt: title,
-                    style: { width: "100%", height: "100%"}
-                  }}
-                />
+      <div className="pageTitle" style={{ marginTop: "73px" }}>
+        <Container>
+          <Row
+            className=" align-items-md-center justify-content-between"
+            style={{ marginBottom: 0 }}
+          >
+            <Col md={12} lg={5} xl={4}>
+              <a href={"/recht/" + lowercaseRecht + "/"}>
+                <h5>{recht}</h5>
+              </a>
+              <h1 style={{ hyphens: "auto" }}>{title}</h1>
+              <p style={{color: "#7a8cb8", marginTop: "1rem"}}>Vom {date}</p>
+
+              <p>{description}</p>
+            </Col>
+
+            <Col md={12} lg={7} xl={7}>
+              <Row className="d-flex justify-content-start align-items-center">
+                <div className="imageWrapper">
+                  <div className="image">
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: image,
+                        alt: title,
+                        style: { width: "100%", height: "100%" },
+                      }}
+                    />
+                  </div>
                 </div>
-              </div>
-            </Row>
-          </Col>
-        </Row>
-      </Container>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
       </div>
-      <Container style={{ background: "white", paddingTop: "2rem"}}>
+      <Container className="pageContent">
         <Row>
           <Col xs={12} md={8}>
             <PostContent content={content} />
@@ -104,7 +78,7 @@ BlogPostTemplate.propTypes = {
   helmet: PropTypes.object,
   image: PropTypes.object,
   recht: PropTypes.object,
-  date: PropTypes.string
+  date: PropTypes.string,
 };
 
 const BlogPost = ({ data }) => {
@@ -118,7 +92,7 @@ const BlogPost = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
-          <Helmet titleTemplate="%s | Blog">
+          <Helmet titleTemplate="%s | Aktuelles">
             <title>{`${post.frontmatter.title}`}</title>
             <meta
               name="description"
@@ -158,11 +132,7 @@ export const pageQuery = graphql`
           publicURL
           extension
           childImageSharp {
-            gatsbyImageData(
-              width: 1920
-              quality: 80
-              layout: CONSTRAINED
-            )
+            gatsbyImageData(width: 1920, quality: 80, layout: CONSTRAINED)
           }
         }
       }

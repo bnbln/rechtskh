@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, {useState, useEffect} from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
@@ -18,6 +18,35 @@ import { withPrefix } from "gatsby";
 const TemplateWrapper = ({ children }) => {
   // const { title, description } = useSiteMetadata();
   // console.log("COOKIE: ", getCookieConsentValue("gdpr"));
+  const getWidth = () => window.innerWidth 
+  || document.documentElement.clientWidth 
+  || document.body.clientWidth;
+
+function useCurrentWidth() {
+  // save current window width in the state object
+  let [width, setWidth] = useState(getWidth());
+
+  // in this case useEffect will execute only once because
+  // it does not have any dependencies.
+  useEffect(() => {
+    const resizeListener = () => {
+      // change width from the state object
+      setWidth(getWidth())
+    };
+    // set resize listener
+    window.addEventListener('resize', resizeListener);
+
+    // clean up function
+    return () => {
+      // remove resize listener
+      window.removeEventListener('resize', resizeListener);
+    }
+  }, [])
+
+  return width;
+}
+let width = useCurrentWidth();
+console.log(width);
   return (
     <div>
       <Helmet>
@@ -58,11 +87,8 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar metadata={metadata} />
-      <div style={{
-        // marginTop: "73px",
-        marginBottom: 56
-      }}>{children}</div>
+      <Navbar metadata={metadata} mobile={width > 991 ? false : true} />
+      <div className="pageWrapper">{children}</div>
       <Footer metadata={metadata}  />
       <Container>
       <CookieConsent
