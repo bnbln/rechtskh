@@ -105,6 +105,7 @@ export const IndexPageTemplate = ({
               borderRadius: "0px",
               maxWidth: "none",
               height: "100%",
+              width: "100%"
             },
           }}
         />

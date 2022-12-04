@@ -16,7 +16,8 @@ const Footer = class extends React.Component {
               <Col md={12} className="footernav">
               <Navbar.Brand onClick={()=> navigate("/")} style={{
                   fontSize: 24,
-                  fontWeight: 800
+                  fontWeight: 800,
+                  color: "white"
                 }}>{meta.site}</Navbar.Brand>
               <h4 style={{fontWeight: 300, marginBottom: "2rem"}}>{meta.description}</h4>
               </Col>

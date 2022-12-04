@@ -1,58 +1,256 @@
-import React from "react";
-import { navigate } from "gatsby";
-import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
-import {MailIcon, ThreeBarsIcon} from '@primer/octicons-react'
+import React, {useState, useEffect} from "react";
+import { navigate, Link } from "gatsby";
+import { Container, Button } from "react-bootstrap";
+import {
+  MailIcon,
+  ThreeBarsIcon,
+  XIcon,
+  ChevronDownIcon,
+} from "@primer/octicons-react";
 
-const Navigation = class extends React.Component {
-  render() {
-    const meta = this.props.metadata;
-    // console.log("meta ", meta);
+import { motion } from "framer-motion";
+
+
+
+
+const variants = {
+  open: { height: "100vh" },
+  closed: { height: "auto" },
+};
+
+const container = {
+  hidden: {
+    translateY: -72,
+  },
+  show: {
+    translateY: 0,
+    transition: {
+      staggerChildren: 0.06,
+      delayChildren: 0.06,
+    },
+  },
+  out: {
+    translateY: -72,
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren: 0.1,
+    },
+  },
+};
+const item = {
+  hidden: { opacity: 0, translateY: -100 },
+  show: { opacity: 1, translateY: 0 },
+  out: { opacity: 0, translateY: -100 },
+};
+
+const Navigation = ({ metadata, mobile }) => {
+  console.log(metadata);
+  const [status, setStatus] = React.useState(false);
+  const [dropdown, setDropdown] = React.useState(false);
+
+  const NavLink = ({ className, style, color, to, children }) => {
     return (
-      <>
-        <Navbar expand="lg" variant="light" fixed="top" style={{
-                //boxShadow: "rgb(24 34 64) 0px -40px 80px -20px",
-                paddingTop: "1rem",
-                paddingBottom: "1rem",
-                backgroundColor: "rgb(255 255 255 / 100%)",
-                // backdropFilter: "blur(15px)",
-                // WebkitBackdropFilter: "blur(15px)"
-              }}>
+      <Link
+        style={{
+          ...style,
+          color: color ? color : "",
+        }}
+        className={"nav-link "+className}
+        onClick={() => handleNavigation()}
+        to={to}
+      >
+        {children}
+      </Link>
+    );
+  };
+
+  const NavDropdown = ({ children }) => {
+    return (
+      <a
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          cursor: "pointer",
+        }}
+        className="nav-link"
+        onClick={() => setDropdown(!dropdown)}
+      >
+        {children} <ChevronDownIcon size="12px" />
+      </a>
+    );
+  };
+
+  function openMenu(e) {
+    setStatus(!status);
+  }
+  function handleNavigation(e) {
+    setStatus(false);
+    setDropdown(false);
+  }
+  return (
+    <>
+
+      {!mobile && dropdown && (
+        <motion.div className="dropdown" initial="hidden" animate="show" exit="out" variants={container}>
           <Container>
-            <Navbar.Brand onClick={()=> navigate("/")} style={{color: "#324c8b", cursor: "pointer", marginRight: "2rem"}}>
-              Rechtsklarheit.de    
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" style={{
-              border: "0px",
-              padding: 0,
-              margin: 0
-            }}>
-              <ThreeBarsIcon size='20px' fill="rgb(50, 76, 139)" />
-            </Navbar.Toggle>
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-lg-auto" style={{gap: 8}}>
-                {meta.menu.map((item, i)=> {
+            <motion.div variants={item}>
+              <NavLink className="light" color={"white"} to={"/recht/versicherungsrecht"}>
+                Versicherungsrecht
+              </NavLink>
+            </motion.div>
+            <motion.div variants={item}>
+              <NavLink className="light" color={"white"} to={"/recht/verkehrsrecht"}>
+                Verkehrsrecht
+              </NavLink>
+            </motion.div>
+            <motion.div variants={item}>
+              <NavLink className="light" color={"white"} to={"/recht/mietrecht"}>
+                Mietrecht
+              </NavLink>
+            </motion.div>
+          </Container>
+        </motion.div>
+      )}
+
+      <motion.nav
+        className="navigationWrapper"
+        animate={mobile && status ? "open" : "closed"}
+        variants={variants}
+        transition={{ ease: [0.17, 0.67, 0.83, 0.67] }}
+      >
+        <Container>
+          <div className="navigation" >
+            <div className="d-flex">
+              <NavLink to={"/"} style={{padding: 0, background: "white"}}>
+                <h1
+                  className="navbar-brand"
+                  onClick={() => navigate("/")}
+                >
+                  Rechtsklarheit.de
+                </h1>
+              </NavLink>
+              <div
+                className="d-none d-lg-flex"
+                style={{ display: "flex", gap: 8 }}
+              >
+                {metadata.menu.map((item, i) => {
                   if (item.to === "DROPDOWN") {
                     return (
-                      <NavDropdown title="Schwerpunkte" id="basic-nav-dropdown" key={"menu-item-"+i}>
-                        <NavDropdown.Item onClick={()=> navigate("/recht/versicherungsrecht")}>Versicherungsrecht</NavDropdown.Item>
-                        <NavDropdown.Item onClick={()=> navigate("/recht/verkehrsrecht")}>Verkehrsrecht</NavDropdown.Item>
-                        <NavDropdown.Item onClick={()=> navigate("/recht/mietrecht")}>Mietrecht</NavDropdown.Item>
+                      <NavDropdown key={"menu-item-" + i}>
+                        {item.name}
                       </NavDropdown>
-                    )
+                    );
                   } else {
-                    return(
-                      <Nav.Link key={"menu-item-"+i} onClick={()=> navigate(item.to)}>{item.name}</Nav.Link>
-                    )
+                    return (
+                      <NavLink key={"menu-item-" + i} to={item.to}>
+                        {item.name}
+                      </NavLink>
+                    );
                   }
                 })}
-              </Nav>
-              <Button variant="outline-secondary" size="sm" onClick={()=> navigate("/kontakt")}><div style={{marginRight: 8, display: "initial"}}><MailIcon /></div> Kontakt aufnehmen</Button>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-      </>
-    );
-  }
+              </div>
+            </div>
+            <Button
+              className="d-none d-lg-flex"
+              variant="outline-secondary"
+              size="sm"
+              onClick={() => navigate("/kontakt")}
+            >
+              <div style={{ marginRight: 8, display: "initial" }}>
+                <MailIcon />
+              </div>{" "}
+              Kontakt aufnehmen
+            </Button>
+            <button
+              className="d-block d-lg-none "
+              style={{
+                margin: 0,
+                padding: 0,
+                border: 0,
+                background: "none",
+                outline: 0,
+              }}
+              onClick={openMenu}
+            >
+              {status === true ? (
+                <XIcon size="24px" fill="rgb(50, 76, 139)" />
+              ) : (
+                <ThreeBarsIcon size="24px" fill="rgb(50, 76, 139)" />
+              )}
+            </button>
+          </div>
+        </Container>
+
+        {status && (
+          <div
+            className="mobileNav"
+            style={{
+              width: "100%",
+              height: "100%",
+              position: "relative",
+            }}
+          >
+            <Container
+              className="d-flex d-lg-none "
+              style={{
+                height: "100%",
+                paddingBottom: 144,
+                justifyContent: "center",
+                alignItems: "center",
+                paddingTop: 72
+              }}
+            >
+              <div
+                style={{
+                  gap: 8,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                
+                {metadata.menu.map((item, i) => {
+                  if (item.to === "DROPDOWN") {
+                    return (
+                      <div className="dropdown">
+                        <h2>Schwerpunkte</h2>
+                        <NavLink
+                          to={"/recht/versicherungsrecht"}
+                        >
+                          Versicherungsrecht
+                        </NavLink>
+                        <NavLink to={"/recht/verkehrsrecht"}>
+                          Verkehrsrecht
+                        </NavLink>
+                        <NavLink to={"/recht/mietrecht"}>
+                          Mietrecht
+                        </NavLink>
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <NavLink key={"menu-item-" + i} to={item.to}>
+                        {item.name}
+                      </NavLink>
+                    );
+                  }
+                })}
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => navigate("/kontakt")}
+                >
+                  <div style={{ marginRight: 8, display: "initial" }}>
+                    <MailIcon />
+                  </div>{" "}
+                  Kontakt aufnehmen
+                </Button>
+              </div>
+            </Container>
+          </div>
+        )}
+      </motion.nav>
+    </>
+  );
 };
 
 export default Navigation;
