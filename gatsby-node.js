@@ -7,8 +7,19 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions
   //createRedirect({ fromPath: '/recht/mietrecht', toPath: '/mietrecht', isPermanent: true })
   createRedirect({
-    fromPath: '/recht/*',
-    toPath: '/*'
+    fromPath: '/recht/mietrecht',
+    toPath: '/mietrecht', 
+    isPermanent: true 
+  });
+  createRedirect({
+    fromPath: '/recht/versicherungsrecht',
+    toPath: '/versicherungsrecht', 
+    isPermanent: true 
+  });
+  createRedirect({
+    fromPath: '/recht/verkehrsrecht',
+    toPath: '/verkehrsrecht', 
+    isPermanent: true 
   });
 
   return graphql(`
