@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
-import { Row, Col, Card, Container, CardGroup } from "react-bootstrap";
+import { Row, Card, Container, CardGroup } from "react-bootstrap";
 
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 

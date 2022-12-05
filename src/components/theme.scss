@@ -72,7 +72,7 @@ nav.navigationWrapper {
 .navbar-brand:hover {
   opacity: 0.75;
   }
-a.nav-link {
+.nav-link {
   height: 72px;
   font-weight: 700;
   font-size: 1rem;
@@ -80,6 +80,11 @@ a.nav-link {
   text-decoration: none;
   display: flex;
   align-items: center
+}
+button.nav-link {
+  background: none;
+  border: 0px;
+  outline: 0px;
 }
 .dropdown {
   position: fixed;
@@ -94,17 +99,17 @@ a.nav-link {
   display: flex
 }
 
-.dropdown a.nav-link.light {
+.dropdown .nav-link.light {
   color: white;
   opacity: 1;
 }
-.dropdown a.nav-link.light[aria-current="page"], .dropdown a.nav-link.light:focus, .dropdown a.nav-link.light:hover {
+.dropdown .nav-link.light[aria-current="page"], .dropdown .nav-link.light:focus, .dropdown .nav-link.light:hover {
   opacity: 1;
 }
-a.nav-link:hover, a.nav-link:focus{
+.nav-link:hover, .nav-link:focus{
   background-color: map.get($theme-colors, "light");
 }
-a.nav-link[aria-current="page"], a.nav-link:hover, a.nav-link:focus{
+.nav-link[aria-current="page"], .nav-link:hover, .nav-link:focus{
   color: map.get($theme-colors, "lightsecondary");
 }
 .mobileNav {
@@ -118,7 +123,7 @@ a.nav-link[aria-current="page"], a.nav-link:hover, a.nav-link:focus{
   align-items: center;
   overflow: scroll;
 }
-.mobileNav a.nav-link {
+.mobileNav .nav-link {
   text-align: center;
   font-size: 1.5rem;
   line-height: 200%;
@@ -140,12 +145,12 @@ a.nav-link[aria-current="page"], a.nav-link:hover, a.nav-link:focus{
     font-weight: 900;
 }
 
-.mobileNav .dropdown a.nav-link {
+.mobileNav .dropdown .nav-link {
   padding: 0px;
   font-size: 1.4rem;
   background: none;
 }
-a.nav-link.light:hover, a.nav-link.light:focus{
+.nav-link.light:hover, .nav-link.light:focus{
   background: darken(map.get($theme-colors, "primary"), 5)
 }
 

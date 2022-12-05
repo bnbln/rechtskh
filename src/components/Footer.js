@@ -39,20 +39,20 @@ const Footer = class extends React.Component {
                     if (item.to === "DROPDOWN") {
                       return(
                         <>
-                        <Link className="navbar-item" to={"/recht/mietrecht"} key={"footermainnav-"+i} style={{
+                        <Link className="navbar-item" to={"/recht/mietrecht"} key={"footermainnav-"+i+1} style={{
                           color: "white"
                         }}>Mietrecht</Link>
-                        <Link className="navbar-item" to={"/recht/verkehrsrecht"} key={"footermainnav-"+i} style={{
+                        <Link className="navbar-item" to={"/recht/verkehrsrecht"} key={"footermainnav-"+i+2} style={{
                           color: "white"
                         }}>Verkehrsrecht</Link>
-                        <Link className="navbar-item" to={"/recht/versicherungsrecht"} key={"footermainnav-"+i} style={{
+                        <Link className="navbar-item" to={"/recht/versicherungsrecht"} key={"footermainnav-"+i+3} style={{
                           color: "white"
                         }}>Versicherungsrecht</Link>
                         </>
                       )
                     } else {
                       return(
-                        <Link className="navbar-item" to={item.to} key={"footermainnav-"+i} style={{
+                        <Link className="navbar-item" to={item.to} key={"footermainnav-name-"+item.name} style={{
                           color: "white"
                         }}>{item.name}</Link>
                       )
@@ -65,7 +65,7 @@ const Footer = class extends React.Component {
                   gap: 8,
                   marginBottom: "2rem"
                 }}>
-                  {meta.footermenu.map((item, i)=> <Link className="navbar-item" to={item.to} key={"footernav-"+i} style={{
+                  {meta.footermenu.map((item, i)=> <Link className="navbar-item" to={item.to} key={"footernav-link-"+item.name} style={{
                     color: "white"
                   }}>{item.name}</Link>)}
                 </nav>

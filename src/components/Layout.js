@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
@@ -17,7 +17,7 @@ import { withPrefix } from "gatsby";
 
 const TemplateWrapper = ({ children }) => {
   // const { title, description } = useSiteMetadata();
-  // console.log("COOKIE: ", getCookieConsentValue("gdpr"));
+  console.log("COOKIE: ", getCookieConsentValue("gdpr"));
 
   const width = useWindowSize()
   return (

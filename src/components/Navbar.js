@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { navigate, Link } from "gatsby";
 import { Container, Button } from "react-bootstrap";
 import {
@@ -44,7 +44,6 @@ const item = {
 };
 
 const Navigation = ({ metadata, mobile }) => {
-  console.log(metadata);
   const [status, setStatus] = React.useState(false);
   const [dropdown, setDropdown] = React.useState(false);
 
@@ -66,7 +65,8 @@ const Navigation = ({ metadata, mobile }) => {
 
   const NavDropdown = ({ children }) => {
     return (
-      <a
+      <button
+        
         style={{
           textDecoration: "none",
           display: "flex",
@@ -76,8 +76,8 @@ const Navigation = ({ metadata, mobile }) => {
         className="nav-link"
         onClick={() => setDropdown(!dropdown)}
       >
-        {children} <ChevronDownIcon size="12px" />
-      </a>
+        {children} <ChevronDownIcon />
+      </button>
     );
   };
 
@@ -125,7 +125,6 @@ const Navigation = ({ metadata, mobile }) => {
               <NavLink to={"/"} style={{padding: 0, background: "white"}}>
                 <h1
                   className="navbar-brand"
-                  onClick={() => navigate("/")}
                 >
                   Rechtsklarheit.de
                 </h1>

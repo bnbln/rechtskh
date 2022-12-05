@@ -18,7 +18,8 @@ class RechtRollTemplate extends React.Component {
         </Col>
         {posts &&
           posts.map(({ node: post }) => (
-            <Col sm={12} lg={3} style={{
+            
+            <Col key={"rechtroll-post-"+post.id} sm={12} lg={3} style={{
               justifyContent: "center",
               display: "flex",
               position: "relative",

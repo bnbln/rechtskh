@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { DatenschutzPageTemplate } from '../../templates/datenschutz-page'
 
 const DatenschutzPagePreview = ({ entry, widgetFor }) => {
-  const data = entry.getIn(['data']).toJS();
+  //const data = entry.getIn(['data']).toJS();
   
   return (
   <>

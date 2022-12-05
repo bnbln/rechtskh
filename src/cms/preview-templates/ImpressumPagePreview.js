@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { ImpressumPageTemplate } from '../../templates/impressum-page'
 
 const ImpressumPagePreview = ({ entry, widgetFor }) => {
-  const data = entry.getIn(['data']).toJS();
+  //const data = entry.getIn(['data']).toJS();
   
   return (
   <>

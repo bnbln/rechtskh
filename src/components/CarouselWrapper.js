@@ -42,15 +42,16 @@ export const CarouselWrapper = ({ images, title }) => {
           >
 
             <div
+              role="none"
               style={{
                 height: heroState === 0 ? "100%" : "80%",
                 width: heroState === 0 ? "68%" : "30%",
                 position: "absolute",
                 transition: timingfunction
-              }}
-            onMouseOut={() => setHoverState(false)}
+              }}            
             onMouseOver={() => setToggle(0)}
             onFocus={() => setToggle(0)}
+            onMouseOut={() => setHoverState(false)}
             onBlur={() => setHoverState(false)}
             >
                 <Link to={images[0].link}>
@@ -94,6 +95,7 @@ export const CarouselWrapper = ({ images, title }) => {
             </div>
 
             <div
+              role="none"
               style={{
                 height: heroState === 1 ? "100%" : "80%",
                 width: heroState === 1 ? "68%" : "30%",
@@ -101,8 +103,11 @@ export const CarouselWrapper = ({ images, title }) => {
                 position: "absolute",
                 transition: timingfunction
               }}
+              
+              onMouseOver={() => setToggle(1)}
+              onFocus={() => setToggle(1)}
               onMouseOut={() => setHoverState(false)}
-        onMouseOver={() => setToggle(1)}
+              onBlur={() => setHoverState(false)}
             >
                 <Link to={images[1].link}>
                 <h1

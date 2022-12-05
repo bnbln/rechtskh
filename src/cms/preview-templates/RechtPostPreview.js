@@ -5,7 +5,7 @@ import { RechtPostTemplate } from '../../templates/recht-post'
 const RechtPostPreview = ({ entry, widgetFor }) => {
   const data = entry.getIn(['data']).toJS();
   const article = entry.getIn(['data', 'article']).toJS();
-  const banner = entry.getIn(['data', 'banner']).toJS();
+  //const banner = entry.getIn(['data', 'banner']).toJS();
   return (
     <RechtPostTemplate
     //   content={widgetFor('body')}

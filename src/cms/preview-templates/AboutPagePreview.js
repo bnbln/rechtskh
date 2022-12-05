@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { AboutPageTemplate } from '../../templates/about-page'
 
 const AboutPagePreview = ({ entry, widgetFor }) => {
-  const data = entry.getIn(['data']).toJS();
+  //const data = entry.getIn(['data']).toJS();
   const list = entry.getIn(['data', 'list']).toJS();
   console.log(list);
   
