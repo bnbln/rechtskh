@@ -19,9 +19,9 @@ import { withPrefix } from "gatsby";
 const TemplateWrapper = ({ children }) => {
   // const { title, description } = useSiteMetadata();
   console.log("COOKIE: ", getCookieConsentValue("gdpr"));
-
   const handleAcceptCookie = () => {
     if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
+      console.log(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
       initGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
     }
   };
