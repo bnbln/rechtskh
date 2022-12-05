@@ -18,10 +18,10 @@ import { withPrefix } from "gatsby";
 
 const TemplateWrapper = ({ children }) => {
   // const { title, description } = useSiteMetadata();
-  console.log("COOKIE: ", getCookieConsentValue("gdpr"));
+  console.log("COOKIE: ", getCookieConsentValue("gdpr"), " ", process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
+  
   const handleAcceptCookie = () => {
-    if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID !== null) {
-      console.log(process.env.REACT_APP_GOOGLE_ANALYTICS_ID.slice(0,3));
+    if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
       initGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
     }
   };
