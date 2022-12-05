@@ -155,6 +155,7 @@ const Navigation = ({ metadata, mobile }) => {
               Kontakt aufnehmen
             </Button>
             <button
+              id="toggleMenu" aria-label={status === false ? "Menü öffnen" : "Menü schließen"}
               className="d-block d-lg-none "
               style={{
                 margin: 0,

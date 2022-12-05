@@ -40,15 +40,17 @@ class BlogRollTemplate extends React.Component {
                 }`}
               >
                 <header>
-                  <h5 style={{
+                  <p style={{
                     //marginTop: 14, fontWeight: 400, fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "4px"
                     fontWeight: 800,
                     margin: "1rem  0px 5px 0px",
                     textTransform: "uppercase",
                     fontSize: "1rem",
-                    letterSpacing: "3px",
+                    letterSpacing: "1px",
                     color: "#334c8b"
-                    }}>{post.frontmatter.recht ? post.frontmatter.recht : "Information"}</h5>
+                    }}>
+                      {post.frontmatter.recht ? post.frontmatter.recht : "Information"}
+                    </p>
                   <h5 className="post-meta" style={{ fontWeight: 700}}>
                       {post.frontmatter.title}
                   </h5>
@@ -57,7 +59,7 @@ class BlogRollTemplate extends React.Component {
                 <p style={{fontWeight: 300}}>
                   {post.excerpt}
                   <span> </span>
-                  <Link className="button" to={post.fields.slug} style={{color: "#258EA6"}}>
+                  <Link className="articlebutton" to={post.fields.slug}>
                     Weiterlesen →
                   </Link>
                 </p>

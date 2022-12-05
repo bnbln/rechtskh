@@ -14,7 +14,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 $theme-colors: (
-  primary: #258EA6,
+  primary: #217D97,
   secondary: #172340,
   lightsecondary: #324c8b,
   light: #f0f3f9,
@@ -335,6 +335,18 @@ footer {
   margin: 10px 10px 0px 0px;
   display: inline-flex
 }
+
+//BlogRoll
+a, .articlebutton{
+color: map.get($theme-colors, "primary");
+font-weight: 600;
+text-decoration: none;
+}
+
+a:hover, a:focus, .articlebutton:hover, .articlebutton:focus {
+  color: darken(map.get($theme-colors, "primary"), 10);
+  }
+
 // Smaller than lg
 @include media-breakpoint-down(lg) { 
   .aboutHero .list {
