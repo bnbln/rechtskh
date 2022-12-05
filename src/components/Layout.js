@@ -32,7 +32,7 @@ const TemplateWrapper = ({ children }) => {
     Cookies.remove("_gid");
   };
   useEffect(() => {
-    const isConsent = getCookieConsentValue();
+    const isConsent = getCookieConsentValue("gdpr");
     if (isConsent === "true") {
       handleAcceptCookie();
     }
