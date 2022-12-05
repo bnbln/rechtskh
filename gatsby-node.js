@@ -5,7 +5,7 @@ const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions
-  createRedirect({ fromPath: '/recht/mietrecht', toPath: '/mietrecht', isPermanent: true })
+  //createRedirect({ fromPath: '/recht/mietrecht', toPath: '/mietrecht', isPermanent: true })
   createRedirect({
     fromPath: '/recht/*',
     toPath: '/*'
