@@ -97,7 +97,12 @@ module.exports = {
         purgeOnly: ["/all.scss"], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        excludes: ['/admin', '/404', '/kontakt/examples', '/kontakt/file-upload', '/kontakt/thanks'],
+      },
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -105,7 +110,7 @@ module.exports = {
         env: {
           production: {
             policy: [{userAgent: '*'}],
-            sitemap: siteUrl + '/sitemap.xml',
+            sitemap: siteUrl + '/sitemap/sitemap-index.xml',
           },
           'branch-deploy': {
             policy: [{userAgent: '*', disallow: ['/']}],
