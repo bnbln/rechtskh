@@ -10,9 +10,6 @@ import {
 
 import { motion } from "framer-motion";
 
-
-
-
 const variants = {
   open: { height: "100vh" },
   closed: { height: "auto" },
@@ -62,7 +59,6 @@ const Navigation = ({ metadata, mobile }) => {
       </Link>
     );
   };
-
   const NavDropdown = ({ children }) => {
     return (
       <button
@@ -80,7 +76,6 @@ const Navigation = ({ metadata, mobile }) => {
       </button>
     );
   };
-
   function openMenu(e) {
     setStatus(!status);
   }
@@ -88,10 +83,12 @@ const Navigation = ({ metadata, mobile }) => {
     setStatus(false);
     setDropdown(false);
   }
+
+  console.log(metadata);
   return (
     <>
-
-      {!mobile && dropdown && (
+      { //Desktop Dropdown
+      !mobile && dropdown && (
         <motion.div className="dropdown" initial="hidden" animate="show" exit="out" variants={container}>
           <Container>
             <motion.div variants={item}>
@@ -113,6 +110,7 @@ const Navigation = ({ metadata, mobile }) => {
         </motion.div>
       )}
 
+      {/* Nav */}
       <motion.nav
         className="navigationWrapper"
         animate={mobile && status ? "open" : "closed"}
@@ -123,11 +121,7 @@ const Navigation = ({ metadata, mobile }) => {
           <div className="navigation" >
             <div className="d-flex">
               <NavLink to={"/"} style={{padding: 0, background: "white"}}>
-                <h1
-                  className="navbar-brand"
-                >
-                  Rechtsklarheit.de
-                </h1>
+                <h1 className="navbar-brand">{metadata.site}</h1>
               </NavLink>
               <div
                 className="d-none d-lg-flex"
@@ -247,6 +241,8 @@ const Navigation = ({ metadata, mobile }) => {
             </Container>
           </div>
         )}
+
+
       </motion.nav>
     </>
   );

@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
-import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
+import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-consent";
 import { Container } from "react-bootstrap";
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./theme.scss";
 
 import metadata from "../../content/settings/global.yml";
+import { initGA } from "./ga-utils";
 import useWindowSize from "./getWindow";
 
 import Footer from "../components/Footer";
@@ -18,6 +19,26 @@ import { withPrefix } from "gatsby";
 const TemplateWrapper = ({ children }) => {
   // const { title, description } = useSiteMetadata();
   console.log("COOKIE: ", getCookieConsentValue("gdpr"));
+
+  const handleAcceptCookie = () => {
+    if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
+      initGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
+    }
+  };
+  const handleDeclineCookie = () => {
+    //remove google analytics cookies
+    Cookies.remove("_ga");
+    Cookies.remove("_gat");
+    Cookies.remove("_gid");
+  };
+  useEffect(() => {
+    const isConsent = getCookieConsentValue();
+    if (isConsent === "true") {
+      handleAcceptCookie();
+    }
+  }, []);
+
+
 
   const width = useWindowSize()
   return (
@@ -74,8 +95,10 @@ const TemplateWrapper = ({ children }) => {
           declineButtonText="Notwendige Cookies akzeptieren"
           buttonClasses="btn btn-primary btn-sm"
           buttonWrapperClasses="buttonWrapperClasses"
-          declineButtonClasses="btn btn-outline-primary btn-sm"
+          declineButtonClasses="btn btn-secondary btn-sm"
           contentClasses="contentClasses"
+          onAccept={handleAcceptCookie}
+          onDecline={handleDeclineCookie}
           style={{
             boxShadow: "black 0px 0px 150px",
             zIndex: "100",
