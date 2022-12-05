@@ -8,7 +8,7 @@ import { Container } from "react-bootstrap";
 import "./theme.scss";
 
 import metadata from "../../content/settings/global.yml";
-import { initGA } from "./ga-utils";
+import { initGA } from "./ga-utils.js";
 import useWindowSize from "./getWindow";
 
 import Footer from "../components/Footer";
