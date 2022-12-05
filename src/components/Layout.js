@@ -35,14 +35,14 @@ const TemplateWrapper = ({ children }) => {
       handleAcceptCookie();
     }
   }, []);
-
+console.log(metadata);
   const width = useWindowSize()
   return (
     <div>
       <Helmet>
         <html lang="de" />
-        <title>{metadata.site}</title>
-        <meta name="description" content={metadata.description} />
+        <title>{metadata.site + " - " + metadata.description}</title>
+        <meta name="description" content={metadata.seo} />
 
         <link
           rel="apple-touch-icon"
