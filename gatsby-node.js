@@ -4,7 +4,12 @@ const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+  createRedirect({ fromPath: '/recht/mietrecht', toPath: '/mietrecht', isPermanent: true })
+  createRedirect({
+    fromPath: '/recht/*',
+    toPath: '/*'
+  });
 
   return graphql(`
     {
@@ -43,7 +48,7 @@ exports.createPages = ({ actions, graphql }) => {
           id,
         },
       })
-    })
+    });
 
     // // Tag pages:
     // let tags = []

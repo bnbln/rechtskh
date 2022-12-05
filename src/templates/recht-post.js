@@ -26,7 +26,7 @@ export const RechtPostTemplate = ({
   helmet,
 }) => {
   // const PageContent = contentComponent || Content;
-  const heroImage = getImage(picture);
+  //const heroImage = getImage(picture);
   // console.log("data", data);
   // console.log("img", picture.publicURL);
   return (

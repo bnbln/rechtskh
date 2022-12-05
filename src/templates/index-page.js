@@ -223,7 +223,7 @@ export const IndexPageTemplate = ({
       </Container>
       <Container style={{ marginTop: "3rem" }}>
         <h1>Aktuelles</h1>
-        <BlogRoll all={false} />
+        <BlogRoll all={{}} />
       </Container>
     </>
   );
