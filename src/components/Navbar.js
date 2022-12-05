@@ -84,7 +84,6 @@ const Navigation = ({ metadata, mobile }) => {
     setDropdown(false);
   }
 
-  console.log(metadata);
   return (
     <>
       { //Desktop Dropdown

@@ -39,7 +39,7 @@ const TemplateWrapper = ({ children }) => {
   }, []);
 
 
-
+  console.log(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
   const width = useWindowSize()
   return (
     <div>
