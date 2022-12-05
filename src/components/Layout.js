@@ -20,8 +20,8 @@ const TemplateWrapper = ({ children }) => {
   // const { title, description } = useSiteMetadata();
   console.log("COOKIE: ", getCookieConsentValue("gdpr"));
   const handleAcceptCookie = () => {
-    if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
-      console.log(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
+    if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID !== null) {
+      console.log(process.env.REACT_APP_GOOGLE_ANALYTICS_ID.slice(0,3));
       initGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
     }
   };
