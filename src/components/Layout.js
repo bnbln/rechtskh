@@ -21,7 +21,7 @@ const TemplateWrapper = ({ children }) => {
   console.log("COOKIE: ", getCookieConsentValue("gdpr"), " ");
   //const gaID = process.env.REACT_APP_GOOGLE_ANALYTICS_ID;
   const handleAcceptCookie = () => {
-      initGA("G-FFL7JLHTD3");
+      //initGA("G-FFL7JLHTD3");
   };
   const handleDeclineCookie = () => {
     //remove google analytics cookies
@@ -29,12 +29,12 @@ const TemplateWrapper = ({ children }) => {
     Cookies.remove("_gat");
     Cookies.remove("_gid");
   };
-  useEffect(() => {
-    const isConsent = getCookieConsentValue("gdpr");
-    if (isConsent === "true") {
-      handleAcceptCookie();
-    }
-  }, []);
+  // useEffect(() => {
+  //   const isConsent = getCookieConsentValue("gdpr");
+  //   if (isConsent === "true") {
+  //     handleAcceptCookie();
+  //   }
+  // }, []);
 console.log(metadata);
   const width = useWindowSize()
   return (
