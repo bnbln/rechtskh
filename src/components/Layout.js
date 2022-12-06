@@ -13,15 +13,15 @@ import useWindowSize from "./getWindow";
 
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-// import useSiteMetadata from "./SiteMetadata";
+import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 
 const TemplateWrapper = ({ children }) => {
   // const { title, description } = useSiteMetadata();
-  console.log("COOKIE: ", getCookieConsentValue("gdpr"), " ");
-  //const gaID = process.env.REACT_APP_GOOGLE_ANALYTICS_ID;
+  const { gaId } = useSiteMetadata();
+  console.log("COOKIE: ", getCookieConsentValue("gdpr"), " ", gaId);
   const handleAcceptCookie = () => {
-      //initGA("G-FFL7JLHTD3");
+      initGA(gaId);
   };
   const handleDeclineCookie = () => {
     //remove google analytics cookies
@@ -29,13 +29,12 @@ const TemplateWrapper = ({ children }) => {
     Cookies.remove("_gat");
     Cookies.remove("_gid");
   };
-  // useEffect(() => {
-  //   const isConsent = getCookieConsentValue("gdpr");
-  //   if (isConsent === "true") {
-  //     handleAcceptCookie();
-  //   }
-  // }, []);
-console.log(metadata);
+  useEffect(() => {
+    const isConsent = getCookieConsentValue("gdpr");
+    if (isConsent === "true") {
+      handleAcceptCookie();
+    }
+  }, []);
   const width = useWindowSize()
   return (
     <div>

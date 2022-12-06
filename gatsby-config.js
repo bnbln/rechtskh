@@ -7,12 +7,19 @@ const {
 const isNetlifyProduction = NETLIFY_ENV === 'production';
 const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+ })
+
+console.log("ga-id ",process.env.GA_ID); 
+
 module.exports = {
   siteMetadata: {
     siteUrl,
     title: "Rechtsklarheit.de",
     description:
       "Rechtsanwalt Tarik Sharief - Kanzlei am Berliner Wittenbergplatz. Ihr Partner für Versicherungsrecht, Verkehrsrecht und Mietrecht",
+      gaId: process.env.GA_ID,
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -102,8 +109,11 @@ module.exports = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "G-FFL7JLHTD3", // Google Analytics / GA
+          process.env.GA_ID, // Google Analytics / GA
         ],
+        gtagConfig: {
+          anonymize_ip: true,
+        },
         // This object is used for configuration specific to this plugin
         pluginConfig: {
           // Puts tracking script in the head instead of the body
