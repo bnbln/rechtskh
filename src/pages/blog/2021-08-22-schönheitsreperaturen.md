@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Schönheitsreperaturen
+title: Schönheitsreparaturen
 date: 2021-08-22T22:32:39.458Z
 recht: Mietrecht
 description: "Mietrecht und Mietverträge in Berlin: Der Streit um
