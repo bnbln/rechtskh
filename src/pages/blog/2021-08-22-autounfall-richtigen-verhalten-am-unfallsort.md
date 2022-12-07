@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Autounfall - Richtigen Verhalten am Unfallsort
+title: Autounfall - Richtiges Verhalten am Unfallsort
 date: 2021-08-22T22:38:14.882Z
 recht: Verkehrsrecht
 description: Nach einem Verkehrsunfall ist jeder aufgeregt. Zunächst ist es
