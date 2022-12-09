@@ -16,7 +16,7 @@ Wenn der Mieter den Prozess verliert, muss er meistens neben den Prozesskosten d
 
 ### Ist die Verpflichtung zu Schönheitsreparaturen im Mietvertrag nicht gültig, muss der Vermieter Auslagen für Renovierung beim Auszug ersetzen
 
-Der Bundesgerichtshof hat dem Mieter einen Anspruch auf Kostenerstattung für von ihm ausgeführte Schönheitsreparaturen zugesprochen, wenn die im Mietvertrag enthaltene Verpflichtung zur Ausführung von Schönheitsreparatu- ren oder Renovierung beim Auszug unwirksam ist. Dies bedeutet für den Vermieter, dass er neben den Prozesskosten auch die Aufwendungen zu erstatten hat, die der Mieter während des Mietverhältnisses zur Ausführung von Schönheitsreparaturen hatte.
+Der Bundesgerichtshof hat dem Mieter einen Anspruch auf Kostenerstattung für von ihm ausgeführte Schönheitsreparaturen zugesprochen, wenn die im Mietvertrag enthaltene Verpflichtung zur Ausführung von Schönheitsreparaturen oder Renovierung beim Auszug unwirksam ist. Dies bedeutet für den Vermieter, dass er neben den Prozesskosten auch die Aufwendungen zu erstatten hat, die der Mieter während des Mietverhältnisses zur Ausführung von Schönheitsreparaturen hatte.
 
 ### Bei übermäßiger Abnutzung der Wohnung können auch ohne Pflicht zur Renovierung beim Auszug die Schönheitsreparaturen zu Lasten des Mieters gehen
 
