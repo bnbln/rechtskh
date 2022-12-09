@@ -11,6 +11,8 @@ description: Gerade die fehlerhafte Beratung durch die Versicherungsagenten hat
 featuredpost: false
 featuredimage: /img/stefan-stefancik-pza7qwnciyg-unsplash.jpg
 ---
+<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="./kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
+
 ### Beratungsbedingte fehlerhafte Angaben
 
 Versicherungsagenten füllen den Versicherungsantrag bewusst falsch aus, um die zu zahlende Versicherungsprämie günstiger erscheinen zu lassen. Für den Versicherungsnehmer hat dies zur Folge, dass er die Gefahr eingeht, dass die Versicherung im Schadensfall nicht zahlt.
