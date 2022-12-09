@@ -6,8 +6,8 @@ recht: Versicherungsrecht
 description: Viele Klauseln in den Versicherungsbedingungen sind sowohl für den
   Laien als auch für Mitarbeiter der Versicherung unverständlich. So hat der im
   Versicherungsrecht tätige Anwalt es erlebt, dass die Versicherungsagenten und
-  die Schadensbearbeiter der Versich- erungen ihre Bedingungen sowohl bewusst
-  als auch unbewusst fehlerhaft auslegen.
+  die Schadensbearbeiter der Versicherungen ihre Bedingungen sowohl bewusst als
+  auch unbewusst fehlerhaft auslegen.
 featuredpost: false
 featuredimage: /img/elena-mozhvilo-j06glukk0gm-unsplash.jpg
 ---
