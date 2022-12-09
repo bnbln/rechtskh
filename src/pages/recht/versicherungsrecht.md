@@ -74,7 +74,7 @@ article:
       dass der Schaden durch die Versicherungen überhaupt nicht oder nur
       schleppend reguliert wird. Der Preisdruck unter den Versicherungen macht
       sich auch bei dem Regulierungsverhalten der Versicherung bemerkbar. Die
-      Ver- sicherungen versuchen ihren Gewinn zu maximieren, indem sie möglichst
+      Versicherungen versuchen ihren Gewinn zu maximieren, indem sie möglichst
       viele Versicherungen abschließen, Personal einsparen und nach Möglichkeit
       im Schadensfall nicht zahlen.
 
@@ -85,10 +85,10 @@ article:
       #### Falsche Risikobewertung der Versicherung
 
 
-      Die Personalkosteneinsparungen bei den Versicherungen führt dazu, dass viele Versicherungen das zu versichernde Objekt nicht vor Vertragsabschluss untersuchen. Dies hat zur Folge, dass diese Versicherungen das zu versichernde Risko nicht kennen. Häufen sich bei einer Versicherung die Schadensfälle, weil diese zu viele schadensgeneigte Objekte mit einer zu niedrigen Prämie versichert hat, versucht diese ihren Gewinn zuhalten, indem sie bei den Versicherungsleistungen spart.
+      Die Personalkosteneinsparungen bei den Versicherungen führt dazu, dass viele Versicherungen das zu versichernde Objekt nicht vor Vertragsabschluss untersuchen. Dies hat zur Folge, dass diese Versicherungen das zu versichernde Risiko nicht kennen. Häufen sich bei einer Versicherung die Schadensfälle, weil diese zu viele schadensgeneigte Objekte mit einer zu niedrigen Prämie versichert hat, versucht diese ihren Gewinn zu halten, indem sie bei den Versicherungsleistungen spart.
 
 
-      #### Der Anwalt hilft Ihnen, die Leistungspflicht des Vericherers durchzusetzen
+      #### Der Anwalt hilft Ihnen, die Leistungspflicht des Versicherers durchzusetzen
 
 
       So wird Versicherungsnehmern z.B. bei einem Brandschaden oder Wasserschaden mitgeteilt, dass die Versicherung nicht oder nur teilweise leisten wird, weil der Versicherungsnehmer seine Vertragspflichten verletzt habe. Erst nachdem ein Anwalt eingeschaltet wurde, zeigt sich die Versicherung oft zahlungsbereit.
