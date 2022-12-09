@@ -48,7 +48,7 @@ article:
       Es kommt vor, dass die Versicherungsvertragsbedingungen dem Versicherungsnehmer nicht übergeben werden, so dass dieser keine Kenntnis von seinen Pflichten hat, deren Einhaltung die Voraussetzung für den Erhalt der vollen Versicherungssumme ist. In diesem Fall kann sich die Versicherung in der Regel nicht auf ihre Leistungsfreiheit berufen, selbst wenn der Versicherungsnehmer gegen Vertragsbedingungen verstoßen hat.
   - title: Versicherungsbedingungen
     body: >-
-      Viele Klauseln in den Versicherungs- bedingungen sind sowohl für den Laien
+      Viele Klauseln in den Versicherungsbedingungen sind sowohl für den Laien
       als auch für Mitarbeiter der Versicherung unverständlich. So hat der im
       Versicherungsrecht tätige Anwalt es erlebt, dass die Versicherungsagenten
       und die Schadensbearbeiter der Versich- erungen ihre Bedingungen sowohl
