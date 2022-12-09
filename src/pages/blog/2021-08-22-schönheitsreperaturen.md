@@ -12,7 +12,7 @@ Oftmals wurde in veralteten Mietverträgen der Mieter nicht wirksam zur Ausführ
 
 ### Prüfung des Mietvertrages durch einen Anwalt in Berlin kann Probleme wegen Schönheitsreparaturen oder Renovierung beim Auszug vermeiden
 
-Wenn der Mieter den Prozess verliert, muss er meistens neben den Prozesskosten die ortsüblichen Renovierungskosten tragen. Die Kosten für die Renovierung bei Auszug betragen in der Regel mehrere tausend Euro. Der Anwalt wird außerdem prüfen, ob der Vermieter einen Schadensersatzanspruch wegen übermäßger Abnutzung oder unsachgemäßem Gebrauch der Wohnung gegen den Mieter hat. Diesen Schadensersatzanspruch kann der Vermieter selbst dann geltend machen, wenn die Vereinbarung im Mietvertrag zur Renovierung bei Auszug oder Schönheitsreparaturen unwirksam ist.
+Wenn der Mieter den Prozess verliert, muss er meistens neben den Prozesskosten die ortsüblichen Renovierungskosten tragen. Die Kosten für die Renovierung bei Auszug betragen in der Regel mehrere tausend Euro. Der Anwalt wird außerdem prüfen, ob der Vermieter einen Schadensersatzanspruch wegen übermäßiger Abnutzung oder unsachgemäßem Gebrauch der Wohnung gegen den Mieter hat. Diesen Schadensersatzanspruch kann der Vermieter selbst dann geltend machen, wenn die Vereinbarung im Mietvertrag zur Renovierung bei Auszug oder Schönheitsreparaturen unwirksam ist.
 
 ### Ist die Verpflichtung zu Schönheitsreparaturen im Mietvertrag nicht gültig, muss der Vermieter Auslagen für Renovierung beim Auszug ersetzen
 
