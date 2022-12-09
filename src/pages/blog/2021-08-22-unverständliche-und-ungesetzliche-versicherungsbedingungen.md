@@ -3,11 +3,11 @@ templateKey: blog-post
 title: Unverständliche und Ungesetzliche Versicherungsbedingungen
 date: 2021-08-22T22:46:56.513Z
 recht: Versicherungsrecht
-description: Viele Klauseln in den Versicherungs- bedingungen sind sowohl für
-  den Laien als auch für Mitarbeiter der Versicherung unverständlich. So hat der
-  im Versicherungsrecht tätige Anwalt es erlebt, dass die Versicherungsagenten
-  und die Schadensbearbeiter der Versich- erungen ihre Bedingungen sowohl
-  bewusst als auch unbewusst fehlerhaft auslegen.
+description: Viele Klauseln in den Versicherungsbedingungen sind sowohl für den
+  Laien als auch für Mitarbeiter der Versicherung unverständlich. So hat der im
+  Versicherungsrecht tätige Anwalt es erlebt, dass die Versicherungsagenten und
+  die Schadensbearbeiter der Versich- erungen ihre Bedingungen sowohl bewusst
+  als auch unbewusst fehlerhaft auslegen.
 featuredpost: false
 featuredimage: /img/elena-mozhvilo-j06glukk0gm-unsplash.jpg
 ---
