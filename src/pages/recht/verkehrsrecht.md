@@ -39,5 +39,5 @@ article:
       #### Kontaktieren Sie nach dem Unfall einen Anwalt in Berlin um Ihre Rechte zu wahren
 
 
-      Damit Ihre Rechte bereits von Anfang an gewahrt bleiben, sollten Sie unmittelbar nach dem Unfall einen Anwalt beauftragen. Betreiben Sie die Schadenregulierung selber, wenden Sie Zeit auf, die Ihnen die Versicherung nicht ersetzt und Sie gehen das Risiko ein, unwissentlich Fehler zu machen. Hat der Unfallgegner die alleinige Schuld an dem Verkehrsunfall, muss er Ihnen Kosten für den beauftragten Anwalt erstatten. Für eine Erstberatung steht Ihnen ein im Verkehrsrecht tätiger Anwalt in Berlin (Kontaktformular) zur Verfügung.
+      Damit Ihre Rechte bereits von Anfang an gewahrt bleiben, sollten Sie unmittelbar nach dem Unfall einen Anwalt beauftragen. Betreiben Sie die Schadenregulierung selber, wenden Sie Zeit auf, die Ihnen die Versicherung nicht ersetzt und Sie gehen das Risiko ein, unwissentlich Fehler zu machen. Hat der Unfallgegner die alleinige Schuld an dem Verkehrsunfall, muss er Ihre Kosten für den beauftragten Anwalt erstatten. Für eine Erstberatung steht Ihnen ein im Verkehrsrecht tätiger Anwalt in Berlin (Kontaktformular) zur Verfügung.
 ---
