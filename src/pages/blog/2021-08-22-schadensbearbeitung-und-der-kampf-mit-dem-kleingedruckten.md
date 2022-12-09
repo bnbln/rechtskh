@@ -13,7 +13,7 @@ Der Preisdruck unter den Versicherungen macht sich auch bei dem Regulierungsverh
 
 ### Falsche Risikobewertung der Versicherung
 
-Die Personalkosteneinsparungen bei den Versicherungen führt dazu, dass viele Versicherungen das zu versichernde Objekt nicht vor Vertragsabschluss untersuchen. Dies hat zur Folge, dass diese Versicherungen das zu versichernde Risko nicht kennen. Häufen sich bei einer Versicherung die Schadensfälle, weil diese zu viele schadensgeneigte Objekte mit einer zu niedrigen Prämie versichert hat, versucht diese ihren Gewinn zuhalten, indem sie bei den Versicherungsleistungen spart.
+Die Personalkosteneinsparungen bei den Versicherungen führt dazu, dass viele Versicherungen das zu versichernde Objekt nicht vor Vertragsabschluss untersuchen. Dies hat zur Folge, dass diese Versicherungen das zu versichernde Risko nicht kennen. Häufen sich bei einer Versicherung die Schadensfälle, weil diese zu viele schadensgeneigte Objekte mit einer zu niedrigen Prämie versichert hat, versucht diese ihren Gewinn zu halten, indem sie bei den Versicherungsleistungen spart.
 
 ### Der Anwalt hilft Ihnen, die Leistungspflicht des Vericherers durchzusetzen
 
