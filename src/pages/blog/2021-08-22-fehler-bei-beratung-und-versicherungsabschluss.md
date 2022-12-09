@@ -5,7 +5,7 @@ date: 2021-08-22T22:44:45.968Z
 recht: Versicherungsrecht
 description: Gerade die fehlerhafte Beratung durch die Versicherungsagenten hat
   zur Folge, dass die Versicherungsnehmer trotz Prämienzahlung im Schadensfall
-  ihre Versicherungsleistung nicht er- halten. Der im Versicherungsrecht tätige
+  ihre Versicherungsleistung nicht erhalten. Der im Versicherungsrecht tätige
   Anwalt erlebt, dass den Versicherungsnehmern Versicherungen verkauft wurden,
   die ihren Bedürfnissen nicht entsprachen.
 featuredpost: false
