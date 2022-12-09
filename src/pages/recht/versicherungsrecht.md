@@ -33,7 +33,7 @@ article:
       #### Versicherungsrecht - Fehler bei Beratung und Versicherungsabschluss
 
 
-      Anwalt in Berlin für Versicherungsrecht prueft Klage und Kostenrisiko bei ungesetzlichen VersicherungsbedingungenGerade die fehlerhafte Beratung durch die Versicherungsagenten hat zur Folge, dass die Versicherungsnehmer trotz Prämienzahlung im Schadensfall ihre Versicherungsleistung nicht er- halten. Der im Versicherungsrecht tätige Anwalt erlebt, dass den Versicherungsnehmern Versicher- ungen verkauft wurden, die ihren Bedürfnissen nicht entsprachen.
+      Anwalt in Berlin für Versicherungsrecht prüft Klage und Kostenrisiko bei ungesetzlichen Versicherungsbedingungen. Gerade die fehlerhafte Beratung durch die Versicherungsagenten hat zur Folge, dass die Versicherungsnehmer trotz Prämienzahlung im Schadensfall ihre Versicherungsleistung nicht er- halten. Der im Versicherungsrecht tätige Anwalt erlebt, dass den Versicherungsnehmern Versicherungen verkauft wurden, die ihren Bedürfnissen nicht entsprachen. 
 
 
       #### Beratungsbedingte fehlerhafte Angaben
