@@ -30,7 +30,7 @@ article:
       #### Hergang des Autounfalls und Zeugenfeststellung sind wichtig
 
 
-      Solche und ähnliche Fälle erlebt der Verkehrsrechtsanwalt in seinem Alltag immer wieder. Das Gericht war bei dem Verkehrsunfall nicht anwesend, so dass es neutral anhand des von Ihrem Anwalt und des Unfallgegners geschilderten Verkehrsunfalls und der vorliegenden Beweismittel über die Haftung aus dem Verkehrsunfall entscheiden muss. Wenn Sie folgende Tipps, die ein Rechtsanwalt für Verkehrsrecht in Berlin für Sie zusammmengestellt hat, beachten, erhöhen Ihre Chancen in einem Prozess und der Anwalt kann Ihre Rechte nach einem Verkehrsunfall erfolgreicher durchsetzen.
+      Solche und ähnliche Fälle erlebt der Verkehrsrechtsanwalt in seinem Alltag immer wieder. Das Gericht war bei dem Verkehrsunfall nicht anwesend, so dass es neutral anhand des von Ihrem Anwalt und des Unfallgegners geschilderten Verkehrsunfalls und der vorliegenden Beweismittel über die Haftung aus dem Verkehrsunfall entscheiden muss. Wenn Sie folgende Tipps, die ein Rechtsanwalt für Verkehrsrecht in Berlin für Sie zusammengestellt hat, beachten, erhöhen Sie Ihre Chancen in einem Prozess und der Anwalt kann Ihre Rechte nach einem Verkehrsunfall erfolgreicher durchsetzen. 
 
 
       <div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="/kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
