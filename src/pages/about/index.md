@@ -17,7 +17,7 @@ Rechtsanwalt Tarik Sharief wurde 1965 in Dresden als Sohn einer Journalistin und
 
 ### Schwerpunkte der Anwaltstätigkeit
 
-Schwerpunkte der Anwaltstätigkeit sind Kauf-, Versicherungs- und Mietrecht. Rechtsanwalt Sharief betreut regelmäßig auch zahlreiche Streitigkeiten aus dem Bereich des Schadensersatz-, Werkvertrags-, Verkehrs- und des Bauvertragsrechts. Seine Stärke ist es, rechtsgebietsübergreifende Lösungen zu finden. Zum Beispiel kann ein Schimmelschaden sowohl mietrechtliche, versicherungsrechtliche als auch baurechtliche Probleme beinhalten.
+Schwerpunkte seiner Anwaltstätigkeit sind Kauf-, Versicherungs- und Mietrecht. Rechtsanwalt Sharief betreut regelmäßig auch zahlreiche Streitigkeiten aus dem Bereich des Schadensersatz-, Werkvertrags-, Verkehrs- und des Bauvertragsrechts. Seine Stärke ist es, rechtsgebietsübergreifende Lösungen zu finden. So kann zum Beispiel ein Schimmelschaden sowohl mietrechtliche, versicherungsrechtliche als auch baurechtliche Probleme beinhalten. 
 
 ### Der Anwalt sucht nach der besten Lösung und betreibt Konfliktmanagement
 
@@ -27,7 +27,7 @@ Aus seiner täglichen Berufserfahrung weiß Rechtsanwalt Tarik Sharief, dass Vie
 
 ### Auf gleicher Augenhöhe mit Firmen und Institutionen durch einen Anwalt
 
-Ein Mandant begegnet Hausverwaltern im Mietrecht, Behörden und Versicherungen im Verkehrsrecht, Sachbearbeitern im Versicherungsrecht - in den meisten Fällen hat der Mandant im juristischen Alltag also Gegner, die tatsächlich Erfahrung haben oder diese zumindest glaubhaft vorspiegeln. Nur mit Hilfe eines engagierten Anwaltes kann eine Privatperson seine Interessen auf gleicher Augenhöhe durchsetzen. Der Anwalt kann den in ihren Rechtsangelegenheiten erfahrenen Sachbearbeitern die tatsächliche Rechtslage derart mitteilen, dass in der Regel Gerichtsverfahren vermieden werden können. 
+Ein Mandant ist gegenüber Unternehmen, Hausverwaltungen im Mietrecht, Behörden und Versicherungen im Verkehrsrecht, Sachbearbeitern im Versicherungsrecht oft unerfahren. In den meisten Fällen hat der Mandant im juristischen Alltag also Gegner, die tatsächlich Erfahrung haben oder diese zumindest glaubhaft vorspiegeln. Nur mit Hilfe eines engagierten Anwaltes kann eine Privatperson seine Interessen auf gleicher Augenhöhe durchsetzen. Der Anwalt kann den in Ihren Rechtsangelegenheiten erfahrenen Sachbearbeitern die tatsächliche Rechtslage derart mitteilen, dass in der Regel Gerichtsverfahren vermieden werden können. 
 
 ### Die praktische Lösung finden: Vermittlung statt Prozess kann Ihr Kostenrisiko senken
 
