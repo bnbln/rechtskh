@@ -55,7 +55,7 @@ article:
       als auch für Mitarbeiter der Versicherung unverständlich. So hat der im
       Versicherungsrecht tätige Anwalt es erlebt, dass die Versicherungsagenten
       und die Schadensbearbeiter der Versicherungen ihre Bedingungen sowohl
-      bewusst als auch unbewusst fehlerhaft auslegen.
+      bewusst als auch unbewusst fehlerhaft auslegen. 
 
 
       <div class='inline-image'> <img src=/img/mari-helin-ilsnkt1imxe-unsplash.jpg /> </div> 
