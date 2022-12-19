@@ -25,7 +25,7 @@ article:
       Vermietern kommt, ist unausweichlich. Häufig entstehen Rechtsprobleme
       sowohl bei Wohnraum- als auch Gewerberaummietverträgen. Grund hierfür ist
       oft eine Fehlinterpretation von Rechten und Pflichten aus dem
-      Mietvertrag. 
+      Mietvertrag.  
 
 
       In den komplexen Fragen des Mietrechts zählt die Erfahrung des Anwalts. Bei Schönheitsreparaturen, Eigenbedarfskündigungen, Wasser- und Schimmelschäden sowie bei Mietminderung gibt es oft keine einfache Antwort. Der erfahrene Anwalt im Mietrecht muss nicht immer den direkten Weg wählen, um Ihr Ziel durchzusetzen. Manchmal ist es auch sinnvoll unabhängig von der Rechtslage eine Lösung zu finden, mit der beide Seiten gut leben können.
