@@ -38,8 +38,6 @@ article:
       Schönheitsreparaturen und Renovierung bei Auszug
 
 
-      \
-
       Oftmals ist der Mieter in Mietverträgen nicht wirksam zur Ausführung von fälligen Schönheitsreparaturen oder zur Renovierung bei Auszug verpflichtet. Die Rechtsprechung hat bereits eine Vielzahl von Schönheitsreparaturklauseln für unwirksam erklärt. Dem Mieter und Vermieter wird dringend angeraten, bevor sie sich vor Gericht über die Ausführung von anstehenden Schönheitsreparaturen oder um die Renovierung bei Auszug streiten, den Mietvertrag von einem Anwalt prüfen zu lassen. Nur dieser kann aufgrund der komplizierten Rechtsprechung beurteilen, ob im Einzelfall die Vertragsklausel zur Renovierung bei Auszug wirksam ist oder nicht. 
 
 
