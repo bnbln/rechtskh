@@ -27,7 +27,7 @@ Aus seiner täglichen Berufserfahrung weiß Rechtsanwalt Tarik Sharief, dass Vie
 
 ### Auf gleicher Augenhöhe mit Firmen und Institutionen durch einen Anwalt
 
-Ein Mandant ist gegenüber Unternehmen, Hausverwaltungen im Mietrecht, Behörden und Versicherungen im Verkehrsrecht, Sachbearbeitern im Versicherungsrecht oft unerfahren. In den meisten Fällen hat der Mandant im juristischen Alltag also Gegner, die tatsächlich Erfahrung haben oder diese zumindest glaubhaft vorspiegeln. Nur mit Hilfe eines engagierten Anwaltes kann eine Privatperson seine Interessen auf gleicher Augenhöhe durchsetzen. Der Anwalt kann den in Ihren Rechtsangelegenheiten erfahrenen Sachbearbeitern die tatsächliche Rechtslage derart mitteilen, dass in der Regel Gerichtsverfahren vermieden werden können. 
+Ein Mandant ist gegenüber Unternehmen, Hausverwaltungen im Mietrecht, Behörden und Versicherungen im Verkehrsrecht, Sachbearbeitern im Versicherungsrecht oft unerfahren. In den meisten Fällen hat der Mandant im juristischen Alltag also Gegner, die tatsächlich Erfahrung haben oder diese zumindest glaubhaft vorspiegeln. Nur mit Hilfe eines engagierten Anwaltes kann eine Privatperson seine Interessen auf gleicher Augenhöhe durchsetzen. Der Anwalt kann den in Ihren Rechtsangelegenheiten erfahrenen Sachbearbeitern die tatsächliche Rechtslage derart mitteilen, dass in der Regel Gerichtsverfahren vermieden werden können. 
 
 ### Die praktische Lösung finden: Vermittlung statt Prozess kann Ihr Kostenrisiko senken
 
