@@ -33,7 +33,7 @@ article:
       #### Versicherungsrecht - Fehler bei Beratung und Versicherungsabschluss
 
 
-      Anwalt in Berlin für Versicherungsrecht prueft Klage und Kostenrisiko bei ungesetzlichen VersicherungsbedingungenGerade die fehlerhafte Beratung durch die Versicherungsagenten hat zur Folge, dass die Versicherungsnehmer trotz Prämienzahlung im Schadensfall ihre Versicherungsleistung nicht er- halten. Der im Versicherungsrecht tätige Anwalt erlebt, dass den Versicherungsnehmern Versicher- ungen verkauft wurden, die ihren Bedürfnissen nicht entsprachen.
+      Der Anwalt in Berlin für Versicherungsrecht prüft Klage und Kostenrisiko bei ungesetzlichen Versicherungsbedingungen. Gerade die fehlerhafte Beratung durch die Versicherungsagenten hat zur Folge, dass die Versicherungsnehmer trotz Prämienzahlung im Schadensfall ihre Versicherungsleistung nicht erhalten. Der im Versicherungsrecht tätige Anwalt erlebt, dass den Versicherungsnehmern Versicherungen verkauft wurden, die ihren Bedürfnissen nicht entsprachen. 
 
 
       #### Beratungsbedingte fehlerhafte Angaben
@@ -46,12 +46,15 @@ article:
 
 
       Es kommt vor, dass die Versicherungsvertragsbedingungen dem Versicherungsnehmer nicht übergeben werden, so dass dieser keine Kenntnis von seinen Pflichten hat, deren Einhaltung die Voraussetzung für den Erhalt der vollen Versicherungssumme ist. In diesem Fall kann sich die Versicherung in der Regel nicht auf ihre Leistungsfreiheit berufen, selbst wenn der Versicherungsnehmer gegen Vertragsbedingungen verstoßen hat.
+
+
+      <div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="./kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
   - title: Versicherungsbedingungen
     body: >-
-      Viele Klauseln in den Versicherungs- bedingungen sind sowohl für den Laien
+      Viele Klauseln in den Versicherungsbedingungen sind sowohl für den Laien
       als auch für Mitarbeiter der Versicherung unverständlich. So hat der im
       Versicherungsrecht tätige Anwalt es erlebt, dass die Versicherungsagenten
-      und die Schadensbearbeiter der Versich- erungen ihre Bedingungen sowohl
+      und die Schadensbearbeiter der Versicherungen ihre Bedingungen sowohl
       bewusst als auch unbewusst fehlerhaft auslegen.
 
 
@@ -74,7 +77,7 @@ article:
       dass der Schaden durch die Versicherungen überhaupt nicht oder nur
       schleppend reguliert wird. Der Preisdruck unter den Versicherungen macht
       sich auch bei dem Regulierungsverhalten der Versicherung bemerkbar. Die
-      Ver- sicherungen versuchen ihren Gewinn zu maximieren, indem sie möglichst
+      Versicherungen versuchen ihren Gewinn zu maximieren, indem sie möglichst
       viele Versicherungen abschließen, Personal einsparen und nach Möglichkeit
       im Schadensfall nicht zahlen.
 
@@ -85,10 +88,10 @@ article:
       #### Falsche Risikobewertung der Versicherung
 
 
-      Die Personalkosteneinsparungen bei den Versicherungen führt dazu, dass viele Versicherungen das zu versichernde Objekt nicht vor Vertragsabschluss untersuchen. Dies hat zur Folge, dass diese Versicherungen das zu versichernde Risko nicht kennen. Häufen sich bei einer Versicherung die Schadensfälle, weil diese zu viele schadensgeneigte Objekte mit einer zu niedrigen Prämie versichert hat, versucht diese ihren Gewinn zuhalten, indem sie bei den Versicherungsleistungen spart.
+      Die Personalkosteneinsparungen bei den Versicherungen führt dazu, dass viele Versicherungen das zu versichernde Objekt nicht vor Vertragsabschluss untersuchen. Dies hat zur Folge, dass diese Versicherungen das zu versichernde Risiko nicht kennen. Häufen sich bei einer Versicherung die Schadensfälle, weil diese zu viele schadensgeneigte Objekte mit einer zu niedrigen Prämie versichert hat, versucht diese ihren Gewinn zu halten, indem sie bei den Versicherungsleistungen spart.
 
 
-      #### Der Anwalt hilft Ihnen, die Leistungspflicht des Vericherers durchzusetzen
+      #### Der Anwalt hilft Ihnen, die Leistungspflicht des Versicherers durchzusetzen
 
 
       So wird Versicherungsnehmern z.B. bei einem Brandschaden oder Wasserschaden mitgeteilt, dass die Versicherung nicht oder nur teilweise leisten wird, weil der Versicherungsnehmer seine Vertragspflichten verletzt habe. Erst nachdem ein Anwalt eingeschaltet wurde, zeigt sich die Versicherung oft zahlungsbereit.
