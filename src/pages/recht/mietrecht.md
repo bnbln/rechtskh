@@ -22,7 +22,7 @@ article:
     body: >-
       Berlin ist eine Millionenstadt, in der die Meisten zur Miete wohnen. Dass
       es in einer Mieterstadt oftmals zu Problemen zwischen Mietern und
-      Vermietern kommt, ist unausweichlich. Häufig entstehen Rechtsprobleme
+      Vermietern kommt ist unausweichlich. Häufig entstehen Rechtsprobleme
       sowohl bei Wohnraum- als auch Gewerberaummietverträgen. Grund hierfür ist
       oft eine Fehlinterpretation von Rechten und Pflichten aus dem
       Mietvertrag. 
