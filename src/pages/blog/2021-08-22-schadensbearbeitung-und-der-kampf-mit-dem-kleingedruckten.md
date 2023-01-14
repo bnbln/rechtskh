@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: Schadensbearbeitung und der Kampf mit dem Kleingedruckten
-date: 2021-08-22T22:47:50.805Z
+date: 2021-08-25T22:47:50.805Z
 recht: Versicherungsrecht
 description: Der im Versicherungsrecht tätige Anwalt muss immer wieder
   feststellen, dass der Schaden durch die Versicherungen überhaupt nicht oder
