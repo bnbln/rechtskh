@@ -4,12 +4,16 @@ title: Mietrecht in Berlin ist oft umstritten
 date: 2021-08-22T22:30:03.830Z
 recht: Mietrecht
 description: Berlin ist eine Millionenstadt, in der die Meisten zur Miete
-  wohnen. Dass es in einer Mieterstadt oftmals zu Problemen mit dem Vermieter
-  kommt. ist unausweichlich. In der Regel bestehen folgende Rechtsprobleme
-  sowohl bei Wohnraum- als auch Gewerberaummietverträgen.
+  wohnen. Dass es in einer Mieterstadt oftmals zu Problemen zwischen Mietern und
+  Vermietern kommt, ist unausweichlich. Häufig entstehen Rechtsprobleme sowohl
+  bei Wohnraum- als auch Gewerberaummietverträgen.
 featuredpost: false
 featuredimage: /img/adrien-aletti-nzwlmc0aaxk-unsplash.jpg
 ---
 ### In den komplexen Fragen des Mietrechts zählt die Erfahrung des Anwalts
 
-Der erfahrene Anwalt im Mietrecht muss nicht immer den direkten Weg wählen, um Ihr Ziel durchzusetzen. Wenn z.B. eine Mietminderung rechtlich schwer durchsetzbar ist, die Schönheitsreparaturen aber aufgrund einer unwirksamen Klausel vom Vermieter zu tragen sind, wird der Anwalt den Vermieter darauf hinweisen. Er wird dem Vermieter erläutern, wie teuer es für ihn ist, wenn er während des laufenden Mietverhältnisses die laufenden Schönheitsreparaturen und Renovierungen auszuführen hat. Viele Vermieter sind dann bereit, eine einvernehmliche Lösung hinsichtlich des ursprünglichen Problems zu finden. Wenn Sie eine konkrete Frage haben, können Sie hier einen[ im Mietrecht tätigen Anwalt in Berlin](https://rechtsklarheit.de/ihre-anfrage-an-einen-Anwalt-in-Berlin-von-rechtsklarheitde) kontaktieren.
+In den komplexen Fragen des Mietrechts zählt die Erfahrung des Anwalts. Bei Schönheitsreparaturen, Eigenbedarfskündigungen, Wasser- und Schimmelschäden sowie bei Mietminderung gibt es oft keine einfache Antwort. Der erfahrene Anwalt im Mietrecht muss nicht immer den direkten Weg wählen, um Ihr Ziel durchzusetzen. Manchmal ist es auch sinnvoll unabhängig von der Rechtslage eine Lösung zu finden, mit der beide Seiten gut leben können. 
+
+Wenn Sie eine konkrete Frage haben, können Sie hier einen[ im Mietrecht tätigen Anwalt in Berlin](https://rechtsklarheit.de/ihre-anfrage-an-einen-Anwalt-in-Berlin-von-rechtsklarheitde) kontaktieren.
+
+<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="./kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
