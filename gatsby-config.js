@@ -11,7 +11,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
  })
 
-console.log("ga-id ",process.env.GA_ID); 
+//console.log("ga-id ",process.env.GA_ID); 
 
 module.exports = {
   siteMetadata: {
@@ -19,7 +19,7 @@ module.exports = {
     title: "Rechtsklarheit.de",
     description:
       "Rechtsanwalt Tarik Sharief - Kanzlei am Berliner Wittenbergplatz. Ihr Partner für Versicherungsrecht, Verkehrsrecht und Mietrecht",
-      // gaId: process.env.GA_ID,
+      //gaId: process.env.GA_ID,
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -104,27 +104,27 @@ module.exports = {
         purgeOnly: ["/all.scss"], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          process.env.GA_ID, // Google Analytics / GA
-        ],
-        gtagConfig: {
-          anonymize_ip: true,
-        },
-        // This object is used for configuration specific to this plugin
-        pluginConfig: {
-          // Puts tracking script in the head instead of the body
-          head: true,
-          // Setting this parameter is also optional
-          respectDNT: true,
-          // Avoids sending pageview hits from custom paths
-          exclude: ["/preview/**", "/do-not-track/me/too/"],
-        },
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     // You can add multiple tracking ids and a pageview event will be fired for all of them.
+    //     trackingIds: [
+    //       process.env.GA_ID, // Google Analytics / GA
+    //     ],
+    //     gtagConfig: {
+    //       anonymize_ip: true,
+    //     },
+    //     // This object is used for configuration specific to this plugin
+    //     pluginConfig: {
+    //       // Puts tracking script in the head instead of the body
+    //       head: true,
+    //       // Setting this parameter is also optional
+    //       respectDNT: true,
+    //       // Avoids sending pageview hits from custom paths
+    //       exclude: ["/preview/**", "/do-not-track/me/too/"],
+    //     },
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {

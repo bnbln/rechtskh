@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
+//import ReactGA from 'react-ga';
 import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-consent";
 import { Container } from "react-bootstrap";
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./theme.scss";
 
-import { initGA } from "./ga-utils.js";
+//import { initGA } from "./ga-utils.js";
 import useWindowSize from "./getWindow";
 
 import Footer from "../components/Footer";
@@ -17,12 +18,11 @@ import { withPrefix } from "gatsby";
 
 const TemplateWrapper = ({ children }) => {
    const meta = useSiteMetadata();
-console.log(meta);
   // const { gaId } = useSiteMetadata();
 
   // console.log("COOKIE: ", getCookieConsentValue("gdpr"), " ", gaId);
   const handleAcceptCookie = () => {
-      //initGA(gaId);
+  //ReactGA.initialize("G-FFL7JLHTD3");
   };
   const handleDeclineCookie = () => {
     //remove google analytics cookies
@@ -67,7 +67,7 @@ console.log(meta);
           href={`${withPrefix("/")}img/safari-pinned-tab.svg`}
           color="#ff4400"
         />
-        <meta name="theme-color" content="#fff" />
+        <meta name="theme-color" content="#172340" />
 
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={meta.site} />

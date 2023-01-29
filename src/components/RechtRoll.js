@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, StaticQuery } from 'gatsby'
 import { Row, Col, Card } from "react-bootstrap";
+import Img from "gatsby-image"
 
 class RechtRollTemplate extends React.Component {
   render() {
@@ -52,6 +53,7 @@ class RechtRollTemplate extends React.Component {
               }}>{post.frontmatter.title}</Card.Title>
               {/* <Button variant="secondary" size='sm' onClick={()=> navigate(post.fields.slug)}>Mehr erfahren</Button> */}
             </Card.Body>
+            {/* <Img className="card-img-top" style={{border: "4px solid white"}} fixed={post.frontmatter.picture.childImageSharp.fixed} /> */}
             <img className="card-img-top" style={{border: "4px solid white"}} src={post.frontmatter.picture.publicURL} alt={post.frontmatter.title}/>
           </Card>
           </a>
@@ -94,6 +96,9 @@ export default function RechtRoll(props) {
                   picture {
                     publicURL
                     childImageSharp {
+                      fixed(width: 300, height: 300) {
+                        ...GatsbyImageSharpFixed
+                      }
                       gatsbyImageData(
                         width: 120
                         quality: 50
