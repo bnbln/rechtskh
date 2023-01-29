@@ -49,8 +49,7 @@ const Navigation = ({ metadata, mobile }) => {
       <Link
         style={{
           ...style,
-          color: color ? color : "",
-          padding: "0px 20px"
+          color: color ? color : ""
         }}
         className={"nav-link "+className}
         onClick={() => handleNavigation()}
@@ -121,7 +120,7 @@ const Navigation = ({ metadata, mobile }) => {
         <Container>
           <div className="navigation" >
             <div className="d-flex">
-              <NavLink to={"/"} style={{padding: 0, background: "white"}}>
+              <NavLink to={"/"} className={"nav-link-brand"} style={{padding: 0}}>
                 <h1 className="navbar-brand">{metadata.site}</h1>
               </NavLink>
               <div
@@ -147,7 +146,7 @@ const Navigation = ({ metadata, mobile }) => {
             </div>
             <Button
               className="d-none d-lg-flex"
-              variant="outline-secondary"
+              variant="outline-light"
               size="sm"
               onClick={() => navigate("/kontakt")}
             >
@@ -169,9 +168,9 @@ const Navigation = ({ metadata, mobile }) => {
               onClick={openMenu}
             >
               {status === true ? (
-                <XIcon size="24px" fill="rgb(50, 76, 139)" />
+                <XIcon size="24px" fill="rgb(255, 255, 255)" />
               ) : (
-                <ThreeBarsIcon size="24px" fill="rgb(50, 76, 139)" />
+                <ThreeBarsIcon size="24px" fill="rgb(255, 255, 255)" />
               )}
             </button>
           </div>
@@ -231,7 +230,7 @@ const Navigation = ({ metadata, mobile }) => {
                   }
                 })}
                 <Button
-                  variant="outline-secondary"
+                  variant="outline-lightsecondary"
                   onClick={() => navigate("/kontakt")}
                 >
                   <div style={{ marginRight: 8, display: "initial" }}>

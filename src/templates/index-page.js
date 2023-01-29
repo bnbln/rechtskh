@@ -124,7 +124,7 @@ export const IndexPageTemplate = ({
       <Container className="d-none d-lg-block">
         <Row
           className="align-items-md-center herorow"
-          style={{ marginTop: "5rem" }}
+          style={{ marginTop: "7rem" }}
         >
           <Col sm={12} md={7} lg={8} xl={8}>
             {/* <CarouselMobileWrapper images={images} /> */}
