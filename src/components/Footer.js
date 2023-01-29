@@ -52,7 +52,7 @@ const Footer = class extends React.Component {
                       )
                     } else {
                       return(
-                        <Link className="navbar-item" to={item.to} key={"footermainnav-name-"+item.name} style={{
+                        <Link className="navbar-item" to={"/"+item.to} key={"footermainnav-name-"+item.name} style={{
                           color: "white"
                         }}>{item.name}</Link>
                       )
@@ -65,7 +65,7 @@ const Footer = class extends React.Component {
                   gap: 8,
                   marginBottom: "2rem"
                 }}>
-                  {meta.footermenu.map((item, i)=> <Link className="navbar-item" to={item.to} key={"footernav-link-"+item.name} style={{
+                  {meta.footermenu.map((item, i)=> <Link className="navbar-item" to={"/"+item.to} key={"footernav-link-"+item.name} style={{
                     color: "white"
                   }}>{item.name}</Link>)}
                 </nav>

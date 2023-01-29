@@ -26,7 +26,7 @@ seo: "Plötzlich und unvermittelt tritt ein Unfall ein, für den die Versicherun
 image: /img/og-image.jpg
 menu:
   - name: Home
-    to: /
+    to: ""
   - name: Anwalt
     to: /about
   - name: Aktuelles

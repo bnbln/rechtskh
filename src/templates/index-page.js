@@ -12,8 +12,6 @@ import RechtRoll from "../components/RechtRoll";
 import image03 from "../img/about/Map.jpg";
 import Layout from "../components/Layout";
 
-import metadata from "../../content/settings/global.json";
-
 export const IndexPageTemplate = ({
   images,
   title,
@@ -21,6 +19,8 @@ export const IndexPageTemplate = ({
   ctatext,
   ctalink,
   rechtsbereiche,
+  description,
+  contact
 }) => {
   return (
     <>
@@ -195,9 +195,9 @@ export const IndexPageTemplate = ({
                 }}
               >
                 <Card.Body>
-                  <h1>{metadata.description}</h1>
-                  <ReactMarkdown>{metadata.contact.info}</ReactMarkdown>
-                  <ReactMarkdown>{metadata.contact.contact}</ReactMarkdown>
+                  <h1>{description}</h1>
+                  <ReactMarkdown>{contact.info}</ReactMarkdown>
+                  <ReactMarkdown>{contact.contact}</ReactMarkdown>
                 </Card.Body>
               </Card>
             </Col>
@@ -242,6 +242,8 @@ IndexPageTemplate.propTypes = {
   ctatext: PropTypes.string,
   ctalink: PropTypes.string,
   rechtsbereiche: PropTypes.string,
+  description: PropTypes.string,
+  contact: PropTypes.object,
 };
 
 const IndexPage = ({ data }) => {
@@ -256,6 +258,8 @@ const IndexPage = ({ data }) => {
         ctalink={frontmatter.ctalink}
         rechtsbereiche={frontmatter.rechtsbereiche}
         images={frontmatter.images}
+        description={frontmatter.description}
+        contact={frontmatter.contact}
       />
     </Layout>
   );
@@ -275,6 +279,18 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
+        description
+        contact {
+          info
+          contact
+          open
+          image {
+            childImageSharp {
+              gatsbyImageData(width: 720, quality: 70, layout: CONSTRAINED)
+            }
+          }
+          bu
+        }
         title
         lead
         ctatext

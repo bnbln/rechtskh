@@ -7,7 +7,6 @@ import { Container } from "react-bootstrap";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./theme.scss";
 
-import metadata from "../../content/settings/global.json";
 import { initGA } from "./ga-utils.js";
 import useWindowSize from "./getWindow";
 
@@ -17,11 +16,13 @@ import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 
 const TemplateWrapper = ({ children }) => {
-  // const { title, description } = useSiteMetadata();
-  const { gaId } = useSiteMetadata();
-  console.log("COOKIE: ", getCookieConsentValue("gdpr"), " ", gaId);
+   const meta = useSiteMetadata();
+console.log(meta);
+  // const { gaId } = useSiteMetadata();
+
+  // console.log("COOKIE: ", getCookieConsentValue("gdpr"), " ", gaId);
   const handleAcceptCookie = () => {
-      initGA(gaId);
+      //initGA(gaId);
   };
   const handleDeclineCookie = () => {
     //remove google analytics cookies
@@ -40,8 +41,8 @@ const TemplateWrapper = ({ children }) => {
     <div>
       <Helmet>
         <html lang="de" />
-        <title>{metadata.site + " - " + metadata.description}</title>
-        <meta name="description" content={metadata.seo} />
+        <title>{meta.site + " - " + meta.description}</title>
+        <meta name="description" content={meta.seo} />
 
         <link
           rel="apple-touch-icon"
@@ -69,16 +70,16 @@ const TemplateWrapper = ({ children }) => {
         <meta name="theme-color" content="#fff" />
 
         <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={metadata.site} />
+        <meta property="og:title" content={meta.site} />
         <meta property="og:url" content="/" />
         <meta
           property="og:image"
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar metadata={metadata} mobile={width > 991 ? false : true} />
+      <Navbar metadata={meta} mobile={width > 991 ? false : true} />
       <div className="pageWrapper">{children}</div>
-      <Footer metadata={metadata} />
+      <Footer metadata={meta} />
       <Container>
         <CookieConsent
           enableDeclineButton
