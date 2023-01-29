@@ -12,7 +12,7 @@ import RechtRoll from "../components/RechtRoll";
 import image03 from "../img/about/Map.jpg";
 import Layout from "../components/Layout";
 
-import metadata from "../../content/settings/global.yml";
+import metadata from "../../content/settings/global.json";
 
 export const IndexPageTemplate = ({
   images,

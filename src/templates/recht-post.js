@@ -125,7 +125,7 @@ export const RechtPostTemplate = ({
       </div>
       <div className="banner">
         <Container>
-          <BlogRollFilter recht={data.title}></BlogRollFilter>
+          <BlogRollFilter recht={data.title} light={false}></BlogRollFilter>
         </Container>        
       </div>
       <Container>

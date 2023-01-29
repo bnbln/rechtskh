@@ -15,7 +15,7 @@ class BlogRollTemplate extends React.Component {
     return (
       <Row>
         {posts &&
-          posts.slice(0, all === false ? 5 : 100).map(({ node: post }) => (
+          posts.slice(0, all === false ? 5 : 5).map(({ node: post }) => (
             <Col key={"BlogRoll-"+post.id} md="auto" lg={post.frontmatter.featuredpost ? 8 : 4}>
                <Link
                       className="title has-text-primary is-size-4"

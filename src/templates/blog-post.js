@@ -8,6 +8,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Layout from "../components/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Content, { HTMLContent } from "../components/Content";
+import BlogRollFilter from "../components/BlogRollFilter";
 
 export const BlogPostTemplate = ({
   content,
@@ -63,8 +64,12 @@ export const BlogPostTemplate = ({
         <Row>
           <Col xs={12} md={8}>
             <PostContent content={content} />
-          </Col>
+          </Col>         
         </Row>
+      </Container>
+      <Container style={{ marginTop: "3rem" }}>
+        <h1>Weiteres zu {recht}</h1>
+        <BlogRollFilter recht={recht} exclude={title} light={false} />
       </Container>
     </>
   );
