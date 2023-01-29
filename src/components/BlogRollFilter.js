@@ -14,9 +14,12 @@ class BlogRollFilterTemplate extends React.Component {
 
     const category = [];
     posts.forEach((post) => {
-      if (post.node.frontmatter.recht === props.recht) {
-        category.push(post);
+      if (post.node.id !== props.exclude ) {
+        if (post.node.frontmatter.recht === props.recht) {
+          category.push(post);
+        }
       }
+     
     });
     return (
       <>

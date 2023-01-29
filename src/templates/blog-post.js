@@ -20,9 +20,11 @@ export const BlogPostTemplate = ({
   title,
   helmet,
   image,
+  data
 }) => {
   const PostContent = contentComponent || Content;
   var lowercaseRecht = recht;
+  console.log("data ",data.markdownRemark.id);
   return (
     <>
       {helmet || ""}
@@ -69,7 +71,7 @@ export const BlogPostTemplate = ({
       </Container>
       <Container style={{ marginTop: "3rem" }}>
         <h1>Weiteres zu {recht}</h1>
-        <BlogRollFilter recht={recht} exclude={title} light={false} />
+        <BlogRollFilter recht={recht} exclude={data.markdownRemark.id} light={false} />
       </Container>
     </>
   );
@@ -84,6 +86,7 @@ BlogPostTemplate.propTypes = {
   image: PropTypes.object,
   recht: PropTypes.object,
   date: PropTypes.string,
+  data: PropTypes.object,
 };
 
 const BlogPost = ({ data }) => {
