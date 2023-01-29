@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: Gewerbemietvertrag
-date: 2021-08-22T22:36:22.893Z
+date: 2023-01-07T23:57:19.671Z
 recht: Mietrecht
 description: Der Gewerbemietvertrag kann existenzbedrohend sein
 featuredpost: false
