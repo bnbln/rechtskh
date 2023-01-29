@@ -13,7 +13,8 @@
     color: map.get($theme-colors, "lightsecondary");
     cursor: pointer;
     margin-right: 2rem;
-    transform: translateY(5px)
+    transform: translateY(5px);
+    font-size: 1.3rem;
   }
   
   nav.navigationWrapper {
@@ -92,33 +93,36 @@
     display: flex;
     align-items: center;
     overflow: scroll;
+    padding-bottom: 40px;
   }
   .mobileNav .nav-link {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 200%;
     display: block;
     padding: 0;
     background: none;
+    height: 45px;
   }
   .mobileNav .dropdown {
     position: relative;
     top: inherit;
-    background: none
+    background: none;
   }
   
   .mobileNav .dropdown h2 {
     text-align: center;
       opacity: 0.5;
-      margin-top: 2rem;
+      margin-top: 1rem;
       font-size: 1rem;
       font-weight: 900;
   }
   
   .mobileNav .dropdown .nav-link {
     padding: 0px;
-    font-size: 1.4rem;
+    font-size: 1rem;
     background: none;
+    height: 45px;
   }
   .nav-link.light:hover, .nav-link.light:focus{
     background: darken(map.get($theme-colors, "primary"), 5)

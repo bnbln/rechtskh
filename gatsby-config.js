@@ -19,7 +19,7 @@ module.exports = {
     title: "Rechtsklarheit.de",
     description:
       "Rechtsanwalt Tarik Sharief - Kanzlei am Berliner Wittenbergplatz. Ihr Partner für Versicherungsrecht, Verkehrsrecht und Mietrecht",
-      gaId: process.env.GA_ID,
+      // gaId: process.env.GA_ID,
   },
   plugins: [
     "gatsby-plugin-react-helmet",

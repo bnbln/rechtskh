@@ -50,6 +50,7 @@ const Navigation = ({ metadata, mobile }) => {
         style={{
           ...style,
           color: color ? color : "",
+          padding: "0px 20px"
         }}
         className={"nav-link "+className}
         onClick={() => handleNavigation()}
@@ -68,6 +69,7 @@ const Navigation = ({ metadata, mobile }) => {
           display: "flex",
           alignItems: "center",
           cursor: "pointer",
+          padding: "0px 20px"
         }}
         className="nav-link"
         onClick={() => setDropdown(!dropdown)}

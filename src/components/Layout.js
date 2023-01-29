@@ -7,7 +7,7 @@ import { Container } from "react-bootstrap";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./theme.scss";
 
-import metadata from "../../content/settings/global.yml";
+import metadata from "../../content/settings/global.json";
 import { initGA } from "./ga-utils.js";
 import useWindowSize from "./getWindow";
 
