@@ -23,7 +23,7 @@
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: white
+    background: map.get($theme-colors, "secondary");
   }
   .navigation {
     display: flex;
@@ -33,15 +33,15 @@
     height: 72px;
   }
   .navbar-brand {
-    color: map.get($theme-colors, "lightsecondary");
+    color: map.get($theme-colors, "light");
     font-weight: 900;
     opacity: 1;
     cursor: "pointer";
     margin-right: 2rem;
-    transform: translateY(5px)
+    //transform: translateY(5px)
     }
-  .navbar-brand:hover {
-    opacity: 0.75;
+    a.nav-link.nav-link-brand:hover {
+    background: map.get($theme-colors, "secondary")
     }
   .nav-link {
     height: 72px;
@@ -50,7 +50,18 @@
     color: hsl(223deg 30% 60%);
     text-decoration: none;
     display: flex;
-    align-items: center
+    align-items: center;
+    padding: 0px 20px
+  }
+  a.nav-link.nav-link-brand {
+    height: 72px;
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0px
   }
   button.nav-link {
     background: none;
@@ -78,10 +89,10 @@
     opacity: 1;
   }
   .nav-link:hover, .nav-link:focus{
-    background-color: map.get($theme-colors, "light");
+    background: darken(map.get($theme-colors, "secondary"), 5)
   }
   .nav-link[aria-current="page"], .nav-link:hover, .nav-link:focus{
-    color: map.get($theme-colors, "lightsecondary");
+    color: map.get($theme-colors, "light");
   }
   .mobileNav {
     width: 100%;
@@ -144,9 +155,9 @@
   .btn-secondary:hover{
   background: lighten(map.get($theme-colors, "secondary"), 20)
   }
-  .navbar-brand:hover {
-    color: #063cbc//map.get($theme-colors, "lightsecondary");
-  }
+  // .navbar-brand:hover {
+  //   color: #063cbc//map.get($theme-colors, "lightsecondary");
+  // }
   .bg-scnd {
     background-color: map.get($theme-colors, "secondary");
     color: white;
