@@ -36,7 +36,7 @@ class BlogRollFilterTemplate extends React.Component {
           <CardGroup style={{ gap: "2rem" }}>
             {posts &&
               category
-                .slice(0, all === false ? 5 : 100)
+                .slice(0, all === false ? 3 : 100)
                 .map(({ node: post }) => (
                   <Card
                     key={post.id}
@@ -76,7 +76,7 @@ class BlogRollFilterTemplate extends React.Component {
                           </h5>
                         </header>
                         <p>
-                          {post.excerpt}
+                          {post.frontmatter.description}
                           <span> </span>
                           <Link
                             className="button"
@@ -125,6 +125,7 @@ export default function BlogRollFilter(props) {
                 frontmatter {
                   recht
                   title
+                  description
                   templateKey
                   date(formatString: "MMMM DD, YYYY")
                   featuredpost
