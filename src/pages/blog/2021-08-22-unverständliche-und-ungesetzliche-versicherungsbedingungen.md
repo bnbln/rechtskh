@@ -15,7 +15,7 @@ featuredimage: /img/elena-mozhvilo-j06glukk0gm-unsplash.jpg
 
 Viele Klauseln der Versicherungen wurden deshalb von dem Bundesverfassungsgericht wegen Verletzung der Grundrechte und dem Bundesgerichtshof für unwirksam erklärt oder zugunsten des Versicherungsnehmers ausgelegt. Der Bundesgerichtshof berücksichtigt außerdem, dass das Vertragswerk der Versicherungen dem Versicherungsnehmer nahezu unbekannt ist. Der Versicherer hat neben der Übergabe der Versicherungsbedingungen sowohl beim Verkauf der Versicherung als auch im Schadensfall besondere Informationspflichten gegenüber dem Versicherungsnehmer. Diesen Informationspflichten kommen die Versicherungen oft nicht nach.
 
-<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="./kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
+<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="https://klarheitundrecht.netlify.app//kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
 
 ### Im Schadensfall führt nicht jede Verletzung einer Vertragsbedingung zum Verlust des Versicherungsschutzes
 

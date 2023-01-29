@@ -11,7 +11,7 @@ featuredimage: /img/mari-helin-ilsnkt1imxe-unsplash.jpg
 ---
 Der Preisdruck unter den Versicherungen macht sich auch bei dem Regulierungsverhalten der Versicherung bemerkbar. Die Versicherungen versuchen ihren Gewinn zu maximieren, indem sie möglichst viele Versicherungen abschließen, Personal einsparen und nach Möglichkeit im Schadensfall nicht zahlen.
 
-<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="./kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
+<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="https://klarheitundrecht.netlify.app//kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
 
 ### Falsche Risikobewertung der Versicherung
 

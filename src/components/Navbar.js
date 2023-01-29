@@ -223,7 +223,7 @@ const Navigation = ({ metadata, mobile }) => {
                     );
                   } else {
                     return (
-                      <NavLink key={"menu-item-" + i} to={item.to}>
+                      <NavLink key={"menu-item-" + i} to={"/"+item.to}>
                         {item.name}
                       </NavLink>
                     );

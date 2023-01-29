@@ -17,7 +17,7 @@ Versuchen Sie direkt nach dem Unfall zur Beweissicherung Name und Anschrift von 
 
 Sollten Sie sehen, dass das andere Fahrzeug bereits Vorschäden hat, fotografieren Sie auch diese. Teilweise braucht ihre Versicherung den Schaden des Gegners nicht zu ersetzen, wenn dieser versucht auch Vorschäden mit ihrer Versicherung abzurechnen.
 
-<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="./kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
+<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="https://klarheitundrecht.netlify.app//kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
 
 ### Unfallbericht gemeinsam mit dem Unfallgegner ausfüllen
 
