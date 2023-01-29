@@ -2,7 +2,8 @@
 templateKey: blog-post
 title: 'Wirtschaftswoche am 28 März 2012: "Warum Kunden die Versicherer nicht
   verstehen"'
-date: 2023-01-29T22:24:26.585Z
+date: 2020-02-01T22:24:00.000Z
+recht: Versicherungsrecht
 description: "Anwälte stellen jedoch in der Praxis fest, dass undurchsichtige
   Regeln beim Geldverdienen oder Geldbehalten helfen. Tarik Sharief,
   Rechtsanwalt in Berlin, hat erlebt, „dass die Versicherungsagenten und die
