@@ -18,7 +18,7 @@ Fax: +49-(0)-30-69 53 33 62\
 E-Mail: anwalt@rechtsklarheit.de\
 \
 **Berufsspezifische Angaben nach § 5 TMG (Anbieterkennzeichnung)**\
-**USt-Id.Nr.:** DE267155160``
+**USt-Id.Nr.:** DE267155160
 
 ### **Berufshaftpflichtversicherung**
 
