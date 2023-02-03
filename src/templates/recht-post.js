@@ -171,7 +171,7 @@ const RechtPost = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
-          <Helmet titleTemplate="%s | Schwerpunkt">
+          <Helmet titleTemplate="%s | Rechtsgebiet">
             <title>{`${post.frontmatter.title}`}</title>
             <meta
               name="description"

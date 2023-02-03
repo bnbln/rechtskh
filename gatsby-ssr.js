@@ -5,7 +5,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     <link
       key="lato300"
       rel="preload"
-      href="./fonts/lato-v23-latin-300.woff2"
+      href="/fonts/lato-v23-latin-300.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -13,7 +13,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     <link
       key="lato400"
       rel="preload"
-      href="./fonts/lato-v23-latin-regular.woff2"
+      href="/fonts/lato-v23-latin-regular.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -21,7 +21,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     <link
       key="lato700"
       rel="preload"
-      href="./fonts/lato-v23-latin-700.woff2"
+      href="/fonts/lato-v23-latin-700.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -29,7 +29,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     <link
       key="vollkornBlack"
       rel="preload"
-      href="./fonts/vollkorn-v21-latin-900.woff2"
+      href="/fonts/vollkorn-v21-latin-900.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -37,7 +37,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     <link
       key="vollkornExtraBold"
       rel="preload"
-      href="./fonts/vollkorn-v21-latin-800.woff2"
+      href="/fonts/vollkorn-v21-latin-800.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"

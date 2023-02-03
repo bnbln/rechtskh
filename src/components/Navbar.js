@@ -207,7 +207,7 @@ const Navigation = ({ metadata, mobile }) => {
                   if (item.to === "DROPDOWN") {
                     return (
                       <div className="dropdown">
-                        <h2>Schwerpunkte</h2>
+                        <h2>Rechtsgebiete</h2>
                         <NavLink
                           to={"/recht/versicherungsrecht"}
                         >
