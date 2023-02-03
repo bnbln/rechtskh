@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Container, Row, Col } from "react-bootstrap";
+import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-consent";
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
@@ -26,9 +27,11 @@ return (
       </Container>
      </div>
      <Container>
-    <section className="mymargins">
-      <PageContent className="content" content={content} />
-    </section>
+     <Row>
+        <Col md={6}>
+          <PageContent className="content" content={content} />
+        </Col>
+      </Row>
     </Container>
   </>
 )

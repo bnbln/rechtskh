@@ -149,7 +149,7 @@ export const IndexPageTemplate = ({
 
           <Col sm={12} md={5} lg={4} xl={3}>
             <h1>{title}</h1>
-            <p className="lead">{lead}</p>
+            <p className="lead" style={{fontWeight: 200}}>{lead}</p>
             <Button
               variant="primary"
               size="lg"
@@ -174,14 +174,31 @@ export const IndexPageTemplate = ({
         </Container>
       </div>
 
-      <div
+        <div
         style={{
+          // backgroundImage: "url(" + image03 + ")",
+          // backgroundSize: "cover",
+          // backgroundPosition: "center",
+          position: "relative"
+        }}
+      >
+      <a
+      style={{
+        position: "absolute",
+        width: "100%",
+        height: "100%"
+      }}
+      target="_blank" href="https://www.google.com/maps/place/Rechtsanwalt+Tarik+Sharief/@52.50342,13.3411114,17z/data=!3m1!4b1!4m5!3m4!1s0x47a850547a59cbff:0x4097aa41c581420e!8m2!3d52.50342!4d13.3433001">
+        <div style={{
           backgroundImage: "url(" + image03 + ")",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          paddingTop: 80,
-        }}
-      >
+          width: "100%",
+          height: "100%"
+        }}>
+
+        </div>
+        </a>
         <Container style={{ minHeight: "65vh" }}>
           <Row>
             <Col md={6} lg={4}>
@@ -192,6 +209,7 @@ export const IndexPageTemplate = ({
                   // WebkitBackdropFilter: "blur(20px)",
                   borderRadius: 0,
                   border: 0,
+                  marginTop: 80
                 }}
               >
                 <Card.Body>
@@ -204,6 +222,7 @@ export const IndexPageTemplate = ({
           </Row>
         </Container>
       </div>
+ 
 
       <Container fluid className="bg-scnd">
         <Container>

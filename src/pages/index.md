@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Ihr Partner für Versicherungsrecht, Verkehrsrecht und Mietrecht
-lead: Hochqualitative Rechtsberatung in der Berliner Kanzlei für Sie
+lead: Persönliche Rechtsberatung in der Berliner Kanzlei für Sie
 ctatext: Mehr zum Anwalt
 ctalink: /about
 rechtsbereiche: Individuelle Fälle erfordern individuelle Lösungsansätze
@@ -31,7 +31,7 @@ menu:
     to: /about
   - name: Aktuelles
     to: /blog
-  - name: Schwerpunkte
+  - name: Rechtsgebiete
     to: DROPDOWN
 footermenu:
   - name: Kontakt

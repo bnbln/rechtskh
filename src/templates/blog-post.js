@@ -64,7 +64,7 @@ export const BlogPostTemplate = ({
       </div>
       <Container className="pageContent">
         <Row>
-          <Col xs={12} md={8}>
+          <Col xs={12} md={6}>
             <PostContent content={content} />
           </Col>         
         </Row>

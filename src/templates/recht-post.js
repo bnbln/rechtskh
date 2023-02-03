@@ -130,7 +130,7 @@ export const RechtPostTemplate = ({
       </div>
       <Container>
         <Row>
-          <Col xs={12} md={8}>
+          <Col xs={12} md={7}>
             {article.map((item, i) => (
               <section className="recht content" key={"section" + i}>
                 <h3 id={i}>{item.title}</h3>

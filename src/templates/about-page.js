@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import { Container, Row, Col } from "react-bootstrap";
+import { graphql, navigate, Link } from "gatsby";
+import { Container, Row, Col, Button } from "react-bootstrap";
 
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
@@ -45,21 +45,30 @@ export const AboutPageTemplate = ({
             className="list"
               xs={12}
               sm={12}
-              lg={9}
+              lg={6}
             >
-              <h3>{subtitle}</h3>
-              <Row style={{margin:0, padding:0}}>
+              {/* <h3>{subtitle}</h3> */}
+              <Row>
+                <Col>
+                <h3>Praktische Lösungen finden</h3>
+                <h5 style={{ fontWeight: "200", lineHeight: "150%", marginBottom: 16 }}>
+              Bundesweit bekannt wurde Sharief durch den Fall des Arztes, für den er eine ungewöhnliche Eigenbedarfsklage durchsetzte. Das Bundesverfassungsgericht fällte dazu ein Urteil mit Signalwirkung. <Link to={"/blog/2023-01-29-focus-spezial-oktober-2014-deutschlands-top-anwälte-krieg-um-die-wohnung/"}>Weiterlesen →</Link>
+              </h5>
+                </Col>
+             
+              </Row>
+              {/* <Row style={{margin:0, padding:0}}>
                 {list.map((item) => (
                   <Col className="listItem" xs={12}>{item.item}</Col>
                 ))}
-              </Row>
+              </Row> */}
             </Col>
           </Row>
         </Container>
       </div>
       <Container style={{ background: "white", paddingTop: "2rem" }}>
         <Row>
-          <Col xs={12} md={8}>
+          <Col xs={12} md={7}>
             <PageContent className="content" content={content} />
           </Col>
         </Row>

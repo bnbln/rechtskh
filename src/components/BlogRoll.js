@@ -56,7 +56,7 @@ class BlogRollTemplate extends React.Component {
                   </h5>
                   <p>Vom {post.frontmatter.date}</p>
                 </header>
-                <p style={{fontWeight: 300}}>
+                <p style={{fontWeight: 200}}>
                   {post.frontmatter.description}
                   <span> </span>
                   <Link className="articlebutton" to={post.fields.slug}>

@@ -27,9 +27,11 @@ return (
       </Container>
      </div>
      <Container>
-    <section className="mymargins">
-      <PageContent className="content" content={content} />
-    </section>
+      <Row>
+        <Col md={6}>
+          <PageContent className="content" content={content} />
+        </Col>
+      </Row>
     </Container>
   </>
 )
