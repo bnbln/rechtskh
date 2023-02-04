@@ -24,7 +24,7 @@ export const BlogPostTemplate = ({
 }) => {
   const PostContent = contentComponent || Content;
   var lowercaseRecht = recht;
-  console.log("data ",data.markdownRemark.id);
+  //console.log("data ",data.markdownRemark.id);
   return (
     <>
       {helmet || ""}
