@@ -1,7 +1,7 @@
 /prozesskosten/* /blog/2023-02-03-online-prozesskostenrechner-anwalts-und-gerichtskosten-auf-einen-blick 301
 /verkehrsrecht/anwalt-berlin-verkehrsrecht-versicherungsrecht-gibt-hinweise-bei-einem-verkehrsunfall-autounfall /recht/verkehrsrecht    301
-/versicherungsrecht/anwalt-berlin-versicherungsrecht-wenn-die-versicherung-nicht-zahlen-will    /versicherungsrecht    301
-/mietrecht/anwalt-berlin-mietrecht-raeumung-renovierung-auszug-schoenheitsreparatur-wasserschaden   /mietrecht  301
+/versicherungsrecht/anwalt-berlin-versicherungsrecht-wenn-die-versicherung-nicht-zahlen-will    /recht/versicherungsrecht    301
+/mietrecht/anwalt-berlin-mietrecht-raeumung-renovierung-auszug-schoenheitsreparatur-wasserschaden   /recht/mietrecht  301
 /anwalt-berlin-mietrecht-verkehrsrecht-versicherungsrecht-biografie-tarik-sharief   /anwalt 301
 /ihre-anfrage-an-einen-Anwalt-in-Berlin-von-rechtsklarheitde    /kontakt    301
 /anwalt-berlin-Verkehrsrecht-versicherungsrecht-anfahrt-und-lage    /kontakt    301
@@ -74,3 +74,6 @@
 /anwalt-berlin-themen/rechtsklarheit/kaufrecht  /blog   301
 /node/* /   301
 /mietrecht/schadensverursachung-bei-feuchtigkeits-schimmelpilzschaeden /2023-02-04-sachverständiger-wer-verursacht-den-schaden-bei-feuchtigkeits-und-schimmelpilzschäden   301
+/verkehrsrecht  /recht/verkehrsrecht    301
+/mietrecht  /recht/mietrecht    301
+/versicherungsrecht /recht/versicherungsrecht   301
