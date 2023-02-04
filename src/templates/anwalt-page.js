@@ -11,7 +11,7 @@ import Content, { HTMLContent } from "../components/Content";
 export const AboutPageTemplate = ({
   title,
   subtitle,
-  list,
+  lead,
   image,
   content,
   contentComponent,
@@ -47,21 +47,15 @@ export const AboutPageTemplate = ({
               sm={12}
               lg={6}
             >
-              {/* <h3>{subtitle}</h3> */}
               <Row>
                 <Col>
-                <h3>Praktische Lösungen finden</h3>
+                <h3>{subtitle}</h3>
                 <h5 style={{ fontWeight: "200", lineHeight: "150%", marginBottom: 16 }}>
-              Bundesweit bekannt wurde Sharief durch den Fall des Arztes, für den er eine ungewöhnliche Eigenbedarfsklage durchsetzte. Das Bundesverfassungsgericht fällte dazu ein Urteil mit Signalwirkung. <Link to={"/blog/2023-01-29-focus-spezial-oktober-2014-deutschlands-top-anwälte-krieg-um-die-wohnung/"}>Weiterlesen →</Link>
+                {lead} <Link to={"/blog/2023-01-29-focus-spezial-oktober-2014-deutschlands-top-anwälte-krieg-um-die-wohnung/"}>Weiterlesen →</Link>
               </h5>
                 </Col>
              
               </Row>
-              {/* <Row style={{margin:0, padding:0}}>
-                {list.map((item) => (
-                  <Col className="listItem" xs={12}>{item.item}</Col>
-                ))}
-              </Row> */}
             </Col>
           </Row>
         </Container>
@@ -82,7 +76,7 @@ AboutPageTemplate.propTypes = {
   content: PropTypes.string,
   contentComponent: PropTypes.func,
   subtitle: PropTypes.string,
-  list: PropTypes.object,
+  lead: PropTypes.string,
   image: PropTypes.object,
 };
 
@@ -96,7 +90,7 @@ const AboutPage = ({ data }) => {
         title={post.frontmatter.title}
         image={post.frontmatter.featuredimage}
         subtitle={post.frontmatter.subtitle}
-        list={post.frontmatter.list}
+        lead={post.frontmatter.lead}
         content={post.html}
       />
     </Layout>
@@ -116,12 +110,10 @@ export const aboutPageQuery = graphql`
       frontmatter {
         title
         subtitle
-        list {
-          item
-        }
+        lead
         featuredimage {
           childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            gatsbyImageData(width: 720, quality: 70, layout: CONSTRAINED)
           }
         }
       }

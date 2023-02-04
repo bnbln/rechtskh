@@ -4,24 +4,8 @@ const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage, createRedirect } = actions
+  const { createPage } = actions
 
-  createRedirect({ fromPath: '/anwalt-berlin-mietrecht-verkehrsrecht-versicherungsrecht-biografie-tarik-sharief', toPath: '/about', isPermanent: true })
-  // createRedirect({
-  //   fromPath: '/recht/mietrecht',
-  //   toPath: '/mietrecht', 
-  //   isPermanent: true 
-  // });
-  // createRedirect({
-  //   fromPath: '/recht/versicherungsrecht',
-  //   toPath: '/versicherungsrecht', 
-  //   isPermanent: true 
-  // });
-  // createRedirect({
-  //   fromPath: '/recht/verkehrsrecht',
-  //   toPath: '/verkehrsrecht', 
-  //   isPermanent: true 
-  // });
 
   return graphql(`
     {

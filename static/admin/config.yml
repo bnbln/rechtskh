@@ -43,15 +43,16 @@ collections:
           - { label: "Hauptmenü", name: menu, widget: list, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string"}] }
           - { label: "Footermenü", name: footermenu, widget: list, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string"}] }
           - { label: "Kontakt", name: contact, widget: object, fields: [{label: "Information", name: "info", widget: "markdown"}, {label: "Kontakt", name: "contact", widget: "markdown"}, {label: "Öffnungszeiten", name: "open", widget: "markdown"}, {label: "Einleitung", name: "intro", widget: "markdown"}, {label: "Bild", name: "image", widget: image},{label: "Bildunterschrift", name: "bu", widget: "markdown"}] }
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
+      - file: "src/pages/anwalt/index.md"
+        label: "Anwalt"
+        name: "anwalt"
         fields:
-          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page" }
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "anwalt-page" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Featured Image", name: "featuredimage", widget: image }
           - { label: "Subtitle", name: "subtitle", widget: "string"}
-          - { label: "Liste", name: "list", widget: "list", fields: [{ label: "Eintrag", name: "item", widget: "string" }]}
+          - { label: Lead, name: lead, widget: string}
+          - { label: "Link", name: "link", widget: "relation", collection: "blog", value_field: "slug", search_fields: ["title", "recht"] }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/impressum/index.md"
         label: "Impressum"

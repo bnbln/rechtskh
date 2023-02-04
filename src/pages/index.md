@@ -3,15 +3,15 @@ templateKey: index-page
 title: Ihr Partner für Versicherungsrecht, Verkehrsrecht und Mietrecht
 lead: Persönliche Rechtsberatung in der Berliner Kanzlei für Sie
 ctatext: Mehr zum Anwalt
-ctalink: /about
+ctalink: /anwalt
 rechtsbereiche: Individuelle Fälle erfordern individuelle Lösungsansätze
 images:
   - title: Tarik Sharief
     image: /img/20140510-17-06_2.jpg
-    link: /about
+    link: /anwalt
   - title: Kanzlei am Wittenbergplatz
     image: /img/mietrecht.png
-    link: /about
+    link: /anwalt
 site: Rechtsklarheit.de
 description: Kanzlei am Wittenbergplatz
 seo: "Plötzlich und unvermittelt tritt ein Unfall ein, für den die Versicherung
@@ -28,7 +28,7 @@ menu:
   - name: Home
     to: ""
   - name: Anwalt
-    to: /about
+    to: /anwalt
   - name: Aktuelles
     to: /blog
   - name: Rechtsgebiete

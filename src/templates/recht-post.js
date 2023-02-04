@@ -25,10 +25,6 @@ export const RechtPostTemplate = ({
   contentComponent,
   helmet,
 }) => {
-  // const PageContent = contentComponent || Content;
-  //const heroImage = getImage(picture);
-  // console.log("data", data);
-  // console.log("img", picture.publicURL);
   return (
     <>
       {helmet || ""}
@@ -206,19 +202,13 @@ export const pageQuery = graphql`
           publicURL
           extension
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 720, quality: 70, layout: CONSTRAINED)
           }
         }
         picture {
           publicURL
           childImageSharp {
-            gatsbyImageData(
-              width: 2400
-              quality: 100
-              layout: CONSTRAINED
-            )
+            gatsbyImageData(width: 1920, quality: 100, layout: CONSTRAINED)
           }
         }
         banner {

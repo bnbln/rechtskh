@@ -334,6 +334,7 @@
   
   // Smaller than lg
   @include media-breakpoint-down(lg) { 
+
     .aboutHero .list {
       padding: 1rem
     }
@@ -371,9 +372,6 @@
       width: 100%;
     }
   }
-  
-  
-  
   .gatsby-image-wrapper img {
     object-position: center;
    }

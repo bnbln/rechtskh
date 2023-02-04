@@ -127,7 +127,6 @@ export const IndexPageTemplate = ({
           style={{ marginTop: "7rem" }}
         >
           <Col sm={12} md={7} lg={8} xl={8}>
-            {/* <CarouselMobileWrapper images={images} /> */}
             <Row
               className="justify-content-start align-items-center"
               style={{
@@ -319,7 +318,7 @@ export const pageQuery = graphql`
           title
           image {
             childImageSharp {
-              gatsbyImageData(width: 720, quality: 70, layout: CONSTRAINED)
+              gatsbyImageData(width: 1920, quality: 100, layout: CONSTRAINED)
             }
           }
           link

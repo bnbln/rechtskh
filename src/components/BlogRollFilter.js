@@ -134,11 +134,7 @@ export default function BlogRollFilter(props) {
                   featuredpost
                   featuredimage {
                     childImageSharp {
-                      gatsbyImageData(
-                        width: 120
-                        quality: 100
-                        layout: FULL_WIDTH
-                      )
+                      gatsbyImageData(width: 720, quality: 70, layout: CONSTRAINED)
                     }
                   }
                 }
