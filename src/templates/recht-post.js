@@ -144,7 +144,7 @@ export const RechtPostTemplate = ({
 RechtPostTemplate.propTypes = {
   data: PropTypes.object,
   picture: PropTypes.object,
-  banner: PropTypes.object,
+  banner: PropTypes.array,
   article: PropTypes.object,
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,

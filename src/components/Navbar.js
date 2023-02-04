@@ -168,9 +168,9 @@ const Navigation = ({ metadata, mobile }) => {
               onClick={openMenu}
             >
               {status === true ? (
-                <XIcon size="24px" fill="rgb(255, 255, 255)" />
+                <XIcon size={24} fill="rgb(255, 255, 255)" />
               ) : (
-                <ThreeBarsIcon size="24px" fill="rgb(255, 255, 255)" />
+                <ThreeBarsIcon size={20} fill="rgb(255, 255, 255)" />
               )}
             </button>
           </div>
