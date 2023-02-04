@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { graphql, navigate } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
 import { Container, Row, Col, Button } from "react-bootstrap";
 // import Content, { HTMLContent } from "../components/Content";
 

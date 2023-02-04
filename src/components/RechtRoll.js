@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, StaticQuery } from 'gatsby'
 import { Row, Col, Card } from "react-bootstrap";
-import Img from "gatsby-image"
 import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 class RechtRollTemplate extends React.Component {
