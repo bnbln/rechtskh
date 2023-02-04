@@ -1,5 +1,18 @@
 ---
 templateKey: index-page
+hero:
+  images:
+    - title: Tarik Sharief
+      image: /img/20140510-17-06_2.jpg
+      link: /anwalt
+    - title: Kanzlei am Wittenbergplatz
+      image: /img/mietrecht.png
+      link: /anwalt
+  title: Ihr Partner für Versicherungsrecht, Verkehrsrecht und Mietrecht
+  lead: Persönliche Rechtsberatung in der Berliner Kanzlei für Sie
+  cta:
+    text: Mehr zum Anwalt
+    link: /anwalt
 title: Ihr Partner für Versicherungsrecht, Verkehrsrecht und Mietrecht
 lead: Persönliche Rechtsberatung in der Berliner Kanzlei für Sie
 ctatext: Mehr zum Anwalt
@@ -24,9 +37,10 @@ seo: "Plötzlich und unvermittelt tritt ein Unfall ein, für den die Versicherun
   Risiko ein, Ihre Rechte in diesen wichtigen Fragen nicht ausreichend
   wahrzunehmen."
 image: /img/og-image.jpg
+gaid: --
 menu:
   - name: Home
-    to: ""
+    to: NONE
   - name: Anwalt
     to: /anwalt
   - name: Aktuelles
