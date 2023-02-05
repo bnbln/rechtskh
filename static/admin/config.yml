@@ -28,22 +28,8 @@ collections:
               default: "index-page",
             }
           - { label: Hero, name: hero, widget: object, collapsed: true, summary: '{{fields.title}}: {{fields.lead}}', fields: [{ label: Bilder, name: images, widget: list, minimize_collapsed: true, fields: [{label: Titel, name: title, widget: "string"}, {label: Bild, name: image, widget: image}, {label: Link, name: link, widget: "string"}]}, { label: Titel, name: title, widget: string }, { label: Lead, name: lead, widget: string }, { label: CTA, name: cta, widget: object, fields: [{  label: Text, name: text, widget: string }, {  label: Link, name: link, widget: string }] }] }
-          - { label: Rechtsgebiete, name: recht, widget: object, collapsed: true, summary: '{{fields.lead}}: {{fields.category.*}}', fields: [{ label: Lead, name: lead, widget: string }, { label: Rechtsgebiete, name: category, widget: relation, collection: recht, value_field: title, search_fields: [title, picture], multiple: true, max: 3 }] }
+          - { label: Rechtsgebiete, name: rechtsgebiete, widget: object, collapsed: true, summary: '{{fields.lead}}', fields: [{ label: Lead, name: lead, widget: string }, { label: Rechtsgebiete, name: category, widget: relation, collection: recht, value_field: title, search_fields: [title], multiple: true, max: 3 }] }
           - { label: Seiteneinstellungen, name: settings, widget: object, collapsed: true, summary: '{{fields.site}}: {{fields.description}}', fields: [{ label: "Seitenname", name: "site", widget: "string" }, { label: "Beschreibung", name: "description", widget: "string" }, { label: "SEO Beschreibung", name: "seo", widget: "text" }, { label: "Bild", name: "image", widget: image }, { label: "Hauptmenü", name: menu, widget: list, minimize_collapsed: true, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string", required: false}] }, { label: "Footermenü", name: footermenu, widget: list, minimize_collapsed: true, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string", required: false}] }, { label: "Kontakt", name: contact, widget: object, fields: [{label: "Information", name: "info", widget: "markdown"}, {label: "Kontakt", name: "contact", widget: "markdown"}, { label: "Karte", name: "map", widget: image }, {label: "Öffnungszeiten", name: "open", widget: "markdown"}, {label: "Einleitung", name: "intro", widget: "markdown"}, {label: "Bild", name: "image", widget: image},{label: "Bildunterschrift", name: "bu", widget: "markdown"}] }] }
-          - { label: Title, name: title, widget: string }
-          - { label: Lead, name: lead, widget: string }
-          - { label: CTA Text, name: ctatext, widget: string }
-          - { label: CTA Link, name: ctalink, widget: string }
-          - { label: Rechtsbereiche, name: rechtsbereiche, widget: string }
-          - { label: Images, name: images, widget: list, fields: [{label: Titel, name: title, widget: "string"}, {label: Image, name: image, widget: image}, {label: Link, name: link, widget: "string"}]}
-          - { label: "Seitenname", name: "site", widget: "string" }
-          - { label: "Beschreibung", name: "description", widget: "string" }
-          - { label: "SEO Beschreibung", name: "seo", widget: "text" }
-          - { label: "Bild", name: "image", widget: image }
-          - { label: "Google Analytics ID", name: "gaid", widget: "string" }
-          - { label: "Hauptmenü", name: menu, widget: list, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string"}] }
-          - { label: "Footermenü", name: footermenu, widget: list, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string"}] }
-          - { label: "Kontakt", name: contact, widget: object, fields: [{label: "Information", name: "info", widget: "markdown"}, {label: "Kontakt", name: "contact", widget: "markdown"}, {label: "Öffnungszeiten", name: "open", widget: "markdown"}, {label: "Einleitung", name: "intro", widget: "markdown"}, {label: "Bild", name: "image", widget: image},{label: "Bildunterschrift", name: "bu", widget: "markdown"}] }
       - file: "src/pages/anwalt/index.md"
         label: "Anwalt"
         name: "anwalt"

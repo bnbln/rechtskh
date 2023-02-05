@@ -6,7 +6,8 @@ const useSiteMetadata = () => {
     query SITE_METADATA_QUERY {
       markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
         frontmatter {
-          site
+          settings {
+            site
           description
           seo 
           image {
@@ -34,6 +35,7 @@ const useSiteMetadata = () => {
             }
             bu
           }
+          }
     
     
         }
@@ -41,7 +43,7 @@ const useSiteMetadata = () => {
     }
     `
   )
-  return markdownRemark.frontmatter
+  return markdownRemark.frontmatter.settings
 }
 
 export default useSiteMetadata

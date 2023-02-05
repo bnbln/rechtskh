@@ -128,6 +128,13 @@ const Navigation = ({ metadata, mobile }) => {
                 style={{ display: "flex", gap: 8 }}
               >
                 {metadata.menu.map((item, i) => {
+                  if (item.to === null) {
+                    return (
+                      <NavLink key={"menu-item-" + i} to={"/"}>
+                        {item.name}
+                      </NavLink>
+                    );
+                   }
                   if (item.to === "DROPDOWN") {
                     return (
                       <NavDropdown key={"menu-item-" + i}>
@@ -204,6 +211,13 @@ const Navigation = ({ metadata, mobile }) => {
               >
                 
                 {metadata.menu.map((item, i) => {
+                  if (item.to === null) {
+                    return (
+                      <NavLink key={"menu-item-" + i} to={"/"}>
+                        {item.name}
+                      </NavLink>
+                    );
+                   }
                   if (item.to === "DROPDOWN") {
                     return (
                       <div className="dropdown">
