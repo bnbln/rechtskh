@@ -4,14 +4,14 @@ import { AboutPageTemplate } from '../../templates/anwalt-page'
 
 const AboutPagePreview = ({ entry, widgetFor }) => {
   //const data = entry.getIn(['data']).toJS();
-  const list = entry.getIn(['data', 'list']).toJS();
-  console.log(list);
+  //const list = entry.getIn(['data', 'list']).toJS();
+  //console.log(list);
   
   return (
   <>
   <AboutPageTemplate
     title={entry.getIn(['data', 'title'])}
-    list={list}
+    lead={entry.getIn(['data', 'lead'])}
     image={entry.getIn(['data', 'featuredimage'])}
     content={widgetFor('body')}
     subtitle={entry.getIn(['data', 'subtitle'])}

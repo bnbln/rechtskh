@@ -69,10 +69,12 @@ export const BlogPostTemplate = ({
           </Col>         
         </Row>
       </Container>
-      <Container style={{ marginTop: "3rem" }}>
+      { !recht || !data ? null :
+        <Container style={{ marginTop: "3rem" }}>
         <h1>Weiteres zu {recht}</h1>
         <BlogRollFilter recht={recht} exclude={data.markdownRemark.id} light={false} />
       </Container>
+        }
     </>
   );
 };
@@ -91,7 +93,6 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
-
   return (
     <Layout>
       <BlogPostTemplate

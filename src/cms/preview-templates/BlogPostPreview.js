@@ -5,7 +5,7 @@ import { BlogPostTemplate } from '../../templates/blog-post'
 const BlogPostPreview = ({ entry, widgetFor }) => {
   const tags = entry.getIn(['data', 'tags']);
   const data = entry.getIn(['data']).toJS();
-  console.log(data.date);
+  console.log(data);
   return (
     <BlogPostTemplate
       content={widgetFor('body')}
@@ -14,6 +14,7 @@ const BlogPostPreview = ({ entry, widgetFor }) => {
       title={entry.getIn(['data', 'title'])}
       date={"DATUM"}
       image={entry.getIn(['data', 'featuredimage'])}
+      recht={entry.getIn(['data', 'recht'])}
     />
   )
 }
