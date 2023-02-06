@@ -16,7 +16,7 @@ Nachdem Sie den ersten Schock überwunden haben und wieder zu Hause sind, müsse
 
 Die gegnerische Versicherung kann über den Zentralruf der Autoversicherer ermittelt werden. Die gegnerische Versicherung wird versuchen möglichst schnell mit Ihnen Kontakt aufzunehmen, um den Schaden in ihrem Interesse kostengünstig zu regulieren. Dies liegt in der Regel nicht in Ihrem Interesse, denn die Sachverständigen der Versicherung schätzen den Schaden in der Regel erheblich niedriger, als der von Ihnen beauftragte und in der aktuellen Rechtsprechung bewanderte unabhängige Sachverständige. Bei der Schadensregulierung durch die Versicherung ohne einen Anwalt werden häufig Ihnen zustehende Schadensersatzansprüche nicht mit berücksichtigt.
 
-<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="https://klarheitundrecht.netlify.app//kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
+<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="https://rechtsklarheit.de/kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
 
 ### Eigene Versicherung nach Unfall auch bei Fremdverschulden informieren
 

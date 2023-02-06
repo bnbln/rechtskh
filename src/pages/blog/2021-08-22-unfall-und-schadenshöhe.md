@@ -15,7 +15,7 @@ Außer bei einem Bagatellschaden sollten Sie die Schadenshöhe durch ein Sachver
 
 Er macht Fotos von den Unfallschäden, beziffert die Reparaturkosten, den Wiederbeschaffungswert, die Reparatur- oder Wiederbeschaffungsdauer und den sog. merkantilen Minderwert. Geben Sie gegenüber dem Sachverständigen Vorschäden an dem verunfallten Fahrzeug an. Sie gehen ansonsten das Risiko ein, dass der Sachverständige kein gerichtsverwertbares Gutachten erstellen kann.
 
-<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="https://klarheitundrecht.netlify.app//kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
+<div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="https://rechtsklarheit.de/kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
 
 ### Kostenfalle: Erstattung der Kosten für einen Leihwagen erst nach erfolgter Reparatur
 

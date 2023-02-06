@@ -48,7 +48,7 @@ article:
       Es kommt vor, dass die Versicherungsvertragsbedingungen dem Versicherungsnehmer nicht übergeben werden, so dass dieser keine Kenntnis von seinen Pflichten hat, deren Einhaltung die Voraussetzung für den Erhalt der vollen Versicherungssumme ist. In diesem Fall kann sich die Versicherung in der Regel nicht auf ihre Leistungsfreiheit berufen, selbst wenn der Versicherungsnehmer gegen Vertragsbedingungen verstoßen hat.
 
 
-      <div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="https://klarheitundrecht.netlify.app//kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
+      <div class="bg-scnd container-fluid" style="margin-top:1rem;margin-bottom:1rem;"><div class="container"><div class="justify-content-center row"><div class="col-md-auto"><h2 style="text-align: right; width: fit-content;">Jetzt Kontakt aufnehmen</h2></div><div class="col-md-auto"><a href="https://rechtsklarheit.de/kontakt" class="btn btn-primary">Zum Kontaktformular</a></div></div></div></div>
   - title: Versicherungsbedingungen
     body: >-
       Viele Klauseln in den Versicherungsbedingungen sind sowohl für den Laien
