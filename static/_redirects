@@ -98,3 +98,6 @@
 /taxonomy/term/271  /recht/versicherungsrecht   301
 /taxonomy/* /blog   301
 /mietrecht/anwalt-berlin-mietrecht-mietmängel-mietminderung     /recht/mietrecht    301
+/mietrecht/*    /recht/mietrecht    301
+/verkehrsrecht/*    /recht/verkehrsrecht    301
+/versicherungsrecht/*   /recht/versicherungsrecht   301
