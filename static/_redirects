@@ -52,9 +52,9 @@
 /category/rechtsklarheit/versicherungsrecht /recht/versicherungsrecht   301
 /aggregator/*   /   301
 /anwalt-berlin-news/*   /blog   301
-/verkehrsrecht/*    /verkehrsrecht   301
-/versicherungsrecht/*    /versicherungsrecht    301
-/mietrecht/*    /mietrecht  301
+/verkehrsrecht/*    /recht/verkehrsrecht   301
+/versicherungsrecht/*    /recht/versicherungsrecht    301
+/mietrecht/*    /recht/mietrecht  301
 /presse/*   /blog   301
 /datenschutzerklärung   /datenschutz    301
 /blog/tarik-sharief-anwalt-berlin-n-der-vermieter-ist-nicht-verpflichtet-dem-mieter-zu-best-tigen-das   /blog   301
