@@ -81,7 +81,7 @@ const TemplateWrapper = ({ children }) => {
       <div className="pageWrapper">{children}</div>
       <Footer metadata={meta} />
       <Container>
-        <CookieConsent
+        {/* <CookieConsent
           enableDeclineButton
           location="bottom"
           buttonText="Alle Cookies akzeptieren"
@@ -110,7 +110,7 @@ const TemplateWrapper = ({ children }) => {
               Weitere Informationen
             </Link>
           </span>
-        </CookieConsent>
+        </CookieConsent> */}
       </Container>
     </div>
   );
