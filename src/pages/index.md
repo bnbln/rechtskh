@@ -71,7 +71,10 @@ settings:
       Fax: +49/(0)30-69 53 33 62\
       Mail: kanzlei@rechtsklarheit.de
     info: |-
-      **Rechtsanwälte in Bürogemeinschaft**\
+      **rechtlich selbständige Rechtsanwälte** \
+      **in Bürogemeinschaft**
+
       Tarik Sharief, Zivilrecht\
       Sarah Kreibich, Strafrecht\
-      Tanja Ruperti, Fachanwältin für Arbeitsrecht
+      Dr. Marc Wortmann, Strafrecht
+---
