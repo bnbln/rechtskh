@@ -58,7 +58,7 @@ settings:
       Sie können unser Anwalts-Sekretariat in Berlin zwischen 9.00 Uhr und 12.00 Uhr und 15.00 Uhr bis 18.00 Uhr telefonisch erreichen.
 
 
-      Oder senden Sie uns hier Ihre Nachricht: Wir melden uns umgehend zurück. Bitte beachten Sie, dass der Anwalt für Sie wichtige Fristen erst nach der Mandatsübernahmebestätigung und Erhalt sämtlicher wesentlicher Unterlagen beachten wird. Der Anwalt wird also erst nach einer Mandatsvereinbarung für Sie tätig werden.
+      Oder senden Sie uns hier Ihre Nachricht. Wir melden uns umgehend zurück. Bitte beachten Sie, dass der Anwalt für Sie wichtige Fristen erst nach der Mandatsübernahmebestätigung und Erhalt sämtlicher wesentlicher Unterlagen beachten wird. Der Anwalt wird also erst nach einer Mandatsvereinbarung für Sie tätig werden.
     open: __
     map: /img/map.jpg
     contact: |-
@@ -71,7 +71,10 @@ settings:
       Fax: +49/(0)30-69 53 33 62\
       Mail: kanzlei@rechtsklarheit.de
     info: |-
-      **Rechtsanwälte in Bürogemeinschaft**\
+      **rechtlich selbständige Rechtsanwälte** \
+      **in Bürogemeinschaft**
+
       Tarik Sharief, Zivilrecht\
       Sarah Kreibich, Strafrecht\
-      Tanja Ruperti, Fachanwältin für Arbeitsrecht
+      Dr. Marc Wortmann, Strafrecht
+---
