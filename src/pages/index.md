@@ -74,7 +74,7 @@ settings:
       Telefon: +49/(0)30-69 53 33 61\
       Fax: +49/(0)30-69 53 33 62\
       Mail: kanzlei@rechtsklarheit.de
-    info: Die Kanzlei liegt im Herzen von Berlin am Wittenbergplatz in Berlin
-      Schöneberg. Sie können die Kanzlei sehr gut mit den öffentlichen
+    info: Die Kanzlei liegt im Herzen von Berlin am Wittenbergplatz in
+      Berlin-Schöneberg. Sie können die Kanzlei sehr gut mit den öffentlichen
       Verkehrsmitteln, Bus- und U-Bahnhaltestelle Wittenbergplatz, erreichen.
 ---
