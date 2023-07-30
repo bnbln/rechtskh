@@ -53,11 +53,10 @@ settings:
     image: /img/renate-cremer-portrait.jpg
     intro: >-
       ### Für Sie erreichbar
-
-
-      Sie können unser Anwalts-Sekretariat in Berlin zwischen 9.00 Uhr und 12.00 Uhr und 15.00 Uhr bis 18.00 Uhr telefonisch erreichen.
-
-
+      
+      Sie können unser Anwalts-Sekretariat in Berlin zwischen 9.00 Uhr und 12.00 Uhr und 15.00 Uhr bis 18.00 Uhr telefonisch erreichen. 
+      
+      
       Oder senden Sie uns hier Ihre Nachricht. Wir melden uns umgehend zurück. Bitte beachten Sie, dass der Anwalt für Sie wichtige Fristen erst nach der Mandatsübernahmebestätigung und Erhalt sämtlicher wesentlicher Unterlagen beachten wird. Der Anwalt wird also erst nach einer Mandatsvereinbarung für Sie tätig werden.
     open: __
     map: /img/map.jpg
