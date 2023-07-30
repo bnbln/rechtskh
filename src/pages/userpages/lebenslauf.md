@@ -1,5 +1,5 @@
 ---
-templateKey: userpage-post
+templateKey: userpages-post
 title: Lebenslauf
 date: 2022-11-29T23:47:13.198Z
 description: Das ist ein Lebenslauf
