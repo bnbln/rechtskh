@@ -62,6 +62,10 @@ settings:
     open: __
     map: /img/map.jpg
     contact: |-
+      **Rechtsanwalt**
+
+      Tarik Sharief
+
       **Anschrift**\
       Ansbacher Straße 13\
       10787 Berlin
@@ -70,11 +74,7 @@ settings:
       Telefon: +49/(0)30-69 53 33 61\
       Fax: +49/(0)30-69 53 33 62\
       Mail: kanzlei@rechtsklarheit.de
-    info: |-
-      **rechtlich selbständige Rechtsanwälte** \
-      **in Bürogemeinschaft**
-
-      Tarik Sharief, Zivilrecht\
-      Sarah Kreibich, Strafrecht\
-      Dr. Marc Wortmann, Strafrecht
+    info: Die Kanzlei liegt im Herzen von Berlin am Wittenbergplatz in Berlin
+      Schöneberg. Sie können die Kanzlei sehr gut mit den öffentlichen
+      Verkehrsmitteln, Bus- und U-Bahnhaltestelle Wittenbergplatz, erreichen.
 ---
