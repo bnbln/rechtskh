@@ -88,6 +88,26 @@ module.exports = {
       resolve: "gatsby-plugin-decap-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
+        manualInit: true,
+        customizeWebpackConfig: (config, { plugins }) => {
+          // Remove decap-cms-app from externals to force bundling
+          config.externals = config.externals.filter(external => {
+            if (typeof external === 'object' && external['decap-cms-app']) {
+              return false;
+            }
+            return true;
+          });
+
+          // Ensure we can resolve path/assert for the bundled version
+          config.resolve = {
+            ...config.resolve,
+            fallback: {
+              ...config.resolve.fallback,
+              "path": require.resolve("path-browserify"),
+              "assert": require.resolve("assert")
+            }
+          };
+        }
       },
     },
     {

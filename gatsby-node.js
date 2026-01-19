@@ -63,3 +63,24 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
+
+exports.onCreateWebpackConfig = ({ actions, plugins }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      plugins.provide({
+        process: 'process/browser',
+        Buffer: ['buffer', 'Buffer'],
+      }),
+    ],
+    resolve: {
+      fallback: {
+        "path": require.resolve("path-browserify"),
+        "assert": require.resolve("assert"),
+        "buffer": require.resolve("buffer/"),
+      },
+      alias: {
+        'decap-cms-app': path.resolve(__dirname, 'node_modules/decap-cms-app/dist/decap-cms-app.js'),
+      }
+    },
+  })
+}

@@ -12,6 +12,8 @@ import DatenschutzPagePreview from './preview-templates/DatenschutzPagePreview'
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
 
+CMS.init()
+
 CMS.registerPreviewTemplate('index', IndexPagePreview)
 CMS.registerPreviewTemplate('anwalt', AnwaltPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
