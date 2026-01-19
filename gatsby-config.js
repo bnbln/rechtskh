@@ -105,7 +105,12 @@ module.exports = {
               ...config.resolve.fallback,
               "path": require.resolve("path-browserify"),
               "assert": require.resolve("assert")
-            }
+            },
+            alias: {
+              ...config.resolve.alias,
+              'react': require.resolve('react'),
+              'react-dom': require.resolve('react-dom'),
+            },
           };
         }
       },
