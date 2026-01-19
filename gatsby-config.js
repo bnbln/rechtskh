@@ -127,8 +127,10 @@ module.exports = {
               ...config.resolve.fallback,
               "path": require.resolve("path-browserify"),
               "assert": require.resolve("assert"),
-              "crypto": require.resolve("crypto-browserify"),
-              "stream": require.resolve("stream-browserify")
+              // Wichtig: KEINE crypto/stream Fallbacks in den Admin-Bundle ziehen.
+              // Die führen zu readable-stream/_stream_writable Problemen im Browser.
+              "crypto": false,
+              "stream": false,
             },
             alias: {
               'react$': require.resolve('react'),
