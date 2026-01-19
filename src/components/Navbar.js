@@ -8,7 +8,7 @@ import {
   ChevronDownIcon,
 } from "@primer/octicons-react";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const variants = {
   open: { height: "100vh" },
@@ -22,6 +22,9 @@ const container = {
   show: {
     translateY: 0,
     transition: {
+      type: "tween",
+      ease: "easeOut",
+      duration: 0.3,
       staggerChildren: 0.06,
       delayChildren: 0.06,
     },
@@ -29,15 +32,33 @@ const container = {
   out: {
     translateY: -72,
     transition: {
+      type: "tween",
+      ease: "easeOut",
       staggerChildren: 0.3,
       delayChildren: 0.1,
     },
   },
 };
 const item = {
-  hidden: { opacity: 0, translateY: -100 },
-  show: { opacity: 1, translateY: 0 },
-  out: { opacity: 0, translateY: -100 },
+  hidden: { opacity: 0, translateY: -20 },
+  show: {
+    opacity: 1,
+    translateY: 0,
+    transition: {
+      type: "tween",
+      ease: "easeOut",
+      duration: 0.25,
+    },
+  },
+  out: {
+    opacity: 0,
+    translateY: -20,
+    transition: {
+      type: "tween",
+      ease: "easeOut",
+      duration: 0.2,
+    },
+  },
 };
 
 const Navigation = ({ metadata, mobile }) => {
@@ -88,7 +109,9 @@ const Navigation = ({ metadata, mobile }) => {
   return (
     <>
       { //Desktop Dropdown
-        !mobile && dropdown && (
+      }
+      <AnimatePresence>
+        {!mobile && dropdown && (
           <motion.div className="dropdown" initial="hidden" animate="show" exit="out" variants={container}>
             <Container>
               <motion.div variants={item}>
@@ -109,6 +132,7 @@ const Navigation = ({ metadata, mobile }) => {
             </Container>
           </motion.div>
         )}
+      </AnimatePresence>
 
       {/* Nav */}
       <motion.nav
