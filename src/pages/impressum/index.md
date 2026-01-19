@@ -2,8 +2,7 @@
 templateKey: impressum-page
 title: Impressum
 lead: " "
-icon: /img/flavor_wheel.jpg
-image: /img/flavor_wheel.jpg
+
 ---
 ## **Inhaltliche Betreuung**
 

@@ -2,8 +2,7 @@
 templateKey: datenschutz-page
 title: Datenschutzerklärung
 lead: " "
-icon: /img/flavor_wheel.jpg
-image: /img/flavor_wheel.jpg
+
 ---
 ## Datenschutzerklärung gemäß DSGVO
 

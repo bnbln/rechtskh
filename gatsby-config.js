@@ -9,7 +9,7 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
- })
+})
 
 //console.log("ga-id ",process.env.GA_ID); 
 
@@ -19,7 +19,7 @@ module.exports = {
     title: "Rechtsklarheit.de",
     description:
       "Rechtsanwalt Tarik Sharief - Kanzlei am Berliner Wittenbergplatz. Ihr Partner für Versicherungsrecht, Verkehrsrecht und Mietrecht",
-      //gaId: process.env.GA_ID,
+    //gaId: process.env.GA_ID,
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -85,7 +85,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-netlify-cms",
+      resolve: "gatsby-plugin-decap-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
@@ -130,16 +130,16 @@ module.exports = {
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
-            policy: [{userAgent: '*'}],
+            policy: [{ userAgent: '*' }],
             sitemap: siteUrl + '/sitemap/sitemap-index.xml',
           },
           'branch-deploy': {
-            policy: [{userAgent: '*', disallow: ['/']}],
+            policy: [{ userAgent: '*', disallow: ['/'] }],
             sitemap: null,
             host: null
           },
           'deploy-preview': {
-            policy: [{userAgent: '*', disallow: ['/']}],
+            policy: [{ userAgent: '*', disallow: ['/'] }],
             sitemap: null,
             host: null
           }
