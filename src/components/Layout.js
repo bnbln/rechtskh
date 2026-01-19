@@ -17,12 +17,12 @@ import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 
 const TemplateWrapper = ({ children }) => {
-   const meta = useSiteMetadata();
+  const meta = useSiteMetadata();
   // const { gaId } = useSiteMetadata();
 
   // console.log("COOKIE: ", getCookieConsentValue("gdpr"), " ", gaId);
   const handleAcceptCookie = () => {
-  //ReactGA.initialize("G-FFL7JLHTD3");
+    //ReactGA.initialize("G-FFL7JLHTD3");
   };
   const handleDeclineCookie = () => {
     //remove google analytics cookies
@@ -35,6 +35,15 @@ const TemplateWrapper = ({ children }) => {
     if (isConsent === "true") {
       handleAcceptCookie();
     }
+  }, []);
+
+  useEffect(() => {
+    if (window.history.scrollRestoration) {
+      window.history.scrollRestoration = 'manual';
+    }
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 10);
   }, []);
   const width = useWindowSize()
   return (

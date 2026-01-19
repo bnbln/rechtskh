@@ -9,7 +9,7 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
- })
+})
 
 //console.log("ga-id ",process.env.GA_ID); 
 
@@ -19,7 +19,7 @@ module.exports = {
     title: "Rechtsklarheit.de",
     description:
       "Rechtsanwalt Tarik Sharief - Kanzlei am Berliner Wittenbergplatz. Ihr Partner für Versicherungsrecht, Verkehrsrecht und Mietrecht",
-      //gaId: process.env.GA_ID,
+    //gaId: process.env.GA_ID,
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -28,6 +28,7 @@ module.exports = {
       options: {
         sassOptions: {
           indentedSyntax: false,
+          silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin', 'color-functions', 'if-function'],
         },
       },
     },
@@ -85,9 +86,57 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-netlify-cms",
+      resolve: "gatsby-plugin-decap-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
+        manualInit: true,
+        customizeWebpackConfig: (config, { plugins }) => {
+          // Remove decap-cms-app from externals to force bundling
+          config.externals = config.externals.filter(external => {
+            if (typeof external === 'object' && external['decap-cms-app']) {
+              return false;
+            }
+            return true;
+          });
+
+          // Ensure we can resolve path/assert for the bundled version
+          config.module.rules.push({
+            test: /\.js$/,
+            include: /node_modules\/gatsby\/cache-dir/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: ['babel-preset-gatsby']
+              }
+            }
+          });
+          config.module.rules.push({
+            test: /\.js$/,
+            include: /.*\/.cache\/.*/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: ['babel-preset-gatsby']
+              }
+            }
+          });
+
+          config.resolve = {
+            ...config.resolve,
+            fallback: {
+              ...config.resolve.fallback,
+              "path": require.resolve("path-browserify"),
+              "assert": require.resolve("assert"),
+              "crypto": require.resolve("crypto-browserify"),
+              "stream": require.resolve("stream-browserify")
+            },
+            alias: {
+              'react$': require.resolve('react'),
+              'react-dom$': require.resolve('react-dom'),
+              'react/jsx-runtime': require.resolve('react/jsx-runtime'),
+            },
+          };
+        }
       },
     },
     {
@@ -130,22 +179,22 @@ module.exports = {
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
-            policy: [{userAgent: '*'}],
+            policy: [{ userAgent: '*' }],
             sitemap: siteUrl + '/sitemap/sitemap-index.xml',
           },
           'branch-deploy': {
-            policy: [{userAgent: '*', disallow: ['/']}],
+            policy: [{ userAgent: '*', disallow: ['/'] }],
             sitemap: null,
             host: null
           },
           'deploy-preview': {
-            policy: [{userAgent: '*', disallow: ['/']}],
+            policy: [{ userAgent: '*', disallow: ['/'] }],
             sitemap: null,
             host: null
           }
         }
       }
     },
-    "gatsby-plugin-netlify", // make sure to keep it last in the array
+    // gatsby-plugin-netlify removed - gatsby-adapter-netlify handles this automatically
   ],
 };

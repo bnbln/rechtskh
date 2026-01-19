@@ -14,12 +14,12 @@ class BlogRollFilterTemplate extends React.Component {
 
     const category = [];
     posts.forEach((post) => {
-      if (post.node.id !== props.exclude ) {
+      if (post.node.id !== props.exclude) {
         if (post.node.frontmatter.recht === props.recht) {
           category.push(post);
         }
       }
-     
+
     });
     return (
       <>
@@ -69,9 +69,8 @@ class BlogRollFilterTemplate extends React.Component {
                     </Link>
                     <Container>
                       <article
-                        className={`blog-list-item tile is-child box notification ${
-                          post.frontmatter.featuredpost ? "is-featured" : ""
-                        }`}
+                        className={`blog-list-item tile is-child box notification ${post.frontmatter.featuredpost ? "is-featured" : ""
+                          }`}
                       >
                         <header>
                           <h5 className="post-meta" style={{ marginTop: 14 }}>
@@ -115,7 +114,7 @@ export default function BlogRollFilter(props) {
       query={graphql`
         query BlogRollFilterQuery {
           allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
+            sort: { frontmatter: { date: DESC } }
             filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
           ) {
             edges {

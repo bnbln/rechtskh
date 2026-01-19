@@ -45,9 +45,8 @@ class BlogRollTemplate extends React.Component {
                     }}
                   />
                   <article
-                    className={`blog-list-item tile is-child box notification ${
-                      post.frontmatter.featuredpost ? "is-featured" : ""
-                    }`}
+                    className={`blog-list-item tile is-child box notification ${post.frontmatter.featuredpost ? "is-featured" : ""
+                      }`}
                   >
                     <header>
                       <p
@@ -102,7 +101,7 @@ export default function BlogRoll(props) {
       query={graphql`
         query BlogRollQuery {
           allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
+            sort: { frontmatter: { date: DESC } }
             filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
           ) {
             edges {
