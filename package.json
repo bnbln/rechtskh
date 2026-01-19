@@ -50,6 +50,7 @@
   },
   "scripts": {
     "clean": "gatsby clean",
+    "decap": "npx decap-server",
     "start": "npm run develop",
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
