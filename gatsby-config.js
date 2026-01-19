@@ -99,17 +99,40 @@ module.exports = {
           });
 
           // Ensure we can resolve path/assert for the bundled version
+          config.module.rules.push({
+            test: /\.js$/,
+            include: /node_modules\/gatsby\/cache-dir/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: ['babel-preset-gatsby']
+              }
+            }
+          });
+          config.module.rules.push({
+            test: /\.js$/,
+            include: /.*\/.cache\/.*/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: ['babel-preset-gatsby']
+              }
+            }
+          });
+
           config.resolve = {
             ...config.resolve,
             fallback: {
               ...config.resolve.fallback,
               "path": require.resolve("path-browserify"),
-              "assert": require.resolve("assert")
+              "assert": require.resolve("assert"),
+              "crypto": require.resolve("crypto-browserify"),
+              "stream": require.resolve("stream-browserify")
             },
             alias: {
-              ...config.resolve.alias,
-              'react': require.resolve('react'),
-              'react-dom': require.resolve('react-dom'),
+              'react$': require.resolve('react'),
+              'react-dom$': require.resolve('react-dom'),
+              'react/jsx-runtime': require.resolve('react/jsx-runtime'),
             },
           };
         }
