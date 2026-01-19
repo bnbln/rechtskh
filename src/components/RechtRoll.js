@@ -1,72 +1,65 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, StaticQuery } from 'gatsby'
-import { Row, Col, Card } from "react-bootstrap";
-import PreviewCompatibleImage from './PreviewCompatibleImage';
+import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 class RechtRollTemplate extends React.Component {
   render() {
-    const { props } = this.props
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
 
+    // Simple line SVG icons for each practice area
+    const icons = {
+      'Mietrecht': (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10" />
+        </svg>
+      ),
+      'Versicherungsrecht': (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M9 12h6M9 16h6M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      ),
+      'Verkehrsrecht': (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      ),
+    };
+
+    // Default scale/law icon
+    const defaultIcon = (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M12 3v18M3 12l3-3 3 3M15 9l3-3 3 3M6 15h3M15 15h3" />
+      </svg>
+    );
+
     return (
-      <Row className="justify-content-center align-items-center rechtroll">
-        <Col style={{ color: "white" }} sm={12} lg={3}>
-          <h2 style={{
-            fontWeight: 300
-          }}>{props.rechtsbereiche}</h2>
-        </Col>
+      <div className="practice-cards">
         {posts &&
           posts.map(({ node: post }) => (
-
-            <Col key={"rechtroll-post-" + post.id} sm={12} lg={3} style={{
-              justifyContent: "center",
-              display: "flex",
-              position: "relative",
-
-            }}>
-              <a href={post.fields.slug} style={{
-                width: "100%",
-                color: "inherit",
-                textDecoration: "inherit"
-              }}>
-                <Card style={{
-                  width: "100%",
-                  position: "relative",
-                  display: "flex",
-                  minWidth: 0,
-                  wordWrap: "break-word",
-                  backgroundColor: "#fff",
-                  backgroundClip: "border-box",
-                  border: "0px solid rgba(0, 0, 0, 0.125)",
-                  borderRadius: "0rem",
-                  overflow: "hidden",
-                  boxShadow: "black 0px 0 70px -50px"
-
-                }}>
-
-                  <Card.Body>
-                    <Card.Title style={{
-                      margin: 0,
-                      textAlign: "center"
-                    }}>{post.frontmatter.title}</Card.Title>
-                    {/* <Button variant="secondary" size='sm' onClick={()=> navigate(post.fields.slug)}>Mehr erfahren</Button> */}
-                  </Card.Body>
-                  <PreviewCompatibleImage
-                    imageInfo={{
-                      style: { border: "4px solid white" },
-                      image: post.frontmatter.picture,
-                      alt: post.frontmatter.title,
-                      className: "card-img-top"
-                    }} />
-                  {/* <img className="card-img-top" style={{border: "4px solid white"}} src={post.frontmatter.picture.publicURL} alt={post.frontmatter.title}/> */}
-                </Card>
-              </a>
-            </Col>
-
+            <a
+              key={"rechtroll-post-" + post.id}
+              href={post.fields.slug}
+              className="practice-card"
+            >
+              <div className="practice-card-header">
+                <h3>{post.frontmatter.title}</h3>
+              </div>
+              <div className="practice-card-image">
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: post.frontmatter.picture,
+                    alt: post.frontmatter.title,
+                  }}
+                />
+                <div className="practice-card-icon">
+                  {icons[post.frontmatter.title] || defaultIcon}
+                </div>
+              </div>
+            </a>
           ))}
-      </Row>
+      </div>
     )
   }
 }

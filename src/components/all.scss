@@ -1,379 +1,832 @@
 * {
-    //font-family: 'DM Sans', sans-serif;
-    font-family: 'Lato', sans-serif;
-    }
-  h1 {
-      font-family: 'Vollkorn', sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-    }
-  
-  .navbar-brand {
-    font-family: 'Vollkorn', sans-serif;
-    color: map.get($theme-colors, "lightsecondary");
-    cursor: pointer;
-    margin-right: 2rem;
-    transform: translateY(5px);
-    font-size: 1.3rem;
-  }
-  
-  nav.navigationWrapper {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: map.get($theme-colors, "secondary");
-  }
-  .navigation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 72px;
-  }
-  .navbar-brand {
-    color: map.get($theme-colors, "light");
-    font-weight: 900;
-    opacity: 1;
-    cursor: "pointer";
-    margin-right: 2rem;
-    //transform: translateY(5px)
-    }
-    a.nav-link.nav-link-brand:hover {
-    background: map.get($theme-colors, "secondary")
-    }
-  .nav-link {
-    height: 72px;
-    font-weight: 700;
-    font-size: 1rem;
-    color: hsl(223deg 30% 60%);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 0px 20px
-  }
-  a.nav-link.nav-link-brand {
-    height: 72px;
-    font-weight: 700;
-    font-size: 1rem;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 0px
-  }
-  button.nav-link {
-    background: none;
-    border: 0px;
-    outline: 0px;
-  }
-  .dropdown {
-    position: fixed;
-    top: 72px;
-    left: 0px;
-    right: 0px;
-    background: map.get($theme-colors, "primary");
-    z-index: 2
-  }
-  .dropdown .container {
-    padding-left: 227px;
-    display: flex
-  }
-  
-  .dropdown .nav-link.light {
-    color: white;
-    opacity: 1;
-  }
-  .dropdown .nav-link.light[aria-current="page"], .dropdown .nav-link.light:focus, .dropdown .nav-link.light:hover {
-    opacity: 1;
-  }
-  .nav-link:hover, .nav-link:focus{
-    background: darken(map.get($theme-colors, "secondary"), 5)
-  }
-  .nav-link[aria-current="page"], .nav-link:hover, .nav-link:focus{
-    color: map.get($theme-colors, "light");
-  }
-  .mobileNav {
-    width: 100%;
-    height: calc( 100vh - 72px );
-    position: relative;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    display: flex;
-    align-items: center;
-    overflow: scroll;
-    padding-bottom: 40px;
-  }
-  .mobileNav .nav-link {
-    text-align: center;
-    font-size: 1.3rem;
-    line-height: 200%;
-    display: block;
-    padding: 0;
-    background: none;
-    height: 45px;
-  }
-  .mobileNav .dropdown {
-    position: relative;
-    top: inherit;
-    background: none;
-  }
-  
-  .mobileNav .dropdown h2 {
-    text-align: center;
-      opacity: 0.5;
-      margin-top: 1rem;
-      font-size: 1rem;
-      font-weight: 900;
-  }
-  
-  .mobileNav .dropdown .nav-link {
-    padding: 0px;
-    font-size: 1rem;
-    background: none;
-    height: 45px;
-  }
-  .nav-link.light:hover, .nav-link.light:focus{
-    background: darken(map.get($theme-colors, "primary"), 5)
-  }
-  
-  
-  .btn {
-    border-radius: 0px
-  }
-  
-  .btn-primary {
-    color: #fff
-  }
-  
-  .btn-outline-primary:hover, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-    color: #fff;
-  }
-  
-  .btn-secondary:hover{
+  //font-family: 'DM Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+// Prevent white background gaps between sections and footer
+body {
+  background: linear-gradient(180deg, #172340 0%, #0a1428 100%);
+}
+
+h1 {
+  font-family: 'Vollkorn', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.navbar-brand {
+  font-family: 'Vollkorn', sans-serif;
+  color: map.get($theme-colors, "lightsecondary");
+  cursor: pointer;
+  margin-right: 2rem;
+  transform: translateY(5px);
+  font-size: 1.3rem;
+}
+
+nav.navigationWrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: map.get($theme-colors, "secondary");
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.navbar-brand {
+  color: map.get($theme-colors, "light");
+  font-weight: 900;
+  opacity: 1;
+  cursor: "pointer";
+  margin-right: 2rem;
+  //transform: translateY(5px)
+}
+
+a.nav-link.nav-link-brand:hover {
+  background: map.get($theme-colors, "secondary")
+}
+
+.nav-link {
+  height: 72px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: hsl(223deg 30% 60%);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px
+}
+
+a.nav-link.nav-link-brand {
+  height: 72px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0px
+}
+
+button.nav-link {
+  background: none;
+  border: 0px;
+  outline: 0px;
+}
+
+.dropdown {
+  position: fixed;
+  top: 72px;
+  left: 0px;
+  right: 0px;
+  background: map.get($theme-colors, "primary");
+  z-index: 2
+}
+
+.dropdown .container {
+  padding-left: 227px;
+  display: flex
+}
+
+.dropdown .nav-link.light {
+  color: white;
+  opacity: 1;
+}
+
+.dropdown .nav-link.light[aria-current="page"],
+.dropdown .nav-link.light:focus,
+.dropdown .nav-link.light:hover {
+  opacity: 1;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background: darken(map.get($theme-colors, "secondary"), 5)
+}
+
+.nav-link[aria-current="page"],
+.nav-link:hover,
+.nav-link:focus {
+  color: map.get($theme-colors, "light");
+}
+
+.mobileNav {
+  width: 100%;
+  height: calc(100vh - 72px);
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  overflow: scroll;
+  padding-bottom: 40px;
+}
+
+.mobileNav .nav-link {
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 200%;
+  display: block;
+  padding: 0;
+  background: none;
+  height: 45px;
+}
+
+.mobileNav .dropdown {
+  position: relative;
+  top: inherit;
+  background: none;
+}
+
+.mobileNav .dropdown h2 {
+  text-align: center;
+  opacity: 0.5;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.mobileNav .dropdown .nav-link {
+  padding: 0px;
+  font-size: 1rem;
+  background: none;
+  height: 45px;
+}
+
+.nav-link.light:hover,
+.nav-link.light:focus {
+  background: darken(map.get($theme-colors, "primary"), 5)
+}
+
+
+.btn {
+  border-radius: 0px
+}
+
+.btn-primary {
+  color: #fff
+}
+
+.btn-outline-primary:hover,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open>.dropdown-toggle.btn-primary {
+  color: #fff;
+}
+
+.btn-secondary:hover {
   background: lighten(map.get($theme-colors, "secondary"), 20)
-  }
-  // .navbar-brand:hover {
-  //   color: #063cbc//map.get($theme-colors, "lightsecondary");
-  // }
-  .bg-scnd {
-    background-color: map.get($theme-colors, "secondary");
-    color: white;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-  
-  .herorow {
-    margin-bottom: 3rem;
-    flex-direction: row;
-  }
-  
-  .card-img-top {
-    border-radius: 0px;
-  }
-  
-  .gatsby-image-wrapper img{
+}
+
+// .navbar-brand:hover {
+//   color: #063cbc//map.get($theme-colors, "lightsecondary");
+// }
+.bg-scnd {
+  background-color: map.get($theme-colors, "secondary");
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.herorow {
+  margin-bottom: 3rem;
+  flex-direction: row;
+}
+
+.card-img-top {
+  border-radius: 0px;
+}
+
+.gatsby-image-wrapper img {
   object-position: top;
+}
+
+@include media-breakpoint-down(lg) {
+
+  .herorow {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
-  
-  @include media-breakpoint-down(lg) { 
-  
-    .herorow {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-    .window02 p {
-      transform: rotate(90deg)
-  
-    }
-    
+
+  .window02 p {
+    transform: rotate(90deg)
   }
-  
-  .inline-image {
-    position: relative;
-    width: 45%;
-    float: left;
-    margin-right: 60px;
-    margin-bottom: 30px;
-    margin-top: 10px;
-  }
-  .inline-image img {
-    width: 100%;
-  }
-  
-  
+
+}
+
+.inline-image {
+  position: relative;
+  width: 45%;
+  float: left;
+  margin-right: 60px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.inline-image img {
+  width: 100%;
+}
+
+
+.CookieConsent {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: map.get($theme-colors, "secondary");
+  padding: 16px 32px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+}
+
+.CookieConsent .buttonWrapperClasses {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 222px;
+}
+
+@include media-breakpoint-down(md) {
   .CookieConsent {
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    background: map.get($theme-colors, "secondary");
-    padding: 16px 32px;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 24px;
-    align-items: center;
-  }
-  
-  .CookieConsent .buttonWrapperClasses {
-    display: flex;
     flex-direction: column;
-    gap: 8px;
-    min-width: 222px;
+    gap: 8px
   }
-  @include media-breakpoint-down(md) { 
-    .CookieConsent {
-      flex-direction: column;
-      gap: 8px
-    }
-  
-  }
-  
-  .list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  .recht.content h3 {
-    padding-top: 4.5rem;
-    font-family: 'Vollkorn';
-      font-weight: 700;
-  }
-  .recht.content h4 {
-    font-weight: 300;
-  }
-  
-  footer {
-    background: map.get($theme-colors, "secondary");
-    color: white;
-  }
-  
-  
-  //Page & Post Layouts
-  .pageWrapper {
-    margin-bottom: 56px
-  }
-  .pageTitle {
-    background: map.get($theme-colors, "light");
-    padding: 2rem 0rem;
-    margin-top: 73px;
-  }
-  .pageTitle a {
-    color: inherit;
-    text-decoration: none;
-  }
-  .pageTitle p {
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-bottom: 2rem;
-  }
-  .pageTitle a h5 {
-    font-weight: 800;
-    margin: 1rem 0px;
-    text-transform: uppercase;
-    font-size: 1rem;
-    letter-spacing: 3px;
-    color: #334c8b
-  }
-  .pageTitle h1 {
-    margin: 0px;
-    margin-top: 5px;
-  }
-  .pageTitle .imageWrapper {
-    position: relative;
-    overflow: hidden;
-  }
-  .pageTitle .imageWrapper .image {
-    height: 60vh
-  }
-  .pageContent {
-    background: white; 
-    padding-top: 2rem;
-  }
-  
-  
-  //Banner
-  .banner {
-    background: map.get($theme-colors, "secondary");
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  
-  //About
-  .aboutHero {
-    background: map.get($theme-colors, "secondary"); 
-    color: white
-  }
-  .aboutHero .list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem
-  }
-  .aboutHero .list .listItem {
-    background: linear-gradient(60deg, #22335c, transparent);
-    padding: 20px;
-    margin: 10px 10px 0px 0px;
-    display: inline-flex
-  }
-  
-  //BlogRoll
-  a, .articlebutton{
+
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.recht.content h3 {
+  padding-top: 4.5rem;
+  font-family: 'Vollkorn';
+  font-weight: 700;
+}
+
+.recht.content h4 {
+  font-weight: 300;
+}
+
+footer {
+  background: map.get($theme-colors, "secondary");
+  color: white;
+}
+
+
+//Page & Post Layouts
+.pageWrapper {
+  margin-bottom: 56px
+}
+
+.pageTitle {
+  background: map.get($theme-colors, "light");
+  padding: 2rem 0rem;
+  margin-top: 73px;
+}
+
+.pageTitle a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pageTitle p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.pageTitle a h5 {
+  font-weight: 800;
+  margin: 1rem 0px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  color: #334c8b
+}
+
+.pageTitle h1 {
+  margin: 0px;
+  margin-top: 5px;
+}
+
+.pageTitle .imageWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.pageTitle .imageWrapper .image {
+  height: 60vh
+}
+
+.pageContent {
+  background: white;
+  padding-top: 2rem;
+}
+
+
+//Banner
+.banner {
+  background: map.get($theme-colors, "secondary");
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+//About
+.aboutHero {
+  background: map.get($theme-colors, "secondary");
+  color: white
+}
+
+.aboutHero .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem
+}
+
+.aboutHero .list .listItem {
+  background: linear-gradient(60deg, #22335c, transparent);
+  padding: 20px;
+  margin: 10px 10px 0px 0px;
+  display: inline-flex
+}
+
+//BlogRoll
+a,
+.articlebutton {
   color: map.get($theme-colors, "primary");
   font-weight: 600;
   text-decoration: none;
-  }
-  
-  a:hover, a:focus, .articlebutton:hover, .articlebutton:focus {
-    color: darken(map.get($theme-colors, "primary"), 10);
-    }
-  
-  // Smaller than lg
-  @include media-breakpoint-down(lg) { 
+}
 
-    .aboutHero .list {
-      padding: 1rem
-    }
-    .card-group {
-      display: initial;
-    }
-    .pageTitle {
-      padding: 1rem 0rem;
-    }
-    .pageTitle .row {
-      gap: 1rem;
-    }
-    .about-image {
-      padding: 30px;
-    }
-    .recht.herorow {
-      flex-direction: column-reverse!important;
-      gap: 20px
-    }
-    .rechtroll {
-      gap: 16px;
-    }
-    .rechtroll .card {
-      flex-direction: row;
-    }
-    .rechtroll .card .card-img-top {
-      width: 110px
-    }
-    .rechtroll .card .card-body {
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-    }
-    .inline-image {
-      width: 100%;
+a:hover,
+a:focus,
+.articlebutton:hover,
+.articlebutton:focus {
+  color: darken(map.get($theme-colors, "primary"), 10);
+}
+
+// Smaller than lg
+@include media-breakpoint-down(lg) {
+
+  .aboutHero .list {
+    padding: 1rem
+  }
+
+  .card-group {
+    display: initial;
+  }
+
+  .pageTitle {
+    padding: 1rem 0rem;
+  }
+
+  .pageTitle .row {
+    gap: 1rem;
+  }
+
+  .about-image {
+    padding: 30px;
+  }
+
+  .recht.herorow {
+    flex-direction: column-reverse !important;
+    gap: 20px
+  }
+
+  .rechtroll {
+    gap: 16px;
+  }
+
+  .rechtroll .card {
+    flex-direction: row;
+  }
+
+  .rechtroll .card .card-img-top {
+    width: 110px
+  }
+
+  .rechtroll .card .card-body {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inline-image {
+    width: 100%;
+  }
+}
+
+.gatsby-image-wrapper img {
+  object-position: center;
+}
+
+
+// ====================
+// LIQUID GLASS SYSTEM
+// Apple iOS 26 Inspired
+// ====================
+
+// Deep gradient backgrounds
+.bg-deep-blue {
+  background: linear-gradient(180deg, #0a1428 0%, #172340 100%);
+}
+
+.bg-gradient-radial {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(33, 125, 151, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(50, 76, 139, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, #0a1428 0%, #172340 100%);
+}
+
+// Base liquid glass material
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 4px; // Minimal radius
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    inset 0 0.5px 0 0 rgba(255, 255, 255, 0.25),
+    0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+// Dark variant for on-light backgrounds
+.liquid-glass-dark {
+  background: rgba(23, 35, 64, 0.85);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border-radius: 4px; // Minimal radius
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+// Interactive hover state
+.liquid-glass-interactive {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.3),
+      0 24px 48px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Solid CTA button
+.btn-solid-primary {
+  background: linear-gradient(135deg, #217D97 0%, #1a6377 100%);
+  border: none;
+  border-radius: 2px; // Minimal radius for professional look
+  padding: 12px 28px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 8px rgba(33, 125, 151, 0.3);
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: white;
+    box-shadow: 0 4px 16px rgba(33, 125, 151, 0.4);
+  }
+}
+
+// ====================
+// LIQUID HERO SECTION
+// Image overlaps into light section, glass panel ON TOP of image
+// ====================
+
+.hero-section {
+  position: relative;
+  // Figma gradient: linear-gradient(58.58deg, rgb(23, 35, 64) 6%, rgb(9, 14, 26) 100%)
+  background: linear-gradient(58deg, rgb(23, 35, 64) 6%, rgb(9, 14, 26) 100%);
+  padding-top: 72px;
+  padding-bottom: 180px; // More space for larger image overlap (per Figma)
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 900px;
+  margin: 3rem auto 0;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  max-width: 71%; // Figma: 736px / 1035px ≈ 71%
+  margin-bottom: -220px; // MUST exceed padding-bottom (180px) to overlap into light section
+  z-index: 5;
+
+  .gatsby-image-wrapper {
+    display: block;
+  }
+
+  .gatsby-image-wrapper img {
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+// Glass panel positioned ON TOP of the image (per Figma Frame 1 at x=597)
+.hero-glass-panel {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 340px;
+  padding: 1.75rem 2rem;
+  z-index: 20;
+
+  // Glass effect - Figma uses blur with dark background
+  background: rgba(45, 60, 90, 0.82);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  border-radius: 0; // Sharp corners per Figma
+  border: none;
+}
+
+.hero-glass-panel .hero-name {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 0.5rem;
+}
+
+.hero-glass-panel h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+.hero-glass-panel .lead {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 1.25rem;
+  line-height: 1.55;
+}
+
+// Mobile hero
+.hero-mobile {
+  .hero-inner {
+    max-width: 100%;
+    margin: 2rem 0 0;
+  }
+
+  .hero-image-wrapper {
+    max-width: 100%;
+    margin-bottom: -80px;
+  }
+
+  .hero-glass-panel {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+    max-width: 380px;
+  }
+}
+
+// ====================
+// PRACTICE AREA SECTION
+// Figma: Light background with dark card bar
+// ====================
+
+.practice-section {
+  // Figma gradient: linear-gradient(62.94deg, rgb(244, 246, 251) 6%, rgb(230, 234, 243) 100%)
+  background: linear-gradient(63deg, rgb(244, 246, 251) 6%, rgb(230, 234, 243) 100%);
+  padding-top: 5rem;
+  padding-bottom: 0; // No bottom padding - cards-wrapper extends to bottom
+}
+
+.section-header {
+  margin-bottom: 2.5rem;
+
+  h2 {
+    font-family: 'Vollkorn', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: italic;
+    color: map.get($theme-colors, "secondary");
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: map.get($theme-colors, "secondary");
+    opacity: 0.75;
+    margin: 0;
+  }
+}
+
+// Dark bar that holds the cards (per Figma Rectangle 5)
+.practice-cards-wrapper {
+  background: linear-gradient(50deg, rgb(23, 35, 64) 6%, rgb(9, 14, 26) 100%);
+  padding: 2.5rem 0 4rem 0; // Extra bottom padding per Figma
+  margin-top: 2rem;
+}
+
+.practice-cards {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.practice-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border-radius: 0; // Sharp corners per Figma
+  overflow: hidden;
+  background: white;
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.practice-card-header {
+  background: rgba(255, 255, 255, 1);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(23, 35, 64, 0.08);
+
+  h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: map.get($theme-colors, "secondary");
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.practice-card-image {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+
+  .gatsby-image-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+  .gatsby-image-wrapper img {
+    object-fit: cover;
+  }
+}
+
+// Icon box at bottom of image (per Figma)
+.practice-card-icon {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 28px;
+  background: rgba(23, 35, 64, 0.9);
+  border-radius: 0; // Sharp corners per Figma
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// ====================
+// CONTACT SECTION
+// ====================
+
+.contact-liquid {
+  position: relative;
+  min-height: 70vh;
+}
+
+.map-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  .gatsby-image-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .gatsby-image-wrapper img {
+    object-fit: cover;
+  }
+}
+
+.contact-panel {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+  padding: 2.5rem;
+  margin-top: 5rem;
+  color: white;
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  address {
+    font-style: normal;
+    margin-bottom: 1.5rem;
+    opacity: 0.85;
+    line-height: 1.6;
+  }
+
+  .contact-details {
+    margin-bottom: 2rem;
+
+    p {
+      margin-bottom: 0.5rem;
+      opacity: 0.85;
     }
   }
-  .gatsby-image-wrapper img {
-    object-position: center;
-   }
-  
-  
+}
+
+// ====================
+// CONTACT BANNER
+// ====================
+
+.banner-liquid {
+  padding: 3rem 0;
+  text-align: center;
+
+  h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+}
+
+// ====================
+// NAVIGATION LIQUID
+// ====================
+
+nav.navigationWrapper.nav-liquid {
+  background: rgba(23, 35, 64, 0.9);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 -0.5px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+// ====================
+// RESPONSIVE OVERRIDES
+// ====================
+
+@include media-breakpoint-down(lg) {
+  .hero-liquid {
+    min-height: auto;
+  }
+
+  .hero-panel {
+    padding: 2rem;
+    margin: 1rem;
+  }
+
+  .hero-panel h1 {
+    font-size: 1.8rem;
+  }
+
+  .practice-cards {
+    flex-direction: column;
+  }
+
+  .contact-panel {
+    margin: 3rem auto;
+  }
+}
