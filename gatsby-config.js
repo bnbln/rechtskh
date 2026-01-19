@@ -28,6 +28,7 @@ module.exports = {
       options: {
         sassOptions: {
           indentedSyntax: false,
+          silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin', 'color-functions', 'if-function'],
         },
       },
     },
@@ -194,6 +195,6 @@ module.exports = {
         }
       }
     },
-    "gatsby-plugin-netlify", // make sure to keep it last in the array
+    // gatsby-plugin-netlify removed - gatsby-adapter-netlify handles this automatically
   ],
 };
