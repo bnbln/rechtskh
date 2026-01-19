@@ -51,7 +51,7 @@ const Navigation = ({ metadata, mobile }) => {
           ...style,
           color: color ? color : ""
         }}
-        className={"nav-link "+className}
+        className={"nav-link " + className}
         onClick={() => handleNavigation()}
         to={to}
       >
@@ -62,7 +62,7 @@ const Navigation = ({ metadata, mobile }) => {
   const NavDropdown = ({ children }) => {
     return (
       <button
-        
+
         style={{
           textDecoration: "none",
           display: "flex",
@@ -88,27 +88,27 @@ const Navigation = ({ metadata, mobile }) => {
   return (
     <>
       { //Desktop Dropdown
-      !mobile && dropdown && (
-        <motion.div className="dropdown" initial="hidden" animate="show" exit="out" variants={container}>
-          <Container>
-            <motion.div variants={item}>
-              <NavLink className="light" color={"white"} to={"/recht/versicherungsrecht"}>
-                Versicherungsrecht
-              </NavLink>
-            </motion.div>
-            <motion.div variants={item}>
-              <NavLink className="light" color={"white"} to={"/recht/verkehrsrecht"}>
-                Verkehrsrecht
-              </NavLink>
-            </motion.div>
-            <motion.div variants={item}>
-              <NavLink className="light" color={"white"} to={"/recht/mietrecht"}>
-                Mietrecht
-              </NavLink>
-            </motion.div>
-          </Container>
-        </motion.div>
-      )}
+        !mobile && dropdown && (
+          <motion.div className="dropdown" initial="hidden" animate="show" exit="out" variants={container}>
+            <Container>
+              <motion.div variants={item}>
+                <NavLink className="light" color={"white"} to={"/recht/versicherungsrecht"}>
+                  Versicherungsrecht
+                </NavLink>
+              </motion.div>
+              <motion.div variants={item}>
+                <NavLink className="light" color={"white"} to={"/recht/verkehrsrecht"}>
+                  Verkehrsrecht
+                </NavLink>
+              </motion.div>
+              <motion.div variants={item}>
+                <NavLink className="light" color={"white"} to={"/recht/mietrecht"}>
+                  Mietrecht
+                </NavLink>
+              </motion.div>
+            </Container>
+          </motion.div>
+        )}
 
       {/* Nav */}
       <motion.nav
@@ -120,7 +120,7 @@ const Navigation = ({ metadata, mobile }) => {
         <Container>
           <div className="navigation" >
             <div className="d-flex">
-              <NavLink to={"/"} className={"nav-link-brand"} style={{padding: 0}}>
+              <NavLink to={"/"} className={"nav-link-brand"} style={{ padding: 0 }}>
                 <h1 className="navbar-brand">{metadata.site}</h1>
               </NavLink>
               <div
@@ -134,7 +134,7 @@ const Navigation = ({ metadata, mobile }) => {
                         {item.name}
                       </NavLink>
                     );
-                   }
+                  }
                   if (item.to === "DROPDOWN") {
                     return (
                       <NavDropdown key={"menu-item-" + i}>
@@ -143,7 +143,7 @@ const Navigation = ({ metadata, mobile }) => {
                     );
                   } else {
                     return (
-                      <NavLink key={"menu-item-" + i} to={"/"+item.to}>
+                      <NavLink key={"menu-item-" + i} to={item.to.startsWith('/') ? item.to : "/" + item.to}>
                         {item.name}
                       </NavLink>
                     );
@@ -209,7 +209,7 @@ const Navigation = ({ metadata, mobile }) => {
                   flexDirection: "column",
                 }}
               >
-                
+
                 {metadata.menu.map((item, i) => {
                   if (item.to === null) {
                     return (
@@ -217,7 +217,7 @@ const Navigation = ({ metadata, mobile }) => {
                         {item.name}
                       </NavLink>
                     );
-                   }
+                  }
                   if (item.to === "DROPDOWN") {
                     return (
                       <div className="dropdown">
@@ -237,7 +237,7 @@ const Navigation = ({ metadata, mobile }) => {
                     );
                   } else {
                     return (
-                      <NavLink key={"menu-item-" + i} to={"/"+item.to}>
+                      <NavLink key={"menu-item-" + i} to={item.to.startsWith('/') ? item.to : "/" + item.to}>
                         {item.name}
                       </NavLink>
                     );

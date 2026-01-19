@@ -95,7 +95,7 @@ const Footer = class extends React.Component {
                       return (
                         <Link
                           className="navbar-item"
-                          to={"/" + item.to}
+                          to={item.to.startsWith('/') ? item.to : "/" + item.to}
                           key={"footermainnav-name-" + i + "-" + item.name}
                           style={{
                             color: "white",
@@ -118,7 +118,7 @@ const Footer = class extends React.Component {
                   {meta.footermenu.map((item, i) => (
                     <Link
                       className="navbar-item"
-                      to={"/" + item.to}
+                      to={item.to.startsWith('/') ? item.to : "/" + item.to}
                       key={"footernav-link-" + i + "-" + item.name}
                       style={{
                         color: "white",
