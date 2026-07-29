@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import { Container, Row, Col } from "react-bootstrap";
 
 import Layout from "../components/Layout";
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import Content, { HTMLContent } from "../components/Content";
+import Seo from "../components/Seo";
 
 // eslint-disable-next-line
 export const UserPagePostTemplate = ({
@@ -15,17 +15,17 @@ export const UserPagePostTemplate = ({
   contentComponent,
   description,
   title,
-  helmet,
   image
 }) => {
   const PostContent = contentComponent || Content;
   return (
     <>
-      {helmet || ""}
       {/* <PreviewCompatibleImage
                   imageInfo={{
                     image: image,
                     alt: title,
+                    loading: "eager",
+                    fetchPriority: "high",
                     style: { position: "absolute", left: 0, top:0, right:0, width: "100%", zIndex: "-100", filter: "blur(100px)", transform: "scale(0.5)", opacity: "0.6"}
                   }}
                 /> */}
@@ -81,7 +81,6 @@ UserPagePostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.object,
   image: PropTypes.object,
   date: PropTypes.string
 };
@@ -96,18 +95,6 @@ const UserPagePost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        helmet={
-          <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-            {post.frontmatter.noindex && (
-              <meta name="robots" content="noindex, nofollow" />
-            )}
-          </Helmet>
-        }
         image={post.frontmatter.featuredimage}
         title={post.frontmatter.title}
         date={post.frontmatter.date}
@@ -123,6 +110,19 @@ UserPagePost.propTypes = {
 };
 
 export default UserPagePost;
+
+export const Head = ({ data, location }) => {
+  const { frontmatter } = data.markdownRemark;
+  return (
+    <Seo
+      title={frontmatter.title}
+      description={frontmatter.description}
+      pathname={location.pathname}
+      image={frontmatter.featuredimage.publicURL}
+      noindex={frontmatter.noindex}
+    />
+  );
+};
 
 export const pageQuery = graphql`
   query UserPagePostByID($id: String!) {

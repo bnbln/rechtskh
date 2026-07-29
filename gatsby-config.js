@@ -1,14 +1,12 @@
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://klarheitundrecht.netlify.app/',
-  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV
 } = process.env;
-const isNetlifyProduction = NETLIFY_ENV === 'production';
-const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+const siteUrl = (process.env.SITE_URL || 'https://rechtsklarheit.de').replace(/\/$/, '');
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
+  quiet: true,
 })
 
 //console.log("ga-id ",process.env.GA_ID); 
@@ -22,7 +20,6 @@ module.exports = {
     //gaId: process.env.GA_ID,
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-sass",
       options: {
@@ -127,6 +124,7 @@ module.exports = {
               ...config.resolve.fallback,
               "path": require.resolve("path-browserify"),
               "assert": require.resolve("assert"),
+              "buffer": require.resolve("buffer/"),
               // Wichtig: KEINE crypto/stream Fallbacks in den Admin-Bundle ziehen.
               // Die führen zu readable-stream/_stream_writable Problemen im Browser.
               "crypto": false,
@@ -138,16 +136,15 @@ module.exports = {
               'react/jsx-runtime': require.resolve('react/jsx-runtime'),
             },
           };
+          config.plugins.push(
+            plugins.provide({
+              process: 'process/browser',
+              Buffer: ['buffer', 'Buffer'],
+            })
+          );
         }
       },
     },
-    {
-      resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
-      options: {
-        develop: true, // Activates purging in npm run develop
-        purgeOnly: ["/all.scss"], // applies purging only on the bulma css file
-      },
-    }, // must be after other CSS plugins
     // {
     //   resolve: `gatsby-plugin-google-gtag`,
     //   options: {
@@ -194,7 +191,7 @@ module.exports = {
         env: {
           production: {
             policy: [{ userAgent: '*' }],
-            sitemap: `${siteUrl.replace(/\/$/, '')}/sitemap-index.xml`,
+            sitemap: `${siteUrl}/sitemap-index.xml`,
           },
           'branch-deploy': {
             policy: [{ userAgent: '*', disallow: ['/'] }],

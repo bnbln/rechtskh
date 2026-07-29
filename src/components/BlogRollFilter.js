@@ -26,7 +26,7 @@ class BlogRollFilterTemplate extends React.Component {
         <Row>
           <h2
             style={{
-              color: "white",
+              color: props.headingOnDark ? "white" : "inherit",
               marginBottom: "1.8rem",
               fontSize: "1.8rem",
               fontWeight: "300",
@@ -73,9 +73,9 @@ class BlogRollFilterTemplate extends React.Component {
                           }`}
                       >
                         <header>
-                          <h5 className="post-meta" style={{ marginTop: 14 }}>
+                          <h3 className="post-meta" style={{ marginTop: 14 }}>
                             {post.frontmatter.title}
-                          </h5>
+                          </h3>
                         </header>
                         <p>
                           {post.frontmatter.description}

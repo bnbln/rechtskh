@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Layout from "../../components/Layout";
+import Seo from "../../components/Seo";
 
 // eslint-disable-next-line
 export default () => (
@@ -16,4 +17,13 @@ export default () => (
       </Container>
     </div>
   </Layout>
+);
+
+export const Head = ({ location }) => (
+  <Seo
+    title="Nachricht gesendet"
+    description="Ihre Nachricht wurde an die Rechtsanwaltskanzlei Tarik Sharief übermittelt."
+    pathname={location.pathname}
+    noindex
+  />
 );

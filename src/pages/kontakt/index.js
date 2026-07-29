@@ -1,12 +1,11 @@
 import * as React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql, StaticQuery } from "gatsby";
-import { navigate } from "gatsby-link";
+import { Link, graphql, navigate, StaticQuery } from "gatsby";
 import { Container, Button, Row, Col, Form } from "react-bootstrap";
 
 import PreviewCompatibleImage from '../../components/PreviewCompatibleImage'
 import Layout from "../../components/Layout";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import ReactMarkdown from "react-markdown";
+import Seo from "../../components/Seo";
 
 
 
@@ -43,7 +42,6 @@ class Index extends React.Component {
   };
 
   render() {
-    const { props } = this.props;
     const { data } = this.props;
     //console.log(data.markdownRemark.frontmatter.settings.contact);
     return (
@@ -210,7 +208,9 @@ class Index extends React.Component {
                   padding: "1rem",
                   background: "#172340",
                 }}>
-                  <ReactMarkdown>{data.markdownRemark.frontmatter.settings.contact.intro}</ReactMarkdown>
+                  <ReactMarkdown components={{ h3: "h2" }}>
+                    {data.markdownRemark.frontmatter.settings.contact.intro}
+                  </ReactMarkdown>
                   <PreviewCompatibleImage
                     className="card-img-top"
                     imageInfo={{
@@ -267,3 +267,11 @@ export default function ContactSheet(props) {
     />
   );
 }
+
+export const Head = ({ location }) => (
+  <Seo
+    title="Kontakt"
+    description="Kontaktieren Sie die Rechtsanwaltskanzlei Tarik Sharief am Wittenbergplatz in Berlin."
+    pathname={location.pathname}
+  />
+);

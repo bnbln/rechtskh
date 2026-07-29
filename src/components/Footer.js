@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Link, navigate } from "gatsby";
+import { Link } from "gatsby";
 import ReactMarkdown from "react-markdown";
-import { Navbar, Container, Col, Row } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 
 const Footer = class extends React.Component {
   render() {
@@ -12,8 +12,9 @@ const Footer = class extends React.Component {
           <Container>
             <Row>
               <Col md={12} className="footernav">
-                <Navbar.Brand
-                  onClick={() => navigate("/")}
+                <Link
+                  to="/"
+                  className="footer-brand"
                   style={{
                     fontSize: 24,
                     fontWeight: 800,
@@ -21,10 +22,10 @@ const Footer = class extends React.Component {
                   }}
                 >
                   {meta.site}
-                </Navbar.Brand>
-                <h4 style={{ fontWeight: 300, marginBottom: "2rem" }}>
+                </Link>
+                <p className="footer-description">
                   {meta.description}
-                </h4>
+                </p>
               </Col>
             </Row>
             <Row>
@@ -58,11 +59,10 @@ const Footer = class extends React.Component {
                     }
                     if (item.to === "DROPDOWN") {
                       return (
-                        <>
+                        <React.Fragment key={`footer-practice-${i}`}>
                           <Link
                             className="navbar-item"
                             to={"/recht/mietrecht"}
-                            key={"footermainnav-" + i + "-" + 1}
                             style={{
                               color: "white",
                             }}
@@ -72,7 +72,6 @@ const Footer = class extends React.Component {
                           <Link
                             className="navbar-item"
                             to={"/recht/verkehrsrecht"}
-                            key={"footermainnav-" + i + "-" + 2}
                             style={{
                               color: "white",
                             }}
@@ -82,14 +81,13 @@ const Footer = class extends React.Component {
                           <Link
                             className="navbar-item"
                             to={"/recht/versicherungsrecht"}
-                            key={"footermainnav-" + i + "-" + 3}
                             style={{
                               color: "white",
                             }}
                           >
                             Versicherungsrecht
                           </Link>
-                        </>
+                        </React.Fragment>
                       );
                     } else {
                       return (

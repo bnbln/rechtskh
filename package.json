@@ -13,14 +13,10 @@
     "bootstrap": "^5.3.3",
     "buffer": "^6.0.3",
     "decap-cms-app": "^3.15.1",
-    "decap-cms-ui-auth": "^3.3.0",
     "dotenv": "^17.4.2",
-    "framer-motion": "^10.0.0",
     "gatsby": "^5.16.1",
     "gatsby-plugin-decap-cms": "^4.0.4",
     "gatsby-plugin-image": "^3.16.0",
-    "gatsby-plugin-purgecss": "^6.2.1",
-    "gatsby-plugin-react-helmet": "^6.16.0",
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sass": "^6.16.0",
     "gatsby-plugin-sharp": "^5.16.0",
@@ -40,7 +36,6 @@
     "react": "18.3.1",
     "react-bootstrap": "^2.10.0",
     "react-dom": "18.3.1",
-    "react-helmet": "^6.1.0",
     "react-markdown": "^8.0.7",
     "rehype-raw": "^7.0.0",
     "sass": "^1.102.0",
@@ -50,13 +45,15 @@
     "clean": "gatsby clean",
     "decap": "npx decap-server",
     "start": "npm run develop",
-    "build": "npm run clean && gatsby build",
+    "build": "npm run clean && NODE_OPTIONS=--disable-warning=DEP0040 gatsby build",
     "develop": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build && npm run test:smoke",
+    "test:smoke": "node scripts/smoke-test.mjs"
   },
   "devDependencies": {
+    "@netlify/plugin-lighthouse": "^6.0.4",
     "prettier": "^3.0.0"
   },
   "engines": {

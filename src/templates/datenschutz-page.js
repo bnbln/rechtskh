@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Container, Row, Col } from "react-bootstrap";
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import Content, { HTMLContent, remapHeadings } from '../components/Content'
+import Seo from '../components/Seo'
 
 export const DatenschutzPageTemplate = ({
   title,
@@ -28,7 +29,10 @@ return (
      <Container>
      <Row>
         <Col md={6}>
-          <PageContent className="content" content={content} />
+          <PageContent
+            className="content promotedLegalHeadings"
+            content={content}
+          />
         </Col>
       </Row>
     </Container>
@@ -55,7 +59,7 @@ const DatenschutzPage = ({ data }) => {
           lead={frontmatter.lead}
           icon={frontmatter.icon}
           image={frontmatter.image}
-          content={data.markdownRemark.html}
+          content={remapHeadings(data.markdownRemark.html, { 4: 3 })}
           contentComponent={HTMLContent}
         />
     </Layout>
@@ -71,6 +75,14 @@ DatenschutzPage.propTypes = {
 }
 
 export default DatenschutzPage
+
+export const Head = ({ location }) => (
+  <Seo
+    title="Datenschutzerklärung"
+    description="Datenschutzhinweise der Rechtsanwaltskanzlei Tarik Sharief für die Nutzung von rechtsklarheit.de."
+    pathname={location.pathname}
+  />
+)
 
 export const pageQuery = graphql`
   query DatenschutzPageTemplate {

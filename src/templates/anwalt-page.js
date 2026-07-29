@@ -6,7 +6,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
+import Content, { HTMLContent, remapHeadings } from "../components/Content";
+import Seo from "../components/Seo";
 
 export const AboutPageTemplate = ({
   title,
@@ -37,6 +38,8 @@ export const AboutPageTemplate = ({
                 imageInfo={{
                   image: image,
                   alt: title,
+                  loading: "eager",
+                  fetchPriority: "high",
                   style: { width: "100%", height: "auto", objectFit: "contain",  },
                 }}
               />
@@ -49,10 +52,10 @@ export const AboutPageTemplate = ({
             >
               <Row>
                 <Col>
-                <h3>{subtitle}</h3>
-                <h5 style={{ fontWeight: "200", lineHeight: "150%", marginBottom: 16 }}>
+                <h2 className="aboutSubtitle">{subtitle}</h2>
+                <p className="aboutLead">
                 {lead} <Link to={"/blog/2023-01-29-focus-spezial-oktober-2014-deutschlands-top-anwälte-krieg-um-die-wohnung/"}>Weiterlesen →</Link>
-              </h5>
+              </p>
                 </Col>
              
               </Row>
@@ -63,7 +66,7 @@ export const AboutPageTemplate = ({
       <Container style={{ background: "white", paddingTop: "2rem" }}>
         <Row>
           <Col xs={12} md={7}>
-            <PageContent className="content" content={content} />
+            <PageContent className="content promotedHeadings" content={content} />
           </Col>
         </Row>
       </Container>
@@ -91,7 +94,7 @@ const AboutPage = ({ data }) => {
         image={post.frontmatter.featuredimage}
         subtitle={post.frontmatter.subtitle}
         lead={post.frontmatter.lead}
-        content={post.html}
+        content={remapHeadings(post.html, { 3: 2 })}
       />
     </Layout>
   );
@@ -103,6 +106,18 @@ AboutPage.propTypes = {
 
 export default AboutPage;
 
+export const Head = ({ data, location }) => {
+  const { frontmatter } = data.markdownRemark;
+  return (
+    <Seo
+      title={frontmatter.title}
+      description={frontmatter.lead}
+      pathname={location.pathname}
+      image={frontmatter.featuredimage.publicURL}
+    />
+  );
+};
+
 export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
@@ -112,6 +127,7 @@ export const aboutPageQuery = graphql`
         subtitle
         lead
         featuredimage {
+          publicURL
           childImageSharp {
             gatsbyImageData(width: 720, quality: 70, layout: CONSTRAINED)
           }

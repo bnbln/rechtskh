@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
-import { graphql, navigate } from "gatsby";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { graphql } from "gatsby";
+import { Container, Row, Col } from "react-bootstrap";
 // import Content, { HTMLContent } from "../components/Content";
 
 import ReactMarkdown from "react-markdown";
@@ -12,22 +11,19 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import Layout from "../components/Layout";
 import { HTMLContent } from "../components/Content";
 import BlogRollFilter from "../components/BlogRollFilter";
+import Seo from "../components/Seo";
 
 export const RechtPostTemplate = ({
   data,
   banner,
   article,
-  image,
   picture,
   description,
   content,
   contentComponent,
-  helmet,
 }) => {
   return (
     <>
-      {helmet || ""}
-
       <div
         //className="d-block d-lg-none"
         style={{
@@ -73,10 +69,9 @@ export const RechtPostTemplate = ({
             <Col md={4}>
             <div className="list">
                 {data.article.map((item, i) => (
-                  <Button
-                    size="md"
-                    variant="primary"
-                    onClick={() => navigate("#" + i)}
+                  <a
+                    href={`#section-${i}`}
+                    className="btn btn-primary"
                     key={"sectionbutton" + i}
                     style={{
                       background: "white",
@@ -85,7 +80,7 @@ export const RechtPostTemplate = ({
                     }}
                   >
                     {item.title}
-                  </Button>
+                  </a>
                 ))}
               </div>
             </Col>
@@ -99,6 +94,8 @@ export const RechtPostTemplate = ({
           imageInfo={{
             image: picture,
             alt: data.title,
+            loading: "eager",
+            fetchPriority: "high",
             style: {
               borderRadius: "0px",
               maxWidth: "none",
@@ -120,7 +117,10 @@ export const RechtPostTemplate = ({
       </div>
       <div className="banner">
         <Container>
-          <BlogRollFilter recht={data.title} light={false}></BlogRollFilter>
+          <BlogRollFilter
+            recht={data.title}
+            headingOnDark
+          ></BlogRollFilter>
         </Container>        
       </div>
       <Container>
@@ -128,9 +128,14 @@ export const RechtPostTemplate = ({
           <Col xs={12} md={7}>
             {article.map((item, i) => (
               <section className="recht content" key={"section" + i}>
-                <h3 id={i}>{item.title}</h3>
+                <h2 id={`section-${i}`}>{item.title}</h2>
                 {/* <PageContent className="content" content={content} /> */}
-                <ReactMarkdown rehypePlugins={[rehypeRaw]}>{item.body}</ReactMarkdown>
+                <ReactMarkdown
+                  rehypePlugins={[rehypeRaw]}
+                  components={{ h4: "h3" }}
+                >
+                  {item.body}
+                </ReactMarkdown>
               </section>
             ))}
           </Col>
@@ -149,7 +154,6 @@ RechtPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.object,
 };
 
 const RechtPost = ({ data }) => {
@@ -164,16 +168,7 @@ const RechtPost = ({ data }) => {
         article={data.markdownRemark.frontmatter.article}
         content={post.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
-        helmet={
-          <Helmet titleTemplate="%s | Rechtsgebiet">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-          </Helmet>
-        }
+        description={post.frontmatter.lead}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
@@ -189,6 +184,18 @@ RechtPost.propTypes = {
 
 export default RechtPost;
 
+export const Head = ({ data, location }) => {
+  const { frontmatter } = data.markdownRemark;
+  return (
+    <Seo
+      title={`${frontmatter.title} in Berlin`}
+      description={frontmatter.lead}
+      pathname={location.pathname}
+      image={frontmatter.picture.publicURL}
+    />
+  );
+};
+
 export const pageQuery = graphql`
   query RechtPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
@@ -197,13 +204,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         lead
-        image {
-          publicURL
-          extension
-          childImageSharp {
-            gatsbyImageData(width: 720, quality: 70, layout: CONSTRAINED)
-          }
-        }
         picture {
           publicURL
           childImageSharp {

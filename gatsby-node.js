@@ -62,26 +62,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
+exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
+  if (stage !== 'build-javascript') return
 
-exports.onCreateWebpackConfig = ({ actions, plugins }) => {
-  actions.setWebpackConfig({
-    plugins: [
-      plugins.provide({
-        process: 'process/browser',
-        Buffer: ['buffer', 'Buffer'],
-      }),
-    ],
-    resolve: {
-      fallback: {
-        "path": require.resolve("path-browserify"),
-        "assert": require.resolve("assert"),
-        "buffer": require.resolve("buffer/"),
-      },
-      // Wichtig: KEIN Alias auf decap-cms-app/dist/decap-cms-app.js setzen.
-      // Das kann falsche Bundles/Polyfills in den Browser ziehen.
-      // alias: {
-      //   'decap-cms-app': path.resolve(__dirname, 'node_modules/decap-cms-app/dist/decap-cms-app.js'),
-      // },
+  const config = getConfig()
+  config.ignoreWarnings = [
+    ...(config.ignoreWarnings || []),
+    {
+      module: /gatsby-plugin-decap-cms[\\/]gatsby-browser\.js$/,
+      message: /the request of a dependency is an expression/i,
     },
-  })
+  ]
+
+  actions.replaceWebpackConfig(config)
 }

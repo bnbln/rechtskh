@@ -11,7 +11,7 @@ class BlogRollTemplate extends React.Component {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
     var all = props.all ? props.all : false;
-    // console.log(data);
+    const Heading = `h${props.headingLevel || 2}`;
     return (
       <Row>
         {posts &&
@@ -21,18 +21,11 @@ class BlogRollTemplate extends React.Component {
               md="auto"
               lg={post.frontmatter.featuredpost ? 8 : 4}
             >
-              <Link
-                className="title has-text-primary is-size-4"
-                to={post.fields.slug}
-                style={{
-                  textDecoration: `none`,
-                  color: `black`,
-                }}
+              <Card
+                key={post.id}
+                className="blogCard"
+                style={{ borderRadius: 0, border: "none", marginBottom: 40 }}
               >
-                <Card
-                  key={post.id}
-                  style={{ borderRadius: 0, border: "none", marginBottom: 40 }}
-                >
                   <PreviewCompatibleImage
                     className="card-img-top"
                     imageInfo={{
@@ -42,6 +35,9 @@ class BlogRollTemplate extends React.Component {
                       },
                       image: post.frontmatter.featuredimage,
                       alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                      sizes: post.frontmatter.featuredpost
+                        ? "(max-width: 991px) 100vw, 66vw"
+                        : "(max-width: 991px) 100vw, 33vw",
                     }}
                   />
                   <article
@@ -64,21 +60,24 @@ class BlogRollTemplate extends React.Component {
                           ? post.frontmatter.recht
                           : "Information"}
                       </p>
-                      <h5 className="post-meta" style={{ fontWeight: 700 }}>
-                        {post.frontmatter.title}
-                      </h5>
+                      <Heading className="post-meta blogCardTitle">
+                        <Link
+                          className="stretched-link"
+                          to={post.fields.slug}
+                        >
+                          {post.frontmatter.title}
+                        </Link>
+                      </Heading>
                       <p>Vom {post.frontmatter.date}</p>
                     </header>
                     <p style={{ fontWeight: 200 }}>
                       {post.frontmatter.description}
-                      <span> </span>
-                      <Link className="articlebutton" to={post.fields.slug}>
-                        Weiterlesen →
-                      </Link>
                     </p>
+                    <span className="articlebutton" aria-hidden="true">
+                      Weiterlesen →
+                    </span>
                   </article>
-                </Card>
-              </Link>
+              </Card>
             </Col>
           ))}
       </Row>
@@ -88,6 +87,7 @@ class BlogRollTemplate extends React.Component {
 
 BlogRoll.propTypes = {
   all: PropTypes.bool,
+  headingLevel: PropTypes.oneOf([2, 3, 4]),
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -122,8 +122,9 @@ export default function BlogRoll(props) {
                     childImageSharp {
                       gatsbyImageData(
                         width: 720
-                        quality: 70
+                        quality: 60
                         layout: CONSTRAINED
+                        formats: [AUTO, WEBP, AVIF]
                       )
                     }
                   }

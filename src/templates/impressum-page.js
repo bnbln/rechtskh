@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import { Container, Row, Col } from "react-bootstrap";
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import Seo from '../components/Seo'
 
 
 export const ImpressumPageTemplate = ({
@@ -71,6 +72,14 @@ ImpressumPage.propTypes = {
 }
 
 export default ImpressumPage
+
+export const Head = ({ location }) => (
+  <Seo
+    title="Impressum"
+    description="Impressum und Anbieterkennzeichnung der Rechtsanwaltskanzlei Tarik Sharief in Berlin."
+    pathname={location.pathname}
+  />
+)
 
 export const pageQuery = graphql`
   query ImpressumPageTemplate {

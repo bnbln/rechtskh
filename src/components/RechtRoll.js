@@ -13,7 +13,7 @@ class RechtRollTemplate extends React.Component {
     return (
       <Row className="justify-content-center align-items-center rechtroll">
         <Col style={{ color: "white" }} sm={12} lg={3}>
-          <h2 style={{
+          <h2 id={props.headingId} style={{
             fontWeight: 300
           }}>{props.rechtsbereiche}</h2>
         </Col>
@@ -26,7 +26,7 @@ class RechtRollTemplate extends React.Component {
               position: "relative",
 
             }}>
-              <a href={post.fields.slug} style={{
+              <a href={post.fields.slug} className="practiceCardLink" style={{
                 width: "100%",
                 color: "inherit",
                 textDecoration: "inherit"
@@ -47,7 +47,7 @@ class RechtRollTemplate extends React.Component {
                 }}>
 
                   <Card.Body>
-                    <Card.Title style={{
+                    <Card.Title as="h3" style={{
                       margin: 0,
                       textAlign: "center"
                     }}>{post.frontmatter.title}</Card.Title>
@@ -57,7 +57,8 @@ class RechtRollTemplate extends React.Component {
                     imageInfo={{
                       style: { border: "4px solid white" },
                       image: post.frontmatter.picture,
-                      alt: post.frontmatter.title,
+                      alt: "",
+                      sizes: "(max-width: 991px) 110px, 300px",
                       className: "card-img-top"
                     }} />
                   {/* <img className="card-img-top" style={{border: "4px solid white"}} src={post.frontmatter.picture.publicURL} alt={post.frontmatter.title}/> */}
@@ -73,6 +74,7 @@ class RechtRollTemplate extends React.Component {
 
 RechtRoll.propTypes = {
   props: PropTypes.array,
+  headingId: PropTypes.string,
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,

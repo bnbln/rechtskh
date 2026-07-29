@@ -2,6 +2,21 @@
     //font-family: 'DM Sans', sans-serif;
     font-family: 'Lato', sans-serif;
     }
+
+  .skip-link {
+    position: fixed;
+    left: 1rem;
+    top: 0.5rem;
+    z-index: 2000;
+    padding: 0.75rem 1rem;
+    background: white;
+    color: map.get($theme-colors, "secondary");
+    transform: translateY(-150%);
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
   h1 {
       font-family: 'Vollkorn', sans-serif;
       font-size: 2rem;
@@ -44,7 +59,7 @@
     background: map.get($theme-colors, "secondary")
     }
   .nav-link {
-    height: 72px;
+    min-height: 72px;
     font-weight: 700;
     font-size: 1rem;
     color: hsl(223deg 30% 60%);
@@ -67,6 +82,15 @@
     background: none;
     border: 0px;
     outline: 0px;
+  }
+  .mobile-menu-toggle {
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 0;
+    background: transparent;
   }
   .dropdown {
     position: fixed;
@@ -115,25 +139,39 @@
     background: none;
     height: 45px;
   }
-  .mobileNav .dropdown {
+  .mobileNav .mobilePracticeLinks {
     position: relative;
     top: inherit;
     background: none;
   }
   
-  .mobileNav .dropdown h2 {
+  .mobileNavHeading {
+    display: block;
     text-align: center;
-      opacity: 0.5;
-      margin-top: 1rem;
-      font-size: 1rem;
-      font-weight: 900;
+    opacity: 0.65;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 900;
   }
   
-  .mobileNav .dropdown .nav-link {
+  .mobileNav .mobilePracticeLinks .nav-link {
     padding: 0px;
     font-size: 1rem;
     background: none;
     height: 45px;
+  }
+  .mobileNav .container {
+    display: flex;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-block: 2rem;
+  }
+  .mobileNavLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: min(100%, 24rem);
   }
   .nav-link.light:hover, .nav-link.light:focus{
     background: darken(map.get($theme-colors, "primary"), 5)
@@ -141,7 +179,12 @@
   
   
   .btn {
-    border-radius: 0px
+    border-radius: 0px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
   
   .btn-primary {
@@ -204,46 +247,20 @@
   }
   
   
-  .CookieConsent {
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    background: map.get($theme-colors, "secondary");
-    padding: 16px 32px;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 24px;
-    align-items: center;
-  }
-  
-  .CookieConsent .buttonWrapperClasses {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    min-width: 222px;
-  }
-  @include media-breakpoint-down(md) { 
-    .CookieConsent {
-      flex-direction: column;
-      gap: 8px
-    }
-  
-  }
-  
   .list {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
   }
-  .recht.content h3 {
+  .recht.content h2 {
+    scroll-margin-top: 5rem;
     padding-top: 4.5rem;
     font-family: 'Vollkorn';
-      font-weight: 700;
+    font-size: 1.75rem;
+    font-weight: 700;
   }
-  .recht.content h4 {
+  .recht.content h3 {
+    font-size: 1.5rem;
     font-weight: 300;
   }
   
@@ -271,7 +288,10 @@
     font-weight: 400;
     margin-bottom: 2rem;
   }
-  .pageTitle a h5 {
+  .pageTitle .practiceLabel {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
     font-weight: 800;
     margin: 1rem 0px;
     text-transform: uppercase;
@@ -331,9 +351,242 @@
   a:hover, a:focus, .articlebutton:hover, .articlebutton:focus {
     color: darken(map.get($theme-colors, "primary"), 10);
     }
+
+  .blogCard {
+    position: relative;
+  }
+  .blogCardTitle {
+    font-family: 'Vollkorn', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .blogCardTitle a,
+  .blogCardTitle a:hover,
+  .blogCardTitle a:focus {
+    color: black;
+  }
+  .blogCard .stretched-link::after {
+    border: 2px solid transparent;
+  }
+  .blogCard .stretched-link:focus-visible::after {
+    border-color: map.get($theme-colors, "primary");
+  }
+  .practiceCardLink {
+    min-height: 44px;
+  }
+  .rechtroll .card-title {
+    color: map.get($theme-colors, "dark");
+    font-family: 'Lato', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .footer-brand {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .footer-description {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  .sectionHeading {
+    font-family: 'Vollkorn', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  .aboutSubtitle {
+    font-size: 1.75rem;
+  }
+  .aboutLead {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 200;
+    line-height: 1.5;
+  }
+  .promotedHeadings h2 {
+    font-size: 1.75rem;
+  }
+  .promotedLegalHeadings h3 {
+    font-size: 1.5rem;
+  }
+
+  // Home hero: interactive two-panel carousel on desktop, static LCP image on mobile.
+  .homeHero {
+    margin-top: 72px;
+    padding-block: 2rem 3rem;
+  }
+  .homeHeroRow {
+    align-items: center;
+    min-height: min(67vh, 760px);
+  }
+  .homeHeroMedia {
+    height: min(67vh, 760px);
+    overflow: hidden;
+  }
+  .homeHeroDesktopMedia {
+    width: 100%;
+    height: 100%;
+  }
+  .heroCarousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: translateX(-16px) scale(0.94);
+  }
+  .heroCarouselSlide {
+    position: absolute;
+    width: 30%;
+    height: 80%;
+    overflow: hidden;
+    transition:
+      width 3s cubic-bezier(0.45, 0, 0.55, 1),
+      height 3s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+  .heroCarouselSlide:first-child {
+    left: 0;
+  }
+  .heroCarouselSlide:last-child {
+    right: 0;
+  }
+  .heroCarouselSlide.isActive {
+    width: 68%;
+    height: 100%;
+  }
+  .heroCarouselLink {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: white;
+  }
+  .heroCarouselLink:focus-visible {
+    outline: 3px solid map.get($theme-colors, "primary");
+    outline-offset: -3px;
+  }
+  .heroCarouselTitle {
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+    z-index: 2;
+    max-width: 13rem;
+    color: white;
+    font-family: 'Vollkorn', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 0 0 20px black;
+    opacity: 0;
+    transform: translateX(-2rem);
+    transition:
+      opacity 600ms ease,
+      transform 600ms ease;
+  }
+  .heroCarouselSlide:last-child .heroCarouselTitle {
+    transform: translateX(2rem);
+  }
+  .heroCarouselSlide.isActive .heroCarouselTitle {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .heroCarousel.reduceMotion .heroCarouselSlide,
+  .heroCarousel.reduceMotion .heroCarouselTitle {
+    transition: none;
+  }
+  .homeHeroContent {
+    padding: 2rem;
+  }
+  .homeHeroEyebrow {
+    color: map.get($theme-colors, "lightsecondary");
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .homeHeroOverlay {
+    display: none;
+  }
+  .locationSection {
+    position: relative;
+    min-height: 65vh;
+  }
+  .locationMapLink {
+    position: absolute;
+    inset: 0;
+  }
+  .locationContent {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .locationCard {
+    margin-top: 5rem;
+    border: 0;
+    border-radius: 0;
+    pointer-events: auto;
+  }
   
   // Smaller than lg
   @include media-breakpoint-down(lg) { 
+
+    .homeHero {
+      padding: 0;
+    }
+    .homeHero > .container {
+      max-width: none;
+      padding: 0;
+    }
+    .homeHeroRow {
+      min-height: 720px;
+      margin: 0;
+      position: relative;
+    }
+    .homeHeroMedia {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      padding: 0;
+    }
+    .heroCarousel {
+      transform: none;
+    }
+    .heroCarouselSlide:first-child {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .heroCarouselSlide:last-child,
+    .heroCarouselTitle {
+      display: none;
+    }
+    .homeHeroOverlay {
+      display: block;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 26%,
+        rgba(0, 0, 0, 0.68) 68%,
+        #000 100%
+      );
+    }
+    .homeHeroContent {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      color: white;
+      padding: 2rem max(1rem, calc((100vw - 720px) / 2));
+    }
+    .homeHeroEyebrow {
+      color: white;
+    }
 
     .aboutHero .list {
       padding: 1rem
@@ -374,6 +627,4 @@
   }
   .gatsby-image-wrapper img {
     object-position: center;
-   }
-  
-  
+  }

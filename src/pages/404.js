@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Layout from "../components/Layout";
+import Seo from "../components/Seo";
 
 const NotFoundPage = () => (
   <Layout>
@@ -18,3 +19,12 @@ const NotFoundPage = () => (
 );
 
 export default NotFoundPage;
+
+export const Head = ({ location }) => (
+  <Seo
+    title="Seite nicht gefunden"
+    description="Die angeforderte Seite wurde nicht gefunden."
+    pathname={location.pathname}
+    noindex
+  />
+);

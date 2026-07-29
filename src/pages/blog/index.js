@@ -4,10 +4,9 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import Layout from "../../components/Layout";
 import BlogRoll from "../../components/BlogRoll";
+import Seo from "../../components/Seo";
 
-export default class BlogIndexPage extends React.Component {
-  render() {
-    return (
+const BlogIndexPage = () => (
       <Layout>
         <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginBottom: "2rem", marginTop: "73px",}}>
       <Container>
@@ -19,9 +18,17 @@ export default class BlogIndexPage extends React.Component {
       </Container>
      </div>
         <Container>
-        <BlogRoll all={true} />
+        <BlogRoll all={true} headingLevel={2} />
       </Container>
       </Layout>
-    );
-  }
-}
+);
+
+export default BlogIndexPage;
+
+export const Head = ({ location }) => (
+  <Seo
+    title="Aktuelles"
+    description="Aktuelle Beiträge zu Mietrecht, Verkehrsrecht und Versicherungsrecht von Rechtsanwalt Tarik Sharief in Berlin."
+    pathname={location.pathname}
+  />
+);
