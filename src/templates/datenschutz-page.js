@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Container, Row, Col } from "react-bootstrap";
-import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-consent";
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 

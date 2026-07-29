@@ -4,6 +4,19 @@ title: Datenschutzerklärung
 lead: " "
 
 ---
+<!--
+TODO(datenschutz): Vor einer inhaltlichen Änderung fachlich prüfen und vollständig
+an die tatsächlich eingesetzten Dienste sowie die aktuelle Rechtslage anpassen.
+
+- Stand Mai 2018 aktualisieren.
+- Behaupteten Einsatz von Google Analytics und reCAPTCHA mit dem realen Betrieb abgleichen.
+- Behauptete Social-Media-Plugins und Google Maps mit dem realen Betrieb abgleichen.
+- Fremdbezug "Gelenk-Klinik" entfernen.
+- Aussagen zu externen Google Fonts und Google-jQuery korrigieren; Fonts werden derzeit lokal ausgeliefert.
+- Verarbeitung, Pflichtfelder, Aufbewahrung und Empfänger des Kontaktformulars konkret beschreiben.
+- Rechtsgrundlagen, Drittlandtransfers, Auftragsverarbeitung und Betroffeneninformationen fachlich prüfen.
+-->
+
 ## Datenschutzerklärung gemäß DSGVO
 
 **1. Name und Kontaktdaten des für die Verarbeitung Verantwortlichen sowie des betrieblichen Datenschutzbeauftragten**

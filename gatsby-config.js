@@ -172,7 +172,19 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        excludes: ['/admin', '/404', '/kontakt/examples', '/kontakt/file-upload', '/kontakt/thanks'],
+        excludes: [
+          '/admin/**',
+          '/404',
+          '/404/',
+          '/kontakt/examples/**',
+          '/kontakt/file-upload/**',
+          '/kontakt/thanks/',
+          '/kontakt/thanks/**',
+          '/page/testseite/',
+          '/page/testseite/**',
+          '/userpages/lebenslauf/',
+          '/userpages/lebenslauf/**',
+        ],
       },
     },
     {
@@ -182,7 +194,7 @@ module.exports = {
         env: {
           production: {
             policy: [{ userAgent: '*' }],
-            sitemap: siteUrl + '/sitemap/sitemap-index.xml',
+            sitemap: `${siteUrl.replace(/\/$/, '')}/sitemap-index.xml`,
           },
           'branch-deploy': {
             policy: [{ userAgent: '*', disallow: ['/'] }],

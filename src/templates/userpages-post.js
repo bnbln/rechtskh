@@ -103,6 +103,9 @@ const UserPagePost = ({ data }) => {
               name="description"
               content={`${post.frontmatter.description}`}
             />
+            {post.frontmatter.noindex && (
+              <meta name="robots" content="noindex, nofollow" />
+            )}
           </Helmet>
         }
         image={post.frontmatter.featuredimage}
@@ -130,6 +133,7 @@ export const pageQuery = graphql`
         date(formatString: "DD.MM.YYYY")
         title
         description
+        noindex
         featuredimage {
           publicURL
           extension

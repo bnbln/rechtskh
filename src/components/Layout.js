@@ -1,14 +1,9 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "gatsby";
-//import ReactGA from 'react-ga';
-import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-consent";
-import { Container } from "react-bootstrap";
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./theme.scss";
 
-//import { initGA } from "./ga-utils.js";
 import useWindowSize from "./getWindow";
 
 import Footer from "../components/Footer";
@@ -18,24 +13,6 @@ import { withPrefix } from "gatsby";
 
 const TemplateWrapper = ({ children }) => {
   const meta = useSiteMetadata();
-  // const { gaId } = useSiteMetadata();
-
-  // console.log("COOKIE: ", getCookieConsentValue("gdpr"), " ", gaId);
-  const handleAcceptCookie = () => {
-    //ReactGA.initialize("G-FFL7JLHTD3");
-  };
-  const handleDeclineCookie = () => {
-    //remove google analytics cookies
-    Cookies.remove("_ga");
-    Cookies.remove("_gat");
-    Cookies.remove("_gid");
-  };
-  useEffect(() => {
-    const isConsent = getCookieConsentValue("gdpr");
-    if (isConsent === "true") {
-      handleAcceptCookie();
-    }
-  }, []);
 
   useEffect(() => {
     if (window.history.scrollRestoration) {
@@ -89,38 +66,6 @@ const TemplateWrapper = ({ children }) => {
       <Navbar metadata={meta} mobile={width > 991 ? false : true} />
       <div className="pageWrapper">{children}</div>
       <Footer metadata={meta} />
-      <Container>
-        {/* <CookieConsent
-          enableDeclineButton
-          location="bottom"
-          buttonText="Alle Cookies akzeptieren"
-          cookieName="gdpr"
-          expires={150}
-          disableStyles={true}
-          declineButtonText="Notwendige Cookies akzeptieren"
-          buttonClasses="btn btn-primary btn-sm"
-          buttonWrapperClasses="buttonWrapperClasses"
-          declineButtonClasses="btn btn-secondary btn-sm"
-          contentClasses="contentClasses"
-          onAccept={handleAcceptCookie}
-          onDecline={handleDeclineCookie}
-          style={{
-            boxShadow: "black 0px 0px 150px",
-            zIndex: "100",
-          }}
-        >
-          <b>Diese Seite verwendet Cookies </b>
-          <br />
-          <span style={{ fontSize: 10 }}>
-            Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren,
-            Funktionen für soziale Medien anbieten zu können und die Zugriffe
-            auf unsere Website zu analysieren.{" "}
-            <Link to="/datenschutz" style={{ color: "white" }}>
-              Weitere Informationen
-            </Link>
-          </span>
-        </CookieConsent> */}
-      </Container>
     </div>
   );
 };

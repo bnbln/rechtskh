@@ -23,7 +23,8 @@ class Index extends React.Component {
   }
 
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    const { name, type, checked, value } = e.target;
+    this.setState({ [name]: type === "checkbox" ? checked : value });
   };
 
   handleSubmit = (e) => {
@@ -85,9 +86,10 @@ class Index extends React.Component {
                       <Form.Control
                         type={'text'}
                         name={'vorname'}
-                        onChange={this.handleChange}
-                        id={'vorname'}
-                        required={true}
+                      onChange={this.handleChange}
+                      id={'vorname'}
+                      autoComplete="given-name"
+                      required={true}
                         placeholder="Max" />
                     </Form.Group>
                   </Col>
@@ -97,9 +99,10 @@ class Index extends React.Component {
                       <Form.Control
                         type={'text'}
                         name={'nachname'}
-                        onChange={this.handleChange}
-                        id={'nachname'}
-                        required={true}
+                      onChange={this.handleChange}
+                      id={'nachname'}
+                      autoComplete="family-name"
+                      required={true}
                         placeholder="Mustermann" />
                     </Form.Group>
                   </Col>
@@ -107,25 +110,25 @@ class Index extends React.Component {
                 <Row>
                   <Col sm={6}>
                     <Form.Group className="mb-3" controlId="adresse">
-                      <Form.Label htmlFor={'adresse'}>Straße und Hausnummer</Form.Label>
+                      <Form.Label htmlFor={'adresse'}>Straße und Hausnummer (optional)</Form.Label>
                       <Form.Control
                         type={'text'}
                         name={'adresse'}
                         onChange={this.handleChange}
                         id={'adresse'}
-                        required={true}
+                        autoComplete="street-address"
                         placeholder="Musterstraße 10" />
                     </Form.Group>
                   </Col>
                   <Col sm={6}>
                     <Form.Group className="mb-3" controlId="stadt">
-                      <Form.Label htmlFor={'stadt'}>PLZ und Stadt</Form.Label>
+                      <Form.Label htmlFor={'stadt'}>PLZ und Stadt (optional)</Form.Label>
                       <Form.Control
                         type={'text'}
                         name={'stadt'}
                         onChange={this.handleChange}
                         id={'stadt'}
-                        required={true}
+                        autoComplete="address-level2"
                         placeholder="12161 Berlin" />
                     </Form.Group>
                   </Col>
@@ -137,21 +140,22 @@ class Index extends React.Component {
                       <Form.Control
                         type={'email'}
                         name={'email'}
-                        onChange={this.handleChange}
-                        id={'email'}
-                        required={true}
+                      onChange={this.handleChange}
+                      id={'email'}
+                      autoComplete="email"
+                      required={true}
                         placeholder="max.mustermann@mail.de" />
                     </Form.Group>
                   </Col>
                   <Col sm={6}>
                     <Form.Group className="mb-3" controlId="telefon">
-                      <Form.Label htmlFor={'telefon'}>Telefonnummer</Form.Label>
+                      <Form.Label htmlFor={'telefon'}>Telefonnummer (optional)</Form.Label>
                       <Form.Control
-                        type={'text'}
+                        type={'tel'}
                         name={'telefon'}
                         onChange={this.handleChange}
                         id={'telefon'}
-                        required={true}
+                        autoComplete="tel"
                         placeholder="030 1234567" />
                     </Form.Group>
                   </Col>
@@ -159,7 +163,9 @@ class Index extends React.Component {
                     <Form.Check
                       type="switch"
                       id="custom-switch"
-                      label="ich wünsche einen Rückruf"
+                      name="rueckruf"
+                      onChange={this.handleChange}
+                      label="Ich wünsche einen Rückruf"
                       style={{ marginBottom: 24 }}
                     />
                   </Form.Group>
@@ -187,6 +193,11 @@ class Index extends React.Component {
                     style={{ height: '200px' }}
                     placeholder="Meine Nachricht" />
                 </Form.Group>
+                <p className="small text-muted">
+                  Mit dem Absenden werden Ihre Angaben zur Bearbeitung Ihrer
+                  Anfrage übermittelt. Weitere Informationen finden Sie in der{" "}
+                  <Link to="/datenschutz/">Datenschutzerklärung</Link>.
+                </p>
                 <Button type="submit">Senden</Button>
               </Form>
             </Col>
