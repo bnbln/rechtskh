@@ -12,7 +12,7 @@ import { MailIcon } from "./Icons";
 const normalizeTarget = (target) =>
   target?.startsWith("/") ? target : `/${target || ""}`;
 
-const Navigation = ({ metadata }) => {
+const Navigation = ({ metadata, isHome = false }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
@@ -47,7 +47,12 @@ const Navigation = ({ metadata }) => {
   );
 
   return (
-    <nav className="navigationWrapper" aria-label="Hauptnavigation">
+    <nav
+      className={`navigationWrapper${
+        isHome ? " navigationWrapper--home" : ""
+      }`}
+      aria-label="Hauptnavigation"
+    >
       <Container>
         <div className="navigation">
           <div className="d-flex">
@@ -55,29 +60,36 @@ const Navigation = ({ metadata }) => {
               <span className="navbar-brand">{metadata.site}</span>
             </NavLink>
 
-            <div className="d-none d-lg-flex">
-              {metadata.menu.map((item) => {
-                if (item.to === "DROPDOWN") {
-                  return (
-                    <button
-                      key={item.name}
-                      className="nav-link"
-                      type="button"
-                      aria-expanded={dropdownOpen}
-                      aria-controls="practice-dropdown"
-                      onClick={() => setDropdownOpen((open) => !open)}
-                    >
-                      {item.name} <ChevronDownIcon aria-hidden="true" />
-                    </button>
-                  );
-                }
+            <div className="homeDesktopNav d-none d-lg-flex">
+              {metadata.menu
+                .filter(
+                  (item) =>
+                    !isHome ||
+                    item.name === "Anwalt" ||
+                    item.to === "DROPDOWN"
+                )
+                .map((item) => {
+                  if (item.to === "DROPDOWN") {
+                    return (
+                      <button
+                        key={item.name}
+                        className="nav-link"
+                        type="button"
+                        aria-expanded={dropdownOpen}
+                        aria-controls="practice-dropdown"
+                        onClick={() => setDropdownOpen((open) => !open)}
+                      >
+                        {item.name} <ChevronDownIcon aria-hidden="true" />
+                      </button>
+                    );
+                  }
 
-                return (
-                  <NavLink key={item.name} to={normalizeTarget(item.to)}>
-                    {item.name}
-                  </NavLink>
-                );
-              })}
+                  return (
+                    <NavLink key={item.name} to={normalizeTarget(item.to)}>
+                      {item.name}
+                    </NavLink>
+                  );
+                })}
             </div>
           </div>
 

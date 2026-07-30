@@ -378,6 +378,9 @@ a.nav-link.nav-link-brand:focus {
   line-height: 1.6;
   color: $on-navy-strong;
 }
+.homeHeroEyebrowDesktop {
+  display: none;
+}
 
 // Crossfading hero photo stack (CarouselWrapper).
 .heroStack {
@@ -1596,6 +1599,104 @@ footer {
 }
 
 // ──────────────────────────────────────────────────────── responsive ──
+
+@include media-breakpoint-up(lg) {
+  // The homepage uses a deliberately quieter desktop masthead. Subpages and
+  // the mobile navigation retain the shared site header above.
+  .navigationWrapper--home .container {
+    max-width: none;
+    padding-inline: clamp(2rem, 3.25vw, 3.75rem);
+  }
+  .navigationWrapper--home .navigation {
+    height: clamp(#{$nav-height}, 5.5vw, 6.25rem);
+  }
+  .navigationWrapper--home .navigation > .d-flex {
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navigationWrapper--home .navbar-brand {
+    font-size: clamp(1.35rem, 1.55vw, 1.75rem);
+  }
+  .navigationWrapper--home .nav-link,
+  .navigationWrapper--home a.nav-link.nav-link-brand {
+    min-height: clamp(#{$nav-height}, 5.5vw, 6.25rem);
+    height: clamp(#{$nav-height}, 5.5vw, 6.25rem);
+  }
+  .navigationWrapper--home .homeDesktopNav .nav-link {
+    font-size: clamp(0.95rem, 1.05vw, 1.15rem);
+  }
+  .navigationWrapper--home .homeDesktopNav {
+    margin-left: auto;
+  }
+  .navigationWrapper--home .btn-outline-on-navy {
+    min-height: clamp(3.25rem, 3.9vw, 4.5rem);
+    margin-left: clamp(1.5rem, 3vw, 3.5rem);
+    padding-inline: clamp(2rem, 2.6vw, 3rem);
+    border-width: 2px;
+    font-size: clamp(1rem, 1.05vw, 1.15rem);
+  }
+  .navigationWrapper--home .btn-outline-on-navy svg {
+    display: none;
+  }
+
+  .homeHero {
+    padding-top: 0;
+  }
+  .homeHero > .container {
+    max-width: $page-max;
+  }
+  .homeHeroRow {
+    flex-direction: column;
+    margin-inline: 0;
+  }
+  .homeHeroMedia {
+    order: 2;
+    width: min(82.5%, 66rem);
+    padding-inline: 0;
+  }
+  .homeHeroFrame {
+    aspect-ratio: 16 / 9;
+  }
+  .homeHeroContent {
+    order: 1;
+    width: 100%;
+    margin: 0;
+    padding: 9.75rem 0 7rem;
+    text-align: center;
+    border-radius: 0;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .homeHeroEyebrow {
+    margin-bottom: 1.75rem;
+    font-size: clamp(1rem, 1.55vw, 1.35rem);
+    font-weight: $weight-strong;
+    letter-spacing: 0.06em;
+  }
+  .homeHeroEyebrowDesktop {
+    display: inline;
+  }
+  .homeHeroEyebrowMobile {
+    display: none;
+  }
+  .homeHeroContent h1 {
+    max-width: 68.75rem;
+    margin: 0 auto 2.5rem;
+    font-size: clamp(3.35rem, 4.2vw, 4.75rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+  }
+  .homeHeroContent .lead {
+    display: none;
+  }
+  .homeHeroContent .btn {
+    min-height: 4rem;
+    padding-inline: 3.25rem;
+    font-size: 1.1rem;
+  }
+}
 
 @include media-breakpoint-down(xl) {
   .homeHeroContent {

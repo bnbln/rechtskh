@@ -28,7 +28,14 @@ export const IndexPageTemplate = ({ hero, rechtsgebiete, kanzlei, settings }) =>
             </div>
           </Col>
           <Col lg={6} className="homeHeroContent">
-            <p className="homeHeroEyebrow">{hero.images[0].title}</p>
+            <p className="homeHeroEyebrow">
+              <span className="homeHeroEyebrowDesktop">
+                {settings.description} · Berlin
+              </span>
+              <span className="homeHeroEyebrowMobile">
+                {hero.images[0].title}
+              </span>
+            </p>
             <h1>{hero.title}</h1>
             <p className="lead">{hero.lead}</p>
             <Link className="btn btn-primary" to={hero.cta.link}>
@@ -216,7 +223,7 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
-    <Layout>
+    <Layout isHome>
       <IndexPageTemplate
         hero={frontmatter.hero}
         rechtsgebiete={frontmatter.rechtsgebiete}
