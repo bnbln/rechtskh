@@ -1,12 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql, Link } from "gatsby";
-import { Container, Row, Col } from "react-bootstrap";
-
-import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+import { Container } from "react-bootstrap";
 
 import Layout from "../components/Layout";
 import Content, { HTMLContent, remapHeadings } from "../components/Content";
+import { PracticeLinks, SplitHero } from "../components/PageElements";
 import Seo from "../components/Seo";
 
 export const AboutPageTemplate = ({
@@ -20,55 +19,50 @@ export const AboutPageTemplate = ({
   const PageContent = contentComponent || Content;
   return (
     <>
-      <div className="pageTitle">
-        <Container>
-          <Row>
-            <Col>
-              <h1>{title}</h1>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-      <div className="aboutHero">
-        <Container>
-          <Row gap={24} className="align-items-md-center justify-content-center">
-            <Col xs={8} sm={6} lg={3} style={{ padding: "1.5rem"}}>
-              <PreviewCompatibleImage
-              className="about-image "
-                imageInfo={{
-                  image: image,
-                  alt: title,
-                  loading: "eager",
-                  fetchPriority: "high",
-                  style: { width: "100%", height: "auto", objectFit: "contain",  },
-                }}
-              />
-            </Col>
-            <Col
-            className="list"
-              xs={12}
-              sm={12}
-              lg={6}
-            >
-              <Row>
-                <Col>
-                <h2 className="aboutSubtitle">{subtitle}</h2>
-                <p className="aboutLead">
-                {lead} <Link to={"/blog/2023-01-29-focus-spezial-oktober-2014-deutschlands-top-anwälte-krieg-um-die-wohnung/"}>Weiterlesen →</Link>
+      <SplitHero
+        title={title}
+        lead={lead}
+        eyebrow={subtitle}
+        image={image}
+        imageAlt="Rechtsanwalt Tarik Sharief"
+        imagePosition="center 25%"
+        imageFirst
+        showBreadcrumbs={false}
+      >
+        <Link className="btn btn-primary" to="/kontakt/">
+          Zum Kontaktformular
+        </Link>
+      </SplitHero>
+
+      <Container className="subpageContent">
+        <div className="contentWithSidebar">
+          <div>
+            <PageContent className="richContent promotedHeadings" content={content} />
+          </div>
+          <div className="sidebarStack">
+            <aside className="sidebarCard">
+              <h2 className="sidebarTitle">Kanzlei</h2>
+              <p>
+                <strong>Rechtsanwalt Tarik Sharief</strong>
+                <br />
+                Ansbacher Straße 13
+                <br />
+                10787 Berlin
               </p>
-                </Col>
-             
-              </Row>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-      <Container style={{ background: "white", paddingTop: "2rem" }}>
-        <Row>
-          <Col xs={12} md={7}>
-            <PageContent className="content promotedHeadings" content={content} />
-          </Col>
-        </Row>
+              <p>
+                <a href="tel:+493069533361">030 – 69 53 33 61</a>
+                <br />
+                <a href="mailto:kanzlei@rechtsklarheit.de">
+                  kanzlei@rechtsklarheit.de
+                </a>
+              </p>
+              <Link className="btn btn-outline-navy btn-sm" to="/kontakt/">
+                Kontakt & Standort →
+              </Link>
+            </aside>
+            <PracticeLinks />
+          </div>
+        </div>
       </Container>
     </>
   );

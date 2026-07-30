@@ -1,89 +1,91 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql, StaticQuery } from 'gatsby'
-import { Row, Col, Card } from "react-bootstrap";
-import PreviewCompatibleImage from './PreviewCompatibleImage';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql, StaticQuery, Link } from "gatsby";
 
-class RechtRollTemplate extends React.Component {
-  render() {
-    const { props } = this.props
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+import PreviewCompatibleImage from "./PreviewCompatibleImage";
+import { LayersIcon, practiceIcon } from "./Icons";
+
+// Staggered tile grid from the redesign: a tall tile, a wide tile, a filler
+// card that carries the "aus einer Hand" message, and a third tile. The tile
+// shapes are assigned by position in all.scss (.practiceTile:nth-child), so
+// the CMS order of `rechtsgebiete.category` decides which area gets which
+// shape.
+const FILLER_TEXT = "Rechtsgebietsübergreifende Lösungen aus einer Hand";
+
+const sortByCategory = (posts, order) => {
+  if (!order?.length) return posts;
+
+  const rank = new Map(
+    order.map((title, index) => [title.trim().toLowerCase(), index])
+  );
+  const position = ({ node }) =>
+    rank.has(node.frontmatter.title.trim().toLowerCase())
+      ? rank.get(node.frontmatter.title.trim().toLowerCase())
+      : order.length;
+
+  return [...posts].sort((a, b) => position(a) - position(b));
+};
+
+const PracticeTiles = ({ data, order }) => {
+  const posts = sortByCategory(data.allMarkdownRemark.edges, order).slice(0, 3);
+
+  const tiles = posts.map(({ node: post }, index) => {
+    const Icon = practiceIcon(post.frontmatter.title);
 
     return (
-      <Row className="justify-content-center align-items-center rechtroll">
-        <Col style={{ color: "white" }} sm={12} lg={3}>
-          <h2 id={props.headingId} style={{
-            fontWeight: 300
-          }}>{props.rechtsbereiche}</h2>
-        </Col>
-        {posts &&
-          posts.map(({ node: post }) => (
+      <Link
+        key={`rechtroll-post-${post.id}`}
+        to={post.fields.slug}
+        className="practiceTile"
+      >
+        <PreviewCompatibleImage
+          imageInfo={{
+            image: post.frontmatter.picture,
+            alt: "",
+            loading: "lazy",
+            sizes:
+              index === 0
+                ? "(max-width: 991px) 100vw, 33vw"
+                : "(max-width: 991px) 100vw, 66vw",
+          }}
+        />
+        <span className="practiceTileScrim" aria-hidden="true" />
+        <span className="practiceTileIcon">
+          <Icon size={26} />
+        </span>
+        <span className="practiceTileBody">
+          <span className="practiceTileTitle">{post.frontmatter.title}</span>
+          <span className="practiceTileText">
+            {post.frontmatter.teaser || post.frontmatter.lead}
+          </span>
+        </span>
+      </Link>
+    );
+  });
 
-            <Col key={"rechtroll-post-" + post.id} sm={12} lg={3} style={{
-              justifyContent: "center",
-              display: "flex",
-              position: "relative",
+  // The filler card sits in the bottom-left cell, between tile 2 and tile 3.
+  return (
+    <div className="practiceGrid">
+      {tiles.slice(0, 2)}
+      <div className="practiceFiller">
+        <LayersIcon size={28} style={{ color: "var(--rk-teal)" }} />
+        <span>{FILLER_TEXT}</span>
+      </div>
+      {tiles.slice(2)}
+    </div>
+  );
+};
 
-            }}>
-              <a href={post.fields.slug} className="practiceCardLink" style={{
-                width: "100%",
-                color: "inherit",
-                textDecoration: "inherit"
-              }}>
-                <Card style={{
-                  width: "100%",
-                  position: "relative",
-                  display: "flex",
-                  minWidth: 0,
-                  wordWrap: "break-word",
-                  backgroundColor: "#fff",
-                  backgroundClip: "border-box",
-                  border: "0px solid rgba(0, 0, 0, 0.125)",
-                  borderRadius: "0rem",
-                  overflow: "hidden",
-                  boxShadow: "black 0px 0 70px -50px"
-
-                }}>
-
-                  <Card.Body>
-                    <Card.Title as="h3" style={{
-                      margin: 0,
-                      textAlign: "center"
-                    }}>{post.frontmatter.title}</Card.Title>
-                    {/* <Button variant="secondary" size='sm' onClick={()=> navigate(post.fields.slug)}>Mehr erfahren</Button> */}
-                  </Card.Body>
-                  <PreviewCompatibleImage
-                    imageInfo={{
-                      style: { border: "4px solid white" },
-                      image: post.frontmatter.picture,
-                      alt: "",
-                      sizes: "(max-width: 991px) 110px, 300px",
-                      className: "card-img-top"
-                    }} />
-                  {/* <img className="card-img-top" style={{border: "4px solid white"}} src={post.frontmatter.picture.publicURL} alt={post.frontmatter.title}/> */}
-                </Card>
-              </a>
-            </Col>
-
-          ))}
-      </Row>
-    )
-  }
-}
-
-RechtRoll.propTypes = {
-  props: PropTypes.array,
-  headingId: PropTypes.string,
+PracticeTiles.propTypes = {
+  order: PropTypes.arrayOf(PropTypes.string),
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
     }),
   }),
-}
+};
 
-
-export default function RechtRoll(props) {
+export default function RechtRoll({ order }) {
   return (
     <StaticQuery
       query={graphql`
@@ -100,11 +102,18 @@ export default function RechtRoll(props) {
                 }
                 frontmatter {
                   title
+                  lead
+                  teaser
                   templateKey
                   picture {
                     publicURL
                     childImageSharp {
-                      gatsbyImageData(width: 300, quality: 50, layout: CONSTRAINED)
+                      gatsbyImageData(
+                        width: 900
+                        quality: 60
+                        layout: CONSTRAINED
+                        formats: [AUTO, WEBP, AVIF]
+                      )
                     }
                   }
                 }
@@ -113,7 +122,11 @@ export default function RechtRoll(props) {
           }
         }
       `}
-      render={(data, count) => <RechtRollTemplate data={data} count={count} props={props} />}
+      render={(data) => <PracticeTiles data={data} order={order} />}
     />
   );
 }
+
+RechtRoll.propTypes = {
+  order: PropTypes.arrayOf(PropTypes.string),
+};

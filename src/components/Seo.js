@@ -110,11 +110,11 @@ const Seo = ({
       <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content={socialImage} />
 
-      <meta name="theme-color" content="#172340" />
+      <meta name="theme-color" content="#141d33" />
       <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
-      <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#172340" />
+      <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#141d33" />
 
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </>

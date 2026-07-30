@@ -18,7 +18,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
     return (
       <GatsbyImage
         image={image.childImageSharp.gatsbyImageData}
-        style={{...style, objectPosition: "center"}}
+        style={{ objectPosition: "center", ...style }}
         alt={alt}
         className={className}
         loading={loading}
@@ -30,7 +30,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
     return (
       <GatsbyImage
         image={childImageSharp.gatsbyImageData}
-        style={{...style, objectPosition: "center"}}
+        style={{ objectPosition: "center", ...style }}
         alt={alt}
         className={className}
         loading={loading}
@@ -43,7 +43,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
     return (
       <img
         className={className}
-        style={{ ...style, objectPosition: "center" }}
+        style={{ objectPosition: "center", ...style }}
         src={image}
         alt={alt}
         loading={loading}

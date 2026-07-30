@@ -1,111 +1,77 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
-import { Row, Card, Container, CardGroup } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
-class BlogRollFilterTemplate extends React.Component {
-  render() {
-    const { props } = this.props;
-    const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
-    var all = props.all ? props.all : false;
+const BlogRollFilterTemplate = ({ data, props }) => {
+  const posts = data.allMarkdownRemark.edges
+    .filter(
+      ({ node }) =>
+        node.id !== props.exclude && node.frontmatter.recht === props.recht
+    )
+    .slice(0, props.all ? 100 : 3);
 
-    const category = [];
-    posts.forEach((post) => {
-      if (post.node.id !== props.exclude) {
-        if (post.node.frontmatter.recht === props.recht) {
-          category.push(post);
-        }
-      }
+  if (!posts.length) return null;
 
-    });
-    return (
-      <>
-        <Row>
-          <h2
-            style={{
-              color: props.headingOnDark ? "white" : "inherit",
-              marginBottom: "1.8rem",
-              fontSize: "1.8rem",
-              fontWeight: "300",
-            }}
-          >
-            Aktuelles zum {props.recht}
-          </h2>
-        </Row>
-        <Row>
-          <CardGroup style={{ gap: "2rem" }}>
-            {posts &&
-              category
-                .slice(0, all === false ? 3 : 100)
-                .map(({ node: post }) => (
-                  <Card
-                    key={post.id}
-                    style={{
-                      borderRadius: 0,
-                      border: "none",
-                      marginBottom: 40,
-                      background: "##f0f3f9",
+  return (
+    <>
+      <div className="sectionHead">
+        <div>
+          <h2 className="sectionEyebrow">Artikel zum {props.recht}</h2>
+          <p className="sectionLead">Aktuelles aus der Kanzlei</p>
+        </div>
+        <Link className="linkUnderline" to="/blog/">
+          Alle Artikel ansehen →
+        </Link>
+      </div>
+      <Row>
+        {posts.map(({ node: post }) => (
+          <Col key={post.id} md={6} lg={4} className="blogCard">
+            <article>
+              <div className="blogCardMedia">
+                {post.frontmatter.featuredimage ? (
+                  <PreviewCompatibleImage
+                    imageInfo={{
+                      image: post.frontmatter.featuredimage,
+                      alt: "",
+                      loading: "lazy",
+                      sizes: "(max-width: 767px) 100vw, 33vw",
+                      style: { aspectRatio: "4 / 2.6" },
                     }}
-                  >
-                    <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                      style={{
-                        textDecoration: `none`,
-                        color: `black`,
-                      }}
-                    >
-                      <PreviewCompatibleImage
-                        className="card-img-top"
-                        imageInfo={{
-                          style: { height: 300 },
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                        }}
-                      />
-                    </Link>
-                    <Container>
-                      <article
-                        className={`blog-list-item tile is-child box notification ${post.frontmatter.featuredpost ? "is-featured" : ""
-                          }`}
-                      >
-                        <header>
-                          <h3 className="post-meta" style={{ marginTop: 14 }}>
-                            {post.frontmatter.title}
-                          </h3>
-                        </header>
-                        <p>
-                          {post.frontmatter.description}
-                          <span> </span>
-                          <Link
-                            className="button"
-                            to={post.fields.slug}
-                            style={{ color: "#258EA6" }}
-                          >
-                            Weiterlesen →
-                          </Link>
-                        </p>
-                      </article>
-                    </Container>
-                  </Card>
-                ))}
-          </CardGroup>
-        </Row>
-      </>
-    );
-  }
-}
+                  />
+                ) : (
+                  <div className="blogCardPlaceholder" aria-hidden="true">
+                    <span>Artikelbild</span>
+                  </div>
+                )}
+              </div>
+              <span className="blogCardKicker">{post.frontmatter.recht}</span>
+              <h3 className="blogCardTitle">
+                <Link className="stretched-link" to={post.fields.slug}>
+                  {post.frontmatter.title}
+                </Link>
+              </h3>
+            </article>
+          </Col>
+        ))}
+      </Row>
+    </>
+  );
+};
+
+BlogRollFilterTemplate.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({ edges: PropTypes.array }),
+  }).isRequired,
+  props: PropTypes.object.isRequired,
+};
 
 BlogRollFilter.propTypes = {
-  all: PropTypes.object,
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array,
-    }),
-  }),
+  all: PropTypes.bool,
+  exclude: PropTypes.string,
+  recht: PropTypes.string.isRequired,
 };
 
 export default function BlogRollFilter(props) {
@@ -119,7 +85,6 @@ export default function BlogRollFilter(props) {
           ) {
             edges {
               node {
-                excerpt(pruneLength: 200)
                 id
                 fields {
                   slug
@@ -127,13 +92,14 @@ export default function BlogRollFilter(props) {
                 frontmatter {
                   recht
                   title
-                  description
-                  templateKey
-                  date(formatString: "MMMM DD, YYYY")
-                  featuredpost
                   featuredimage {
                     childImageSharp {
-                      gatsbyImageData(width: 720, quality: 70, layout: CONSTRAINED)
+                      gatsbyImageData(
+                        width: 720
+                        quality: 68
+                        layout: CONSTRAINED
+                        formats: [AUTO, WEBP, AVIF]
+                      )
                     }
                   }
                 }
@@ -142,9 +108,7 @@ export default function BlogRollFilter(props) {
           }
         }
       `}
-      render={(data, count) => (
-        <BlogRollFilterTemplate data={data} count={count} props={props} />
-      )}
+      render={(data) => <BlogRollFilterTemplate data={data} props={props} />}
     />
   );
 }

@@ -1,176 +1,115 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import { Container, Row, Col } from "react-bootstrap";
-// import Content, { HTMLContent } from "../components/Content";
-
+import { graphql, Link } from "gatsby";
+import { Container } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
-import rehypeRaw from 'rehype-raw'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import rehypeRaw from "rehype-raw";
 
-import Layout from "../components/Layout";
-import { HTMLContent } from "../components/Content";
 import BlogRollFilter from "../components/BlogRollFilter";
+import Layout from "../components/Layout";
+import {
+  InlineContactCta,
+  PracticeLinks,
+  SplitHero,
+} from "../components/PageElements";
 import Seo from "../components/Seo";
 
-export const RechtPostTemplate = ({
-  data,
-  banner,
-  article,
-  picture,
-  description,
-  content,
-  contentComponent,
-}) => {
-  return (
-    <>
-      <div
-        //className="d-block d-lg-none"
-        style={{
-          height: "720px",
-          width: "100%",
-          position: "relative",
-        }}
-      >
-        <Container
-          className="d-flex justify-content-end"
-          style={{
-            position: "absolute",
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0,
-            zIndex: 1,
-            padding: " var(--bs-gutter-x, 0.75rem)",
-            flexDirection: "column",
-          }}
-        >
-          <Row>
-            <Col md={5}>
-              <h1
-                style={{
-                  color: "white",
-                  fontFamily: "Lato",
-                  fontSize: "1.5rem",
-                }}
-              >
-                {data.title}
-              </h1>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={5}>
-              <p className="lead" style={{ color: "white" }}>
-                {data.lead}
-              </p>
-            </Col>
-          </Row>
-          <Row style={{marginBottom: "2rem"}}>
-            <Col md={4}>
-            <div className="list">
-                {data.article.map((item, i) => (
-                  <a
-                    href={`#section-${i}`}
-                    className="btn btn-primary"
-                    key={"sectionbutton" + i}
-                    style={{
-                      background: "white",
-                      color: "black",
-                      border: 0
-                    }}
-                  >
-                    {item.title}
-                  </a>
-                ))}
-              </div>
-            </Col>
-          </Row>
-        </Container>
+const sectionId = (index) => `section-${index}`;
 
-        <PreviewCompatibleImage
-          style={{
-            objectFit: "cover",
-          }}
-          imageInfo={{
-            image: picture,
-            alt: data.title,
-            loading: "eager",
-            fetchPriority: "high",
-            style: {
-              borderRadius: "0px",
-              maxWidth: "none",
-              height: "100%",
-              width: "100%"
-            },
-          }}
-        />
-        <div style={{
-          position: "absolute",
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0,
-          zIndex: 0,
-          background:
-              "linear-gradient(180deg, rgba(0, 0, 0, 0) 26.15%, rgba(0, 0, 0, 0.65) 66.15%, #000000 100%)",
-            }}></div>
+export const RechtPostTemplate = ({ data, picture, article, banner }) => (
+  <>
+    <SplitHero
+      title={data.title}
+      lead={data.lead}
+      eyebrow="Rechtsgebiet"
+      image={picture}
+      imageAlt={data.title}
+      compact
+    >
+      <Link className="btn btn-primary" to="/kontakt/">
+        Fall schildern
+      </Link>
+    </SplitHero>
+
+    <Container className="subpageContent">
+      <div className="contentWithSidebar">
+        <div>
+          <header className="contentIntro">
+            <h2 className="sectionEyebrow">Überblick</h2>
+            <p className="sectionLead">{data.title} in Berlin</p>
+            {banner?.[0]?.text ? <p>{banner[0].text}</p> : null}
+          </header>
+
+          {banner?.[1]?.text ? (
+            <aside className="legalCallout">
+              <span aria-hidden="true">§</span>
+              <p>{banner[1].text}</p>
+            </aside>
+          ) : null}
+
+          {article.map((item, index) => (
+            <section
+              className="richContent legalSection"
+              id={sectionId(index)}
+              key={`${item.title}-${index}`}
+            >
+              <h2>{item.title}</h2>
+              <ReactMarkdown
+                rehypePlugins={[rehypeRaw]}
+                components={{ h4: "h3" }}
+              >
+                {item.body}
+              </ReactMarkdown>
+            </section>
+          ))}
+
+          <InlineContactCta
+            title={`${data.title}: persönliche Beratung`}
+            text="Schildern Sie uns Ihren Fall. Wir melden uns umgehend zurück."
+          />
+        </div>
+
+        <div className="sidebarStack">
+          <aside className="sidebarCard">
+            <h2 className="sidebarTitle">Auf dieser Seite</h2>
+            <nav className="sidebarNav" aria-label="Inhalt dieser Seite">
+              <a href="#main-content">Überblick</a>
+              {article.map((item, index) => (
+                <a href={`#${sectionId(index)}`} key={`nav-${item.title}`}>
+                  {item.title}
+                </a>
+              ))}
+            </nav>
+          </aside>
+          <PracticeLinks current={data.title} />
+        </div>
       </div>
-      <div className="banner">
-        <Container>
-          <BlogRollFilter
-            recht={data.title}
-            headingOnDark
-          ></BlogRollFilter>
-        </Container>        
-      </div>
+    </Container>
+
+    <section className="relatedSection">
       <Container>
-        <Row>
-          <Col xs={12} md={7}>
-            {article.map((item, i) => (
-              <section className="recht content" key={"section" + i}>
-                <h2 id={`section-${i}`}>{item.title}</h2>
-                {/* <PageContent className="content" content={content} /> */}
-                <ReactMarkdown
-                  rehypePlugins={[rehypeRaw]}
-                  components={{ h4: "h3" }}
-                >
-                  {item.body}
-                </ReactMarkdown>
-              </section>
-            ))}
-          </Col>
-        </Row>
+        <BlogRollFilter recht={data.title} />
       </Container>
-    </>
-  );
-};
+    </section>
+  </>
+);
 
 RechtPostTemplate.propTypes = {
-  data: PropTypes.object,
-  picture: PropTypes.object,
+  data: PropTypes.object.isRequired,
+  picture: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
   banner: PropTypes.array,
-  article: PropTypes.object,
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
-  description: PropTypes.string,
-  title: PropTypes.string,
+  article: PropTypes.array.isRequired,
 };
 
 const RechtPost = ({ data }) => {
   const { markdownRemark: post } = data;
-  //console.log(data);
   return (
     <Layout>
       <RechtPostTemplate
-        data={data.markdownRemark.frontmatter}
-        picture={data.markdownRemark.frontmatter.picture}
-        banner={data.markdownRemark.frontmatter.banner}
-        article={data.markdownRemark.frontmatter.article}
-        content={post.html}
-        contentComponent={HTMLContent}
-        description={post.frontmatter.lead}
-        tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
+        data={post.frontmatter}
+        picture={post.frontmatter.picture}
+        banner={post.frontmatter.banner}
+        article={post.frontmatter.article}
       />
     </Layout>
   );
@@ -200,14 +139,18 @@ export const pageQuery = graphql`
   query RechtPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
-      html
       frontmatter {
         title
         lead
         picture {
           publicURL
           childImageSharp {
-            gatsbyImageData(width: 1920, quality: 100, layout: CONSTRAINED)
+            gatsbyImageData(
+              width: 1200
+              quality: 82
+              layout: CONSTRAINED
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
         banner {

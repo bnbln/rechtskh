@@ -1,0 +1,96 @@
+// Design tokens — the single source of truth for the Rechtsklarheit redesign.
+//
+// Every value here comes from the design (Claude Design project
+// "Rechtsklarheit Website Redesign", Startseite.dc.html). The SCSS variables
+// feed Bootstrap's own maps in theme.scss; the :root custom properties below
+// mirror them so React components and inline styles can reach the same values
+// without importing SCSS. Change a colour here and it changes everywhere.
+
+// — brand —
+$navy: #141d33; // dark surface: nav, hero, contact banner, footer
+$navy-deep: #0a0f1c; // shadow tint only
+$teal: #1c8c99; // accent: primary buttons, icons, underlines
+$teal-dark: #156b74; // accent hover/active
+
+// — text —
+$ink: #1c2233; // body copy on light
+$ink-heading: #141d33; // headings on light
+$ink-muted: #4a5164; // secondary copy
+$ink-label: #5b6478; // eyebrows, kickers, meta
+$ink-faint: #9aa2b1; // placeholder captions
+
+// — text on navy —
+$on-navy: #ffffff;
+$on-navy-strong: #c3cadb; // body copy on navy
+$on-navy-muted: #93a3c2; // lead copy, icon labels on navy
+$on-navy-nav: #aab2c6; // idle nav links
+$on-navy-faint: #5c6a8a; // footer headings, copyright
+
+// — light surfaces —
+$surface: #ffffff;
+$surface-tint: #f6f7f4; // "Warum die Kanzlei" band
+$surface-mute: #f3f4f6; // filler tile
+$border: #e4e7ec;
+$placeholder-a: #eef0f3; // article image placeholder stripes
+$placeholder-b: #e4e7ec;
+
+// — typography —
+$font-heading: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$weight-heading: 800; // Archivo ExtraBold — wordmark and h1/h2
+$weight-strong: 600;
+$weight-medium: 500;
+
+// — shape —
+$radius: 10px; // cards, images, tiles
+$radius-pill: 999px; // every button in the design is a pill
+$shadow-hero: 0 24px 50px rgba(10, 15, 28, 0.4);
+$shadow-chip: 0 4px 14px rgba(20, 29, 51, 0.18);
+$shadow-card: 0 18px 40px rgba(20, 29, 51, 0.1);
+
+// — layout —
+$page-max: 1280px;
+$page-gutter: 48px;
+$page-gutter-sm: 20px;
+$nav-height: 72px; // the fixed nav; subpage templates offset their top band by this
+
+// — motion —
+$ease: 0.15s ease;
+$ease-slow: 0.35s ease;
+
+:root {
+  --rk-navy: #{$navy};
+  --rk-teal: #{$teal};
+  --rk-teal-dark: #{$teal-dark};
+
+  --rk-ink: #{$ink};
+  --rk-ink-heading: #{$ink-heading};
+  --rk-ink-muted: #{$ink-muted};
+  --rk-ink-label: #{$ink-label};
+  --rk-ink-faint: #{$ink-faint};
+
+  --rk-on-navy: #{$on-navy};
+  --rk-on-navy-strong: #{$on-navy-strong};
+  --rk-on-navy-muted: #{$on-navy-muted};
+  --rk-on-navy-nav: #{$on-navy-nav};
+  --rk-on-navy-faint: #{$on-navy-faint};
+
+  --rk-surface: #{$surface};
+  --rk-surface-tint: #{$surface-tint};
+  --rk-surface-mute: #{$surface-mute};
+  --rk-border: #{$border};
+
+  --rk-font-heading: #{$font-heading};
+  --rk-font-body: #{$font-body};
+  --rk-weight-heading: #{$weight-heading};
+
+  --rk-radius: #{$radius};
+  --rk-radius-pill: #{$radius-pill};
+  --rk-shadow-hero: #{$shadow-hero};
+  --rk-shadow-chip: #{$shadow-chip};
+  --rk-shadow-card: #{$shadow-card};
+
+  --rk-page-max: #{$page-max};
+  --rk-page-gutter: #{$page-gutter};
+  --rk-nav-height: #{$nav-height};
+}

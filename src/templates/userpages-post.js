@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { graphql } from "gatsby";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 import Layout from "../components/Layout";
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import Content, { HTMLContent } from "../components/Content";
+import { SplitHero } from "../components/PageElements";
 import Seo from "../components/Seo";
 
 // eslint-disable-next-line
@@ -20,57 +20,15 @@ export const UserPagePostTemplate = ({
   const PostContent = contentComponent || Content;
   return (
     <>
-      {/* <PreviewCompatibleImage
-                  imageInfo={{
-                    image: image,
-                    alt: title,
-                    loading: "eager",
-                    fetchPriority: "high",
-                    style: { position: "absolute", left: 0, top:0, right:0, width: "100%", zIndex: "-100", filter: "blur(100px)", transform: "scale(0.5)", opacity: "0.6"}
-                  }}
-                /> */}
-      <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginTop: "73px",}}>
-      <Container style={{
- 
-      }}>
-        <Row className=" align-items-md-center justify-content-between herorow" style={{marginBottom: 0}}>
-          <Col md={12} lg={5} xl={4}>
-            <h1 style={{hyphens: "auto"}}>{title}</h1>
-            <p>{description}</p>
-          </Col>
-          <Col md={12} lg={7} xl={7}>
-            <Row className="d-flex justify-content-start align-items-center">
-              <div
-                style={{
-                  position: "relative",
-                  overflow: "hidden",
-                }}
-              >
-                <div
-                  style={{
-                    height: "60vh",
-                  }}
-                >
-                  <PreviewCompatibleImage
-                  imageInfo={{
-                    image: image,
-                    alt: title,
-                    style: { width: "100%", height: "100%"}
-                  }}
-                />
-                </div>
-              </div>
-            </Row>
-          </Col>
-        </Row>
-      </Container>
-      </div>
-      <Container style={{ background: "white", paddingTop: "2rem"}}>
-        <Row>
-          <Col xs={12} md={8}>
-            <PostContent content={content} />
-          </Col>
-        </Row>
+      <SplitHero
+        title={title}
+        lead={description}
+        eyebrow="Kanzlei"
+        image={image}
+        imageAlt={title}
+      />
+      <Container className="legalPage">
+        <PostContent className="richContent" content={content} />
       </Container>
     </>
   );

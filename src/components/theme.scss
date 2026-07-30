@@ -2,19 +2,64 @@
 
 @import "~bootstrap/scss/functions";
 
-$primary: #217d97;
-$secondary: #172340;
-$lightsecondary: #324c8b;
-$light: #f0f3f9;
-$dark: #172340;
-$body-color: #172340;
-$enable-validation-icons: false;
+// Design tokens first — Bootstrap's own variables are then derived from them
+// instead of carrying their own hardcoded palette.
+@import "./tokens.scss";
+
+$primary: $teal;
+$secondary: $navy;
+$light: $surface-tint;
+$dark: $navy;
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
-  "lightsecondary": $lightsecondary,
   "light": $light,
   "dark": $dark,
+);
+
+// — typography —
+$font-family-sans-serif: $font-body;
+$body-color: $ink;
+$body-bg: $surface;
+$headings-font-family: $font-heading;
+$headings-font-weight: $weight-heading;
+$headings-color: $ink-heading;
+$lead-font-weight: 400;
+
+// — links —
+$link-color: $teal;
+$link-hover-color: $teal-dark;
+$link-decoration: none;
+$link-shade-percentage: 15%;
+
+// — shape: soft 10px corners for surfaces, full pills for buttons —
+$border-color: $border;
+$border-radius: $radius;
+$border-radius-sm: 6px;
+$border-radius-lg: 14px;
+$btn-border-radius: $radius-pill;
+$btn-border-radius-sm: $radius-pill;
+$btn-border-radius-lg: $radius-pill;
+$btn-font-weight: $weight-strong;
+$btn-font-size: 0.875rem;
+$btn-padding-y: 0.8rem;
+$btn-padding-x: 1.6rem;
+$btn-padding-y-sm: 0.625rem;
+$btn-padding-x-sm: 1.25rem;
+$card-border-radius: $radius;
+$card-border-color: $border;
+$input-border-radius: 8px;
+$input-border-color: $border;
+$input-focus-border-color: $teal;
+$enable-validation-icons: false;
+
+// The design's content column is 1280px wide.
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: $page-max,
 );
 
 @import "~bootstrap/scss/variables";

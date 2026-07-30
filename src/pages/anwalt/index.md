@@ -2,7 +2,7 @@
 templateKey: anwalt-page
 path: /anwalt
 title: Über Rechtsanwalt Tarik Sharief
-featuredimage: /img/tarik-sharief-anwalt-in-berlin-portrait-1-.png
+featuredimage: /img/tarik-sharief-anwalt-in-berlin-portrait.jpg
 subtitle: Praktische Lösungen finden
 lead: Bundesweit bekannt wurde Sharief durch den Fall des Arztes, für den er eine ungewöhnliche Eigenbedarfsklage durchsetzte. Das Bundesverfassungsgericht fällte dazu ein Urteil mit Signalwirkung.
 ---

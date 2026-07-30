@@ -6,10 +6,16 @@ const useSiteMetadata = () => {
     query SITE_METADATA_QUERY {
       markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
         frontmatter {
+          hero {
+            images {
+              title
+            }
+          }
           settings {
             site
           description
-          seo 
+          footertext
+          seo
           image {
             childImageSharp {
               gatsbyImageData(width: 720, quality: 70, layout: CONSTRAINED)
@@ -43,7 +49,11 @@ const useSiteMetadata = () => {
     }
     `
   )
-  return markdownRemark.frontmatter.settings
+  const { settings, hero } = markdownRemark.frontmatter
+  return {
+    ...settings,
+    lawyerName: hero?.images?.[0]?.title,
+  }
 }
 
 export default useSiteMetadata

@@ -1,26 +1,23 @@
 import * as React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-
-
+import { Container } from "react-bootstrap";
 import Layout from "../../components/Layout";
 import BlogRoll from "../../components/BlogRoll";
+import { SimplePageHeader } from "../../components/PageElements";
 import Seo from "../../components/Seo";
 
 const BlogIndexPage = () => (
-      <Layout>
-        <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginBottom: "2rem", marginTop: "73px",}}>
+  <Layout>
+    <SimplePageHeader
+      title="Aktuelles"
+      eyebrow="Wissen & Einordnung"
+      lead="Aktuelle Beiträge zu Mietrecht, Verkehrsrecht und Versicherungsrecht."
+    />
+    <section className="blogIndex">
       <Container>
-        <Row>
-          <Col>
-            <h1 style={{margin: 0, marginTop: 5}}>Aktuelles</h1>    
-          </Col>
-        </Row>
+        <BlogRoll all headingLevel={2} />
       </Container>
-     </div>
-        <Container>
-        <BlogRoll all={true} headingLevel={2} />
-      </Container>
-      </Layout>
+    </section>
+  </Layout>
 );
 
 export default BlogIndexPage;

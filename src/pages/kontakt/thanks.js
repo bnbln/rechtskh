@@ -1,21 +1,32 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "gatsby";
+import { Container } from "react-bootstrap";
 import Layout from "../../components/Layout";
+import { SimplePageHeader } from "../../components/PageElements";
 import Seo from "../../components/Seo";
 
 // eslint-disable-next-line
 export default () => (
   <Layout>
-    <div style={{background: "#f0f3f9", padding: "10rem 0rem", marginTop: "73px"}}>
-      <Container>
-        <Row>
-          <Col>
-            <h1 style={{margin: 0, marginTop: 5}}>Nachricht gesendet</h1>  
-            <p>Vielen Dank für Ihre Nachricht. Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen. Bei dringenden Anliegen sind wir telefonisch zu erreichen.</p>  
-          </Col>
-        </Row>
-      </Container>
-    </div>
+    <SimplePageHeader
+      title="Nachricht gesendet"
+      eyebrow="Vielen Dank"
+      lead="Ihre Nachricht ist bei uns eingegangen."
+    />
+    <Container className="statusPage">
+      <p>
+        Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen.
+        Bei dringenden Anliegen erreichen Sie uns telefonisch.
+      </p>
+      <div className="statusActions">
+        <a className="btn btn-primary" href="tel:+493069533361">
+          030 – 69 53 33 61
+        </a>
+        <Link className="btn btn-outline-navy" to="/">
+          Zur Startseite
+        </Link>
+      </div>
+    </Container>
   </Layout>
 );
 

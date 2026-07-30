@@ -2,9 +2,10 @@ import * as React from "react";
 import { Link, graphql, navigate, StaticQuery } from "gatsby";
 import { Container, Button, Row, Col, Form } from "react-bootstrap";
 
-import PreviewCompatibleImage from '../../components/PreviewCompatibleImage'
+import PreviewCompatibleImage from "../../components/PreviewCompatibleImage";
 import Layout from "../../components/Layout";
 import ReactMarkdown from "react-markdown";
+import { SimplePageHeader } from "../../components/PageElements";
 import Seo from "../../components/Seo";
 
 
@@ -46,17 +47,13 @@ class Index extends React.Component {
     //console.log(data.markdownRemark.frontmatter.settings.contact);
     return (
       <Layout>
-        <div style={{ background: "#f0f3f9", padding: "2rem 0rem", marginBottom: "2rem", marginTop: "73px", }}>
-          <Container>
-            <Row>
-              <Col>
-                <h1 style={{ margin: 0, marginTop: 5 }}>Kontakt</h1>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-        <Container>
-          <Row>
+        <SimplePageHeader
+          title="Kontakt"
+          eyebrow="Persönlich für Sie da"
+          lead="Schildern Sie uns Ihr Anliegen. Wir melden uns umgehend zurück."
+        />
+        <Container className="contactPage">
+          <Row className="g-4">
             <Col lg={8}>
               <Form
                 name="contact"
@@ -65,9 +62,7 @@ class Index extends React.Component {
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={this.handleSubmit}
-                style={{
-                  marginBottom: "2rem"
-                }}
+                className="contactForm"
               >
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                 <input type="hidden" name="form-name" value="contact" />
@@ -196,37 +191,35 @@ class Index extends React.Component {
                   Anfrage übermittelt. Weitere Informationen finden Sie in der{" "}
                   <Link to="/datenschutz/">Datenschutzerklärung</Link>.
                 </p>
-                <Button type="submit">Senden</Button>
+                <Button type="submit">Nachricht senden</Button>
               </Form>
             </Col>
             <Col lg={4}>
-              <div style={{
-                width: "100%",
-                color: "white"
-              }}>
-                <div style={{
-                  padding: "1rem",
-                  background: "#172340",
-                }}>
-                  <ReactMarkdown components={{ h3: "h2" }}>
-                    {data.markdownRemark.frontmatter.settings.contact.intro}
-                  </ReactMarkdown>
+              <aside className="contactAside">
+                <ReactMarkdown components={{ h3: "h2" }}>
+                  {data.markdownRemark.frontmatter.settings.contact.intro}
+                </ReactMarkdown>
+                <div className="contactPortrait">
                   <PreviewCompatibleImage
-                    className="card-img-top"
                     imageInfo={{
-                      style: { width: "100%", padding: "50px", },
-                      image: data.markdownRemark.frontmatter.settings.contact.image,
+                      image:
+                        data.markdownRemark.frontmatter.settings.contact.image,
+                      alt: "Sekretariat der Anwaltskanzlei am Wittenbergplatz",
+                      loading: "lazy",
+                      style: { width: "100%", height: "100%" },
                     }}
                   />
-                  <div style={{
-                    padding: "1rem",
-                    color: "black"
-                  }}>
-                  </div>
-                  <ReactMarkdown>{data.markdownRemark.frontmatter.settings.contact.bu}</ReactMarkdown>
                 </div>
-
-              </div>
+                <ReactMarkdown>
+                  {data.markdownRemark.frontmatter.settings.contact.bu}
+                </ReactMarkdown>
+                <div className="contactDirect">
+                  <a href="tel:+493069533361">030 – 69 53 33 61</a>
+                  <a href="mailto:kanzlei@rechtsklarheit.de">
+                    kanzlei@rechtsklarheit.de
+                  </a>
+                </div>
+              </aside>
             </Col>
           </Row>
         </Container>

@@ -9,6 +9,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
       <IndexPageTemplate
         hero={data.hero}
         rechtsgebiete={data.rechtsgebiete}
+        kanzlei={data.kanzlei}
         settings={data.settings}
       />
     )

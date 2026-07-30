@@ -1,9 +1,10 @@
 ---
 templateKey: recht-post
 title: Verkehrsrecht
-lead: Die Beschwerden der Versicherten beim Versicherungsombudsmann sowie bei
-  Anwälten über das Verhalten von Versicherungen nehmen seit Jahren dramatisch
-  zu. Hierzu zählt unter anderem
+lead: Unfallregulierung, Schadensbewertung und das richtige Verhalten am
+  Unfallort sind entscheidend, um Ihre Rechte nach einem Verkehrsunfall zu
+  wahren.
+teaser: Unfallregulierung, Schadenshöhe und das richtige Verhalten am Unfallort.
 image: /img/safari-pinned-tab.svg
 picture: /img/verkehrsrecht.png
 banner:

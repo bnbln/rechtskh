@@ -1,20 +1,31 @@
 import * as React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "gatsby";
+import { Container } from "react-bootstrap";
 import Layout from "../components/Layout";
+import { SimplePageHeader } from "../components/PageElements";
 import Seo from "../components/Seo";
 
 const NotFoundPage = () => (
   <Layout>
-    <div style={{background: "#f0f3f9", padding: "10rem 0rem", marginTop: "73px"}}>
-      <Container>
-        <Row>
-          <Col>
-            <h1 style={{margin: 0, marginTop: 5}}>Diese Unterseite existiert nicht mehr.</h1>  
-            <p>Sie haben eine Unterseite besucht, die nicht existiert.</p>  
-          </Col>
-        </Row>
-      </Container>
-    </div>
+    <SimplePageHeader
+      title="Seite nicht gefunden"
+      eyebrow="Fehler 404"
+      lead="Die aufgerufene Unterseite existiert nicht oder wurde verschoben."
+    />
+    <Container className="statusPage">
+      <p>
+        Über die Startseite oder unsere Rechtsgebiete finden Sie schnell wieder
+        zum gesuchten Thema.
+      </p>
+      <div className="statusActions">
+        <Link className="btn btn-primary" to="/">
+          Zur Startseite
+        </Link>
+        <Link className="btn btn-outline-navy" to="/kontakt/">
+          Kontakt aufnehmen
+        </Link>
+      </div>
+    </Container>
   </Layout>
 );
 

@@ -1,98 +1,101 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
-import { Row, Col, Card } from "react-bootstrap";
 
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
+const HOME_LIMIT = 3;
+
 class BlogRollTemplate extends React.Component {
   render() {
-    const { props } = this.props;
-    const { data } = this.props;
+    const { props, data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
-    var all = props.all ? props.all : false;
+    const all = Boolean(props.all);
     const Heading = `h${props.headingLevel || 2}`;
+    const visible = all ? posts : posts.slice(0, HOME_LIMIT);
+
+    const renderCard = ({ node: post }, variant = "standard", showText = false) => (
+      <article
+        className={`blogCard blogCard--${variant}`}
+        key={`BlogRoll-${post.id}`}
+      >
+        <div className="blogCardMedia">
+          {post.frontmatter.featuredimage ? (
+            <PreviewCompatibleImage
+              imageInfo={{
+                image: post.frontmatter.featuredimage,
+                alt: "",
+                loading: "lazy",
+                style: { aspectRatio: "4 / 2.6" },
+                sizes:
+                  variant === "lead"
+                    ? "(max-width: 991px) 100vw, 66vw"
+                    : "(max-width: 991px) 100vw, 33vw",
+              }}
+            />
+          ) : (
+            <div className="blogCardPlaceholder" aria-hidden="true">
+              <span>Artikelbild</span>
+            </div>
+          )}
+        </div>
+        <div className="blogCardContent">
+          <span className="blogCardKicker">
+            {post.frontmatter.recht || "Information"}
+          </span>
+          <Heading className="blogCardTitle">
+            <Link className="stretched-link" to={post.fields.slug}>
+              {post.frontmatter.title}
+            </Link>
+          </Heading>
+          <p className="blogCardMeta">Vom {post.frontmatter.date}</p>
+          {showText && post.frontmatter.description ? (
+            <p className="blogCardText">{post.frontmatter.description}</p>
+          ) : null}
+        </div>
+      </article>
+    );
+
+    if (!all) {
+      return (
+        <div className="blogGrid blogGrid--home">
+          {visible.map((post) => renderCard(post))}
+        </div>
+      );
+    }
+
+    const [lead, ...remaining] = visible;
+    const stacked = remaining.slice(0, 2);
+    const archive = remaining.slice(2);
+
     return (
-      <Row>
-        {posts &&
-          posts.slice(0, all === false ? 5 : 99).map(({ node: post }) => (
-            <Col
-              key={"BlogRoll-" + post.id}
-              md="auto"
-              lg={post.frontmatter.featuredpost ? 8 : 4}
-            >
-              <Card
-                key={post.id}
-                className="blogCard"
-                style={{ borderRadius: 0, border: "none", marginBottom: 40 }}
-              >
-                  <PreviewCompatibleImage
-                    className="card-img-top"
-                    imageInfo={{
-                      style: {
-                        height: post.frontmatter.featuredpost ? 450 : 300,
-                        borderRadius: 0,
-                      },
-                      image: post.frontmatter.featuredimage,
-                      alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                      sizes: post.frontmatter.featuredpost
-                        ? "(max-width: 991px) 100vw, 66vw"
-                        : "(max-width: 991px) 100vw, 33vw",
-                    }}
-                  />
-                  <article
-                    className={`blog-list-item tile is-child box notification ${post.frontmatter.featuredpost ? "is-featured" : ""
-                      }`}
-                  >
-                    <header>
-                      <p
-                        style={{
-                          //marginTop: 14, fontWeight: 400, fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "4px"
-                          fontWeight: 800,
-                          margin: "1rem  0px 5px 0px",
-                          textTransform: "uppercase",
-                          fontSize: "1rem",
-                          letterSpacing: "1px",
-                          color: "#334c8b",
-                        }}
-                      >
-                        {post.frontmatter.recht
-                          ? post.frontmatter.recht
-                          : "Information"}
-                      </p>
-                      <Heading className="post-meta blogCardTitle">
-                        <Link
-                          className="stretched-link"
-                          to={post.fields.slug}
-                        >
-                          {post.frontmatter.title}
-                        </Link>
-                      </Heading>
-                      <p>Vom {post.frontmatter.date}</p>
-                    </header>
-                    <p style={{ fontWeight: 200 }}>
-                      {post.frontmatter.description}
-                    </p>
-                    <span className="articlebutton" aria-hidden="true">
-                      Weiterlesen →
-                    </span>
-                  </article>
-              </Card>
-            </Col>
-          ))}
-      </Row>
+      <>
+        <div className="blogFeatureGrid">
+          {lead ? renderCard(lead, "lead", true) : null}
+          <div className="blogFeatureStack">
+            {stacked.map((post) => renderCard(post, "compact"))}
+          </div>
+        </div>
+        <div className="blogGrid blogGrid--archive">
+          {archive.map((post) => renderCard(post, "standard", true))}
+        </div>
+      </>
     );
   }
 }
 
-BlogRoll.propTypes = {
-  all: PropTypes.bool,
-  headingLevel: PropTypes.oneOf([2, 3, 4]),
+BlogRollTemplate.propTypes = {
+  props: PropTypes.object,
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
     }),
   }),
+};
+
+BlogRoll.propTypes = {
+  all: PropTypes.bool,
+  headingLevel: PropTypes.oneOf([2, 3, 4]),
 };
 
 export default function BlogRoll(props) {
@@ -106,23 +109,20 @@ export default function BlogRoll(props) {
           ) {
             edges {
               node {
-                excerpt(pruneLength: 400)
                 id
                 fields {
                   slug
                 }
                 frontmatter {
                   title
-                  templateKey
                   recht
                   description
                   date(formatString: "DD.MM.YYYY")
-                  featuredpost
                   featuredimage {
                     childImageSharp {
                       gatsbyImageData(
-                        width: 720
-                        quality: 60
+                        width: 900
+                        quality: 68
                         layout: CONSTRAINED
                         formats: [AUTO, WEBP, AVIF]
                       )
@@ -134,9 +134,7 @@ export default function BlogRoll(props) {
           }
         }
       `}
-      render={(data, count) => (
-        <BlogRollTemplate data={data} count={count} props={props} />
-      )}
+      render={(data) => <BlogRollTemplate data={data} props={props} />}
     />
   );
 }

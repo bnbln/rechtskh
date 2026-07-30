@@ -1,145 +1,91 @@
 import * as React from "react";
+import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import ReactMarkdown from "react-markdown";
 import { Container, Col, Row } from "react-bootstrap";
 
-const Footer = class extends React.Component {
-  render() {
-    var meta = this.props.metadata;
-    return (
-      <>
-        <footer style={{ padding: "40px 0px" }}>
-          <Container>
-            <Row>
-              <Col md={12} className="footernav">
-                <Link
-                  to="/"
-                  className="footer-brand"
-                  style={{
-                    fontSize: 24,
-                    fontWeight: 800,
-                    color: "white",
-                  }}
-                >
-                  {meta.site}
-                </Link>
-                <p className="footer-description">
-                  {meta.description}
-                </p>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={5}>
-                <ReactMarkdown>{meta.contact.contact}</ReactMarkdown>
-                <ReactMarkdown>{meta.contact.info}</ReactMarkdown>
-              </Col>
-              <Col md={6} className="footernav">
-                <nav
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 8,
-                    marginBottom: "2rem",
-                  }}
-                >
-                  {meta.menu.map((item, i) => {
-                    if (item.to === null) {
-                      return (
-                        <Link
-                          className="navbar-item"
-                          to={"/"}
-                          key={"footermainnav-name-" + i + "-" + item.name}
-                          style={{
-                            color: "white",
-                          }}
-                        >
-                          {item.name}
-                        </Link>
-                      );
-                    }
-                    if (item.to === "DROPDOWN") {
-                      return (
-                        <React.Fragment key={`footer-practice-${i}`}>
-                          <Link
-                            className="navbar-item"
-                            to={"/recht/mietrecht"}
-                            style={{
-                              color: "white",
-                            }}
-                          >
-                            Mietrecht
-                          </Link>
-                          <Link
-                            className="navbar-item"
-                            to={"/recht/verkehrsrecht"}
-                            style={{
-                              color: "white",
-                            }}
-                          >
-                            Verkehrsrecht
-                          </Link>
-                          <Link
-                            className="navbar-item"
-                            to={"/recht/versicherungsrecht"}
-                            style={{
-                              color: "white",
-                            }}
-                          >
-                            Versicherungsrecht
-                          </Link>
-                        </React.Fragment>
-                      );
-                    } else {
-                      return (
-                        <Link
-                          className="navbar-item"
-                          to={item.to.startsWith('/') ? item.to : "/" + item.to}
-                          key={"footermainnav-name-" + i + "-" + item.name}
-                          style={{
-                            color: "white",
-                          }}
-                        >
-                          {item.name}
-                        </Link>
-                      );
-                    }
-                  })}
-                </nav>
-                <nav
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 8,
-                    marginBottom: "2rem",
-                  }}
-                >
-                  {meta.footermenu.map((item, i) => (
-                    <Link
-                      className="navbar-item"
-                      to={item.to.startsWith('/') ? item.to : "/" + item.to}
-                      key={"footernav-link-" + i + "-" + item.name}
-                      style={{
-                        color: "white",
-                      }}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </nav>
-              </Col>
+const PRACTICE_LINKS = [
+  { name: "Mietrecht", to: "/recht/mietrecht/" },
+  { name: "Verkehrsrecht", to: "/recht/verkehrsrecht/" },
+  { name: "Versicherungsrecht", to: "/recht/versicherungsrecht/" },
+];
 
-              <p
-                className="copyright top"
-                style={{ textAlign: "center", paddingTop: 100 }}
-              >
-                Alle Rechte vorbehalten. © Copyright {new Date().getFullYear()}
-              </p>
-            </Row>
-          </Container>
-        </footer>
-      </>
-    );
-  }
+const normalizeTarget = (target) =>
+  target?.startsWith("/") ? target : `/${target || ""}`;
+
+// Three columns: brand blurb, Rechtsgebiete, Kanzlei. The "Rechtsgebiete"
+// dropdown entry of the main menu is expanded into its three areas; every
+// other main-menu entry joins the Kanzlei column alongside the footer menu.
+const Footer = ({ metadata: meta }) => {
+  const footerBlurb = (meta.footertext || "")
+    .replace(meta.description || "", "")
+    .replace(/^[\s—-]+/, "");
+  const kanzleiLinks = [
+    ...meta.menu
+      .filter((item) => item.to && item.to !== "DROPDOWN")
+      .map((item) => ({ name: item.name, to: normalizeTarget(item.to) })),
+    ...meta.footermenu.map((item) => ({
+      name: item.name,
+      to: normalizeTarget(item.to),
+    })),
+  ];
+
+  return (
+    <footer>
+      <Container>
+        <Row className="gy-4">
+          <Col md={5} lg={6}>
+            <Link to="/" className="footer-brand">
+              {meta.site}
+            </Link>
+            <p className="footer-office">{meta.description}</p>
+            {meta.lawyerName ? (
+              <p className="footer-lawyer">{meta.lawyerName}</p>
+            ) : null}
+            {footerBlurb ? (
+              <p className="footer-description">{footerBlurb}</p>
+            ) : null}
+          </Col>
+
+          <Col md={3} lg={3}>
+            <nav className="footernav" aria-label="Rechtsgebiete">
+              <span className="footerHeading">Rechtsgebiete</span>
+              {PRACTICE_LINKS.map((item) => (
+                <Link key={`footer-recht-${item.to}`} to={item.to}>
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+          </Col>
+
+          <Col md={4} lg={3}>
+            <nav className="footernav" aria-label="Kanzlei">
+              <span className="footerHeading">Kanzlei</span>
+              {kanzleiLinks.map((item) => (
+                <Link key={`footer-kanzlei-${item.to}-${item.name}`} to={item.to}>
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+          </Col>
+        </Row>
+
+        <p className="copyright">
+          Alle Rechte vorbehalten. © Copyright {new Date().getFullYear()}
+        </p>
+      </Container>
+    </footer>
+  );
+};
+
+Footer.propTypes = {
+  metadata: PropTypes.shape({
+    site: PropTypes.string,
+    description: PropTypes.string,
+    footertext: PropTypes.string,
+    lawyerName: PropTypes.string,
+    menu: PropTypes.array,
+    footermenu: PropTypes.array,
+  }).isRequired,
 };
 
 export default Footer;

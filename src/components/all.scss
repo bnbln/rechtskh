@@ -1,630 +1,1832 @@
-* {
-    //font-family: 'DM Sans', sans-serif;
-    font-family: 'Lato', sans-serif;
-    }
+// Rechtsklarheit — component styles.
+//
+// Everything here is expressed through the tokens in tokens.scss (imported by
+// theme.scss before Bootstrap). No raw hex values below: if a colour looks
+// wrong, fix the token, not the rule.
 
-  .skip-link {
-    position: fixed;
-    left: 1rem;
-    top: 0.5rem;
-    z-index: 2000;
-    padding: 0.75rem 1rem;
-    background: white;
-    color: map.get($theme-colors, "secondary");
-    transform: translateY(-150%);
-  }
+// ─────────────────────────────────────────────────────────────── base ──
 
-  .skip-link:focus {
-    transform: translateY(0);
-  }
-  h1 {
-      font-family: 'Vollkorn', sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-    }
-  
-  .navbar-brand {
-    font-family: 'Vollkorn', sans-serif;
-    color: map.get($theme-colors, "lightsecondary");
-    cursor: pointer;
-    margin-right: 2rem;
-    transform: translateY(5px);
-    font-size: 1.3rem;
-  }
-  
-  nav.navigationWrapper {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: map.get($theme-colors, "secondary");
-  }
-  .navigation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 72px;
-  }
-  .navbar-brand {
-    color: map.get($theme-colors, "light");
-    font-weight: 900;
-    opacity: 1;
-    cursor: "pointer";
-    margin-right: 2rem;
-    //transform: translateY(5px)
-    }
-    a.nav-link.nav-link-brand:hover {
-    background: map.get($theme-colors, "secondary")
-    }
-  .nav-link {
-    min-height: 72px;
-    font-weight: 700;
-    font-size: 1rem;
-    color: hsl(223deg 30% 60%);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 0px 20px
-  }
-  a.nav-link.nav-link-brand {
-    height: 72px;
-    font-weight: 700;
-    font-size: 1rem;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 0px
-  }
-  button.nav-link {
-    background: none;
-    border: 0px;
-    outline: 0px;
-  }
-  .mobile-menu-toggle {
-    width: 44px;
-    height: 44px;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    border: 0;
-    background: transparent;
-  }
-  .dropdown {
-    position: fixed;
-    top: 72px;
-    left: 0px;
-    right: 0px;
-    background: map.get($theme-colors, "primary");
-    z-index: 2
-  }
-  .dropdown .container {
-    padding-left: 227px;
-    display: flex
-  }
-  
-  .dropdown .nav-link.light {
-    color: white;
-    opacity: 1;
-  }
-  .dropdown .nav-link.light[aria-current="page"], .dropdown .nav-link.light:focus, .dropdown .nav-link.light:hover {
-    opacity: 1;
-  }
-  .nav-link:hover, .nav-link:focus{
-    background: darken(map.get($theme-colors, "secondary"), 5)
-  }
-  .nav-link[aria-current="page"], .nav-link:hover, .nav-link:focus{
-    color: map.get($theme-colors, "light");
-  }
-  .mobileNav {
-    width: 100%;
-    height: calc( 100vh - 72px );
-    position: relative;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    display: flex;
-    align-items: center;
-    overflow: scroll;
-    padding-bottom: 40px;
-  }
-  .mobileNav .nav-link {
-    text-align: center;
-    font-size: 1.3rem;
-    line-height: 200%;
-    display: block;
-    padding: 0;
-    background: none;
-    height: 45px;
-  }
-  .mobileNav .mobilePracticeLinks {
-    position: relative;
-    top: inherit;
-    background: none;
-  }
-  
-  .mobileNavHeading {
-    display: block;
-    text-align: center;
-    opacity: 0.65;
-    margin-top: 1rem;
-    font-size: 1rem;
-    font-weight: 900;
-  }
-  
-  .mobileNav .mobilePracticeLinks .nav-link {
-    padding: 0px;
-    font-size: 1rem;
-    background: none;
-    height: 45px;
-  }
-  .mobileNav .container {
-    display: flex;
-    min-height: 100%;
-    align-items: center;
-    justify-content: center;
-    padding-block: 2rem;
-  }
-  .mobileNavLinks {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    width: min(100%, 24rem);
-  }
-  .nav-link.light:hover, .nav-link.light:focus{
-    background: darken(map.get($theme-colors, "primary"), 5)
-  }
-  
-  
-  .btn {
-    border-radius: 0px;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-  
-  .btn-primary {
-    color: #fff
-  }
-  
-  .btn-outline-primary:hover, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-    color: #fff;
-  }
-  
-  .btn-secondary:hover{
-  background: lighten(map.get($theme-colors, "secondary"), 20)
-  }
-  // .navbar-brand:hover {
-  //   color: #063cbc//map.get($theme-colors, "lightsecondary");
-  // }
-  .bg-scnd {
-    background-color: map.get($theme-colors, "secondary");
-    color: white;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-  
-  .herorow {
-    margin-bottom: 3rem;
-    flex-direction: row;
-  }
-  
-  .card-img-top {
-    border-radius: 0px;
-  }
-  
-  .gatsby-image-wrapper img{
-  object-position: top;
-  }
-  
-  @include media-breakpoint-down(lg) { 
-  
-    .herorow {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-    .window02 p {
-      transform: rotate(90deg)
-  
-    }
-    
-  }
-  
-  .inline-image {
-    position: relative;
-    width: 45%;
-    float: left;
-    margin-right: 60px;
-    margin-bottom: 30px;
-    margin-top: 10px;
-  }
-  .inline-image img {
-    width: 100%;
-  }
-  
-  
-  .list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  .recht.content h2 {
-    scroll-margin-top: 5rem;
-    padding-top: 4.5rem;
-    font-family: 'Vollkorn';
-    font-size: 1.75rem;
-    font-weight: 700;
-  }
-  .recht.content h3 {
-    font-size: 1.5rem;
-    font-weight: 300;
-  }
-  
-  footer {
-    background: map.get($theme-colors, "secondary");
-    color: white;
-  }
-  
-  
-  //Page & Post Layouts
-  .pageWrapper {
-    margin-bottom: 56px
-  }
-  .pageTitle {
-    background: map.get($theme-colors, "light");
-    padding: 2rem 0rem;
-    margin-top: 73px;
-  }
-  .pageTitle a {
-    color: inherit;
-    text-decoration: none;
-  }
-  .pageTitle p {
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-bottom: 2rem;
-  }
-  .pageTitle .practiceLabel {
-    display: inline-flex;
-    min-height: 44px;
-    align-items: center;
-    font-weight: 800;
-    margin: 1rem 0px;
-    text-transform: uppercase;
-    font-size: 1rem;
-    letter-spacing: 3px;
-    color: #334c8b
-  }
-  .pageTitle h1 {
-    margin: 0px;
-    margin-top: 5px;
-  }
-  .pageTitle .imageWrapper {
-    position: relative;
-    overflow: hidden;
-  }
-  .pageTitle .imageWrapper .image {
-    height: 60vh
-  }
-  .pageContent {
-    background: white; 
-    padding-top: 2rem;
-  }
-  
-  
-  //Banner
-  .banner {
-    background: map.get($theme-colors, "secondary");
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  
-  //About
-  .aboutHero {
-    background: map.get($theme-colors, "secondary"); 
-    color: white
-  }
-  .aboutHero .list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem
-  }
-  .aboutHero .list .listItem {
-    background: linear-gradient(60deg, #22335c, transparent);
-    padding: 20px;
-    margin: 10px 10px 0px 0px;
-    display: inline-flex
-  }
-  
-  //BlogRoll
-  a, .articlebutton{
-  color: map.get($theme-colors, "primary");
-  font-weight: 600;
+html {
+  background: $navy;
+}
+body {
+  font-family: $font-body;
+  color: $ink;
+  background: $navy;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  color: $ink-heading;
+  letter-spacing: -0.01em;
+}
+h1 {
+  font-size: clamp(2rem, 4vw, 2.55rem);
+  font-weight: $weight-heading;
+  line-height: 1.16;
+}
+h2 {
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
+  line-height: 1.25;
+}
+
+a {
+  color: $teal;
+  font-weight: $weight-strong;
   text-decoration: none;
-  }
-  
-  a:hover, a:focus, .articlebutton:hover, .articlebutton:focus {
-    color: darken(map.get($theme-colors, "primary"), 10);
-    }
+}
+a:hover,
+a:focus {
+  color: $teal-dark;
+}
 
-  .blogCard {
-    position: relative;
+:focus-visible {
+  outline: 2px solid $teal;
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 0.5rem;
+  z-index: 2000;
+  padding: 0.75rem 1rem;
+  background: $surface;
+  color: $navy;
+  border-radius: $radius;
+  transform: translateY(-150%);
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+// ────────────────────────────────────────────────────────── buttons ──
+// The design uses pill buttons throughout. Radius and padding come from
+// Bootstrap variables; only the extra variants live here.
+
+.btn {
+  min-height: 44px; // touch target
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: $font-body;
+  white-space: nowrap;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: $on-navy;
+}
+
+// Outlined pill on a light background — "In Google Maps öffnen".
+.btn-outline-navy {
+  color: $navy;
+  border: 1.5px solid $navy;
+  background: transparent;
+}
+.btn-outline-navy:hover,
+.btn-outline-navy:focus {
+  color: $navy;
+  background: rgba($navy, 0.06);
+}
+
+// Outlined pill on navy — the nav CTA.
+.btn-outline-on-navy {
+  color: $on-navy;
+  border: 1.5px solid $on-navy;
+  background: transparent;
+}
+.btn-outline-on-navy:hover,
+.btn-outline-on-navy:focus {
+  color: $navy;
+  background: $on-navy;
+}
+
+// Text link with an accent rule under it — "Alle Artikel ansehen →".
+.linkUnderline {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: $ink-heading;
+  font-weight: $weight-strong;
+  border-bottom: 2px solid $teal;
+  white-space: nowrap;
+}
+.linkUnderline:hover,
+.linkUnderline:focus {
+  color: $teal;
+}
+
+// ─────────────────────────────────────────────────────── navigation ──
+
+nav.navigationWrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: $navy;
+}
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: $nav-height;
+  gap: 1rem;
+}
+.navbar-brand {
+  font-family: $font-heading;
+  font-weight: $weight-heading;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+  color: $on-navy;
+  margin-right: 2rem;
+}
+.nav-link {
+  min-height: $nav-height;
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem;
+  font-family: $font-body;
+  font-weight: $weight-medium;
+  font-size: 0.95rem;
+  color: $on-navy-nav;
+  background: none;
+  border: 0;
+  transition: color $ease;
+}
+.nav-link:hover,
+.nav-link:focus,
+.nav-link[aria-current="page"] {
+  color: $on-navy;
+  background: none;
+}
+a.nav-link.nav-link-brand {
+  height: $nav-height;
+  padding: 0;
+  color: $on-navy;
+}
+a.nav-link.nav-link-brand:hover,
+a.nav-link.nav-link-brand:focus {
+  background: none;
+}
+.mobile-menu-toggle {
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  color: $on-navy;
+  border: 0;
+  background: transparent;
+}
+
+.dropdown {
+  position: fixed;
+  top: $nav-height;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: $teal;
+}
+.dropdown .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.dropdown .nav-link.light {
+  color: $on-navy;
+}
+.dropdown .nav-link.light:hover,
+.dropdown .nav-link.light:focus,
+.dropdown .nav-link.light[aria-current="page"] {
+  color: $on-navy;
+  background: $teal-dark;
+}
+
+.mobileNav {
+  width: 100%;
+  height: calc(100vh - #{$nav-height});
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  padding-bottom: 2.5rem;
+  background: $navy;
+}
+.mobileNav .container {
+  display: flex;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-block: 2rem;
+}
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.25rem;
+  width: min(100%, 24rem);
+}
+.mobileNav .nav-link {
+  display: block;
+  height: 48px;
+  min-height: 48px;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 48px;
+  text-align: center;
+}
+.mobileNav .mobilePracticeLinks {
+  background: none;
+}
+.mobileNav .mobilePracticeLinks .nav-link {
+  font-size: 1rem;
+}
+.mobileNavHeading {
+  display: block;
+  margin-top: 1.25rem;
+  font-family: $font-heading;
+  font-size: 0.75rem;
+  font-weight: $weight-heading;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  color: $on-navy-faint;
+}
+.mobileNavCta {
+  margin-top: 1.5rem;
+}
+
+// ──────────────────────────────────────────────── section primitives ──
+
+.rkSection {
+  padding-block: 5rem;
+}
+.rkSection--tight {
+  padding-block: 3.5rem;
+}
+.rkSection--tint {
+  background: $surface-tint;
+}
+.rkSection--navy {
+  background: $navy;
+  color: $on-navy-strong;
+}
+
+// Eyebrow above a section headline: uppercase Archivo, letter-spaced.
+.sectionEyebrow {
+  font-family: $font-heading;
+  font-weight: $weight-heading;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $ink-label;
+  margin: 0 0 0.65rem;
+}
+.rkSection--navy .sectionEyebrow {
+  color: $on-navy-muted;
+}
+
+// The large non-heading statement under an eyebrow.
+.sectionLead {
+  font-family: $font-body;
+  font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+  font-weight: $weight-medium;
+  line-height: 1.3;
+  color: $ink-heading;
+  margin: 0;
+}
+.sectionLead--narrow {
+  max-width: 36ch;
+}
+.rkSection--navy .sectionLead {
+  color: $on-navy;
+}
+
+// Headline row with a trailing "see all" link.
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2.25rem;
+}
+
+// Kept for the subpage templates that already use it.
+.sectionHeading {
+  font-family: $font-heading;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: $weight-heading;
+}
+
+// ──────────────────────────────────────────────────────── home hero ──
+// Navy band; the photo overhangs the bottom edge and the copy sits on a
+// translucent navy panel that overlaps the photo.
+
+.homeHero {
+  position: relative;
+  margin-top: $nav-height;
+  background: $navy;
+  padding: 4rem 0 0;
+  margin-bottom: 7.5rem;
+}
+.homeHeroRow {
+  align-items: center;
+}
+.homeHeroMedia {
+  position: relative;
+  z-index: 1;
+}
+.homeHeroFrame {
+  position: relative;
+  overflow: hidden;
+  border-radius: $radius;
+  aspect-ratio: 4 / 4.6;
+  margin-bottom: -8.75rem;
+  box-shadow: $shadow-hero;
+}
+.homeHeroContent {
+  position: relative;
+  z-index: 2;
+  margin-left: -3rem;
+  padding: 2.5rem 2.75rem;
+  border-radius: $radius;
+  color: $on-navy;
+  background: linear-gradient(60deg, rgba($navy, 0.33), $navy);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+}
+.homeHeroEyebrow {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  font-weight: $weight-medium;
+  letter-spacing: 0.06em;
+  color: $on-navy-muted;
+}
+.homeHeroContent h1 {
+  color: $on-navy;
+  margin: 0 0 1.1rem;
+}
+.homeHeroContent .lead {
+  max-width: 42ch;
+  margin: 0 0 1.6rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $on-navy-strong;
+}
+
+// Crossfading hero photo stack (CarouselWrapper).
+.heroStack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.heroStackSlide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: none;
+}
+.heroStackSlide.isActive {
+  opacity: 1;
+}
+.heroStack.reduceMotion .heroStackSlide {
+  transition: none;
+}
+.heroStackLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: $on-navy;
+}
+.heroStackLink:focus-visible {
+  outline: 3px solid $teal;
+  outline-offset: -3px;
+}
+.heroStackSlide .gatsby-image-wrapper,
+.heroStackSlide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+// Only the visible photo may take pointer/tab focus.
+.heroStackSlide:not(.isActive) {
+  pointer-events: none;
+}
+
+// ─────────────────────────────────────────────────── practice tiles ──
+// Two rows: a tall tile on the left, a wide tile top-right, a filler card
+// and a third tile on the bottom row.
+
+.practiceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 230px);
+  gap: 1.125rem;
+}
+.practiceTile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: $radius;
+  color: $on-navy;
+}
+.practiceTile:first-child {
+  grid-row: 1 / 3;
+}
+.practiceTile:nth-child(2) {
+  grid-row: 1;
+  grid-column: 2 / 4;
+}
+.practiceTile:nth-child(3) {
+  grid-row: 2;
+  grid-column: 3;
+}
+.practiceTile .gatsby-image-wrapper,
+.practiceTile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform $ease-slow;
+}
+.practiceTile:hover .gatsby-image-wrapper,
+.practiceTile:hover img {
+  transform: scale(1.04);
+}
+.practiceTileScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba($navy, 0.65) 0%, rgba($navy, 0) 55%);
+}
+.practiceTileIcon {
+  position: absolute;
+  left: 1.25rem;
+  top: 1.25rem;
+  color: $on-navy;
+}
+.practiceTileBody {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 1.125rem;
+}
+.practiceTileTitle {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-family: $font-heading;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: $on-navy;
+}
+// Clamped so an over-long CMS text can never spill past the tile's scrim.
+.practiceTileText {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: $on-navy-strong;
+}
+.practiceFiller {
+  grid-row: 2;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: $radius;
+  background: $surface-mute;
+}
+.practiceFiller span {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: $ink-label;
+}
+
+// ───────────────────────────────────────────────────────── location ──
+// Split card: copy on the left, clickable map on the right.
+
+.locationSection {
+  padding-bottom: 5.5rem;
+}
+.locationSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  border: 1px solid $border;
+  border-radius: $radius;
+  background: $surface;
+}
+.locationContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3.25rem 3rem;
+}
+.locationContent p {
+  color: $ink-muted;
+  line-height: 1.7;
+}
+.locationDetails {
+  margin-bottom: 1.4rem;
+  padding-top: 1.125rem;
+  border-top: 1px solid $border;
+  color: $ink;
+  line-height: 1.9;
+}
+.locationDetails p {
+  margin: 0;
+  color: $ink;
+}
+.locationDetails strong {
+  font-weight: $weight-strong;
+}
+.locationMapLink {
+  position: relative;
+  display: block;
+  min-height: 340px;
+  overflow: hidden;
+}
+.locationMapLink .gatsby-image-wrapper,
+.locationMapLink img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.75) contrast(0.96);
+}
+.locationMapScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba($navy, 0.16) 0%, rgba($navy, 0) 22%);
+}
+.locationMapChip {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1rem;
+  border-radius: $radius-pill;
+  background: $surface;
+  color: $ink-heading;
+  font-size: 0.78rem;
+  font-weight: $weight-strong;
+  box-shadow: $shadow-chip;
+}
+
+// ──────────────────────────────────────────────────── contact banner ──
+
+.contactBanner {
+  background: $navy;
+  padding-block: 4rem;
+}
+.contactBanner h2 {
+  color: $on-navy;
+  font-size: clamp(1.6rem, 3vw, 1.85rem);
+  margin: 0 0 0.9rem;
+}
+.contactBannerLead {
+  max-width: 44ch;
+  margin: 0;
+  color: $on-navy-muted;
+  line-height: 1.6;
+}
+.contactBannerDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contactBannerItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: $on-navy;
+  font-weight: $weight-strong;
+}
+.contactBannerItem svg {
+  flex: none;
+  color: $teal;
+}
+.contactBannerItem a {
+  color: $on-navy;
+}
+.contactBannerItem a:hover,
+.contactBannerItem a:focus {
+  color: $teal;
+}
+
+// Inline banner used inside markdown bodies (blog posts, Rechtsgebiete).
+.bg-scnd {
+  background: $navy;
+  color: $on-navy;
+  padding-block: 2.5rem;
+}
+.bg-scnd h2,
+.banner h2 {
+  color: $on-navy;
+}
+
+.banner {
+  background: $navy;
+  color: $on-navy;
+  padding-block: 2.5rem;
+}
+
+// ──────────────────────────────────────────── warum die kanzlei ──
+
+.whyGrid {
+  align-items: center;
+}
+.whyMedia {
+  position: relative;
+  overflow: hidden;
+  border-radius: $radius;
+  aspect-ratio: 4 / 5;
+}
+.whyMedia .gatsby-image-wrapper,
+.whyMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.whyList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.whyItem {
+  display: flex;
+  gap: 1.25rem;
+}
+.whyItemNumber {
+  flex: none;
+  width: 28px;
+  font-family: $font-heading;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: $teal;
+}
+.whyItemTitle {
+  margin: 0 0 0.25rem;
+  font-family: $font-body;
+  font-size: 0.97rem;
+  font-weight: $weight-strong;
+  color: $ink-heading;
+}
+.whyItemText {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: $ink-label;
+}
+.btn-navy {
+  background: $navy;
+  color: $on-navy;
+  border: 1.5px solid $navy;
+}
+.btn-navy:hover,
+.btn-navy:focus {
+  background: rgba($navy, 0.88);
+  color: $on-navy;
+}
+
+// ───────────────────────────────────────────────────────── blogroll ──
+
+.blogCard {
+  position: relative;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  min-width: 0;
+}
+.blogCardMedia {
+  overflow: hidden;
+  border-radius: $radius;
+}
+.blogCardMedia .gatsby-image-wrapper,
+.blogCardMedia img {
+  width: 100%;
+  transition: transform $ease-slow;
+}
+.blogCard:hover .blogCardMedia .gatsby-image-wrapper,
+.blogCard:hover .blogCardMedia img {
+  transform: scale(1.03);
+}
+// Shown when a post has no featured image, matching the design's stripe swatch.
+.blogCardPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 2.6;
+  background: repeating-linear-gradient(
+    45deg,
+    $placeholder-a,
+    $placeholder-a 10px,
+    $placeholder-b 10px,
+    $placeholder-b 20px
+  );
+}
+.blogCardPlaceholder span {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  color: $ink-faint;
+}
+
+.blogCardKicker {
+  display: block;
+  margin: 1rem 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: $weight-strong;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $ink-label;
+}
+.blogCardTitle {
+  font-family: $font-body;
+  font-size: 1.06rem;
+  font-weight: $weight-strong;
+  line-height: 1.35;
+}
+.blogCardTitle a,
+.blogCardTitle a:hover,
+.blogCardTitle a:focus {
+  color: $ink-heading;
+  font-weight: $weight-strong;
+}
+.blogCard:hover .blogCardTitle a {
+  text-decoration: underline;
+}
+.blogCardMeta {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: $ink-label;
+}
+.blogCardText {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: $ink-muted;
+}
+.blogCard .stretched-link::after {
+  border: 2px solid transparent;
+  border-radius: $radius;
+}
+.blogCard .stretched-link:focus-visible::after {
+  border-color: $teal;
+}
+.blogGrid {
+  display: grid;
+  gap: 2rem;
+}
+.blogGrid--home,
+.blogGrid--archive {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.blogGrid--archive {
+  margin-top: 4rem;
+}
+.blogFeatureGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr);
+  gap: 2rem;
+}
+.blogFeatureStack {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+.blogCard--lead .blogCardMedia {
+  aspect-ratio: 16 / 9;
+}
+.blogCard--lead .blogCardMedia .gatsby-image-wrapper,
+.blogCard--lead .blogCardMedia img {
+  height: 100%;
+  object-fit: cover;
+}
+.blogCard--lead .blogCardTitle {
+  max-width: 30ch;
+  font-size: 1.35rem;
+}
+.blogCard--compact {
+  display: grid;
+  grid-template-columns: minmax(8rem, 42%) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: center;
+}
+.blogCard--compact .blogCardMedia {
+  height: 100%;
+  min-height: 10rem;
+}
+.blogCard--compact .blogCardMedia .gatsby-image-wrapper,
+.blogCard--compact .blogCardMedia img,
+.blogCard--compact .blogCardPlaceholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.blogCard--compact .blogCardKicker {
+  margin-top: 0;
+}
+.blogCard--compact .blogCardMeta {
+  margin-bottom: 0;
+}
+.articlebutton {
+  color: $teal;
+  font-weight: $weight-strong;
+}
+.articlebutton:hover,
+.articlebutton:focus {
+  color: $teal-dark;
+}
+
+// Practice-area cards used outside the homepage grid (rechtroll).
+.practiceCardLink {
+  min-height: 44px;
+}
+.rechtroll .card-title {
+  font-family: $font-heading;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $ink-heading;
+}
+
+// ─────────────────────────────────────────────────────────── footer ──
+
+footer {
+  background: $navy;
+  color: $on-navy-strong;
+  padding-block: 3.5rem 2rem;
+}
+.footer-brand {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  font-family: $font-heading;
+  font-size: 1.25rem;
+  font-weight: $weight-heading;
+  color: $on-navy;
+}
+.footer-brand:hover,
+.footer-brand:focus {
+  color: $on-navy;
+}
+.footer-description {
+  max-width: 34ch;
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $on-navy-muted;
+}
+.footer-office {
+  margin: 0.25rem 0 0;
+  color: $on-navy;
+  font-size: 0.9rem;
+  font-weight: $weight-strong;
+}
+.footer-lawyer {
+  margin: 0.1rem 0 0;
+  color: $on-navy-strong;
+  font-size: 0.88rem;
+}
+.footerHeading {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $on-navy-faint;
+}
+.footernav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.footernav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  color: $on-navy-strong;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+.footernav a:hover,
+.footernav a:focus {
+  color: $on-navy;
+}
+.copyright {
+  margin: 3rem 0 0;
+  text-align: center;
+  font-size: 0.78rem;
+  color: $on-navy-faint;
+}
+
+// ─────────────────────────────────────────── page & post layouts ──
+
+.pageWrapper {
+  margin-bottom: 0;
+  background: $surface;
+}
+.pageTitle {
+  background: $surface-tint;
+  padding: 2rem 0;
+  margin-top: $nav-height;
+}
+.pageTitle a {
+  color: inherit;
+}
+.pageTitle p {
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  color: $ink-muted;
+}
+.pageTitle .practiceLabel {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin: 1rem 0;
+  font-family: $font-heading;
+  font-weight: $weight-heading;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $ink-label;
+}
+.pageTitle h1 {
+  margin: 0.3rem 0 0;
+}
+.pageTitle .imageWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: $radius;
+}
+.pageTitle .imageWrapper .image {
+  height: 60vh;
+}
+.pageContent {
+  background: $surface;
+  padding-top: 2rem;
+}
+
+.aboutHero {
+  background: $navy;
+  color: $on-navy-strong;
+}
+.aboutHero h1,
+.aboutHero h2,
+.aboutHero h3 {
+  color: $on-navy;
+}
+.aboutHero .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+.aboutHero .list .listItem {
+  display: inline-flex;
+  padding: 1.25rem;
+  margin: 0.625rem 0.625rem 0 0;
+  border-radius: $radius;
+  background: linear-gradient(60deg, rgba($on-navy, 0.09), transparent);
+}
+.aboutSubtitle {
+  font-size: 1.6rem;
+}
+.aboutLead {
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: $ink-muted;
+}
+.promotedHeadings h2 {
+  font-size: 1.6rem;
+}
+.promotedLegalHeadings h3 {
+  font-size: 1.35rem;
+}
+
+.recht.content h2 {
+  scroll-margin-top: 5rem;
+  padding-top: 4.5rem;
+  font-family: $font-heading;
+  font-size: 1.65rem;
+  font-weight: $weight-heading;
+}
+.recht.content h3 {
+  font-size: 1.35rem;
+  font-weight: $weight-medium;
+}
+
+.herorow {
+  margin-bottom: 3rem;
+  flex-direction: row;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.inline-image {
+  position: relative;
+  width: 40%;
+  height: clamp(12rem, 22vw, 16rem);
+  float: left;
+  margin: 0.3rem 2.25rem 1.25rem 0;
+  overflow: hidden;
+  border-radius: $radius;
+}
+.inline-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-img-top {
+  border-radius: 0;
+}
+.gatsby-image-wrapper img {
+  object-position: center;
+}
+
+// ─────────────────────────────────────────────── redesign subpages ──
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+  color: $ink-label;
+}
+.breadcrumbs a {
+  color: $ink-label;
+  font-weight: 400;
+}
+.breadcrumbs--dark {
+  color: $on-navy;
+}
+.breadcrumbs--dark a {
+  color: $on-navy-muted;
+}
+.breadcrumbs--dark a:hover,
+.breadcrumbs--dark a:focus {
+  color: $on-navy;
+}
+
+// Shared split header for profile, practice areas and secondary content pages.
+// The media extends 6.875rem below the navy band, so the following content
+// always starts after that physical overhang plus a deliberate 3rem gap.
+.splitHero {
+  margin-top: $nav-height;
+  margin-bottom: 9.875rem;
+  padding: 3.5rem 0 0;
+  background: $navy;
+}
+.splitHeroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: end;
+}
+.splitHeroCopy {
+  padding-bottom: 3.5rem;
+  color: $on-navy-strong;
+}
+.splitHeroCopy h1 {
+  max-width: 15ch;
+  margin: 0 0 1.125rem;
+  color: $on-navy;
+  font-size: clamp(2.35rem, 4.5vw, 3.25rem);
+  line-height: 1.08;
+}
+.splitHeroLead {
+  max-width: 48ch;
+  margin: 0 0 1.625rem;
+  color: $on-navy-strong;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.splitHeroEyebrow {
+  margin: 0 0 1.125rem;
+  color: $on-navy-muted;
+  font-family: $font-heading;
+  font-size: 0.875rem;
+  font-weight: $weight-heading;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.splitHeroMedia {
+  position: relative;
+  z-index: 1;
+  height: min(34rem, 48vw);
+  min-height: 25rem;
+  margin-bottom: -6.875rem;
+  overflow: hidden;
+  border-radius: $radius;
+  box-shadow: $shadow-hero;
+}
+.splitHeroMedia .gatsby-image-wrapper,
+.splitHeroMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.splitHero--imageFirst .splitHeroMedia {
+  grid-column: 1;
+  grid-row: 1;
+  aspect-ratio: 4 / 4.6;
+  height: auto;
+}
+.splitHero--imageFirst .splitHeroCopy {
+  grid-column: 2;
+  grid-row: 1;
+  margin-left: -6rem;
+  padding: 2.5rem 2.75rem;
+  border-radius: $radius;
+  background: linear-gradient(60deg, rgba($navy, 0.33), $navy);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  z-index: 2;
+}
+.splitHero--compact .splitHeroMedia {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+}
+
+.simplePageHeader {
+  margin-top: $nav-height;
+  padding: 3.75rem 0 4rem;
+  background: $navy;
+  color: $on-navy-strong;
+}
+.simplePageHeader .breadcrumbs {
+  margin-bottom: 2rem;
+}
+.simplePageHeader .sectionEyebrow {
+  color: $on-navy-muted;
+}
+.simplePageHeader h1 {
+  max-width: 18ch;
+  margin: 0 0 1rem;
+  color: $on-navy;
+}
+.simplePageHeader > .container > p:last-child {
+  max-width: 54ch;
+  margin: 0;
+  color: $on-navy-strong;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.subpageContent {
+  padding-bottom: 5rem;
+}
+.contentWithSidebar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20rem;
+  gap: 4.5rem;
+  align-items: start;
+}
+.sidebarStack {
+  position: sticky;
+  top: calc(#{$nav-height} + 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.sidebarCard {
+  padding: 1.625rem;
+  border: 1px solid $border;
+  border-radius: $radius;
+  background: $surface;
+  color: $ink-muted;
+  font-size: 0.875rem;
+  line-height: 1.75;
+}
+.sidebarCard--tint {
+  border-color: transparent;
+  background: $surface-tint;
+}
+.sidebarCard p:last-of-type {
+  margin-bottom: 1.25rem;
+}
+.sidebarTitle {
+  margin: 0 0 1rem;
+  color: $ink-label;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sidebarLinks,
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.sidebarLinks a {
+  color: $ink-heading;
+  border-bottom: 1.5px solid $teal;
+}
+.sidebarNav a {
+  color: $ink-heading;
+  font-weight: $weight-medium;
+}
+.sidebarNav a:hover,
+.sidebarNav a:focus {
+  color: $teal;
+}
+
+.contentIntro {
+  margin-bottom: 2.5rem;
+}
+.contentIntro .sectionLead {
+  margin-bottom: 1.25rem;
+}
+.contentIntro > p:last-child {
+  max-width: 70ch;
+  margin-bottom: 0;
+  color: $ink-muted;
+  font-size: 0.97rem;
+  line-height: 1.8;
+}
+.legalCallout {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin: 0 0 2.75rem;
+  padding: 1.75rem 2rem;
+  border-radius: $radius;
+  background: $surface-tint;
+}
+.legalCallout > span {
+  flex: none;
+  color: $teal;
+  font-family: $font-heading;
+  font-size: 3.5rem;
+  font-weight: $weight-heading;
+  line-height: 0.85;
+}
+.legalCallout p {
+  margin: 0;
+  color: $ink-muted;
+  line-height: 1.75;
+}
+
+.richContent {
+  max-width: 70ch;
+  color: $ink-muted;
+  font-size: 0.97rem;
+  line-height: 1.85;
+  overflow-wrap: break-word;
+}
+.richContent > :first-child {
+  margin-top: 0;
+}
+.richContent h2 {
+  margin: 2.75rem 0 0.75rem;
+  color: $ink-heading;
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+.richContent h3 {
+  margin: 2rem 0 0.625rem;
+  color: $ink-heading;
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+.richContent p {
+  margin-bottom: 1.25rem;
+}
+.richContent ul,
+.richContent ol {
+  padding-left: 1.25rem;
+}
+.richContent li {
+  margin-bottom: 0.5rem;
+}
+.richContent img {
+  max-width: 100%;
+}
+.legalSection {
+  max-width: 100%;
+  padding-top: 0.5rem;
+}
+.legalSection > h2,
+.legalSection > h3,
+.legalSection > p,
+.legalSection > ul,
+.legalSection > ol {
+  max-width: 70ch;
+}
+.legalSection + .legalSection {
+  margin-top: 1rem;
+}
+
+.inlineContactCta,
+.richContent .bg-scnd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.75rem;
+  max-width: none;
+  width: 100%;
+  min-height: 9rem;
+  margin: 4rem 0;
+  padding: 2.25rem 2.5rem;
+  border-radius: $radius;
+  background: $navy;
+  color: $on-navy;
+}
+.inlineContactCta h2,
+.richContent .bg-scnd h2 {
+  margin: 0 0 0.35rem;
+  color: $on-navy;
+  font-size: 1.3rem;
+}
+.inlineContactCta p {
+  margin: 0;
+  color: $on-navy-muted;
+  font-size: 0.85rem;
+}
+.richContent .bg-scnd.container-fluid {
+  width: 100%;
+}
+.richContent .bg-scnd .container {
+  width: 100%;
+  padding: 0;
+}
+.richContent .bg-scnd .row {
+  justify-content: space-between !important;
+  align-items: center;
+  gap: 1rem;
+}
+.richContent .bg-scnd h2 {
+  width: auto !important;
+  text-align: left !important;
+}
+
+.relatedSection {
+  padding: 4.5rem 0 2rem;
+  background: $surface-tint;
+}
+.blogIndex {
+  padding: 4.5rem 0 2rem;
+}
+
+// Article detail: the image is pulled into the header by 3.5rem. The content
+// begins after the image box, so no copy can collide with the visual overhang.
+.articleHeader {
+  margin-top: $nav-height;
+  padding: 3rem 0 8rem;
+  background: $navy;
+  color: $on-navy-strong;
+}
+.articleHeaderInner {
+  max-width: 872px;
+}
+.articleHeader h1 {
+  max-width: 20ch;
+  margin: 0 0 1.25rem;
+  color: $on-navy;
+  font-size: clamp(2.15rem, 4.5vw, 2.7rem);
+  line-height: 1.12;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+.articleHeaderInner > p {
+  max-width: 60ch;
+  margin: 0;
+  color: $on-navy-strong;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+.articleMeta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  color: $on-navy-muted;
+  font-size: 0.8rem;
+}
+.articleMeta a,
+.articleMeta > span:first-child {
+  color: $teal;
+  font-weight: $weight-strong;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.articleLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 760px) 18.75rem;
+  justify-content: space-between;
+  gap: 4.5rem;
+  align-items: start;
+  padding-bottom: 5rem;
+}
+.articleMedia {
+  grid-column: 1 / -1;
+  width: 100%;
+  aspect-ratio: 16 / 6.8;
+  max-height: 36rem;
+  margin: -5.5rem 0 1rem;
+  overflow: hidden;
+  border-radius: $radius;
+  background: $surface-mute;
+  box-shadow: 0 24px 50px rgba($navy-deep, 0.2);
+}
+.articleMedia .gatsby-image-wrapper,
+.articleMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.articleBody {
+  max-width: 100%;
+  font-size: 1rem;
+}
+.articleBody h2 {
+  font-size: 1.7rem;
+}
+.articleSidebar {
+  margin-top: 2.75rem;
+}
+.authorNote {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid $border;
+}
+.authorPortrait {
+  width: 5.5rem;
+  height: 5.5rem;
+  overflow: hidden;
+  border-radius: $radius;
+  background: $surface-tint;
+}
+.authorPortrait .gatsby-image-wrapper,
+.authorPortrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+.authorDetails {
+  min-width: 0;
+}
+.authorNote p {
+  margin: 0;
+  color: $ink-label;
+  font-size: 0.84rem;
+}
+.authorNote .authorName {
+  margin-bottom: 0.2rem;
+  color: $ink-heading;
+  font-size: 0.97rem;
+  font-weight: $weight-strong;
+}
+.linkUnderline--small {
+  min-height: 32px;
+  font-size: 0.875rem;
+}
+
+.contactPage,
+.legalPage,
+.statusPage {
+  padding-top: 4.5rem;
+  padding-bottom: 5rem;
+}
+.legalPage {
+  max-width: 900px;
+}
+.legalPage .richContent {
+  max-width: 75ch;
+}
+.contactForm {
+  padding: 2rem;
+  border: 1px solid $border;
+  border-radius: $radius;
+}
+.form-label {
+  color: $ink-heading;
+  font-size: 0.875rem;
+  font-weight: $weight-strong;
+}
+.form-control {
+  min-height: 48px;
+  padding: 0.75rem 0.875rem;
+  background: $surface;
+}
+.form-control:focus {
+  border-color: $teal;
+  box-shadow: 0 0 0 3px rgba($teal, 0.14);
+}
+.contactAside {
+  position: sticky;
+  top: calc(#{$nav-height} + 2rem);
+  overflow: hidden;
+  padding: 2rem;
+  border-radius: $radius;
+  background: $navy;
+  color: $on-navy-strong;
+}
+.contactAside h2,
+.contactAside h3 {
+  color: $on-navy;
+  font-size: 1.5rem;
+}
+.contactAside p {
+  color: $on-navy-strong;
+  line-height: 1.7;
+}
+.contactPortrait {
+  height: 15rem;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  border-radius: $radius;
+  background: rgba($on-navy, 0.05);
+}
+.contactPortrait .gatsby-image-wrapper,
+.contactPortrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.contactDirect {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba($on-navy, 0.15);
+}
+.contactDirect a {
+  color: $on-navy;
+}
+.statusPage {
+  max-width: 860px;
+}
+.statusPage > p {
+  max-width: 56ch;
+  color: $ink-muted;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+.statusActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+// ──────────────────────────────────────────────────────── responsive ──
+
+@include media-breakpoint-down(xl) {
+  .homeHeroContent {
+    margin-left: 0;
   }
-  .blogCardTitle {
-    font-family: 'Vollkorn', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-  }
-  .blogCardTitle a,
-  .blogCardTitle a:hover,
-  .blogCardTitle a:focus {
-    color: black;
-  }
-  .blogCard .stretched-link::after {
-    border: 2px solid transparent;
-  }
-  .blogCard .stretched-link:focus-visible::after {
-    border-color: map.get($theme-colors, "primary");
-  }
-  .practiceCardLink {
-    min-height: 44px;
-  }
-  .rechtroll .card-title {
-    color: map.get($theme-colors, "dark");
-    font-family: 'Lato', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-  .footer-brand {
-    display: inline-flex;
-    min-height: 44px;
-    align-items: center;
-    margin-bottom: 0.5rem;
-  }
-  .footer-description {
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-    font-weight: 300;
-  }
-  .sectionHeading {
-    font-family: 'Vollkorn', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-  }
-  .aboutSubtitle {
-    font-size: 1.75rem;
-  }
-  .aboutLead {
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-    font-weight: 200;
-    line-height: 1.5;
-  }
-  .promotedHeadings h2 {
-    font-size: 1.75rem;
-  }
-  .promotedLegalHeadings h3 {
-    font-size: 1.5rem;
+}
+
+@include media-breakpoint-down(lg) {
+  .rkSection {
+    padding-block: 3.5rem;
   }
 
-  // Home hero: interactive two-panel carousel on desktop, static LCP image on mobile.
+  // Hero stacks: photo on top, copy panel pulled up over its lower edge.
   .homeHero {
-    margin-top: 72px;
-    padding-block: 2rem 3rem;
+    padding-top: $nav-height + 8px;
+    margin-bottom: 0;
   }
-  .homeHeroRow {
-    align-items: center;
-    min-height: min(67vh, 760px);
-  }
-  .homeHeroMedia {
-    height: min(67vh, 760px);
-    overflow: hidden;
-  }
-  .homeHeroDesktopMedia {
-    width: 100%;
-    height: 100%;
-  }
-  .heroCarousel {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    transform: translateX(-16px) scale(0.94);
-  }
-  .heroCarouselSlide {
-    position: absolute;
-    width: 30%;
-    height: 80%;
-    overflow: hidden;
-    transition:
-      width 3s cubic-bezier(0.45, 0, 0.55, 1),
-      height 3s cubic-bezier(0.45, 0, 0.55, 1);
-  }
-  .heroCarouselSlide:first-child {
-    left: 0;
-  }
-  .heroCarouselSlide:last-child {
-    right: 0;
-  }
-  .heroCarouselSlide.isActive {
-    width: 68%;
-    height: 100%;
-  }
-  .heroCarouselLink {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    color: white;
-  }
-  .heroCarouselLink:focus-visible {
-    outline: 3px solid map.get($theme-colors, "primary");
-    outline-offset: -3px;
-  }
-  .heroCarouselTitle {
-    position: absolute;
-    left: 2rem;
-    bottom: 2rem;
-    z-index: 2;
-    max-width: 13rem;
-    color: white;
-    font-family: 'Vollkorn', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1;
-    text-shadow: 0 0 20px black;
-    opacity: 0;
-    transform: translateX(-2rem);
-    transition:
-      opacity 600ms ease,
-      transform 600ms ease;
-  }
-  .heroCarouselSlide:last-child .heroCarouselTitle {
-    transform: translateX(2rem);
-  }
-  .heroCarouselSlide.isActive .heroCarouselTitle {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  .heroCarousel.reduceMotion .heroCarouselSlide,
-  .heroCarousel.reduceMotion .heroCarouselTitle {
-    transition: none;
+  .homeHeroFrame {
+    aspect-ratio: 4 / 3.4;
+    margin-bottom: 0;
   }
   .homeHeroContent {
-    padding: 2rem;
+    margin: -3rem 0 0;
+    padding: 2rem 1.5rem;
   }
-  .homeHeroEyebrow {
-    color: map.get($theme-colors, "lightsecondary");
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+
+  .practiceGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
   }
-  .homeHeroOverlay {
-    display: none;
+  .practiceTile,
+  .practiceTile:first-child,
+  .practiceTile:nth-child(2),
+  .practiceTile:nth-child(3) {
+    grid-row: auto;
+    grid-column: auto;
+    min-height: 220px;
   }
-  .locationSection {
-    position: relative;
-    min-height: 65vh;
+  .practiceFiller {
+    grid-row: auto;
+    grid-column: auto;
+    min-height: 120px;
   }
-  .locationMapLink {
-    position: absolute;
-    inset: 0;
+
+  .locationSplit {
+    grid-template-columns: 1fr;
   }
   .locationContent {
-    position: relative;
-    z-index: 1;
-    pointer-events: none;
+    padding: 2rem 1.5rem;
   }
-  .locationCard {
-    margin-top: 5rem;
-    border: 0;
-    border-radius: 0;
-    pointer-events: auto;
+  .locationMapLink {
+    min-height: 260px;
+    order: -1;
   }
-  
-  // Smaller than lg
-  @include media-breakpoint-down(lg) { 
 
-    .homeHero {
-      padding: 0;
-    }
-    .homeHero > .container {
-      max-width: none;
-      padding: 0;
-    }
-    .homeHeroRow {
-      min-height: 720px;
-      margin: 0;
-      position: relative;
-    }
-    .homeHeroMedia {
-      position: absolute;
-      inset: 0;
-      height: 100%;
-      padding: 0;
-    }
-    .heroCarousel {
-      transform: none;
-    }
-    .heroCarouselSlide:first-child {
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .heroCarouselSlide:last-child,
-    .heroCarouselTitle {
-      display: none;
-    }
-    .homeHeroOverlay {
-      display: block;
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 26%,
-        rgba(0, 0, 0, 0.68) 68%,
-        #000 100%
-      );
-    }
-    .homeHeroContent {
-      position: absolute;
-      z-index: 1;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      color: white;
-      padding: 2rem max(1rem, calc((100vw - 720px) / 2));
-    }
-    .homeHeroEyebrow {
-      color: white;
-    }
+  .whyMedia {
+    margin-bottom: 2rem;
+  }
 
-    .aboutHero .list {
-      padding: 1rem
-    }
-    .card-group {
-      display: initial;
-    }
-    .pageTitle {
-      padding: 1rem 0rem;
-    }
-    .pageTitle .row {
-      gap: 1rem;
-    }
-    .about-image {
-      padding: 30px;
-    }
-    .recht.herorow {
-      flex-direction: column-reverse!important;
-      gap: 20px
-    }
-    .rechtroll {
-      gap: 16px;
-    }
-    .rechtroll .card {
-      flex-direction: row;
-    }
-    .rechtroll .card .card-img-top {
-      width: 110px
-    }
-    .rechtroll .card .card-body {
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-    }
-    .inline-image {
-      width: 100%;
-    }
+  .aboutHero .list {
+    padding: 1rem;
   }
-  .gatsby-image-wrapper img {
-    object-position: center;
+  .card-group {
+    display: initial;
   }
+  .pageTitle {
+    padding: 1rem 0;
+  }
+  .pageTitle .row {
+    gap: 1rem;
+  }
+  .about-image {
+    padding: 1.875rem;
+  }
+  .recht.herorow {
+    flex-direction: column-reverse !important;
+    gap: 1.25rem;
+  }
+  .herorow {
+    margin-block: 1rem;
+  }
+  .rechtroll {
+    gap: 1rem;
+  }
+  .rechtroll .card {
+    flex-direction: row;
+  }
+  .rechtroll .card .card-img-top {
+    width: 110px;
+  }
+  .rechtroll .card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .inline-image {
+    width: 100%;
+    float: none;
+    margin-right: 0;
+  }
+  .window02 p {
+    transform: rotate(90deg);
+  }
+
+  .splitHero {
+    margin-bottom: 2.5rem;
+    padding-top: 2rem;
+  }
+  .splitHeroGrid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .splitHeroCopy,
+  .splitHero--imageFirst .splitHeroCopy {
+    grid-column: 1;
+    grid-row: 2;
+    margin: -2.5rem 1rem 0;
+    padding: 2rem 1.5rem;
+    border-radius: $radius;
+    background: linear-gradient(60deg, rgba($navy, 0.5), $navy 45%);
+    z-index: 2;
+  }
+  .splitHeroMedia,
+  .splitHero--imageFirst .splitHeroMedia {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 0;
+  }
+  .splitHero .breadcrumbs {
+    margin-bottom: 1.25rem;
+  }
+  .contentWithSidebar,
+  .articleLayout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3rem;
+  }
+  .sidebarStack,
+  .contactAside {
+    position: static;
+  }
+  .articleSidebar {
+    margin-top: 0;
+  }
+  .blogFeatureGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .blogFeatureStack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+  .blogCard--compact {
+    display: block;
+  }
+  .blogCard--compact .blogCardMedia {
+    min-height: 0;
+    aspect-ratio: 4 / 2.6;
+  }
+  .blogGrid--home,
+  .blogGrid--archive {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .footer-description {
+    margin-bottom: 2rem;
+  }
+  .footernav {
+    margin-bottom: 2rem;
+  }
+  .copyright {
+    margin-top: 1.5rem;
+  }
+  .simplePageHeader {
+    padding: 2.75rem 0 3rem;
+  }
+  .subpageContent,
+  .contactPage,
+  .legalPage,
+  .statusPage {
+    padding-top: 3.25rem;
+    padding-bottom: 3.5rem;
+  }
+  .inlineContactCta,
+  .richContent .bg-scnd {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  .inlineContactCta .btn,
+  .richContent .bg-scnd .btn {
+    width: 100%;
+  }
+  .articleHeader {
+    padding-bottom: 5.5rem;
+  }
+  .articleMedia {
+    aspect-ratio: 4 / 2.5;
+    margin-top: -3.5rem;
+  }
+  .contactForm {
+    padding: 1.25rem;
+  }
+  .authorNote {
+    align-items: flex-start;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+  }
+  .authorPortrait {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  .authorNote > a {
+    grid-column: 2;
+  }
+  .blogFeatureStack,
+  .blogGrid--home,
+  .blogGrid--archive {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .blogGrid--archive {
+    margin-top: 3rem;
+  }
+  .inline-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    float: none;
+    margin: 0.5rem 0 1.5rem;
+  }
+}

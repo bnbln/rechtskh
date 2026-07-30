@@ -4,6 +4,7 @@ title: Versicherungsrecht
 lead: Die Beschwerden der Versicherten beim Versicherungsombudsmann sowie bei
   Anwälten über das Verhalten von Versicherungen nehmen seit Jahren dramatisch
   zu. Hierzu zählt unter anderem
+teaser: Wenn Versicherungen nicht zahlen wollen — Ihre Rechte durchsetzen.
 image: /img/safari-pinned-tab.svg
 picture: /img/versicherungsrecht.png
 banner:

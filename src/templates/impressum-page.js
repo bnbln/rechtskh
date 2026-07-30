@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import { SimplePageHeader } from '../components/PageElements'
 import Seo from '../components/Seo'
 
 
@@ -18,21 +19,9 @@ export const ImpressumPageTemplate = ({
 const PageContent = contentComponent || Content
 return (
   <>
-  <div style={{background: "#f0f3f9", padding: "2rem 0rem", marginBottom: "2rem",marginTop: "73px",}}>
-      <Container>
-        <Row>
-          <Col>
-            <h1 style={{margin: 0, marginTop: 5}}>{title}</h1>    
-          </Col>
-        </Row>
-      </Container>
-     </div>
-     <Container>
-      <Row>
-        <Col md={6}>
-          <PageContent className="content" content={content} />
-        </Col>
-      </Row>
+    <SimplePageHeader title={title} eyebrow="Rechtliche Hinweise" lead={lead} />
+    <Container className="legalPage">
+      <PageContent className="richContent" content={content} />
     </Container>
   </>
 )

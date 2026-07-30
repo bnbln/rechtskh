@@ -3,6 +3,7 @@ templateKey: recht-post
 title: Mietrecht
 lead: Mietrecht in Berlin ist oft umstritten - Renovierungspflicht,
   Wasserschaden, Reparaturen und Räumung
+teaser: Renovierungspflicht, Wasserschaden, Reparaturen und Räumung.
 image: /img/safari-pinned-tab.svg
 picture: /img/mietrecht.png
 banner:

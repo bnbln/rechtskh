@@ -17,10 +17,24 @@ rechtsgebiete:
   lead: Individuelle Fälle erfordern individuelle Lösungsansätze
   category:
     - Mietrecht
-    - Verkehrsrecht
     - Versicherungsrecht
+    - Verkehrsrecht
+kanzlei:
+  lead: Praktische Lösungen statt langer Verfahren
+  image: /img/tarik-sharief-anwalt-in-berlin-portrait.jpg
+  imagealt: Rechtsanwalt Tarik Sharief
+  cta: Termin anfragen
+  reasons:
+    - title: Seit 1999 in Berlin
+      text: Selbständig als Rechtsanwalt für seine Mandanten tätig.
+    - title: Konfliktmanagement statt Eskalation
+      text: Sachliche Lösungen, bevor es vor Gericht geht.
+    - title: Rechtsgebietsübergreifend
+      text: Miet-, Verkehrs- und Versicherungsrecht aus einer Hand.
 settings:
   site: Rechtsklarheit.de
+  footertext: Kanzlei am Wittenbergplatz — persönliche Rechtsberatung in Berlin
+    für Versicherungsrecht, Verkehrsrecht und Mietrecht.
   seo: "Plötzlich und unvermittelt tritt ein Unfall ein, für den die Versicherung
     nicht zahlen will. Der Vermieter spricht eine Eigenbedarfskündigung aus. Das
     neu gekaufte Auto bleibt nach kurzer Zeit stehen. Ratlos steht man vor

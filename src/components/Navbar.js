@@ -3,10 +3,11 @@ import { Link } from "gatsby";
 import { Container } from "react-bootstrap";
 import {
   ChevronDownIcon,
-  MailIcon,
   ThreeBarsIcon,
   XIcon,
 } from "@primer/octicons-react";
+
+import { MailIcon } from "./Icons";
 
 const normalizeTarget = (target) =>
   target?.startsWith("/") ? target : `/${target || ""}`;
@@ -82,9 +83,9 @@ const Navigation = ({ metadata }) => {
 
           <Link
             to="/kontakt/"
-            className="btn btn-outline-light btn-sm d-none d-lg-flex"
+            className="btn btn-outline-on-navy btn-sm d-none d-lg-flex"
           >
-            <MailIcon aria-hidden="true" />
+            <MailIcon size={15} />
             <span>Kontakt aufnehmen</span>
           </Link>
 
@@ -130,10 +131,10 @@ const Navigation = ({ metadata }) => {
               )}
               <Link
                 to="/kontakt/"
-                className="btn btn-outline-lightsecondary"
+                className="btn btn-primary mobileNavCta"
                 onClick={closeMenus}
               >
-                <MailIcon aria-hidden="true" />
+                <MailIcon size={16} />
                 <span>Kontakt aufnehmen</span>
               </Link>
             </div>
