@@ -7,10 +7,28 @@ import {
   XIcon,
 } from "@primer/octicons-react";
 
-import { MailIcon } from "./Icons";
+import { MailIcon, practiceIcon } from "./Icons";
 
 const normalizeTarget = (target) =>
   target?.startsWith("/") ? target : `/${target || ""}`;
+
+const practiceAreas = [
+  {
+    name: "Versicherungsrecht",
+    to: "/recht/versicherungsrecht/",
+    description: "Ansprüche gegenüber Versicherern klar durchsetzen.",
+  },
+  {
+    name: "Verkehrsrecht",
+    to: "/recht/verkehrsrecht/",
+    description: "Unfall, Haftung und Schadensregulierung.",
+  },
+  {
+    name: "Mietrecht",
+    to: "/recht/mietrecht/",
+    description: "Mietvertrag, Kündigung, Mängel und Räumung.",
+  },
+];
 
 const Navigation = ({ metadata, isHome = false }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -34,16 +52,44 @@ const Navigation = ({ metadata, isHome = false }) => {
 
   const practiceLinks = (
     <>
-      <NavLink className="light" to="/recht/versicherungsrecht/">
-        Versicherungsrecht
-      </NavLink>
-      <NavLink className="light" to="/recht/verkehrsrecht/">
-        Verkehrsrecht
-      </NavLink>
-      <NavLink className="light" to="/recht/mietrecht/">
-        Mietrecht
-      </NavLink>
+      {practiceAreas.map((area) => (
+        <NavLink className="light" key={area.name} to={area.to}>
+          {area.name}
+        </NavLink>
+      ))}
     </>
+  );
+
+  const desktopPracticeMenu = (
+    <div id="practice-dropdown" className="practiceMenu d-none d-lg-block">
+      <div className="practiceMenuPanel">
+        <div className="practiceMenuIntro">
+          <span>Rechtsgebiete</span>
+          <p>Persönliche Beratung und eine klare Strategie für Ihren Fall.</p>
+        </div>
+        <div className="practiceMenuGrid">
+          {practiceAreas.map((area) => {
+            const Icon = practiceIcon(area.name);
+
+            return (
+              <NavLink
+                className="practiceMenuLink"
+                key={area.name}
+                to={area.to}
+              >
+                <span className="practiceMenuIcon" aria-hidden="true">
+                  <Icon size={22} />
+                </span>
+                <span>
+                  <strong>{area.name}</strong>
+                  <small>{area.description}</small>
+                </span>
+              </NavLink>
+            );
+          })}
+        </div>
+      </div>
+    </div>
   );
 
   return (
@@ -62,25 +108,22 @@ const Navigation = ({ metadata, isHome = false }) => {
 
             <div className="homeDesktopNav d-none d-lg-flex">
               {metadata.menu
-                .filter(
-                  (item) =>
-                    !isHome ||
-                    item.name === "Anwalt" ||
-                    item.to === "DROPDOWN"
-                )
+                .filter((item) => item.name !== "Home")
                 .map((item) => {
                   if (item.to === "DROPDOWN") {
                     return (
-                      <button
-                        key={item.name}
-                        className="nav-link"
-                        type="button"
-                        aria-expanded={dropdownOpen}
-                        aria-controls="practice-dropdown"
-                        onClick={() => setDropdownOpen((open) => !open)}
-                      >
-                        {item.name} <ChevronDownIcon aria-hidden="true" />
-                      </button>
+                      <div className="desktopPracticeMenuWrap" key={item.name}>
+                        <button
+                          className="nav-link"
+                          type="button"
+                          aria-expanded={dropdownOpen}
+                          aria-controls="practice-dropdown"
+                          onClick={() => setDropdownOpen((open) => !open)}
+                        >
+                          {item.name} <ChevronDownIcon aria-hidden="true" />
+                        </button>
+                        {dropdownOpen ? desktopPracticeMenu : null}
+                      </div>
                     );
                   }
 
@@ -118,12 +161,6 @@ const Navigation = ({ metadata, isHome = false }) => {
           </button>
         </div>
       </Container>
-
-      {dropdownOpen && (
-        <div id="practice-dropdown" className="dropdown d-none d-lg-block">
-          <Container>{practiceLinks}</Container>
-        </div>
-      )}
 
       {menuOpen && (
         <div id="mobile-navigation" className="mobileNav d-lg-none">

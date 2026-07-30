@@ -41,12 +41,13 @@ export const SplitHero = ({
   imagePosition = "center",
   imageFirst = false,
   compact = false,
+  backgroundMedia = false,
   showBreadcrumbs = true,
 }) => (
   <section
     className={`splitHero${imageFirst ? " splitHero--imageFirst" : ""}${
       compact ? " splitHero--compact" : ""
-    }`}
+    }${backgroundMedia ? " splitHero--backgroundMedia" : ""}`}
   >
     <Container>
       {showBreadcrumbs ? <Breadcrumbs items={[{ label: title }]} dark /> : null}
@@ -83,6 +84,7 @@ SplitHero.propTypes = {
   imagePosition: PropTypes.string,
   imageFirst: PropTypes.bool,
   compact: PropTypes.bool,
+  backgroundMedia: PropTypes.bool,
   showBreadcrumbs: PropTypes.bool,
   children: PropTypes.node,
 };

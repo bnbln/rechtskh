@@ -184,26 +184,90 @@ a.nav-link.nav-link-brand:focus {
   background: transparent;
 }
 
-.dropdown {
-  position: fixed;
-  top: $nav-height;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  background: $teal;
-}
-.dropdown .container {
+.desktopPracticeMenuWrap {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
 }
-.dropdown .nav-link.light {
-  color: $on-navy;
+.practiceMenu {
+  position: absolute;
+  z-index: 3;
+  top: calc(100% + 0.75rem);
+  left: calc(100% - 1.5rem);
+  width: 32rem;
 }
-.dropdown .nav-link.light:hover,
-.dropdown .nav-link.light:focus,
-.dropdown .nav-link.light[aria-current="page"] {
-  color: $on-navy;
-  background: $teal-dark;
+.practiceMenuPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.5rem;
+  width: min(100%, 32rem);
+  padding: 0.75rem;
+  border: 1px solid $border;
+  border-radius: 14px;
+  background: $surface;
+  box-shadow: $shadow-card;
+}
+.practiceMenuIntro {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.6rem 0.75rem 0.8rem;
+  border-bottom: 1px solid $border;
+}
+.practiceMenuIntro > span {
+  flex: none;
+  margin: 0;
+  color: $ink-heading;
+  font-family: $font-heading;
+  font-size: 0.95rem;
+  font-weight: $weight-heading;
+}
+.practiceMenuIntro p {
+  margin: 0;
+  max-width: 28ch;
+  text-align: right;
+  color: $ink-muted;
+  font-size: 0.75rem;
+  line-height: 1.55;
+}
+.practiceMenuGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.25rem;
+}
+.practiceMenuLink.nav-link {
+  min-height: 0;
+  gap: 0.625rem;
+  align-items: center;
+  padding: 0.7rem 0.75rem;
+  border-radius: $radius;
+  color: $ink-heading;
+}
+.practiceMenuLink.nav-link:hover,
+.practiceMenuLink.nav-link:focus,
+.practiceMenuLink.nav-link[aria-current="page"] {
+  color: $ink-heading;
+  background: $surface-tint;
+}
+.practiceMenuIcon {
+  display: inline-flex;
+  flex: none;
+  color: $teal;
+}
+.practiceMenuLink strong,
+.practiceMenuLink small {
+  display: block;
+}
+.practiceMenuLink strong {
+  margin-bottom: 0.25rem;
+  font-family: $font-heading;
+  font-size: 0.82rem;
+}
+.practiceMenuLink small {
+  color: $ink-muted;
+  font-size: 0.69rem;
+  font-weight: 400;
+  line-height: 1.45;
 }
 
 .mobileNav {
@@ -427,13 +491,15 @@ a.nav-link.nav-link-brand:focus {
 
 .practiceGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 230px);
+  grid-template-columns: minmax(0, 1.65fr) repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: 1.125rem;
+  aspect-ratio: 2.285 / 1;
 }
 .practiceTile {
   position: relative;
   display: block;
+  min-height: 0;
   overflow: hidden;
   border-radius: $radius;
   color: $on-navy;
@@ -455,6 +521,10 @@ a.nav-link.nav-link-brand:focus {
   height: 100%;
   object-fit: cover;
   transition: transform $ease-slow;
+}
+.practiceTile .gatsby-image-wrapper {
+  position: absolute !important;
+  inset: 0;
 }
 .practiceTile:hover .gatsby-image-wrapper,
 .practiceTile:hover img {
@@ -499,6 +569,7 @@ a.nav-link.nav-link-brand:focus {
   grid-row: 2;
   grid-column: 2;
   display: flex;
+  min-height: 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1169,6 +1240,81 @@ footer {
   aspect-ratio: 4 / 3;
 }
 
+// Practice-area pages keep their image inside the navy hero. The image behaves
+// like a background layer and softly dissolves into the copy area and top edge.
+.splitHero--backgroundMedia {
+  position: relative;
+  min-height: 31rem;
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+  overflow: hidden;
+}
+.splitHero--backgroundMedia > .container {
+  position: relative;
+  min-height: 29rem;
+}
+.splitHero--backgroundMedia .breadcrumbs {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0.75rem;
+}
+.splitHero--backgroundMedia .splitHeroGrid {
+  min-height: 25rem;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 0;
+  align-items: center;
+}
+.splitHero--backgroundMedia .splitHeroCopy {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 0 4rem;
+}
+.splitHero--backgroundMedia .splitHeroMedia {
+  position: absolute;
+  z-index: 0;
+  top: -4rem;
+  right: calc((100vw - 100%) / -2);
+  bottom: 0;
+  width: calc(70% + ((100vw - 100%) / 2));
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 0.72;
+  filter: saturate(0.58) contrast(0.92);
+}
+.splitHero--backgroundMedia .splitHeroMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      $navy 0%,
+      rgba($navy, 0.98) 30%,
+      rgba($navy, 0.72) 52%,
+      rgba($navy, 0.16) 82%,
+      transparent 100%
+    ),
+    linear-gradient(
+      180deg,
+      $navy 0%,
+      rgba($navy, 0.88) 18%,
+      rgba($navy, 0.32) 48%,
+      transparent 72%
+    );
+  pointer-events: none;
+}
+.splitHero--backgroundMedia .splitHeroMedia .gatsby-image-wrapper,
+.splitHero--backgroundMedia .splitHeroMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .simplePageHeader {
   margin-top: $nav-height;
   padding: 3.75rem 0 4rem;
@@ -1601,50 +1747,8 @@ footer {
 // ──────────────────────────────────────────────────────── responsive ──
 
 @include media-breakpoint-up(lg) {
-  // The homepage uses a deliberately quieter desktop masthead. Subpages and
-  // the mobile navigation retain the shared site header above.
-  .navigationWrapper--home .container {
-    max-width: none;
-    padding-inline: clamp(2rem, 3.25vw, 3.75rem);
-  }
-  .navigationWrapper--home .navigation {
-    height: clamp(#{$nav-height}, 5.5vw, 6.25rem);
-  }
-  .navigationWrapper--home .navigation > .d-flex {
-    flex: 1;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .navigationWrapper--home .navbar-brand {
-    font-size: clamp(1.35rem, 1.55vw, 1.75rem);
-  }
-  .navigationWrapper--home .nav-link,
-  .navigationWrapper--home a.nav-link.nav-link-brand {
-    min-height: clamp(#{$nav-height}, 5.5vw, 6.25rem);
-    height: clamp(#{$nav-height}, 5.5vw, 6.25rem);
-  }
-  .navigationWrapper--home .homeDesktopNav .nav-link {
-    font-size: clamp(0.95rem, 1.05vw, 1.15rem);
-  }
-  .navigationWrapper--home .homeDesktopNav {
-    margin-left: auto;
-  }
-  .navigationWrapper--home .btn-outline-on-navy {
-    min-height: clamp(3.25rem, 3.9vw, 4.5rem);
-    margin-left: clamp(1.5rem, 3vw, 3.5rem);
-    padding-inline: clamp(2rem, 2.6vw, 3rem);
-    border-width: 2px;
-    font-size: clamp(1rem, 1.05vw, 1.15rem);
-  }
-  .navigationWrapper--home .btn-outline-on-navy svg {
-    display: none;
-  }
-
   .homeHero {
     padding-top: 0;
-  }
-  .homeHero > .container {
-    max-width: $page-max;
   }
   .homeHeroRow {
     flex-direction: column;
@@ -1652,17 +1756,27 @@ footer {
   }
   .homeHeroMedia {
     order: 2;
-    width: min(82.5%, 66rem);
+    width: min(76%, 60rem);
     padding-inline: 0;
   }
   .homeHeroFrame {
-    aspect-ratio: 16 / 9;
+    height: 0;
+    margin-top: -8.25rem;
+    padding-top: calc(56.25% + 8.25rem);
+    aspect-ratio: auto;
+    border-radius: $radius;
+  }
+  .homeHeroFrame .heroStack {
+    position: absolute;
+    inset: 0;
+    width: auto;
+    height: auto;
   }
   .homeHeroContent {
     order: 1;
     width: 100%;
     margin: 0;
-    padding: 9.75rem 0 7rem;
+    padding: 8.25rem 0 6.5rem;
     text-align: center;
     border-radius: 0;
     background: none;
@@ -1670,8 +1784,8 @@ footer {
     -webkit-backdrop-filter: none;
   }
   .homeHeroEyebrow {
-    margin-bottom: 1.75rem;
-    font-size: clamp(1rem, 1.55vw, 1.35rem);
+    margin-bottom: 1.4rem;
+    font-size: clamp(0.95rem, 1.2vw, 1.15rem);
     font-weight: $weight-strong;
     letter-spacing: 0.06em;
   }
@@ -1682,9 +1796,9 @@ footer {
     display: none;
   }
   .homeHeroContent h1 {
-    max-width: 68.75rem;
-    margin: 0 auto 2.5rem;
-    font-size: clamp(3.35rem, 4.2vw, 4.75rem);
+    max-width: 60rem;
+    margin: 0 auto 2rem;
+    font-size: clamp(2.9rem, 3.5vw, 4rem);
     line-height: 1.08;
     letter-spacing: -0.035em;
   }
@@ -1692,9 +1806,18 @@ footer {
     display: none;
   }
   .homeHeroContent .btn {
-    min-height: 4rem;
-    padding-inline: 3.25rem;
-    font-size: 1.1rem;
+    min-height: 3.5rem;
+    padding-inline: 2.75rem;
+    font-size: 1rem;
+  }
+  .pageWrapper--home > .rkSection {
+    padding-block: 6.25rem;
+  }
+  .pageWrapper--home .sectionHead {
+    margin-bottom: 3rem;
+  }
+  .pageWrapper--home .locationSection {
+    padding-bottom: 6.5rem;
   }
 }
 
@@ -1726,6 +1849,7 @@ footer {
   .practiceGrid {
     grid-template-columns: 1fr;
     grid-template-rows: none;
+    aspect-ratio: auto;
   }
   .practiceTile,
   .practiceTile:first-child,
@@ -1734,6 +1858,7 @@ footer {
     grid-row: auto;
     grid-column: auto;
     min-height: 220px;
+    aspect-ratio: auto;
   }
   .practiceFiller {
     grid-row: auto;
@@ -1831,6 +1956,34 @@ footer {
   }
   .splitHero .breadcrumbs {
     margin-bottom: 1.25rem;
+  }
+  .splitHero--backgroundMedia {
+    min-height: 0;
+    margin-bottom: 2.5rem;
+  }
+  .splitHero--backgroundMedia > .container {
+    min-height: 0;
+  }
+  .splitHero--backgroundMedia .breadcrumbs {
+    margin-bottom: 1.25rem;
+  }
+  .splitHero--backgroundMedia .splitHeroGrid {
+    min-height: 0;
+  }
+  .splitHero--backgroundMedia .splitHeroCopy {
+    padding: 2rem 1.5rem;
+  }
+  .splitHero--backgroundMedia .splitHeroMedia {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    opacity: 1;
+    filter: none;
+  }
+  .splitHero--backgroundMedia .splitHeroMedia::after {
+    display: none;
   }
   .contentWithSidebar,
   .articleLayout {

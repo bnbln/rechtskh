@@ -25,6 +25,7 @@ export const RechtPostTemplate = ({ data, picture, article, banner }) => (
       image={picture}
       imageAlt={data.title}
       compact
+      backgroundMedia
     >
       <Link className="btn btn-primary" to="/kontakt/">
         Fall schildern

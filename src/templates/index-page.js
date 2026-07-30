@@ -30,7 +30,7 @@ export const IndexPageTemplate = ({ hero, rechtsgebiete, kanzlei, settings }) =>
           <Col lg={6} className="homeHeroContent">
             <p className="homeHeroEyebrow">
               <span className="homeHeroEyebrowDesktop">
-                {settings.description} · Berlin
+                Rechtsanwalt Tarik Sharief · {settings.description} · Berlin
               </span>
               <span className="homeHeroEyebrowMobile">
                 {hero.images[0].title}
