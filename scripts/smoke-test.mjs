@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { buildContactMailto, CONTACT_EMAIL } from "../src/utils/contact-mailto.mjs";
 
 const root = new URL("../", import.meta.url).pathname;
 const publicDir = join(root, "public");
@@ -108,10 +109,39 @@ for (const name of ["adresse", "stadt", "telefon", "rueckruf"]) {
   assert.ok(field, `Kontakt: optionales Feld ${name} fehlt`);
   assert.doesNotMatch(field[0], /\srequired(?:=""|(?=\s|>))/i, `Kontakt: ${name} darf nicht required sein`);
 }
-assert.match(contactHtml, /data-netlify="true"/i, "Kontakt: Netlify-Formularerkennung fehlt");
-assert.match(contactHtml, /name="form-name" value="contact"/i, "Kontakt: form-name fehlt");
-assert.match(contactHtml, /name="bot-field"/i, "Kontakt: Honeypot fehlt");
+assert.doesNotMatch(contactHtml, /data-netlify=/i, "Kontakt: Netlify-Formular ist noch aktiv");
+assert.doesNotMatch(contactHtml, /name="form-name"/i, "Kontakt: Netlify-form-name ist noch aktiv");
 assert.match(contactHtml, /href="\/datenschutz\/"/i, "Kontakt: Datenschutzhinweis fehlt");
+
+const mailto = new URL(
+  buildContactMailto({
+    vorname: "Max",
+    nachname: "Mustermann",
+    adresse: "Musterstraße 10",
+    stadt: "12161 Berlin",
+    email: "max@example.de",
+    telefon: "030 1234567",
+    rueckruf: "on",
+    betreff: "Mietrecht",
+    message: "Bitte rufen Sie mich zurück.",
+  })
+);
+assert.equal(mailto.protocol, "mailto:", "Kontakt: kein mailto-Link erzeugt");
+assert.equal(mailto.pathname, CONTACT_EMAIL, "Kontakt: falsche Empfängeradresse");
+assert.match(mailto.searchParams.get("subject"), /Mietrecht/, "Kontakt: Betreff fehlt");
+for (const value of [
+  "Max",
+  "Mustermann",
+  "Musterstraße 10",
+  "12161 Berlin",
+  "max@example.de",
+  "030 1234567",
+  "Rückruf gewünscht: Ja",
+  "Mietrecht",
+  "Bitte rufen Sie mich zurück.",
+]) {
+  assert.ok(mailto.searchParams.get("body").includes(value), `Kontakt: ${value} fehlt im E-Mail-Text`);
+}
 
 const adminHtml = readRoute("/admin/");
 assert.match(adminHtml, /<script[^>]+src="[^"]+"/i, "CMS: Admin-Bundle fehlt");

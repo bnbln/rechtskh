@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, graphql, navigate, StaticQuery } from "gatsby";
+import { Link, graphql, StaticQuery } from "gatsby";
 import { Container, Button, Row, Col, Form } from "react-bootstrap";
 
 import PreviewCompatibleImage from "../../components/PreviewCompatibleImage";
@@ -7,14 +7,7 @@ import Layout from "../../components/Layout";
 import ReactMarkdown from "react-markdown";
 import { SimplePageHeader } from "../../components/PageElements";
 import Seo from "../../components/Seo";
-
-
-
-function encode(data) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
+import { buildContactMailto } from "../../utils/contact-mailto.mjs";
 
 class Index extends React.Component {
   constructor(props) {
@@ -30,16 +23,9 @@ class Index extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...this.state,
-      }),
-    })
-      .then(() => navigate(form.getAttribute("action")))
-      .catch((error) => alert(error));
+    const values = Object.fromEntries(new FormData(form).entries());
+
+    window.location.href = buildContactMailto(values);
   };
 
   render() {
@@ -57,21 +43,9 @@ class Index extends React.Component {
             <Col lg={8}>
               <Form
                 name="contact"
-                method="post"
-                action="/kontakt/thanks/"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
                 onSubmit={this.handleSubmit}
                 className="contactForm"
               >
-                {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                <input type="hidden" name="form-name" value="contact" />
-                <div hidden>
-                  <label>
-                    Don’t fill this out:{' '}
-                    <input name="bot-field" onChange={this.handleChange} />
-                  </label>
-                </div>
                 <Row>
                   <Col sm={6}>
                     <Form.Group className="mb-3" controlId="vorname">
@@ -187,8 +161,10 @@ class Index extends React.Component {
                     placeholder="Meine Nachricht" />
                 </Form.Group>
                 <p className="small text-muted">
-                  Mit dem Absenden werden Ihre Angaben zur Bearbeitung Ihrer
-                  Anfrage übermittelt. Weitere Informationen finden Sie in der{" "}
+                  Beim Klick auf „Nachricht senden“ wird mit Ihren Angaben ein
+                  E-Mail-Entwurf in Ihrem Mailprogramm geöffnet. Die Nachricht
+                  wird erst versendet, wenn Sie sie dort absenden. Weitere
+                  Informationen finden Sie in der{" "}
                   <Link to="/datenschutz/">Datenschutzerklärung</Link>.
                 </p>
                 <Button type="submit">Nachricht senden</Button>

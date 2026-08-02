@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: github
+  repo: bnbln/rechtskh
+  branch: vercel
+  base_url: https://rechtsklarheit.de
+  auth_endpoint: api/cms/auth
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
     update: "Update {{collection}} “{{slug}}”"
